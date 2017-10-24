@@ -87,7 +87,7 @@ Más específicamente, cuando escribimos `whoami` la terminal:
 > ## Variaciones en el username
 >
 > En esta lección, hemos utilizado el nombre de usuario `nelle` (asociado
-> con nuestro científico hipotético Nelle) en el ejemplo de entrada y salida en todo.
+> a nuestra científica hipotética Nelle) en todos los ejemplos de entrada y salida.
 > Sin embargo, cuando
 > escribas los comandos de esta lección en tu computadora,
 > deberías ver y usar algo diferente,
