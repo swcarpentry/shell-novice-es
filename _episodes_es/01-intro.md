@@ -1,9 +1,9 @@
 ---
-title: "Introducción a la terminal"
+title: "Introducción a la Terminal"
 teaching: 5
 exercises: 0
 questions:
-- "¿Qué es una terminal de comandos y por qué utilizarla?"
+- "¿Qué es una terminal y por qué utilizarla?"
 objectives:
 - "Explicar cómo se relaciona la terminal con el teclado, la pantalla, el sistema operativo y los programas de los usuarios."
 - "Explicar cuándo y por qué se deben utilizar interfaces de línea de comandos en lugar de interfaces gráficas."
