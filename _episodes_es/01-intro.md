@@ -1,5 +1,5 @@
 ---
-title: "Introducción al Shell"
+title: "Introducción a la terminal"
 teaching: 5
 exercises: 0
 questions:
