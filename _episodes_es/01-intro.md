@@ -13,7 +13,7 @@ keypoints:
 - "Las desventajas principales de la terminal son su naturaleza primordialmente textual y que sus comandos y operación pueden llegar a ser muy crípticos."
 ---
 
-###Introducción
+### Introducción
 
 En su nivel más sencillo, las computadoras hacen cuatro cosas:
 
