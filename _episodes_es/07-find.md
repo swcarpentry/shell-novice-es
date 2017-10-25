@@ -119,7 +119,7 @@ Today it is not working
 ~~~
 {: .output}
 
-Hemos visto que usted no requerimos comillas alrededor de palabras simples,
+Hemos visto que no requerimos comillas alrededor de palabras simples,
 pero es útil utilizar comillas cuando se buscan varias palabras consecutivas.
 También ayuda a facilitar la distinción entre el término o frase de búsqueda
 y el archivo que se está buscando.
@@ -191,7 +191,7 @@ $ grep -n -w -v "the" haiku.txt
 ~~~
 {: .output}
 
-`grep` tiene muchas otras opciones. Para averiguar cuales son, podemos escribir:
+`grep` tiene muchas otras opciones. Para averiguar cuáles son, podemos escribir:
 
 ~~~
 $ grep --help
@@ -294,7 +294,7 @@ $ find .
 Como siempre,
 el `.` por sí mismo significa el directorio de trabajo actual,
 que es donde queremos que empiece nuestra búsqueda.
-la salida de `find` es el nombre de cada archivo **y** directorio
+La salida de `find` es el nombre de cada archivo **y** directorio
 dentro del directorio de trabajo actual.
 Esto puede parecer inútil al principio, pero `find` tiene muchas opciones
 para filtrar la salida y en esta lección vamos a descubrir algunas
@@ -463,8 +463,8 @@ $ grep "FE" $(find .. -name '*.pdb')
 > fórmulas?
 >
 > La tercera opción es reconocer que el shell y el procesamiento de texto
-> sus límites, y utilizar otro lenguaje de programación.
-> Sin embargo el shell te seguirá siendo útil para realizar tareas de 
+> tiene sus límites, y utilizar otro lenguaje de programación.
+> Sin embargo, el shell te seguirá siendo útil para realizar tareas de 
 > procesamiento diarias.
 {: .callout}
 
@@ -474,7 +474,7 @@ Ha sobrevivido tanto tiempo porque es uno de los ambientes de programación más
 jamás creados --- quizás incluso *el* más productivo. Su sintaxis
 puede ser críptica, pero las personas que lo dominan pueden experimentar con
 diferentes comandos interactivamente, y luego utilizar lo que han aprendido para
-automatizar su trabajo. Las interfaces gráficas de usuario pueden ser mas sencillas
+automatizar su trabajo. Las interfaces gráficas de usuario pueden ser más sencillas
 al principio, pero el shell sigue invicto en segunda instancia. Y como Alfred
 North Whitehead escribió en 1911, "La civilización avanza extendiendo el
 número de operaciones importantes que podemos realizar sin pensar
@@ -484,7 +484,7 @@ en ellas."
 >
 > Haciendo referencia a `haiku.txt`
 > presentado al inicio de este tema,
-> que comando resultaría en la salida siguiente:
+> qué comando resultaría en la salida siguiente:
 >
 > ~~~
 > and the presence of absence:
@@ -537,9 +537,9 @@ en ellas."
 > {: .source}
 >
 > Quiere escribir un script de shell que tome un directorio y una especie
-> como parámetros de línea de comandos y devolver un archivo llamado `species.txt`
-> Que contenga una lista de fechas y el número de individuos de esa especie observados en esa fecha,
-> como este archivo de números de conejos conejos:
+> como parámetros de línea de comandos y devuelva un archivo llamado `species.txt`
+> que contenga una lista de fechas y el número de individuos de esa especie observados en esa fecha,
+> como este archivo de números de conejos:
 > 
 > ~~~
 > 2013-11-05,22
@@ -548,7 +548,7 @@ en ellas."
 > ~~~
 > {: .source}
 >
-> Ponga estos comandos y tuberías en el orden correcto para lograrlo:
+> Pon estos comandos y tuberías en el orden correcto para lograrlo:
 > 
 > ~~~
 > cut -d : -f 2  
@@ -577,7 +577,7 @@ en ellas."
 > de las cuatro hermanas es mencionada?
 >
 > Sugerencia: una solución sería emplear
-> los comandos `grep` and `wc` and a `|`, mientras que otra podría utilizar
+> los comandos `grep` y `wc` y un `|`, mientras que otra podría utilizar
 > opciones de `grep`.
 {: .challenge}
 
@@ -585,11 +585,11 @@ en ellas."
 >
 > El comando `find` puede recibir varios otros criterios conocidos como "tests"
 > para localizar archivos con atributos específicos, como tiempo de creación, tamaño,
-> permisos o dueño. Utilice `man find` para explorar estos, y luego
-> escriba un solo comando para encontrar todos los archivos en o debajo del directorio actual
+> permisos o dueño. Explora esto con `man find` y luego
+> escribe un solo comando para encontrar todos los archivos en o debajo del directorio actual
 > que han sido modificados por el usuario `ahmed` en las últimas 24 horas.
 >
-> Sugerencia 1: necesitará utilizar tres tests: `-type`,` -mtime` y `-user`.
+> Sugerencia 1: necesitarás utilizar tres tests: `-type`,` -mtime` y `-user`.
 >
 > Sugerencia 2: El valor de `-mtime` tendrá que ser negativo --- ¿por qué?
 >
