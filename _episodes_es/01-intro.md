@@ -32,7 +32,7 @@ comunes sino hasta los años 80s. Las raíces de estas *interfaces gráficas de 
 se remontan al trabajo de Doug Engelbart's en los 60s, el cual podemos ver en lo que
 se ha denominado "[La Madre de todos los Demos](http://www.youtube.com/watch?v=a11JDLBXtPQ)".
 
-###Interfaz de Línea de Comandos
+### Interfaz de Línea de Comandos
 
 Remontándonos aún más allá, 
 la única manera de interactuar con las computadoras tempranas era reorganizando 
@@ -56,7 +56,7 @@ e imprime el resultado (también conocido como output).
 Después el usuario escribe otro comando y el ciclo continúa hasta que el 
 usuario se desconecta del equipo. 
 
-###La Terminal
+### La Terminal
 
 Esta descripción hace pensar que el usuario envía comandos directamente a la computadora
 y que la computadora envía el resultado o salida directamente al usuario.
@@ -71,7 +71,7 @@ con el fin de ocultar algo de su complejidad y hacer más fácil la interacción
 Una terminal es un programa como cualquier otro.
 Lo que la hace especial es que su trabajo es ejecutar otros programas, 
 en lugar de realizar los cálculos en sí.
-La terminal más popular de Unix se llama **Bash**, que proviene de **Bourne Again SHell**
+La terminal más popular de Unix se llama **Bash**, que proviene de **Bourne Again Shell**
 (así llamado porque deriva de una versión previa escrita por Stephen Bourne).
 Bash es la terminal por defecto en la mayoría de las implementaciones modernas de Unix,
 y en la mayoría de los paquetes que proporcionan herramientas similares a las de Unix 
