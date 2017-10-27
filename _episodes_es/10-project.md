@@ -1,13 +1,13 @@
 ---
-title: "Proyecto Final"
-questions:
+título: "Proyecto Final"
+preguntas:
 - "¿Puedes aplicar lo aprendido?"
-keypoints:
-- "Si hay dos proyectos iguales(o extremadamente parecidos) su resultado será descartado"
+puntos clave:
+- "Si hay dos proyectos iguales (o extremadamente parecidos) su resultado será descartado"
 ---
 
 Usando los comandos disponibles en esta lección deberán escribir un script que, 
-a partir únicamente de tres archivos fasta, genere la siguiente información. 
+a partir únicamente de tres archivos fasta, genere la siguiente información: 
 
 1. El nombre del archivo más largo (en número de caracteres) 
 2. Un archivo concatenado de todas las secuencias. 
@@ -44,9 +44,9 @@ Analysis of Complete_ID.fasta
 {: .output}
 
 * La descripciones en la salida deberán ser idénticas a las mostradas arriba.
-* El script deberá imprimir a salida estándar. 
+* El script deberá imprimir la salida estándar. 
 * Deberá funcionar con cualquier otro archivo o archivos fasta, diferentes a los proporcionados. 
-* Deberá estar comentado, explicando brevemente que hace el script y que realiza cada línea. 
+* Deberá estar comentado, explicando brevemente qué hace el script y qué realiza cada línea. 
 
 Todas las ocurrencias de 'ID' deberán ser substituidas por su identificador de estudiante, proporcionado por 
 correo electrónico. No tienen que hacer este ID variable, es decir, si el ID no se puede cambiar en la 
@@ -70,7 +70,7 @@ Se entregarán dos archivos:
 2. Complete_`<identificador_de_estudiante>`.fasta (e.g. Complete_5.fasta)
 
 Se recibirán vía [correo electrónico](mailto:selene.fernandez@cinvestav.mx) a más tardar
-el día sábado 29 de abril al la media noche. El correo debe incluir ambos archivos. 
+el día sábado 29 de abril a la media noche. El correo debe incluir ambos archivos. 
 **No hay prórrogas**. 
 
 El día viernes 28 de abril estará abierto el aula de biocómputo para que prueben su 
@@ -81,7 +81,7 @@ script antes de enviarlo.
 Se dará medio punto extra (sobre 10 en la sección de linux) a aquel que imprima un menú de 
 ayuda si se ejecuta el script sin opciones. 
 
-#### Tips
+#### Pista
 
 Para borrar uno o más espacios al inicio de la línea se puede utilizar:
 
