@@ -14,16 +14,15 @@ keypoints:
 - "`cp old new` copia un archivo."
 - "`mkdir path` crea un nuevo directorio."
 - "`mv old new` mueve (renombra) un archivo o directorio."
-- "`rm path` elimina (elimina) un archivo."
-- "`rmdir path` elimina (elimina) un directorio vacío."
+- "`rm path` elimina un archivo."
 - "El uso de la tecla Control puede ser descrito de muchas maneras, incluyendo` Ctrl-X`, `Control-X` y` ^ X`. "
-- "El shell no tiene un compartimiento de basura: una vez que algo se borra, se borra completamente."
-- "Nano es un editor de texto muy simple: por favor, sugerimos utilizar otro editor para el trabajo diario."
+- "El shell no tiene una papelera de reciclaje o bote de basura: una vez que algo se elimina, se borra completamente."
+- "Dependiendo del tipo de trabajo que se requiera, puede ser necesario utilizar un editor de textos más poderoso que Nano."
 ---
 
 Ahora sabemos cómo explorar archivos y directorios,
-Pero ¿cómo los creamos en primer lugar?
-Volvamos a nuestro directorio `data-shell` en el Escritorio
+pero ¿cómo los creamos en primer lugar?
+Volvamos a nuestro directorio `data-shell` en Desktop
 y utilicemos el comando `ls -F` para ver lo que contiene:
 
 ~~~
@@ -32,7 +31,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/Alicia/Desktop/data-shell
+/home/nelle/Desktop/data-shell
 ~~~
 {: .output}
 
@@ -47,8 +46,7 @@ data/       north-pacific-gyre/  solar.pdf
 Desktop/    notes.txt            writing/
 ~~~
 {: .output}
-
-Vamos a crear un nuevo directorio llamado `thesis` usando el comando` mkdir thesis`
+Creemos un nuevo directorio llamado `thesis` usando el comando` mkdir thesis`
 (que no genera una salida):
 
 ~~~
@@ -77,7 +75,7 @@ molecules/  solar.pdf
 {: .output}
 
 > ## Dos maneras de hacer lo mismo
-> Usar el shell para crear un directorio no es diferente a usar un navegador de archivos gráfico.
+> Usar la terminal para crear un directorio no es diferente de usar un navegador de archivos gráfico.
 > Si abres el directorio actual utilizando el explorador de archivos gráfico de tu sistema operativo,
 > el directorio `thesis` aparecerá allí también.
 > Si bien son dos formas diferentes de interactuar con los archivos,
@@ -86,32 +84,28 @@ molecules/  solar.pdf
 
 > ## Buena nomenclatura para archivos y directorios
 >
-> Dar nombres de archivos y directorios pueden hacer tu vida muy dolorosa
-> cuando se trabaja en la línea de comandos. Te ofrecemos algunos útiles
-> consejos para nombrar tus archivos de ahora en adelante.
+> Usar nombres complicados para archivos y directorios pueden hacer tu vida muy complicada cuando se trabaja en la línea de comandos. Te ofrecemos algunos
+> consejos útiles para nombrar tus archivos de ahora en adelante.
 >
-> 1. No usar espacios en blanco.
+> 1. No uses espacios en blanco.
 >
-> Los espacios en blanco pueden hacer un nombre más significativo
-> Pero desde whitespace se utiliza para romper los argumentos en la línea de comandos
-> Es mejor evitarlos en nombre de archivos y directorios.
-> Puede utilizar `-` o` _` en lugar de espacios en blanco.
+> Los espacios en blanco pueden hacer un nombre más significativo, pero, dado que se utilizan para separar argumentos en la línea de comandos, es mejor evitarlos en nombres de archivos y directorios.
+> Puedes utilizar `-` o` _` en lugar de espacios en blanco.
 >
-> 2. No comenzar el nombre con un `-` (guión).
+> 2. No comiences el nombre con un `-` (guión).
 >
 > Los comandos tratan a los nombres que comienzan con `-` como opciones.
 >
-> 3. Utilizar unicamente letras, números, `.` (punto),` -` (guión) y `_` (guión bajo).
+> 3. Utiliza únicamente letras, números, `.` (punto),` -` (guión) y `_` (guión bajo).
 >
 > Muchos otros caracteres tienen un significado especial en la línea de comandos
-> y los aprenderemos durante esta lección. Algunos sólo harán que tu comando no funcione,
-> ¡pero algunos de ellos pueden incluso hacer que pierdas algunos datos!
+> y los aprenderemos durante esta lección. Algunos sólo harán que tu comando no funcione, otros pueden incluso hacer que pierdas datos.
 >
 > Si necesitas referirte a nombres de archivos o directorios que tengan espacios en blanco
 > u otro carácter no alfanumérico, se debe poner el nombre entre comillas (`""`).
 {: .callout}
 
-Dado que acabamos de crear el directorio `thesis`, aún está vacío:
+Dado que acabamos de crear el directorio `thesis`, aún se encuentra vacío:
 
 ~~~
 $ ls -F thesis
@@ -131,41 +125,37 @@ $ nano draft.txt
 >
 > Cuando decimos, "`nano` es un editor de texto", realmente queremos decir "texto": 
 > sólo funciona con datos de caracteres simples, no con tablas, imágenes o cualquier otro
-> formato amigables para el usuario. Lo utilizamos en ejemplos porque la mayoría de la gente puede
-> utilizarlo en cualquier lugar sin entrenamiento, pero por favor use algo más
-> poderoso para el trabajo real. En los sistemas Unix (como Linux y Mac OS X)
+> formato amigable con el usuario. Lo utilizamos en ejemplos porque es un editor muy sencillo que permite funciones muy básicas. Sin embargo, por estas mismas cualidades, podría ser insuficiente para necesidades de la vida real. En los sistemas Unix (como Linux y Mac OS X)
 > muchos programadores utilizan [Emacs](http://www.gnu.org/software/emacs/) o
-> [Vim](http://www.vim.org/) (ambos de los cuales son completamente no intuitivos,
-> incluso para los estándares Unix), o un editor gráfico como
-> [Gedit](http://projects.gnome.org/gedit/). En Windows, puede
+> [Vim](http://www.vim.org/) (ambos requieren más tiempo para familiarizarse), o un editor gráfico como
+> [Gedit](http://projects.gnome.org/gedit/). En Windows puedes
 > utilizar [Notepad ++](http://notepad-plus-plus.org/). Windows también tiene un editor
-> interno llamado `notepad` que se puede ejecutar desde la línea de comandos en la misma
-> manera como `nano` para los propósitos de esta lección.
+> interno llamado `notepad` que se puede ejecutar desde la línea de comandos de la misma
+> manera que `nano` para los propósitos de esta lección.
 >
 > Sea cual sea el editor que uses, necesitarás saber dónde busca
-> y guarda archivos. Si lo inicias desde el shell, buscará (probablemente)
-> en el directorio de trabajo actual como su ubicación predeterminada. Si utiliza
-> el menú de inicio de su computadora, puede que guarde archivos en su escritorio o
-> directorio de documentos. Puede cambiar esto navegando a
-> otro directorio la primera vez que use "Guardar como ..."
+> y guarda archivos. Si lo inicias desde la terminal, usará (probablemente)
+> el directorio de trabajo actual como ubicación predeterminada. Si utilizas
+> el menú de inicio de tu computadora puede ser que los archivos se guarden en tu Desktop o el
+> directorio de Documentos. Puedes cambiar de directorio destino navegando a
+> otro directorio la primera vez guardes el archivo usando "Guardar como ...".
 {: .callout}
 
-Escriba algunas líneas de texto.
-Una vez que estemos contentos con nuestro texto, podemos presionar `Ctrl-O` (presionar la tecla Ctrl o Control y, mientras
-mantenga pulsada la tecla O) para escribir nuestros datos en el disco
+Escribamos algunas líneas de texto.
+Una vez que estemos contentos con nuestro texto, podemos presionar `Ctrl-O` (presiona la tecla Ctrl o Control y, mientras
+la mantienes presionada, oprime la tecla O) para escribir nuestros datos en el disco
 (se nos preguntará en qué archivo queremos guardar esto:
-presione Enter para aceptar el valor predeterminado sugerido de `draft.txt`).
+presiona Enter para aceptar el valor predeterminado sugerido `draft.txt`).
 
 ![Nano in Action](../fig/nano-screenshot.png)
 
-Una vez que se guarda nuestro archivo, podemos usar `Ctrl-X` para salir del editor y
-Volver a el shell.
+Una vez que nuestro archivo está guardado, podemos usar `Ctrl-X` para salir del editor y volver a la terminal.
 
 > ## Tecla Control, Ctrl o ^ 
 >
 > La tecla Control también se denomina tecla "Ctrl". Hay varias maneras
 > de indicar el uso de la tecla Control. Por ejemplo,
-> una instrucción para presionar la tecla Control y, mientras la mantiene pulsada,
+> una instrucción para presionar la tecla Control y, mientras la mantienes pulsada,
 > presionar la tecla X, puede ser descrita de cualquiera de las siguientes maneras:
 >
 > * `Control-X`
@@ -173,13 +163,14 @@ Volver a el shell.
 > * `Ctrl-X`
 > * `Ctrl+X`
 > * `^X`
+> * `C-x`
 >
-> En nano, a lo largo de la parte inferior de la pantalla verá `^G Get Help ^O WriteOut`.
-> Esto significa que puede usar `Control-G` para obtener ayuda y` Control-O` para guardar su
+> En nano, a lo largo de la parte inferior de la pantalla se lee `^G Get Help ^O WriteOut`.
+> Esto significa que puedes usar `Control-G` para obtener ayuda y` Control-O` para guardar tu
 > archivo.
 {: .callout}
 
-`nano` no deja ninguna salida en la pantalla después de que salimos,
+`nano` no deja ninguna salida en la pantalla después de que salir del programa,
 pero `ls` ahora muestra que hemos creado un archivo llamado` draft.txt`:
 
 ~~~
@@ -199,9 +190,9 @@ $ rm draft.txt
 ~~~
 {: .bash}
 
-Este comando elimina los archivos (`rm` es la abreviatura de "remove").
+Este comando elimina archivos (`rm` es la abreviatura de "remove", "remover" en inglés).
 Si ejecutamos `ls` de nuevo,
-su salida estará vacía una vez más,
+la salida estará vacía una vez más,
 indicándonos que nuestro archivo ha desaparecido:
 
 ~~~
@@ -211,17 +202,17 @@ $ ls
 
 > ## Eliminar es para siempre
 >
-> La shell de Unix no tiene un contenedor de basura donde podamos restaurar archivos
-> eliminados (aunque la mayoría de las interfaces gráficas de Unix si lo tienen). En su lugar,
+> La terminal de Unix no tiene un contenedor de basura donde podamos restaurar archivos
+> eliminados (aunque la mayoría de las interfaces gráficas de Unix sí lo tienen). En su lugar,
 > cuando eliminamos archivos, se desenganchan del sistema de archivos para que
-> su espacio de almacenamiento en disco puede ser reciclado. Existen herramientas para encontrar y
-> recuperar archivos eliminados existe, pero no hay garantía de que
-> funcionan en todas las situaciones, ya que la computadora puede reciclar la
+> su espacio de almacenamiento en disco pueda ser reciclado. Existen herramientas para encontrar y
+> recuperar archivos eliminados, pero no hay garantía de que
+> funcionen en todas las situaciones, ya que la computadora puede reciclar
 > el espacio en disco del archivo en cuestión inmediatamente, perdiéndose de manera permanente.
 {: .callout}
 
-Vamos a volver a crear ese archivo
-y luego subir un directorio a `/home/Alicia/Desktop/data-shell` usando `cd ..`:
+Creemos de nuevo el archivo
+y después subamos un directorio a `/home/nelle/Desktop/data-shell` usando `cd ..`:
 
 ~~~
 $ pwd
@@ -229,7 +220,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/Alicia/Desktop/data-shell/thesis
+/home/nelle/Desktop/data-shell/thesis
 ~~~
 {: .output}
 
@@ -250,7 +241,7 @@ $ cd ..
 {: .bash}
 
 Si tratamos de eliminar todo el directorio `thesis` usando `rm thesis`,
-recibimos un mensaje de error:
+obtenemos un mensaje de error:
 
 ~~~
 $ rm thesis
@@ -264,7 +255,7 @@ rm: cannot remove `thesis': Is a directory
 
 Esto ocurre porque `rm` por defecto sólo funciona en archivos, no en directorios.
 
-Para realmente deshacernos de `thesis` también debemos eliminar el archivo` draft.txt`.
+Para realmente deshacernos de `thesis` también debemos eliminar el archivo `draft.txt`.
 Podemos hacer esto con la opción [recursiva](https://en.wikipedia.org/wiki/Recursion) para `rm`:
 
 ~~~
@@ -276,8 +267,7 @@ $ rm -r thesis
 >
 > Eliminar los archivos en un directorio recursivamente puede ser una operación
 > muy peligrosa. Si nos preocupa lo que podríamos eliminar, podemos
-> añadir la bandera "interactiva" `-i` a `rm`, lo que nos pedirá confirmación
-> antes de cada paso
+> añadir la opción "interactiva" `-i` a `rm`, que nos pedirá confirmar cada paso.
 >
 > ~~~
 > $ rm -r -i thesis
@@ -287,13 +277,13 @@ $ rm -r thesis
 > ~~~
 > {: .bash}
 >
-> Esto elimina todo en el directorio y luego el directorio mismo, preguntando
+> Esto elimina todo en el directorio y después el directorio, preguntando
 > en cada paso para que se confirme la eliminación.
 {: .callout}
 
-Vamos a crear ese directorio y archivo una vez más.
-(Tenga en cuenta que esta vez estamos ejecutando `nano` con la ruta de acceso `thesis/draft.txt`,
-en lugar de ir al directorio `thesis` y ejecutar `nano` en `draft.txt` allí.)
+Vamos a crear el directorio y el archivo una vez más.
+(Ten en cuenta que esta vez estamos ejecutando `nano` con la ruta de acceso `thesis/draft.txt`,
+en lugar de ir al directorio `thesis` y ejecutar `nano` en `draft.txt`.)
 
 ~~~
 $ pwd
@@ -301,7 +291,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/Alicia/Desktop/data-shell
+/home/nelle/Desktop/data-shell
 ~~~
 {: .output}
 
@@ -326,9 +316,9 @@ $ mv thesis/draft.txt thesis/quotes.txt
 ~~~
 {: .bash}
 
-El primer parámetro dice a `mv` lo que estamos moviendo,
-mientras que el segundo indica a donde hay que moverlo.
-En este caso,
+El primer parámetro dice a `mv` lo que estamos "moviendo"",
+mientras que el segundo indica a dónde hay que moverlo.
+En este caso
 estamos moviendo `thesis/draft.txt` a `thesis/quotes.txt`,
 que tiene el mismo efecto que cambiar el nombre del archivo.
 Como esperamos,
@@ -344,14 +334,13 @@ quotes.txt
 ~~~
 {: .output}
 
-Hay que tener cuidado al especificar el nombre del archivo de destino, ya que `mv`
+Hay que tener cuidado al especificar el nombre del archivo destino, ya que `mv`
 remplaza silenciosamente cualquier archivo existente con el mismo nombre,
-conduciendo a la pérdida de datos. Un indicador adicional, `mv -i` (o `mv --interactive`),
-se puede utilizar para hacer que `mv` le pida confirmación antes de sobrescribir.
+provocando pérdida de datos. Un indicador adicional, `mv -i` (o `mv --interactive`),
+se puede utilizar para hacer que `mv` te pida confirmación antes de sobrescribir.
 
-Sólo por el gusto de la inconsistencia,
-`mv` también funciona en directorios --- no existe un comando separado `mvdir`. 
-
+Sólo por el gusto de la consistencia,
+`mv` también funciona en directorios, es decir, no existe un comando separado `mvdir`. 
 Vamos a mover `quotes.txt` al directorio de trabajo actual.
 Utilizamos `mv` una vez más,
 pero esta vez sólo usaremos el nombre de un directorio como el segundo parámetro
@@ -405,9 +394,8 @@ quotes.txt   thesis/quotations.txt
 ~~~
 {: .output}
 
-Para probar que hicimos una copia,
-vamos a eliminar el archivo `quotes.txt` en el directorio actual
-y luego ejecutar el mismo `ls` de nuevo.
+Para probar que hicimos una copia, eliminemos el archivo `quotes.txt` del directorio actual
+y después ejecutemos el mismo `ls` de nuevo.
 
 ~~~
 $ rm quotes.txt
@@ -421,25 +409,25 @@ thesis/quotations.txt
 ~~~
 {: .error}
 
-Esta vez nos dice que no puede encontrar `quotes.txt` en el directorio actual,
+Esta vez el error nos dice que no se puede encontrar `quotes.txt` en el directorio actual,
 pero encuentra la copia en `thesis` que no hemos borrado.
 
 > ## ¿Qué hay en un nombre?
 >
-> Habrá notado que todos los nombres de los archivos de Alicia son "algo punto
+> Tal vez notaste que todos los nombres de los archivos de Nelle son "algo punto
 > algo", y en esta parte de la lección, usamos siempre la extensión
 > `.txt`. Esto es sólo una convención: podemos llamar a un archivo `mythesis` o
 > casi cualquier cosa que queramos. Sin embargo, la mayoría de la gente usa nombres de dos partes
-> la mayor parte del tiempo para ayudarles (y a sus programas) a contar diferentes tipos
-> de archivos separados. La segunda parte de este nombre se llama la
+> para que sea más fácil (para ellos y sus programas) diferenciar entre tipos
+> de archivos. La segunda parte de este nombre se llama la
 > **extensión de nombre de archivo** e indica
 > qué tipo de datos contiene el archivo: `.txt` señala un archivo de texto sin formato, `.pdf`
 > indica un documento PDF, `.cfg` es un archivo de configuración lleno de parámetros
-> para algún programa u otro, `.png` es una imagen PNG, y así sucesivamente.
+> para algún programa, `.png` es una imagen PNG, y así sucesivamente.
 >
-> Esto es sólo una convención, aunque importante. Los archivos contienen solo
-> bits: depende de nosotros y de nuestros programas interpretar esos bits
-> de acuerdo con las reglas para archivos de texto sin formato, documentos PDF,
+> Esto es sólo una convención, aunque una importante. Los archivos contienen solo
+> bytes: depende de nosotros y de nuestros programas interpretar esos bytes
+> de acuerdo a las reglas para archivos de texto, documentos PDF,
 > archivos de configuración, imágenes, etc.
 >
 > Nombrar una imagen PNG de una ballena como `whale.mp3` no lo convierte
@@ -448,13 +436,13 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > cuando alguien hace doble clic en él.
 {: .callout}
 
-> ## Cambiando de nombre a archivos
+> ## Cambiando el nombre de archivos
 >
-> Suponga que ha creado un archivo `.txt` en su directorio actual para contener una lista de las
-> pruebas estadísticas que necesitará hacer para analizar sus datos, y lo llamará: `statstics.txt`
+> Supón que has creado un archivo `.txt` en tu directorio actual para incluír una lista de las
+> pruebas estadísticas que necesitas hacer para analizar tus datos, y lo llamarás: `statstics.txt`
 >
-> Después de crear y guardar este archivo, te das cuenta de que has escrito mal el nombre del archivo. Si desea
-> corregir el error, ¿cuál de los siguientes comandos podría utilizar para hacerlo?
+> Después de crear y guardar este archivo, te das cuenta de que has escrito mal el nombre del archivo. Si deseas
+> corregir el error, ¿cuál de los siguientes comandos podrías utilizar para hacerlo?
 >
 > 1. `cp statstics.txt statistics.txt`
 > 2. `mv statstics.txt statistics.txt`
@@ -462,13 +450,10 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > 4. `cp statstics.txt .`
 >
 Solución
-> > 1. No. Mientras esto crearía un archivo con el nombre correcto, el archivo con nombre incorrecto todavía existe en el directorio
-> > Y necesitaría ser borrado.
+> > 1. No. Mientras esto crearía un archivo con el nombre correcto, el archivo con nombre incorrecto todavía existiría en el directorio y necesitaría ser borrado.
 > > 2. Sí, esto funcionaría para renombrar el archivo.
-> > 3. No, el punto (.) indica dónde mover el archivo, pero no proporciona un nuevo nombre de archivo; nombres de archivo idénticos
-> > no se puede crear.
-> > 4. No, el punto (.) indica dónde copiar el archivo, pero no proporciona un nuevo nombre de archivo; nombres de archivo idénticos
-> > no se puede crear.
+> > 3. No, el punto (.) indica dónde mover el archivo, pero no proporciona un nuevo nombre de archivo; no pueden crearse nombres de archivo idénticos.
+> > 4. No, el punto (.) indica dónde copiar el archivo, pero no proporciona un nuevo nombre de archivo; no pueden crearse nombres de archivo idénticos.
 > {: .solution}
 {: .challenge}
 
@@ -482,7 +467,7 @@ Solución
 > ~~~
 > {: .bash}
 > ~~~
-> /home/jamie/data
+> /Users/jamie/data
 > ~~~
 > {: .output}
 > ~~~
@@ -507,24 +492,23 @@ Solución
 > 4.   `proteins-saved.dat`
 >
 > > ## Solución
-> > Comenzamos en el directorio `/home/jamie/data` y creamos una nueva carpeta llamada `recombine`.
+> > Comenzamos en el directorio `/Users/jamie/data` y creamos una nueva carpeta llamada `recombine`.
 > > La segunda línea mueve (`mv`) el archivo `proteins.dat` a la nueva carpeta (`recombine`).
-> > La tercera línea hace una copia del archivo que acabamos de mover. La parte difícil aquí es a donde el archivo fue
-> > copiado. Recuerde que `..` significa "subir un nivel", por lo que el archivo copiado ahora está en `/home/jamie`.
-> > Observe que `..` se interpreta con respecto al directorio actual de trabajo,
+> > La tercera línea hace una copia del archivo que acabamos de mover. La parte difícil aquí es en dónde se copió el archivo. Recuerda que `..` significa "subir un nivel", por lo que el archivo copiado ahora está en `/Users/jamie`.
+> > Observa que `..` se interpreta con respecto al directorio actual de trabajo,
 > > **no** con respecto a la ubicación del archivo que se está copiando.
-> > Por lo tanto, lo único que se mostrará usando ls (en `/home/jamie/data`) es la carpeta recombine.
+> > Por lo tanto, lo único que se mostrará usando ls (en `/Users/jamie/data`) es la carpeta recombine.
 > >
-> > 1. No, vea la explicación arriba. `proteins-saved.dat` se encuentra en `/home/jamie`
+> > 1. No, consulta la explicación anterior. `proteins-saved.dat` se encuentra en `/Users/jamie`
 > > 2. Sí
-> > 3. No, vea la explicación anterior. `proteins.dat` se encuentra en`/home/jamie/data/recombine`
-> > 4. No, vea la explicación anterior. `Proteins-saved.dat` se encuentra en`/home/jamie`
+> > 3. No, consulta la explicación anterior. `proteins.dat` se encuentra en`/Users/jamie/data/recombine`
+> > 4. No, consulta la explicación anterior. `Proteins-saved.dat` se encuentra en`/Users/jamie`
 > {: .solution}
 {: .challenge}
 
 > ## Organización de directorios y archivos
 >
-> Jamie está trabajando en un proyecto y ve que sus archivos no están muy bien
+> Jamie está trabajando en un proyecto y nota que sus archivos no están muy bien
 > organizados:
 >
 > ~~~
@@ -556,33 +540,50 @@ Solución
 > fructose.dat    sucrose.dat
 > ~~~
 > {: .output}
-{: .challenge}
+>
+>> ## Solución
+>>
+>> ~~~
+>> mv *.dat analyzed
+>> ~~~
+>>
+>> {: .bash} Jamie necesita mover sus archivos `fructose.dat` y `sucrose.dat` al directorio `analyzed`. La terminal expandirá *.dat para abarcar todos los archivos .dat en el directorio. Después, el comando `mv` moverá la lista de archivos .dat al directorio "analyzed". {: .solution} {: .challenge}
 
 > ## Copiar con varios archivos
 >
-> ¿Qué hace `cp` cuando se le dan varios nombres de archivo y un nombre de directorio?, como en:
+> Para este ejercicio puedes probar los comandos del directorio `data-shell/data`
+> En el ejemplo que sigue, ¿qué hace `cp` cuando se le dan varios nombres de archivo y un nombre de directorio?:
 >
 > ~~~
 > $ mkdir backup
-> $ cp thesis/citations.txt thesis/quotations.txt backup
+> $ cp amino-acids.txt animals.txt backup/
 > ~~~
 > {: .bash}
 >
-> ¿Qué hace `cp` cuando se le dan tres o más nombres de archivo?, como en:
+> En el siguiente ejemplo, ¿qué hace `cp` cuando se le dan tres o más nombres de archivo?
 >
 > ~~~
 > $ ls -F
 > ~~~
 > {: .bash}
 > ~~~
-> intro.txt    methods.txt    survey.txt
+> amino-acids.txt  animals.txt  backup/  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt
 > ~~~
 > {: .output}
 > ~~~
-> $ cp intro.txt methods.txt survey.txt
+> $ cp amino-acids.txt animals.txt morse.txt
 > ~~~
 > {: .bash}
-{: .challenge}
+>
+>> ## Solución
+>> 
+>> Si se pasa como argumento más de un archivo seguido del nombre de un directorio (siempre que el nombre del directorio sea el último argumento), `cp` copia los archivos en el directorio especificado.
+>>
+>> Si se proveen tres nombres de archivo, `cp` arroja un error porque espera un nombre de directorio como último argumento.
+>> ~~~
+>> cp: target ‘morse.txt’ is not a directory
+>> ~~~
+>> {: .output} {: .solution} {: .challenge}
 
 
 > ## Listado recursivo y por tiempo
@@ -590,18 +591,20 @@ Solución
 > El comando `ls -R` enumera el contenido de los directorios recursivamente,
 > es decir, enumera sus subdirectorios, subdirectorios secundarios, etc.
 > en orden alfabético en cada nivel.
-> El comando `ls -t` enumera las cosas por el tiempo del último cambio,
+> El comando `ls -t` enumera los contenidos de acuerdo a la fecha y hora del último cambio,
 > empezando por los archivos o directorios modificados más recientemente.
 > ¿En qué orden muestra los archivos el comando `ls -R -t`?
-{: .challenge}
+>
+>> ## Solución
+>> El comando `ls -R` enumera los directorios recursivamente en orden cronológico de cada nivel, y los archivos en cada direcotrio también son desplegados en orden cronológico. {: .solution} {: .challenge}
 
 > ## Creación de archivos de una manera diferente
 >
 > Hemos visto cómo crear archivos de texto usando el editor `nano`.
-> ahora, intente el siguiente comando en su directorio personal:
+> Ahora, intenta el siguiente comando en tu directorio personal:
 >
 > ~~~
-> $ cd                  # ir al directorio de inicio
+> $ cd                  # ir al directorio home
 > $ touch my_file.txt
 > ~~~
 > {: .bash}
@@ -613,7 +616,12 @@ Solución
 > 2. Utilice `ls -l` para inspeccionar los archivos. ¿Qué tan grande es `my_file.txt`?
 >
 > 3. ¿En que circunstancias desearía crear un archivo de esta manera?
-{: .challenge}
+>
+>> ## Solución
+>>
+>> 1. El comando touch genera un nuevo archivo llamado "my_file.txt" en tu directorio home. Si te encuentras en tu directorio home, puedes observar el archivo recién creado utilizando `ls` en la terminal. También puedes visualizar "my_file.txt" en tu explorados de archivos GUI.
+>> 2. Cuando inspeccionas el archivo con "ls -l", nota que el tamaño de "my_file.txt" es 0 kb. En otras palabras, no contiene dato alguno. Si abres "my_file.txt" en un editor de texto, aparecerá en blanco.
+>> 3. Algunos programas no generan nuevos archivos de salida, pero requieren archivos en blanco que ya se hayan generado. Cuando uno de estos programas es ejecutado, automáticamente busca un archivo existente para llenarlo con su salida. El comando touch te permite generar eficientemente archivos en blanco para que este tipo de programas puedan usarlos. {: .solution} {: .challenge}
 
 > ## Pasar a la carpeta actual
 >
@@ -629,37 +637,47 @@ Solución
 > ~~~
 > {: .bash}
 >
-> Rellene los espacios en blanco para mover estos archivos a la carpeta actual
-> (es decir, en el que ella está actualmente):
+> Rellena los espacios en blanco para mover estos archivos a la carpeta actual
+> (es decir, en la que ella está actualmente):
 >
 > ~~~
 > $ mv ___/sucrose.dat  ___/maltose.dat ___
 > ~~~
 > {: .bash}
-{: .challenge}
+>
+>> ## Solución
+>>
+>> ~~~
+>> $ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
+>> ~~~
+>>
+>> {: .bash} Recuerda que `..` se refiere al directorio padre (es decir, el directorio en el nivel superior al actual) y `.` se refiere al directorio actual. {: .solution} {: .challenge}
+>>
 
 > ## Utilizando `rm` con seguridad
 >
 > ¿Qué ocurre cuando escribimos `rm -i thesis /quotations.txt`?
 > ¿Por qué querríamos esta protección cuando usamos `rm`?
 >
-> > ## Solution
+> > ## Solución
 > >
-> > Solicita confirmación.
-> {: .solution}
-{: .challenge}
+>> ~~~
+>> $ rm: remove regular file 'thesis/quotations.txt'?
+>> ~~~
+>>
+> > {: .bash} La opción -i provocará que se pregunte antes de eliminar un elemento. La terminal de Unix no cuenta con una papelera de reciclaje, así que todos los archivos que sean eliminados desaparecerán para siempre. Por medio de la opción -i tienes la oportunidad de revisar que sólo estés eliminando los archivos que realmente deseas borrar. {: .solution} {: .challenge}
 
 > ## Copiar una estructura de carpetas sin archivos
 >
-> Está iniciando un nuevo experimento y le gustaría duplicar el archivo
-> de estructuras de su experimento anterior sin los archivos de datos para que pueda
-> añadir nuevos datos.
+> Estás iniciando un nuevo experimento y te gustaría duplicar la estructura de archivos
+> que utilizaste para tu experimento anterior, sin los archivos de datos para que puedas
+> añadir los nuevos datos.
 >
-> Suponga que la estructura de archivos está en una carpeta llamada '2016-05-18-data',
-> que contiene carpetas denominadas 'raw' y 'processed' que contienen archivos de datos.
+> Suponte que la estructura de archivos está en una carpeta llamada '2016-05-18-data',
+> que contiene un directorio `data`. `data` a su vez contiene dos carpetas denominadas `raw` y `processed`, que contienen archivos de datos.
 > El objetivo es copiar la estructura de archivos de la carpeta `2016-05-18-data`
 > en una carpeta llamada `2016-05-20-data` y eliminar los archivos de datos de
-> el directorio que acaba de crear.
+> el directorio que acabas de crear.
 >
 > ¿Cuál de los siguientes conjuntos de comandos lograrían este objetivo?
 > ¿Qué harían los otros comandos?
@@ -671,8 +689,8 @@ Solución
 > ~~~
 > {: .bash}
 > ~~~
-> $ rm 2016-05-20-data/data/raw/*
-> $ rm 2016-05-20-data/data/processed/*
+> $ rm 2016-05-20-data/raw/*
+> $ rm 2016-05-20-data/processed/*
 > $ cp -r 2016-05-18-data/ 2016-5-20-data/
 > ~~~
 > {: .bash}
@@ -681,5 +699,11 @@ Solución
 > $ rm -r -i 2016-05-20-data/
 > ~~~
 > {: .bash}
-{: .challenge}
-
+>
+>> ## Solución
+>>
+>> El primer grupo de comandos logra este objetivo. Primero se cre una copia recursiva de la carpeta `data`. Después, dos comandos `rm` eliminan todos los archivos en los directorios especificados. La terminal interpreta el caracter especial `*` para incluír todos los archivos y subdirectorios.
+>>
+>> El segundo grupo de comandos está en el orden incorrecto: intenta borrar archivos que aún no han sido copiados, seguido del comando recursivo que los copiaría.
+>>
+>> El tercer grupo de comandos podría lograr el objetivo deseado, pero de una forma muy poco eficiente: el primer comando copia el directorio de forma recursiva, pero el segundo comando borra de forma interactiva, requiriendo confirmación antes de borrar cada archivo y directorio. {: .solution} {: .challenge}
