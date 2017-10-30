@@ -80,34 +80,39 @@ cada carácter alfanumérico coincide con sí mismo.
 Después del patrón viene el nombre o los nombres de los archivos que estamos buscando.
 La salida son las tres líneas del archivo que contienen las letras "not".
 
-Vamos a probar un patrón diferente: "day".
+Vamos a probar un patrón distinto: "The". 
 
 ~~~
-$ grep day haiku.txt
+$ grep The haiku.txt
 ~~~
 {: .bash}
 
 ~~~
-Yesterday it worked
-Today it is not working
+The Tao that is seen
+"My Thesis" not found.
 ~~~
 {: .output}
 
-Esta vez,
-Se emiten dos líneas que incluyen las letras "day".
-Sin embargo, estas letras están contenidas en palabras más grandes.
-Para restringir los aciertos a las líneas que contienen la palabra "day" por sí sola,
+Esta vez, las dos líneas que incluyen las letras "The" forman parte del producto de la búsqueda. 
+Sin embargo, una instancia de esas letras está contenida en una palabra más grande, "Thesis".
+
+Para restringir los aciertos a las líneas que contienen la palabra "The" por sí sola,
 podemos usar `grep` con el indicador` -w`.
 Esto limitará los coincidencias con los límites de las palabras.
 
 ~~~
-$ grep -w day haiku.txt
+$ grep -w The haiku.txt
 ~~~
 {: .bash}
 
-En este caso, no hay ningún caso, así que la salida de `grep` está vacía. A veces no queremos
-buscar una sola palabra, sino una frase. Esto también es fácil de hacer con
-`grep` poniendo la frase entre comillas.
+~~~
+The Tao that is seen
+~~~
+{: .output}
+
+
+Notar que una "word boundary" incluye el comienzo y el final de una línea, no solamente aquellas letras rodeadas de espacios. 
+A veces, queremos buscar una frase en vez de una sola palabra. Esto puede hacerse fácilmente con `grep` usando la frase entre comillas.
 
 ~~~
 $ grep -w "is not" haiku.txt
@@ -223,7 +228,7 @@ Miscellaneous:
 
 > ## Comodines
 >
-> La verdadera potencia de `grep` no proviene de sus opciones; viene de
+> La verdadera ventaja de `grep` no proviene de sus opciones; viene de
 > el hecho de que los patrones pueden incluir comodines. (El nombre técnico para
 > estos son **expresiones regulares**, que
 > es lo que significa el "re" en "grep".) Las expresiones regulares son complejas
@@ -259,15 +264,14 @@ Para mostrar cómo funcionan las más simples, utilizaremos el árbol de directo
 
 ![Árbol de archivos para el ejemplo de búsqueda](../fig/find-file-tree.svg)
 
-El directorio `writing` de Alicia contiene un archivo llamado `haiku.txt` y cuatro subdirectorios:
+El directorio `writing` de Nelle contiene un archivo llamado `haiku.txt` y tres subdirectorios:
 `thesis` (que contiene un archivo tristemente vacío, `empty-draft.md`),
-`data` (que contiene dos archivos` one.txt` y `two.txt`),
+`data` (que contiene dos archivos `LittleWomen.txt` , `one.txt` y `two.txt`),
 un directorio `tools` que contiene los programas` format` y `stats`,
 y un subdirectorio llamado `old`, con un archivo `oldtool`.
 
 Para nuestro primer comando,
 ejecutemos `find '.
-
 ~~~
 $ find .
 ~~~
@@ -275,10 +279,9 @@ $ find .
 
 ~~~
 .
-./old
-./old/.gitkeep
 ./data
 ./data/one.txt
+./data/LittleWomen.txt
 ./data/two.txt
 ./tools
 ./tools/format
@@ -335,6 +338,7 @@ $ find . -type f
 ./tools/format
 ./thesis/empty-draft.md
 ./data/one.txt
+./data/LittleWomen.txt
 ./data/two.txt
 ~~~
 {: .output}
@@ -377,6 +381,7 @@ $ find . -name '*.txt'
 
 ~~~
 ./data/one.txt
+./data/LittleWomen.txt
 ./data/two.txt
 ./haiku.txt
 ~~~
@@ -408,19 +413,20 @@ $ wc -l $(find . -name '*.txt')
 ~~~
 11 ./haiku.txt
 300 ./data/two.txt
+21022 ./data/LittleWomen.txt
 70 ./data/one.txt
-381 total
+21403 total
 ~~~
 {: .output}
 
 Cuando el shell ejecuta este comando,
 lo primero que hace es ejecutar lo que esté dentro del `$()`.
 Luego reemplaza la expresión `$()` con la salida de ese comando.
-Dado que la salida de `find` es los tres nombres de directorio `./data/one.txt`, `./data/two.txt`, y `./haiku.txt`,
+Dado que la salida de `find` es los cuatro nombres de directorio `./data/one.txt`, `./data/LittleWomen.txt`, `./data/two.txt`, y `./haiku.txt`,
 el shell construye el comando:
 
 ~~~
-$ wc -l ./data/one.txt ./data/two.txt ./haiku.txt
+$ wc -l ./data/one.txt ./data/LittleWomen.txt ./data/two.txt ./haiku.txt
 ~~~
 {: .bash}
 
@@ -566,6 +572,25 @@ en ellas."
 > y `man cut` para seleccionar más de un campo en una línea.
 {: .challenge}
 
+Un ejemplo es el siguiente archivo `data-shell/data/animal-counts/animals.txt`
+
+>
+> > ## Solución
+> >
+> > ```
+> > grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
+> > ```
+> > {: .source}
+> >
+> > Puedes llamar al script de la siguiente forma:
+> >
+> > ```
+> > $ bash count-species.sh bear .
+> > ```
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
 > ## Mujercitas
 >
 > Tú y tu amigo, que acaban de terminar de leer *Little Women* de
@@ -579,6 +604,37 @@ en ellas."
 > Sugerencia: una solución sería emplear
 > los comandos `grep` y `wc` y un `|`, mientras que otra podría utilizar
 > opciones de `grep`.
+{: .challenge}
+
+There is often more than one way to solve a programming task, so a
+> particular solution is usually chosen based on a combination of
+> yielding the correct result, elegance, readability, and speed.
+
+Normalmente hay más de una forma para solucionar una tarea de programación. Cada solución es seleccionada de acuerdo a la combinación entre cuál es la que produce el resultado correcto, con mayor elegancia, de la manera más clara y con mayor velocidad.
+
+> > ## Solución
+> > ```
+> > for sis in Jo Meg Beth Amy
+> > do
+> > 	echo $sis:
+> >	grep -ow $sis LittleWomen.txt | wc -l
+> > done
+> > ```
+> > {: .source}
+> >
+> > Alternativa, un poco inferior:
+> > ```
+> > for sis in Jo Meg Beth Amy
+> > do
+> > 	echo $sis:
+> >	grep -ocw $sis LittleWomen.txt
+> > done
+> > ```
+> > {: .source}
+> >
+> > Esta solucón es inferior porque `grep -c` solamente reporta el número de las líneas.
+> > El número total de coincidencias es reportado por este método va a ser más bajo si hay más de una coincidencia por línea. 
+> {: .solution}
 {: .challenge}
 
 > ## Búsqueda de archivos con propiedades diferentes
