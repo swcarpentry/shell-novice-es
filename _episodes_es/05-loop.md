@@ -280,7 +280,7 @@ Como el comando `cp` no produce una salida normalmente, es difícil verificar qu
 
 Nelle ahora está lista para procesar sus archivos de datos. Dado que todavía está aprendiendo cómo utilizar la terminal, decide construir los comandos requeridos en etapas.
 Su primer paso es asegurarse de que puede seleccionar los archivos correctos (recuerda,
-aquellos cuyos nombres terminan en 'A' o 'B', en lugar de 'Z'). Posicionada en su directorio home, Nelle teclea:
+aquellos cuyos nombres terminan en 'A' o 'B', en lugar de 'Z'). Posicionada en su directorio **home**, Nelle teclea:
 
 ~~~
 $ cd north-pacific-gyre/2012-07-03

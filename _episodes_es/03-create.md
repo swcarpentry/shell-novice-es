@@ -1,16 +1,16 @@
 ---
-title: "Trabajando con archivos y directorios"
-teaching: 15
-exercises: 0
-questions:
+Título: "Trabajando con archivos y directorios"
+Lección: 15
+Ejercicios: 0
+Preguntas:
 - "¿Cómo puedo crear, copiar y eliminar archivos y directorios?"
 - "¿Cómo puedo editar archivos?"
-objectives:
+Objetvos:
 - "Crear una jerarquía de directorios que coincida con un diagrama dado."
 - "Crear archivos en esa jerarquía usando un editor o copiando y renombrando archivos existentes."
 - "Mostrar el contenido de un directorio utilizando la línea de comandos."
 - "Eliminar archivos y/o directorios específicos."
-keypoints:
+Conceptos clave:
 - "`cp old new` copia un archivo."
 - "`mkdir path` crea un nuevo directorio."
 - "`mv old new` mueve (renombra) un archivo o directorio."
@@ -31,7 +31,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/nelle/Desktop/data-shell
+/Users/nelle/Desktop/data-shell
 ~~~
 {: .output}
 
@@ -136,7 +136,7 @@ $ nano draft.txt
 > Sea cual sea el editor que uses, necesitarás saber dónde busca
 > y guarda archivos. Si lo inicias desde la terminal, usará (probablemente)
 > el directorio de trabajo actual como ubicación predeterminada. Si utilizas
-> el menú de inicio de tu computadora puede ser que los archivos se guarden en tu Desktop o el
+> el menú de inicio de tu computadora puede ser que los archivos se guarden en tu **Desktop** o el
 > directorio de Documentos. Puedes cambiar de directorio destino navegando a
 > otro directorio la primera vez guardes el archivo usando "Guardar como ...".
 {: .callout}
@@ -212,7 +212,7 @@ $ ls
 {: .callout}
 
 Creemos de nuevo el archivo
-y después subamos un directorio a `/home/nelle/Desktop/data-shell` usando `cd ..`:
+y después subamos un directorio a `/Users/nelle/Desktop/data-shell` usando `cd ..`:
 
 ~~~
 $ pwd
@@ -220,7 +220,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/nelle/Desktop/data-shell/thesis
+/Users/nelle/Desktop/data-shell/thesis
 ~~~
 {: .output}
 
@@ -291,7 +291,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/nelle/Desktop/data-shell
+/Users/nelle/Desktop/data-shell
 ~~~
 {: .output}
 
@@ -604,7 +604,7 @@ Solución
 > Ahora, intenta el siguiente comando en tu directorio personal:
 >
 > ~~~
-> $ cd                  # ir al directorio home
+> $ cd                  # ir al directorio **home**
 > $ touch my_file.txt
 > ~~~
 > {: .bash}
@@ -619,7 +619,7 @@ Solución
 >
 >> ## Solución
 >>
->> 1. El comando touch genera un nuevo archivo llamado "my_file.txt" en tu directorio home. Si te encuentras en tu directorio home, puedes observar el archivo recién creado utilizando `ls` en la terminal. También puedes visualizar "my_file.txt" en tu explorados de archivos GUI.
+>> 1. El comando touch genera un nuevo archivo llamado "my_file.txt" en tu directorio **home**. Si te encuentras en tu directorio **home**, puedes observar el archivo recién creado utilizando `ls` en la terminal. También puedes visualizar "my_file.txt" en tu explorados de archivos GUI.
 >> 2. Cuando inspeccionas el archivo con "ls -l", nota que el tamaño de "my_file.txt" es 0 kb. En otras palabras, no contiene dato alguno. Si abres "my_file.txt" en un editor de texto, aparecerá en blanco.
 >> 3. Algunos programas no generan nuevos archivos de salida, pero requieren archivos en blanco que ya se hayan generado. Cuando uno de estos programas es ejecutado, automáticamente busca un archivo existente para llenarlo con su salida. El comando touch te permite generar eficientemente archivos en blanco para que este tipo de programas puedan usarlos. {: .solution} {: .challenge}
 

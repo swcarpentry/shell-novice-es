@@ -1,13 +1,13 @@
 ---
-title: "Introducción a la Terminal"
-teaching: 5
-exercises: 0
-questions:
+Título: "Introducción a la Terminal"
+Lección: 5
+Ejercicios: 0
+Preguntas:
 - "¿Qué es una terminal y por qué utilizarla?"
-objectives:
+Objetivos:
 - "Explicar cómo se relaciona la terminal con el teclado, la pantalla, el sistema operativo y los programas de los usuarios."
 - "Explicar cuándo y por qué se deben utilizar interfaces de línea de comandos en lugar de interfaces gráficas."
-keypoints:
+Conceptos clave:
 - "Una terminal es un programa cuyo objetivo principal es leer comandos y ejecutar otros programas."
 - "Las principales ventajas de la terminal son su alta relación acción-tecla, su soporte para la automatización de tareas repetitivas, y que puede utilizarse para acceder a otras máquinas en una red."
 - "Las desventajas principales de la terminal son su naturaleza primordialmente textual y que sus comandos y operación pueden llegar a ser muy crípticos."
@@ -73,13 +73,13 @@ Lo que la hace especial es que su trabajo es ejecutar otros programas,
 en lugar de realizar los cálculos en sí.
 La terminal más popular de Unix se llama **Bash**, que proviene de **Bourne Again Shell**
 (así llamado porque deriva de una versión previa escrita por Stephen Bourne).
-Bash es la terminal por defecto en la mayoría de las implementaciones modernas de Unix,
+**Bash** es la terminal por defecto en la mayoría de las implementaciones modernas de Unix,
 y en la mayoría de los paquetes que proporcionan herramientas similares a las de Unix 
 para Windows.
 
 ### ¿Por qué usarlo?
 
-Utilizar Bash o cualquier otra terminal
+Utilizar **bash** o cualquier otra terminal
 a veces se siente más como programación que como usar un ratón.
 Los comandos son cortos (a menudo con sólo un par de caracteres de largo),
 sus nombres son frecuentemente crípticos,
@@ -136,8 +136,8 @@ sino que las posibilidades de que escriba todos los comandos correctamente son p
 Las siguientes lecciones explorarán una mejor alternativa para que Nelle realice su análisis.
 Más específicamente,
 explicaremos cómo puede usar la línea de comandos
-para automatizar los pasos repetitivos en su pipeline. Así, su computadora podrá trabajar las 24 horas del día mientras ella escribe su artículo.
+para automatizar los pasos repetitivos en su **pipeline**. Así, su computadora podrá trabajar las 24 horas del día mientras ella escribe su artículo.
 Además,
-una vez que Nelle haya generado un pipeline
+una vez que Nelle haya generado un **pipeline**
 podrá usarlo de nuevo cada vez que colecte nuevos datos.
 
