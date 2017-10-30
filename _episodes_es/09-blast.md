@@ -25,7 +25,7 @@ artículos más citados del [mundo](http://www.nature.com/news/the-top-100-paper
 
 ### Configurando Blast
 
-Instalamos Blast+ previamente en nuestro proceso de preparación para esta lección.
+Instalamos Blast previamente en nuestro proceso de preparación para esta lección.
 Verifiquemos que nuestra instalación de Blast funcionó correctamente escribiendo:
 
 ~~~
