@@ -39,7 +39,7 @@ head -n 15 octane.pdb | tail -n 5
 ~~~
 {: .source}
 
-Esta es una variación de la **pipe** que construimos anteriormente: selecciona las líneas 11-15 del archivo `octane.pdb`. Recuerda, *no* lo estamos ejecutando como un comando todavía: sólo estamos poniendo los comandos en un archivo.
+Esta es una variación del **pipe** que construimos anteriormente: selecciona las líneas 11-15 del archivo `octane.pdb`. Recuerda, *no* lo estamos ejecutando como un comando todavía: sólo estamos poniendo los comandos en un archivo.
 
 A continuación, guardamos el archivo (`Ctrl-O` en nano), y salimos del editor de texto (`Ctrl-X` en nano). Comprueba que el directorio `molecules` ahora contiene un archivo llamado `middle.sh`.
 
@@ -59,7 +59,7 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 ~~~
 {: .output}
 
-Efectivamente, la salida de nuestro script es exactamente lo que obtendríamos si ejecutamos esa **pipeline** directamente
+Efectivamente, la salida de nuestro script es exactamente lo que obtendríamos si ejecutamos ese **pipeline** directamente
 en la terminal.
 
 > ## Texto vs. Lo que sea
@@ -195,7 +195,7 @@ Un comentario comienza con un caracter `#` y se ejecuta hasta el final de la lí
 pero son invaluables para ayudar a la gente (incluyendote a ti en un futuro) a entender y usar scripts. La única advertencia es que cada vez que modifiques un script, debes comprobar que el comentario siga siendo preciso:
 Una explicación que envía al lector en la dirección equivocada es peor que ninguna.
 
-¿Qué sucede si queremos procesar muchos archivos en una sola pipeline?
+¿Qué sucede si queremos procesar muchos archivos en un solo pipeline?
 Por ejemplo, si queremos ordenar nuestros archivos `.pdb` por longitud, deberíamos escribir:
 
 ~~~
@@ -248,7 +248,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 > {: .bash}
 >
 > pero sin agregar `*.dat` (o cualquier otra cosa)? En este caso, `$@` se expande a
-> nada en absoluto, por lo que la **pipeline** dentro del script es efectivamente:
+> nada en absoluto, por lo que el **pipeline** dentro del script es efectivamente:
 >
 > ~~~
 > $ wc -l | sort -n
@@ -284,7 +284,7 @@ y eliminar la línea final donde llamamos el comando `history`, tenemos un regis
 
 En la práctica, la mayoría de las personas desarrollan scripts de la terminal ejecutando comandos en el prompt de dicha terminal varias veces para asegurarse de que están haciendo las cosas bien, y a continuación los guardan en un archivo para su reutilización. Este estilo de trabajo permite a la gente replicar lo que descubre sobre sus datos y su flujo de trabajo con una llamada a `history` y editando para limpiar la salida pueden guardarlo como un script de la terminal.
 
-## La pipeline de Alicia: Creando un script
+## El pipeline de Alicia: Creando un script
 
 El supervisor de Alicia insistió en que todos sus análisis deben ser reproducibles. Alicia se da cuenta que debería haber proporcionado un par de parámetros adicionales a `goostats` cuando procesó sus archivos. Esto podría haber sido un desastre si hubiera hecho todo el análisis a mano, pero gracias a los bucles `for`, sólo le tomará un par de horas para volver a realizar el análisis. La forma más fácil de capturar todos los pasos es en un script. Ella ejecuta el editor y escribe lo siguiente:
 
@@ -361,20 +361,18 @@ Si quisiera ser más aventurera, Alicia podría modificar su script para verific
 **Solución**
 
 La respuesta correcta es la 2.
-
 Las variables $1, $2 y $3 representan los argumentos para el script, tal que los comandos ejecutados son:
 
 ~~~
 $ head -n 1 cubane.pdb ethan ee.pdb octane.pdb pentane.pdb propane.pdb
 $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 ~~~
-{: .bash}
 
 La terminal no expande '* .pdb' porque está rodeado por comillas. El primer parámetro del script es '*.pdb', que se expande dentro del script desde el principio al final.
 
 > ## Listando especies únicas
 >
-> Leah tiene varios cientos de archivos de datos, cada uno de los cuales tiene el formato siguiente:
+> Leah tiene varios cientos de archivos de datos, cada uno de los cuales tiene el siguiente formato :
 >
 > ~~~
 > 2013-11-05,deer,5
@@ -388,51 +386,83 @@ La terminal no expande '* .pdb' porque está rodeado por comillas. El primer par
 > ~~~
 > {: .source}
 >
-> Escribe un script de shell llamado `species.sh` que tome cualquier número de
+> Un ejemplo de este tipo de archivo se puede ver en data-shell/data/animal-counts/animals.txt.
+>
+> Escribe un script de la terminal llamado `species.sh` que tome cualquier número de
 > nombres de archivos como parámetros de línea de comandos, y utilice `cut`, `sort` y
-> `uniq` para imprimir una lista de las especies únicas que aparecen en cada uno de
+> `uniq` para mostrar una lista de las especies únicas que aparecen en cada uno de
 > esos archivos por separado.
 {: .challenge}
 
+**Solución**
+~~~
+# Script to find unique species in csv files where species is the second data field
+# This script accepts any number of file names as command line arguments
+
+# Loop over all files
+for file in $@ 
+do
+	echo "Unique species in $file:"
+	# Extract species names
+	cut -d , -f 2 $file | sort | uniq
+done
+~~~
+
 > ## Encuentre el archivo más largo con una extensión determinada
 >
-> Escribe un script de shell llamado `longest.sh` que tome el nombre de un
+> Escribe un script de la terminal llamado `longest.sh` que tome el nombre de un
 > directorio y una extensión de nombre de archivo como sus parámetros, e imprima
-> el nombre del archivo con más líneas en ese directorio
-> con esa extensión. Por ejemplo:
+> el nombre del archivo con más líneas en ese directorio con esa extensión. Por ejemplo:
 >
 > ~~~
 > $ bash longest.sh /tmp/data pdb
 > ~~~
 > {: .bash}
 >
-> Imprimirá el nombre del archivo `.pdb` en`/tmp/data` que tenga
-> más líneas.
+> Mostraría el nombre del archivo `.pdb` en`/tmp/data` que tenga más líneas.
 {: .challenge}
 
-> ## ¿Por qué registrar comandos en la historia antes de ejecutarlos?
+**Solución**
+
+~~~
+ # Script que toma 2 parámetros: 
+ #    1. un nombre de directorio
+ #    2. una extensión de archivo
+ # y muestra el nombre del archivo de ese directorio 
+ # con las líneas que coincide con la extensión del archivo.
+ 
+ wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
+ ~~~
+
+
+> ## ¿Por qué grabar los comandos en el historial antes de ejecutarlos?
 >
-> Si ejecuta el comando:
+> Si ejecutas el comando:
 >
 > ~~~
 > $ history | tail -n 5 > recent.sh
 > ~~~
 > {: .bash}
 >
-> El último comando del archivo es el comando `history` mismo, es decir,
-> el shell ha añadido `history` al registro de comandos antes de
-> ejecutarlo. De hecho, el shell *siempre* agrega comandos al registro
-> antes de ejecutarlos. ¿Por qué cree que hace esto?
+> El último comando del archivo es el mismo comando `history`, es decir,
+> la terminal ha añadido `history` al registro de comandos antes de
+> ejecutarlo. De hecho, la terminal *siempre* agrega comandos al registro
+> antes de ejecutarlos. ¿Por qué crees que hace esto?
+
+
+**Solución**
+
+Si un comando hace que algo se cuelgue, podría ser útil saber cuál era ese comando para saber cual fue el problema. 
+Si el comando sólo se registra después de ejecutarlo, no tendríamos un registro del último comando ejecutado en caso de un bloqueo.
+
 {: .challenge}
 
 
-
-> ## Script Reading Comprehension
+> ## Script de lectura y comprensión
 >
-> El directorio `data` de Joel contiene tres archivos:` fructose.dat`,
-> `glucose.dat` y `sucrose.dat`. Explica qué haría un script llamado
-> `example.sh` cuando se ejecute como `bash example.sh *.dat` si
-> contiene las líneas siguientes:
+> Considera el directorio data-shell/molecules una vez más. Este contiene una cantidad de archivos .pdb 
+> además de otro archivo que hayas creado. Explica qué haría un script llamado example.sh cuando se ejecutara como bash 
+> example.sh * .pdb si contuviera las siguientes líneas:
 >
 > ~~~
 > # Script 1
@@ -454,6 +484,15 @@ La terminal no expande '* .pdb' porque está rodeado por comillas. El primer par
 > echo $@.dat
 > ~~~
 > {: .bash}
+
+**Solución**
+
+El script 1 mostrará una lista de todos los archivos que contienen un punto en su nombre.
+
+El script 2 mostrará el contenido de los primeros 3 archivos que coinciden con la extensión del archivo. La terminal expande el caracter especial antes de pasar los argumentos al script example.sh.
+
+El script 3 mostrará todos los parámetros del script (es decir, todos los archivos .pdb), seguido de .pdb. cubane.pdb etano.pdb metano.pdb octano.pdb pentano.pdb propano.pdb.pdb
+
 {: .challenge}
 
 > ## Depuración (debugging) de Scripts
