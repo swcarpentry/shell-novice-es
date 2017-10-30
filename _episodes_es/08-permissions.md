@@ -52,8 +52,8 @@ La lista de quién está en qué grupo se almacena normalmente en el archivo `/e
 intente ejecutar `cat /etc/group` para ver ese archivo.)
 
 Ahora veamos archivos y directorios.
-cada archivo y directorio en un equipo Unix pertenece a un propietario y un grupo.
-junto con el contenido de cada archivo,
+Cada archivo y directorio en un equipo Unix pertenece a un propietario y un grupo.
+Junto con el contenido de cada archivo,
 el sistema operativo almacena los ID numéricos del usuario y del grupo que lo posee.
 
 El modelo de usuario y grupo significa que
@@ -82,9 +82,9 @@ Por ejemplo, si un archivo tuviera el siguiente conjunto de permisos:
 
 esto significaría que:
 
-* el propietario del archivo puede leerlo y escribirlo, pero no lo ejecuta;
+* el propietario del archivo puede leerlo y escribirlo, pero no ejecutarlo;
 * otras personas del grupo del archivo pueden leerlo, pero no modificarlo o ejecutarlo; y
-* otras personas (no el grupo ni el propietario) no pueden hacer nada con el en absoluto.
+* otras personas (no el grupo ni el propietario) no pueden hacer nada con él en absoluto.
 
 Veamos este modelo en acción.
 Si usamos `cd` en el directorio `labs` y ejecutamos `ls -F`,
@@ -140,7 +140,7 @@ junto a ellos,
 moviéndose a la izquierda,
 están los tiempos y fechas en que fueron modificados por última vez.
 Los sistemas de respaldo y otras herramientas utilizan esta información de varias maneras,
-pero usted puede utilizarlo para saber cuando usted (o cualquier otra persona con permiso)
+pero tú puedes utilizarlo para saber cuando tú (o cualquier otra persona con permiso)
 realizó la última modificación de un archivo.
 
 Junto al tiempo de modificación se encuentra el tamaño del archivo en bytes
@@ -179,7 +179,7 @@ $ ls -l final.grd
 ~~~
 {: .output}
 
-Ups: todo el mundo en el mundo puede leer y mdash, y lo que es peor,
+Ups: todo el mundo puede leerlo, y lo que es peor,
 modificarlo
 (también podrían tratar de ejecutar el archivo de calificaciones como un programa,
 lo que casi con seguridad no funcionaría.)
@@ -190,11 +190,11 @@ El comando para cambiar los permisos del propietario a `rw-` es:
 $ chmod u=rw final.grd
 ~~~
 
-El 'u' señala que estamos cambiando los privilegios
+La 'u' señala que estamos cambiando los privilegios
 del usuario (es decir, el propietario del archivo),
 y `rw` es el nuevo conjunto de permisos.
 Un rápido `ls -l` nos muestra que funcionó,
-ya que los permisos del propietario ahora están configurados para leer y escribir:
+ya que los permisos del propietario ahora están configurados para leer y escribir (pero no para ejecutar):
 
 ~~~
 $ ls -l final.grd
@@ -220,11 +220,8 @@ $ ls -l final.grd
 ~~~
 {: .output}
 
-And finally,
-let's give "all" (everyone on the system who isn't the file's owner or in its group) no permissions at all:
-
 Y finalmente,
-vamos a dar a "todos" (todos en el sistema que no son ni el propietario del archivo o están su grupo) ningún permiso:
+vamos a quitarles los permisos a "todos" (todos en el sistema que no son ni el propietario del archivo o están su grupo):
 
 ~~~
 $ chmod a= final.grd
@@ -237,9 +234,9 @@ $ ls -l final.grd
 ~~~
 {: .output}
 
-El 'a' indica que estamos cambiando permisos para "todos",
+La 'a' indica que estamos cambiando permisos para "todos",
 y, puesto que no hay nada a la derecha del "=",
-los nuevos permisos de "all" están vacíos.
+los nuevos permisos de "todos" están vacíos.
 
 También podemos buscar por permisos.
 Aquí, por ejemplo, podemos usar `-type f -perm -u=x` para encontrar archivos
@@ -287,20 +284,8 @@ El directorio de inicio de Vlad tiene tres subdirectorios llamados `venus`, `mar
 
 ![Permisos de ejecución para directorios](../fig/x-for-directories.svg)
 
-Each of these has a subdirectory in turn called `notes`,
-and those sub-subdirectories contain various files.
-If a user's permissions on `venus` are 'r-x',
-then if she tries to see the contents of `venus` and `venus/notes` using `ls`,
-the computer lets her see both.
-If her permissions on `mars` are just 'r--',
-then she is allowed to read the contents of both `mars` and `mars/notes`.
-But if her permissions on `pluto` are only '--x',
-she cannot see what's in the `pluto` directory:
-`ls pluto` will tell her she doesn't have permission to view its contents.
-If she tries to look in `pluto/notes`, though, the computer will let her do that.
-She's allowed to go through `pluto`, but not to look at what's there.
-This trick gives people a way to make some of their directories visible to the world as a whole
-without opening up everything else.
+
+
 
 Cada uno de ellos tiene un subdirectorio llamado `notes`,
 y esos subdirectorios contienen varios archivos.
@@ -314,7 +299,7 @@ No puede ver lo que hay en el directorio `pluto`:
 `ls pluto` le dirá que no tiene permiso para ver su contenido.
 Si ella trata de mirar en `pluto/notas`, sin embargo, la computadora se lo permitirá.
 Se le permite pasar por `pluto`, pero no para mirar lo que hay.
-Este truco da a la gente una forma de hacer que algunos de sus directorios sean visibles para el mundo entero
+Este truco da a la gente una forma de hacer que algunos de sus directorios sean visibles para todos
 sin abrir todo lo demás.
 
 #### ¿Qué hay de Windows?
@@ -325,14 +310,14 @@ Allí, los permisos están definidos por listas de control de acceso,
 o ACL.
 Una ACL es una lista de pares, cada uno de los cuales combina un "quién" con un "qué".
 Por ejemplo,
-usted podría dar a la Antonio permiso para agregar datos a un archivo sin darle permiso para leerlo o borrarlo,
+tú podrías dar a la Antonio permiso para agregar datos a un archivo sin darle permiso para leerlo o borrarlo,
 y dar permiso a Tania para borrar un archivo sin poder ver lo que contiene.
 
 Esto es más flexible que el modelo Unix,
-pero también es más complejo administrar y entender en sistemas pequeños.
-(si usted tiene un sistema de computadora grande,
-*nada* es fácil de administrar o entender.)
-Algunas variantes modernas de ACL de soporte de Unix, así como los permisos antiguos de lectura-escritura-ejecución,
+pero también es más complejo de administrar y entender en sistemas pequeños
+(si tú tienes un sistema de computadora grande,
+*nada* es fácil de administrar o entender).
+Algunas variantes modernas de Unix aceptan ACL, así como los permisos antiguos de lectura-escritura-ejecución,
 pero casi nadie los utiliza.
 
 > ## Challenge 
@@ -344,8 +329,8 @@ pero casi nadie los utiliza.
 > {: .output}
 > ¿Cuál de las siguientes afirmaciones es verdadera?
 >
-> 1. caro (el propietario) puede leer, escribir y ejecutar myfile.php
-> 2. caro (el propietario) no puede escribir en myfile.php
-> 3. los miembros de caro (un grupo) pueden leer, escribir y ejecutar myfile.php
-> 4. los miembros de zoo (un grupo) no pueden ejecutar myfile.php
+> 1. Caro (el propietario) puede leer, escribir y ejecutar myfile.php
+> 2. Caro (el propietario) no puede escribir en myfile.php
+> 3. Los miembros de Caro (un grupo) pueden leer, escribir y ejecutar myfile.php
+> 4. Los miembros de zoo (un grupo) no pueden ejecutar myfile.php
 {: .challenge}
