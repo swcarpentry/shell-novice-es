@@ -1,19 +1,19 @@
 ---
-title: "Navegación de archivos y directorios"
-teaching: 15
-exercises: 0
-questions:
+Título: "Navegación de archivos y directorios"
+Lección: 15
+Ejercicios: 0
+Preguntas:
 - "¿Cómo puedo moverme en mi computadora?"
 - "¿Cómo puedo ver qué archivos y directorios tengo?"
 - "¿Cómo puedo especificar la ubicación de un archivo o directorio en mi computadora?"
-objectives:
+Objetivos:
 - "Explicar las similitudes y diferencias entre un archivo y un directorio."
 - "Convertir una ruta absoluta en una ruta relativa y viceversa."
 - "Construir rutas absolutas y relativas que identifican archivos y directorios específicos."
 - "Explicar los pasos del ciclo de lectura-ejecución-impresión de la terminal."
 - "Identificar el comando, opciones y nombres de archivo en una llamada de línea de comandos."
 - "Demostrar el uso del autocompletado con el tabulador y explicar sus ventajas."
-keypoints:
+Conceptos clave:
 - "El sistema de archivos es responsable de administrar la información en el disco."
 - "La información se almacena en archivos, que a su vez se almacenan en directorios (carpetas)."
 - "Los directorios también pueden almacenar otros directorios, formando un árbol de directorios."
@@ -92,8 +92,8 @@ Más específicamente, cuando escribimos `whoami` la terminal:
 > escribas los comandos de esta lección en tu computadora,
 > deberías ver y usar algo diferente,
 > específicamente, el **username** asociado con tu cuenta de usuario en la computadora que estás utilizando. Este
-> username será la salida de `whoami`. En
-> los ejemplos siguientes, `nelle` siempre será reemplazado por ese username.
+> **username** será la salida de `whoami`. En
+> los ejemplos siguientes, `nelle` siempre será reemplazado por ese **username**.
 {: .callout}
 
 > ## Comandos Desconocidos
@@ -120,7 +120,7 @@ es decir,
 el directorio en el que la computadora asume que queremos ejecutar comandos
 a menos que especifiquemos explícitamente otra cosa.
 En este caso
-la respuesta de la computadora es `/home/nelle`,
+la respuesta de la computadora es `/Users/nelle`,
 el cual es el directorio de inicio de Nelle, también conocido como su **home**:
 
 ~~~
@@ -129,15 +129,15 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/nelle
+/Users/nelle
 ~~~
 {: .output}
 
 > ## Variaciones en el Directorio de Inicio
-> El directorio home puede lucir diferente en distintos sistemas operativos. En Linux puede verse como `/home/nelle`, en Windows puede ser similar a `C:\Documents and Settings\nelle` o `C:\Users\nelle` (pueden variar según la versión de Windows que estés utilizando). En los ejemplos que siguen utilizaremos la salida de Mac como estándar. Linux y Windows pueden variar ligeramente, pero deberían lucir similares en general.
+> El directorio **home** puede lucir diferente en distintos sistemas operativos. En Linux puede verse como `/home/nelle`, en Windows puede ser similar a `C:\Documents and Settings\nelle` o `C:\Users\nelle` (pueden variar según la versión de Windows que estés utilizando). En los ejemplos que siguen utilizaremos la salida de Mac como estándar. Linux y Windows pueden variar ligeramente, pero deberían lucir similares en general.
 > {: .callout}
 
-Para entender lo que es un "directorio de inicio"
+Para entender lo que es un "directorio **home**"
 echemos un vistazo a cómo se organiza el sistema de archivos. 
 Como ejemplo, discutiremos 
 el sistema de archivos en la computadora de nuestra científica Nelle. Después de este
@@ -150,19 +150,19 @@ En la computadora de Nelle, el sistema de archivos se ve así:
 En la parte superior está el **directorio raíz** o **root**
 que contiene todo lo demás.
 Nos referimos a este directorio usando un caracter de barra `/` por si solo;
-ésta es la barra al inicio de `/home/nelle`.
+ésta es la barra al inicio de `/Users/nelle`.
 
 Dentro de ese directorio hay otros directorios:
 `bin` (que es donde se almacenan algunos programas preestablecidos),
 `data` (para archivos de datos diversos),
-`home` (donde se encuentran los directorios personales de los usuarios),
+`Users` (donde se encuentran los directorios personales de los usuarios),
 `tmp` (para archivos temporales que no necesitan ser almacenados a largo plazo),
 etcétera.
 
-Sabemos que nuestro actual directorio de trabajo `/home/nelle` se almacena dentro de`/home`
-porque `/home` es la primera parte de su nombre.
+Sabemos que nuestro actual directorio de trabajo `/Users/nelle` se almacena dentro de`/Users`
+porque `/Users` es la primera parte de su nombre.
 Igualmente,
-sabemos que `/home` se almacena dentro del directorio raíz` / `
+sabemos que `/Users` se almacena dentro del directorio raíz` / `
 porque su nombre comienza con `/`.
 
 > ## Diagonales
@@ -173,17 +173,17 @@ porque su nombre comienza con `/`.
 > es sólo un separador.
 {: .callout}
 
-Dentro de `/home`,
+Dentro de `/Users`,
 encontramos un directorio para cada usuario con una cuenta en la máquina de Nelle,
 sus colegas Mummy y Wolfman.
 
 ![Home Directories](../fig/home-directories.svg)
 
-Los archivos de Mummy se almacenan en `/home/imhotep`,
-los de Wolfman están en `/home/larry`,
-y los de Nelle en `/home/nelle`. Dado que Nelle es el usuario en nuestros
-ejemplos, es por eso que recibimos `/home/nelle` como nuestro directorio personal.
-Normalmente, cada vez que abres una nueva terminal te encontrarás en tu directorio home.
+Los archivos de Mummy se almacenan en `/Users/imhotep`,
+los de Wolfman están en `/Users/larry`,
+y los de Nelle en `/Users/nelle`. Dado que Nelle es el usuario en nuestros
+ejemplos, es por eso que recibimos `/Users/nelle` como nuestro directorio personal.
+Normalmente, cada vez que abres una nueva terminal te encontrarás en tu directorio **home**.
 
 Ahora vamos a aprender el comando que nos permitirá ver el contenido de nuestro
 sistema de archivos. Podemos ver lo que hay en nuestro directorio personal ejecutando `ls`,
@@ -220,7 +220,7 @@ Desktop/      Downloads/    Movies/       Pictures/
 ~~~
 {: .output}
 
-`ls` permite muchas otras flags. Para averiguar cuales son, podemos escribir:
+`ls` permite muchas otras **flags**. Para averiguar cuales son, podemos escribir:
 
 ~~~
 $ ls --help
@@ -352,7 +352,7 @@ ejecutar desde el bash, aceptan la opción `--help` para mostrar más
 información sobre cómo usar los comandos o programas.
 
 > ## Opciones de línea de comandos inexistentes
-> Si intentas utilizar una flag que no existe, `ls` y otros programas imprimirán un mensaje de error similar a este:
+> Si intentas utilizar una **flag** que no existe, `ls` y otros programas imprimirán un mensaje de error similar a este:
 >
 > ~~~
 > $ ls -j
@@ -389,7 +389,7 @@ las teclas de flecha arriba y abajo te permiten moverte línea por línea,
 las teclas "b" y la barra espaciadora permiten saltar hacia arriba y hacia abajo una página a la vez.
 Sal de las páginas `man` escribiendo "q".
 
-Aquí podemos ver que nuestro directorio home contiene principalmente **subdirectorios**.
+Aquí podemos ver que nuestro directorio **home** contiene principalmente **subdirectorios**.
 Cualquier nombre en la salida que no tenga barras se refiere a **archivos** comunes y corrientes.
 Observa que hay un espacio entre `ls` y `-F`:
 sin él,
@@ -407,7 +407,7 @@ el cual no existe.
 > ~~~
 > $ ls -lh Documents
 > ~~~
-> {: .bash} `ls` es el comando, `-lh` son las flags (o opciones), y `Documents` es el argumento.
+> {: .bash} `ls` es el comando, `-lh` son las **flags** (u opciones), y `Documents` es el argumento.
 {: .callout}
 
 También podemos usar `ls` para ver el contenido de un directorio diferente. Veamos
@@ -427,18 +427,18 @@ data-shell/
 {: .output}
 
 La salida debe ser una lista de todos los archivos y subdirectorios en tu
-Desktop, incluido el directorio `data-shell` que descargaste
+**Desktop**, incluido el directorio `data-shell` que descargaste
 al comienzo de la lección. Echa un vistazo a tu escritorio para confirmar que
 la salida es correcta.
 
 Como puedes ver ahora, el uso de una terminal está basado de la idea de que
 tus archivos se organizan en un sistema de archivos jerárquico.
 Organizar las cosas jerárquicamente nos ayuda a realizar un seguimiento de nuestro trabajo:
-es posible poner centenares de archivos en nuestro directorio home,
+es posible poner centenares de archivos en nuestro directorio **home**,
 así como es posible acumular cientos de papeles impresos en nuestro escritorio,
 pero es una estrategia muy poco eficiente.
 
-Ahora que sabemos que el directorio `data-shell` se encuentra en Desktop,
+Ahora que sabemos que el directorio `data-shell` se encuentra en `Desktop`,
 podemos hacer dos cosas.
 
 Primero, podemos ver su contenido, usando la misma estrategia que antes, pasando
@@ -457,7 +457,7 @@ data/               north-pacific-gyre/ pizza.cfg           writing/
 
 En segundo lugar, podemos cambiar nuestra ubicación a un directorio diferente, por lo que
 ya no estaremos ubicados en
-nuestro directorio home.
+nuestro directorio **home**.
 
 El comando para cambiar de ubicación es `cd`, seguido del
 nombre de un directorio para cambiar nuestro directorio de trabajo.
@@ -476,12 +476,12 @@ $ cd data
 ~~~
 {: .bash}
 
-Estos comandos nos moverán del directorio home al directorio Desktop, luego
+Estos comandos nos moverán del directorio **home** al directorio Desktop, luego
 al directorio `data-shell`, y finalmente al directorio `data`. `cd` no imprime nada,
 pero si ejecutamos `pwd` después de esto, podemos ver que ahora estamos
-en `/home/nelle/Desktop/data-shell/data`.
+en `/Users/nelle/Desktop/data-shell/data`.
 Si ejecutamos `ls` ahora sin argumentos,
-se listan los contenidos de `/home/nelle/Desktop/data-shell/data`, porque ahí es donde estamos ahora:
+se listan los contenidos de `/Users/nelle/Desktop/data-shell/data`, porque ahí es donde estamos ahora:
 
 ~~~
 $ pwd
@@ -489,7 +489,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/nelle/Desktop/data-shell/data
+/Users/nelle/Desktop/data-shell/data
 ~~~
 {: .output}
 
@@ -536,7 +536,7 @@ $ cd ..
 "el directorio que contiene a este", o más brevemente,
 el **padre** del directorio actual.
 Por supuesto,
-si ejecutamos `pwd` después de ejecutar` cd ..`, volvemos a `/home/nelle/Desktop/data-shell`:
+si ejecutamos `pwd` después de ejecutar` cd ..`, volvemos a `/Users/nelle/Desktop/data-shell`:
 
 ~~~
 $ pwd
@@ -544,7 +544,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/nelle/Desktop/data-shell
+/Users/nelle/Desktop/data-shell
 ~~~
 {: .output}
 
@@ -565,14 +565,14 @@ Desktop/            north-pacific-gyre/ writing/
 {: .output}
 
 `-a` significa "mostrar todo"; obliga a `ls` a mostrarnos nombres de archivos y directorios que comienzan con `.`,
-como `..` (que, si estamos en` /home/nelle`, hace referencia al directorio `/home`)
+como `..` (que, si estamos en` /Users/nelle`, hace referencia al directorio `/Users`)
 Como puedes ver,
 también muestra otro directorio especial que se llama simplemente `.`,
 que significa "el directorio de trabajo actual".
 Puede parecer redundante tener un nombre para él,
 pero veremos algunos usos para ello en el transcurso de este curso.
 
-Nota que varias flags del mismo comando pueden combinarse en el mismo `-`, sin espacios entre los argumentos: `ls -F -a` es equivalente a `ls -Fa`. 
+Nota que varias **flags** del mismo comando pueden combinarse en el mismo `-`, sin espacios entre los argumentos: `ls -F -a` es equivalente a `ls -Fa`. 
 
 > ## Otros archivos ocultos
 >
@@ -590,8 +590,8 @@ Nota que varias flags del mismo comando pueden combinarse en el mismo `-`, sin e
 > Los nombres especiales `.` y `..` no son exclusivos de `cd`;
 > son interpretados de la misma manera por todos los programas.
 > Por ejemplo,
-> si estamos en `/home/nelle/data`,
-> el comando `ls ..` nos dará una lista de`/home/nelle`.
+> si estamos en `/Users/nelle/data`,
+> el comando `ls ..` nos dará una lista de`/Users/nelle`.
 > Cuando los significados de las partes son los mismos, no importa cómo se combinan,
 > los programadores dicen que son **ortogonales**:
 > los sistemas ortogonales tienden a ser más fáciles de aprender
@@ -616,11 +616,11 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/nelle
+/Users/nelle
 ~~~
 {: .output}
 
-Resulta que `cd` sin un argumento te devolverá a tu directorio home,
+Resulta que `cd` sin un argumento te devolverá a tu directorio **home**,
 lo cual es genial si te has perdido en tu propio sistema de archivos.
 
 Vamos a intentar volver al directorio `data` que utilizamos antes. La última vez, usamos
@@ -660,12 +660,12 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/nelle/Desktop/data-shell/data
+/Users/nelle/Desktop/data-shell/data
 ~~~
 {: .output}
 
 ~~~
-$ cd /home/nelle/Desktop/data-shell
+$ cd /Users/nelle/Desktop/data-shell
 ~~~
 {: .bash}
 
@@ -674,10 +674,10 @@ Ejecuta `pwd` y `ls -F` para asegurarte de que estás en el directorio que esper
 > ## Dos Atajos Más
 >
 > La terminal interpreta el carácter `~` (tilde) al inicio de una ruta
-> como "el directorio inicial del usuario actual". Por ejemplo, si el home de Nelle
-> es `/home/nelle`, entonces` ~/data` es equivalente a
-> `/home/nelle/data`. Esto sólo funciona si es el primer carácter en la
-> ruta: `aqui/alla/~/otrolado` *no* es `aquí/alla/home/nelle/otrolado`.
+> como "el directorio inicial del usuario actual". Por ejemplo, si el **home** de Nelle
+> es `/Users/nelle`, entonces` ~/data` es equivalente a
+> `/Users/nelle/data`. Esto sólo funciona si es el primer carácter en la
+> ruta: `aqui/alla/~/otrolado` *no* es `aquí/alla/Users/nelle/otrolado`.
 >
 > Otro atajo es el carácter `-` (guión). `cd` lo interpreta como
 > *el directorio anterior en el que estaba*, lo cual es más rápido que tener que recordar,
@@ -776,12 +776,12 @@ y lo veremos en muchas otras herramientas a medida que avancemos.
 > > ## Solución
 > > 1. No: `.` significa el directorio actual.
 > > 2. No: `/` significa el directorio raíz.
-> > 3. No: El directorio home de Amanda es `/Users/amanda`.
+> > 3. No: El directorio **home** de Amanda es `/Users/amanda`.
 > > 4. No: sube dos niveles, es decir termina en `/Users`.
-> > 5. Sí:  `~` significa el directorio home del usuario, en este caso` /Users/amanda`.
+> > 5. Sí:  `~` significa el directorio **home** del usuario, en este caso` /Users/amanda`.
 > > 6. No: esto navegaria a un directorio `home` en el directorio actual, si existe.
 > > 7. Sí: innecesariamente complicado, pero correcto.
-> > 8. Sí: un atajo para volver al directorio home del usuario.
+> > 8. Sí: un atajo para volver al directorio **home** del usuario.
 > > 9. Sí: sube un nivel.
 > {: .solution}
 {: .challenge}

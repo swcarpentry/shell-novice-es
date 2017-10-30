@@ -7,8 +7,8 @@ Preguntas:
 Objetivos:
 - "Redireccionar la salida de un comando a un archivo."
 - "Procesar un archivo en lugar de la entrada de teclado mediante la redirección."
-- "Construir pipelines de comandos con dos o más etapas."
-- "Explicar lo que normalmente sucede si un programa o un pipeline no recibe ninguna entrada para procesar."
+- "Construir **pipelines** de comandos con dos o más etapas."
+- "Explicar lo que normalmente sucede si un programa o un **pipeline** no recibe ninguna entrada para procesar."
 - "Explicar las filosofía de Unix de 'pequeñas piezas, libremente unidas'."
 Conceptos clave:
 - "`cat` muestra el contenido de sus entradas."
@@ -19,8 +19,8 @@ Conceptos clave:
 - "`*` coincide con cero o más caracteres en un nombre de archivo, por lo que`*.txt` coincide con todos los archivos que terminan en `.txt`."
 - "`?` Coincide con un solo carácter en un nombre de archivo, así que `?.txt` coincide con `a.txt` pero no `any.txt`."
 - "`command > file` redirige la salida de un comando a un archivo."
-- "`first | second` es un pipeline: la salida del primer comando se utiliza como entrada para el segundo."
-- "La mejor manera de usar la terminal es utilizar pipes para combinar programas sencillos de propósito único (filtros)."
+- "`first | second` es un **pipeline**: la salida del primer comando se utiliza como entrada para el segundo."
+- "La mejor manera de usar la terminal es utilizar **pipes** para combinar programas sencillos de propósito único (filtros)."
 ---
 
 Ahora que ya sabemos algunos comandos básicos,
@@ -365,7 +365,7 @@ a través de `wc` a `sort`, de `sort` a` head` y finalmente a la pantalla.
 
 Esta sencilla idea es la razón por la cual Unix ha tenido tanto éxito.
 En lugar de crear enormes programas que tratan de hacer muchas cosas diferentes,
-los programadores de Unix se centran en crear muchas herramientas simples que hacen bien su trabajo y son capaces de cooperar entre sí. Este modelo de programación se llama "pipes y filtros".
+los programadores de Unix se centran en crear muchas herramientas simples que hacen bien su trabajo y son capaces de cooperar entre sí. Este modelo de programación se llama "**pipes** y filtros".
 Ya hemos visto **pipes**;
 un **filtro** es un programa como `wc` o` sort`
 que transforma una entrada en una salida.
@@ -637,7 +637,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >
 >> ## Solución
 >>
->> La solución es la opción 3. El caracter de **pipe* `|` es usado para alimentar la entrada estándar de un proceso con la salida estándar del anterior. `>` es utilizado para redirigir la salida estándar a un archivo. ¡Inténtalo en el directorio `data-shell/molecules`! {: .solution} {: .challenge}
+>> La solución es la opción 3. El caracter de **pipe** `|` es usado para alimentar la entrada estándar de un proceso con la salida estándar del anterior. `>` es utilizado para redirigir la salida estándar a un archivo. ¡Inténtalo en el directorio `data-shell/molecules`! {: .solution} {: .challenge}
 
 > ## ¿Por qué `uniq` sólo elimina duplicados adyacentes?
 >
@@ -666,7 +666,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >
 > ¿Por qué crees que `uniq` sólo elimina *líneas adyacentes* duplicadas?
 > (Pista: piensa en datasets muy largos.) ¿Qué otro comando podría
-> combinarse con él en un pipe para eliminar todas las líneas duplicadas?
+> combinarse con él en un **pipe** para eliminar todas las líneas duplicadas?
 >
 >> ## Solución
 >>
@@ -691,7 +691,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > {: .source}
 >
-> ¿Qué texto pasa a través de cada uno de los pipes y qué incluye el redireccionamiento final en el siguiente **pipeline**?
+> ¿Qué texto pasa a través de cada uno de los **pipes** y qué incluye el redireccionamiento final en el siguiente **pipeline**?
 >
 > ~~~
 > $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
@@ -721,7 +721,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > {: .output}
 >
-> ¿Qué otro(s) comando(s) podría(n) agregarse a estos en un pipeline para encontrar
+> ¿Qué otro(s) comando(s) podría(n) agregarse a estos en un **pipeline** para encontrar
 > qué animales contiene el archivo (sin nombres duplicados)?
 >
 >> ## Solución
