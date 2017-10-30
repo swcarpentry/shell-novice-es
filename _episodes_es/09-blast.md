@@ -6,7 +6,7 @@ questions:
 - "¿Qué es un análisis de Blast?"
 - "¿Cómo puedo realizar una búsqueda de Blast?"
 objectives:
-- "Entender que tipo de búsquedas realiza Blast."
+- "Entender qué tipo de búsquedas realiza Blast."
 - "Configurar bases de datos para usar Blast en la línea de comandos."
 - "Realizar descargas de secuencias desde la línea de comandos."
 - "Realizar búsquedas de Blast locales desde la línea de comandos."
@@ -16,16 +16,16 @@ keypoints:
 - "Se pueden realizar búsquedas de Blast en la línea de comandos"
 ---
 
-[Blast](https://es.wikipedia.org/wiki/BLAST) es uno de los programas de alineamiento 
+[Blast](https://es.wikipedia.org/wiki/BLAST) es uno de los programas de alineamiento
 de secuencias más populares. Se utiliza
 para buscar similitud (homología) entre distintas secuencias
-generando alineamientos locales de manera heurística. De hecho es tan popular 
-que las publicaciones que lo describen figuran entre los 20 
+generando alineamientos locales de manera heurística. De hecho es tan popular
+que las publicaciones que lo describen figuran entre los 20
 artículos más citados del [mundo](http://www.nature.com/news/the-top-100-papers-1.16224).
 
 ### Configurando Blast
 
-Instalamos Blast+ previamente en nuestro proceso de preparación para esta lección. 
+Instalamos Blast+ previamente en nuestro proceso de preparación para esta lección.
 Verifiquemos que nuestra instalación de Blast funcionó correctamente escribiendo:
 
 ~~~
@@ -63,15 +63,15 @@ cd $HOME/blastdb
 {: .bash}
 
 Y cambiemos el formato de la base de datos que descargamos de [Uniprot](http://www.uniprot.org/)
-para que blast+ pueda usarla como datos de búsqueda.
+para que Blast pueda usarla como datos de búsqueda.
 
 ~~~
 makeblastdb -in uniprot_sprot.fasta -dbtype prot
 ~~~
 {: .blast}
 
-Ahora, vamos a configurar la **variable de ambiente** que especifica 
-en donde se encuentra nuestra base de datos de blast
+Ahora, vamos a configurar la **variable de entorno** que especifica
+en dónde se encuentra nuestra base de datos de Blast
 
 ~~~
 export BLASTDB=$HOME/blastdb
@@ -162,7 +162,7 @@ Examinemos un ejemplo de una búsqueda usando Blast. Este es el tipo de salida q
 por defecto:
 
 ~~~
->ref|NM_009586.1| UniGene infoGeoGene info Homo sapiens single-minded homolog 2 (Drosophila) (SIM2), transcript 
+>ref|NM_009586.1| UniGene infoGeoGene info Homo sapiens single-minded homolog 2 (Drosophila) (SIM2), transcript
 variant SIM2s, mRNA
 Length=2823
 
@@ -175,7 +175,7 @@ Query  6378  GTGGCTCACGCCTGTAATCCCAGCACTTTGGGAGGCCAAGGTGGGCAGATCAC-TGGAGG  6436
 Sbjct  2541  GTGGCTCACACCTGTAATCCCAGCACTTTGGGAGGCCAAGGTGGGCGGATCACCTG-AGG  2599
 
 Query  6437  TCAGGAGTTCGAAACCAGCCTGGCCAACATGGTGAAACCCCATCTCTACTAAAAATACAG  6496
-             ||||||||| |  || |||||| |||||| | |||||||||||||| |||||||||||| 
+             ||||||||| |  || |||||| |||||| | |||||||||||||| ||||||||||||
 Sbjct  2600  TCAGGAGTTTGCGACAAGCCTG-CCAACAAGCTGAAACCCCATCTCCACTAAAAATACAA  2658
 
 Query  6497  AAATTAGCCGGTCATGGTGGTG-GACACCTGTAATCCCAGCTACTCAGGTGGCTAAGGCA  6555
@@ -192,15 +192,15 @@ Sbjct  2778  TCCAGCCTGGGTAACAGAGTGAGACTGT--CTCAAAAAAAAAAAAAAA  2823
 ~~~
 {: .output}
 
-Podemos ver que hay nucleótidos idénticos entre estas dos secuencias 
-(denotados por el símbolo '|'), así como nucleótidos diferentes (donde no hay 
+Podemos ver que hay nucleótidos idénticos entre estas dos secuencias
+(denotados por el símbolo '|'), así como nucleótidos diferentes (donde no hay
 similitud), así como inserciones y deleciones (denotadas por guiones '-'). Al principio
 y al final de cada línea del alineamiento se marcan las posiciones de inicio y término
-en la secuencia de interés (query) así como en la secuencia encontrada (subject). 
+en la secuencia de interés (**query**) así como en la secuencia encontrada (**subject**).
 
-A pesar de que es muy informativa si tenemos una sola secuencia, no lo es tanto cuando hay 
+A pesar de que es muy informativa si tenemos una sola secuencia, no lo es tanto cuando hay
 muchas secuencias que queremos analizar, por ello en el siguiente ejercicio usaremos un
-formato diferente. 
+formato diferente.
 
 ## Usando Blast
 
@@ -261,12 +261,12 @@ blastp -query BRCA1_HUMAN.fasta -db uniprot_sprot.fasta -outfmt 7 -max_target_se
 
 ¿Qué significa cada una de las opciones que utilizamos?
 
-* `-query` se refiere al archivo con la secuencia a la cual le queremos encontrar secuencias homólogas. 
+* `-query` se refiere al archivo con la secuencia a la cual le queremos encontrar secuencias homólogas.
 Debe estar en formato fasta.
-* `-db` Se refiere a la base de datos que queremos usar
-* `-outfmt` se refiere al formato de salida deseamos, en este caso el tipo 7, que es en columnas con 
+* `-db` Se refiere a la base de datos que queremos usar.
+* `-outfmt` se refiere al formato de salida deseamos, en este caso el tipo 7, que es en columnas con
 comentarios.
-* `-max_target_seqs` Nos indica que se reportarán máximo 5 'hits' o secuencias similares a nuestra 
+* `-max_target_seqs` Nos indica que se reportarán máximo 5 'hits' o secuencias similares a nuestra
 secuencia de interés. Sólo se muestran las 5 secuencias con mayores niveles de identidad.
 
 ¿Por qué utilizamos blastp?
@@ -286,46 +286,42 @@ sp|P38398|BRCA1_HUMAN	sp|Q6J6I9|BRCA1_MACMU	93.026	1864	128	2	1	1863	1	1863	0.0	
 ~~~
 {: .output}
 
-La salida nos muestra las 5 secuencias con mayor identidad a nuestra secuencia de interés, así como 
+La salida nos muestra las 5 secuencias con mayor identidad a nuestra secuencia de interés, así como
 información acerca de cada una de estas secuencias:
 
 1. `query acc.` - El nombre de nuestra secuencia de interés.
 2. `subject acc.` - El nombre de la secuencia con identidad a nuestra secuencia de interés.  
 3. `% identity` - El porcentaje de identidad.
 4. `alignment length` - La longitud del alineamiento.
-5. `mismatches` - El número de mismatches (posiciones diferentes).
+5. `mismatches` - El número de posiciones diferentes (**mismatches**).
 6. `gap opens` - El número de gaps.
 7. `q. start` - La posición de inicio en nuestra secuencia de interés.
-8. `q. end` - La posición de termino en nuestra secuencia de interés.
+8. `q. end` - La posición de término en nuestra secuencia de interés.
 9. `s. start` - La posición de inicio en la secuencia en la base de datos.
 10. `s. end` - La posición de término en la secuencia en la base de datos.
-11. `evalue` - El e-valor.
-12. `bit score` - El score de bits.
+11. `evalue` - El **e-value**.
+12. `bit score` - El **bit score**.
 
-Ahondemos un poco más en el significado de los últimos dos campos. 
+Ahondemos un poco más en el significado de los últimos dos campos.
 
-# El e-valor (e-value)
+# El e-value
 
-El valor esperado o e-value es el número de secuencias que obtendrían el mismo nivel de homología solo por azar
-dado el tamaño de la base de datos que estamos usando. Por lo tanto, mientras más cercano a 
+El valor esperado o **e-value** es el número de secuencias que obtendrían el mismo nivel de homología sólo por azar
+dado el tamaño de la base de datos que estamos usando. Por lo tanto, mientras más cercano a
 cero sea este valor, más significativo es, es decir, hay pocas posibilidades de que encontremos
-un nivel de similitud de secuencias como el observado por azar. Por lo tanto, mientras más grande sea la base 
+un nivel de similitud de secuencias como el observado por azar. Por lo tanto, mientras más grande sea la base
 de datos de secuencias que estamos usando, más significativos serán los valores esperados.
 
-Este valor se usa comúnmente para filtrar resultados de blast y solo obtener aquellos que 
-son probablemente debidos a que los organismos que las contienen comparten un ancestro común y 
-no al hecho de que tenemos una base de datos enorme. 
+Este valor se usa comúnmente para filtrar resultados de Blast y sólo obtener aquellos que
+son probablemente debidos a que los organismos que las contienen comparten un ancestro común y
+no al hecho de que tenemos una base de datos enorme.
 
-# El bit score 
+# El bit score
 
-El bit score sirve como indicación de que tan bueno es un alineamiento, mientras más alto
-sea esta métrica, mejor será el alineamiento. Este se calcula por medio de una fórmula que 
-toma en cuenta cuantos residuos similares existen en el alineamiento así como el número de gaps
-en el mismo. Es comparable entre bases de datos de diferente tamaño. 
+El **bit score** sirve como indicador de qué tan bueno es un alineamiento, mientras más alto
+sea esta métrica, mejor será el alineamiento. Este se calcula por medio de una fórmula que
+toma en cuenta cuántos residuos similares existen en el alineamiento así como el número de gaps
+en el mismo. Es comparable entre bases de datos de diferente tamaño.
 
-Hay muchas más opciones de Blast, para ello debes revisar el manual que ese encuentra en 
+Hay muchas más opciones de Blast, para ello debes revisar el manual que ese encuentra en
 NCBI - https://www.ncbi.nlm.nih.gov/books/NBK279690/.
-
-
-
-
