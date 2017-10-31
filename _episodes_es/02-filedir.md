@@ -1,6 +1,6 @@
 ---
 title: "Navegación de archivos y directorios"
-lesson: 15
+teaching: 15
 exercises: 0
 questions:
 - "¿Cómo puedo moverme en mi computadora?"
