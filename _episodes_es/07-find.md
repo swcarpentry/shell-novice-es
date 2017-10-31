@@ -506,7 +506,7 @@ en ellas."
 
 > ## `find` Comprensión de lectura de pipeline
 >
-> Escriba un breve comentario explicativo para el siguiente script de shell:
+> Escriba un breve comentario explicativo para el siguiente **script** de shell:
 >
 > ~~~
 > wc -l $(find . -name '*.dat') | sort -n
@@ -542,7 +542,7 @@ en ellas."
 > ~~~
 > {: .source}
 >
-> Quiere escribir un script de shell que tome un directorio y una especie
+> Quiere escribir un **script** de shell que tome un directorio y una especie
 > como parámetros de línea de comandos y devuelva un archivo llamado `species.txt`
 > que contenga una lista de fechas y el número de individuos de esa especie observados en esa fecha,
 > como este archivo de números de conejos:
@@ -582,7 +582,7 @@ Un ejemplo es el siguiente archivo `data-shell/data/animal-counts/animals.txt`
 > > ```
 > > {: .source}
 > >
-> > Puedes llamar al script de la siguiente forma:
+> > Puedes llamar al **script** de la siguiente forma:
 > >
 > > ```
 > > $ bash count-species.sh bear .

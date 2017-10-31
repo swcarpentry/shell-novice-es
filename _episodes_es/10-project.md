@@ -6,7 +6,7 @@ keypoints:
 - "Práctica opcional usando fasta files"
 ---
 
-Usando los comandos disponibles en esta lección deberán escribir un script que,
+Usando los comandos disponibles en esta lección deberán escribir un **script** que,
 a partir únicamente de tres archivos fasta, genere la siguiente información.
 
 1. El nombre del archivo más largo (en número de caracteres).
@@ -44,9 +44,9 @@ Analysis of Complete_ID.fasta
 {: .output}
 
 * La descripciones en la salida deberán ser idénticas a las mostradas arriba.
-* El script deberá imprimir a salida estándar.
+* El **script** deberá imprimir a salida estándar.
 * Deberá funcionar con cualquier otro archivo o archivos fasta, diferentes a los proporcionados.
-* Deberá estar comentado, explicando brevemente qué hace el script y qué realiza cada línea.
+* Deberá estar comentado, explicando brevemente qué hace el **script** y qué realiza cada línea.
 
 Todas las ocurrencias de 'ID' deberán ser substituidas por un identificador, pueden usar un número entre 1 y 16. No tienen que hacer este ID variable, es decir, no es necesario que el ID se pueda cambiar en la línea de comandos cuando se ejecuta el script.  
 
@@ -71,7 +71,7 @@ Se entregarán dos archivos:
 #### Reto extra
 
 Intenta imprimir un menú de
-ayuda si se ejecuta el script sin opciones.
+ayuda si se ejecuta el **script** sin opciones.
 
 #### Tips
 
