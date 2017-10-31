@@ -19,8 +19,8 @@ keypoints:
 ---
 
 Finalmente estamos listos para ver lo que hace que la terminal sea un entorno de programación tan potente.
-Vamos a tomar los comandos que repetimos con frecuencia y guardarlos en archivos
-de modo que podemos volver a ejecutar todas esas operaciones de nuevo más tarde escribiendo un sólo comando.
+Vamos a tomar los comandos que repetimos con frecuencia y los vamos a guardar en archivos
+de modo que podemos volver a ejecutar todas esas operaciones más tarde escribiendo un sólo comando.
 Por razones históricas, a un conjunto de comandos guardados en un archivo se le llama un **script de la terminal**, pero no se equivoquen: estos son en realidad pequeños programas.
 
 Comencemos por volver a `molecules/` creando un nuevo archivo, `middle.sh`, que se convertirá en nuestro script de la terminal:
@@ -71,7 +71,9 @@ en la terminal.
 > etcétera. Esta información adicional no se almacena como caracteres y no es comprendida por
 > herramientas como `head`: los comandos esperan que los archivos de entrada contengan
 > unicamente letras, dígitos y puntuación en un teclado de computadora estándar.
-> Por lo tanto, al editar programas, debemos utilizar un editor de texto sin formatos o tener cuidado de guardar nuestros archivos como texto sin formato.
+> Por lo tanto, al editar programas, debemos utilizar un editor de texto sin formatos o tener cuidado de guardar 
+> nuestros archivos como texto sin formato.
+>
 {: .callout}
 
 ¿Qué pasa si queremos seleccionar líneas de un archivo arbitrario?
@@ -356,19 +358,20 @@ Si quisiera ser más aventurera, Nelle podría modificar su script para verifica
 > 2. La primera y la última línea de cada archivo que termina en `.pdb` en el directorio `molecules`.
 > 3. La primera y la última línea de cada archivo en el directorio `molecules`.
 > 4. Un error debido a las comillas alrededor de `*.pdb`.
+>
+Solución
+>> La respuesta correcta es la 2.
+>> Las variables $1, $2 y $3 representan los argumentos para el script, tal que los comandos ejecutados son:
+>>
+>> ~~~
+>> $ head -n 1 cubane.pdb ethan ee.pdb octane.pdb pentane.pdb propane.pdb
+>> $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
+>> ~~~
+>> La terminal no expande '* .pdb' porque está rodeado por comillas. El primer parámetro del script es '*.pdb', que se expande 
+>> dentro del script desde el principio al final.
+> {: .solution}
 {: .challenge}
 
-**Solución**
-
-La respuesta correcta es la 2.
-Las variables $1, $2 y $3 representan los argumentos para el script, tal que los comandos ejecutados son:
-
-~~~
-$ head -n 1 cubane.pdb ethan ee.pdb octane.pdb pentane.pdb propane.pdb
-$ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
-~~~
-
-La terminal no expande '* .pdb' porque está rodeado por comillas. El primer parámetro del script es '*.pdb', que se expande dentro del script desde el principio al final.
 
 > ## Listando especies únicas
 >
@@ -392,22 +395,21 @@ La terminal no expande '* .pdb' porque está rodeado por comillas. El primer par
 > nombres de archivos como parámetros de línea de comandos, y utilice `cut`, `sort` y
 > `uniq` para mostrar una lista de las especies únicas que aparecen en cada uno de
 > esos archivos por separado.
+Solución
+>> ~~~
+>> # Script to find unique species in csv files where species is the second data field
+>> # This script accepts any number of file names as command line arguments
+>> 
+>> # Loop over all files
+>> for file in $@ 
+>> do
+>> 	echo "Unique species in $file:"
+>> 	# Extract species names
+>> 	cut -d , -f 2 $file | sort | uniq
+>> done
+>> ~~~
+>{: .solution}
 {: .challenge}
-
-**Solución**
-~~~
-# Script to find unique species in csv files where species is the second data field
-# This script accepts any number of file names as command line arguments
-
-# Loop over all files
-for file in $@ 
-do
-	echo "Unique species in $file:"
-	# Extract species names
-	cut -d , -f 2 $file | sort | uniq
-done
-~~~
-
 > ## Encuentre el archivo más largo con una extensión determinada
 >
 > Escribe un script de la terminal llamado `longest.sh` que tome el nombre de un
@@ -420,20 +422,20 @@ done
 > {: .bash}
 >
 > Mostraría el nombre del archivo `.pdb` en`/tmp/data` que tenga más líneas.
+>
+Solución
+>> 
+>> ~~~
+>>  # Script que toma 2 parámetros: 
+>>  #    1. un nombre de directorio
+>>  #    2. una extensión de archivo
+>>  # y muestra el nombre del archivo de ese directorio 
+>>  # con las líneas que coincide con la extensión del archivo.
+>>  
+>> wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
+>> ~~~
+>{: .solution}
 {: .challenge}
-
-**Solución**
-
-~~~
- # Script que toma 2 parámetros: 
- #    1. un nombre de directorio
- #    2. una extensión de archivo
- # y muestra el nombre del archivo de ese directorio 
- # con las líneas que coincide con la extensión del archivo.
- 
- wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
- ~~~
-
 
 > ## ¿Por qué grabar los comandos en el historial antes de ejecutarlos?
 >
@@ -448,15 +450,15 @@ done
 > la terminal ha añadido `history` al registro de comandos antes de
 > ejecutarlo. De hecho, la terminal *siempre* agrega comandos al registro
 > antes de ejecutarlos. ¿Por qué crees que hace esto?
-
-
-**Solución**
-
-Si un comando hace que algo se cuelgue, podría ser útil saber cuál era ese comando para saber cual fue el problema. 
-Si el comando sólo se registra después de ejecutarlo, no tendríamos un registro del último comando ejecutado en caso de un bloqueo.
-
+>
+Solución
+>> 
+>> Si un comando hace que algo se cuelgue, podría ser útil saber cuál era ese comando para saber cual fue el problema. 
+>> Si el comando sólo se registra después de ejecutarlo, no tendríamos un registro del último comando ejecutado en caso
+>> de un bloqueo.
+>>
+>{: .solution}
 {: .challenge}
-
 
 > ## Script de lectura y comprensión
 >
@@ -484,47 +486,58 @@ Si el comando sólo se registra después de ejecutarlo, no tendríamos un regist
 > echo $@.dat
 > ~~~
 > {: .bash}
-
-**Solución**
-
-El script 1 mostrará una lista de todos los archivos que contienen un punto en su nombre.
-
-El script 2 mostrará el contenido de los primeros 3 archivos que coinciden con la extensión del archivo. La terminal expande el caracter especial antes de pasar los argumentos al script example.sh.
-
-El script 3 mostrará todos los parámetros del script (es decir, todos los archivos .pdb), seguido de .pdb. cubane.pdb etano.pdb metano.pdb octano.pdb pentano.pdb propano.pdb.pdb
-
+>
+Solución
+>> 
+>> El script 1 mostrará una lista de todos los archivos que contienen un punto en su nombre.
+>> 
+>> El script 2 mostrará el contenido de los primeros 3 archivos que coinciden con la extensión del archivo. 
+>> La terminal expande el caracter especial antes de pasar los argumentos al script example.sh.
+>> 
+>> El script 3 mostrará todos los parámetros del script (es decir, todos los archivos .pdb), seguido de .pdb. 
+>> cubane.pdb etano.pdb metano.pdb octano.pdb pentano.pdb propano.pdb.pdb
+>{: .solution}
 {: .challenge}
 
-> ## Depuración (debugging) de Scripts
+> ## Depuración (debugging) de scripts
 >
-> Supongamos que ha guardado el siguiente script en un archivo denominado `do-errors.sh`
-> en el directorio `north-pacific-gyre/2012-07-03` de Nelle:
+> Supongamos que has guardado el siguiente script en un archivo denominado `do-errors.sh`
+> en el directorio `north-pacific-gyre/2012-07-03` de Alicia:
 >
 > ~~~
-> # Calculate reduced stats for data files at J = 100 c/bp.
+> # Calcular las estadísticas de los archivos de datos.
 > for datafile in "$@"
 > do
 >     echo $datfile
->     bash goostats -J 100 -r $datafile stats-$datafile
+>     bash goostats $datafile stats-$datafile
 > done
 > ~~~
 > {: .bash}
 >
-> Cuando lo ejecute:
+> Cuando lo ejecutas:
 >
 > ~~~
-> $ bash do-errors.sh *[AB].txt
+> $ bash do-errors.sh NENE*[AB].txt
 > ~~~
 > {: .bash}
 >
 > La salida está en blanco.
-> Para averiguar por qué, vuelva a ejecutar el script utilizando la opción `-x`:
+> Para averiguar por qué, vuelves a ejecutar el script utilizando la opción `-x`:
 >
 > ~~~
-> bash -x do-errors.sh *[AB].txt
+> bash -x do-errors.sh NENE*[AB].txt
 > ~~~
 > {: .bash}
 >
 > ¿Cuál es el resultado que muestra?
 > ¿Qué línea es responsable del error?
+>
+Solución
+>> 
+>> El indicador `-x` hace que `bash` se ejecute en modo de depuración. Esto muestra cada comando mientras se ejecuta, 
+>> lo que te ayudará a localizar errores. En este ejemplo, podemos ver que `echo` no está mostrando nada. 
+>> Hemos creado un error tipográfico en el nombre de la variable del bucle, la variable `datfile` no existe, 
+>> por lo que devuelve una cadena vacía.
+>> 
+>{: .solution}
 {: .challenge}
