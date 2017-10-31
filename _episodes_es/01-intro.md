@@ -1,13 +1,13 @@
 ---
-Title: "Introducción a la Terminal"
-Lesson: 5
-Exercises: 0
-Questions:
+title: "Introducción a la Terminal"
+lesson: 5
+exercises: 0
+questions:
 - "¿Qué es una terminal y por qué utilizarla?"
-Objetives:
+objectives:
 - "Explicar cómo se relaciona la terminal con el teclado, la pantalla, el sistema operativo y los programas de los usuarios."
 - "Explicar cuándo y por qué se deben utilizar interfaces de línea de comandos en lugar de interfaces gráficas."
-Keypoints:
+keypoints:
 - "Una terminal es un programa cuyo objetivo principal es leer comandos y ejecutar otros programas."
 - "Las principales ventajas de la terminal son su alta relación acción-tecla, su soporte para la automatización de tareas repetitivas, y que puede utilizarse para acceder a otras máquinas en una red."
 - "Las desventajas principales de la terminal son su naturaleza primordialmente textual y que sus comandos y operación pueden llegar a ser muy crípticos."
