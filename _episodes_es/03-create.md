@@ -1,6 +1,6 @@
 ---
 title: "Trabajando con archivos y directorios"
-lesson: 15
+teaching: 15
 exercises: 0
 questions:
 - "¿Cómo puedo crear, copiar y eliminar archivos y directorios?"
