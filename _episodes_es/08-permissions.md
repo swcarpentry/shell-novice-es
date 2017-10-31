@@ -329,8 +329,8 @@ pero casi nadie los utiliza.
 > {: .output}
 > ¿Cuál de las siguientes afirmaciones es verdadera?
 >
-> 1. Caro (el propietario) puede leer, escribir y ejecutar myfile.php
-> 2. Caro (el propietario) no puede escribir en myfile.php
-> 3. Los miembros de Caro (un grupo) pueden leer, escribir y ejecutar myfile.php
+> 1. caro (el propietario) puede leer, escribir y ejecutar myfile.php
+> 2. caro (el propietario) no puede escribir en myfile.php
+> 3. Los miembros de caro (un grupo) pueden leer, escribir y ejecutar myfile.php
 > 4. Los miembros de zoo (un grupo) no pueden ejecutar myfile.php
 {: .challenge}
