@@ -1,16 +1,16 @@
 ---
-Título: "Trabajando con archivos y directorios"
-Lección: 15
-Ejercicios: 0
-Preguntas:
+title: "Trabajando con archivos y directorios"
+lesson: 15
+exercises: 0
+questions:
 - "¿Cómo puedo crear, copiar y eliminar archivos y directorios?"
 - "¿Cómo puedo editar archivos?"
-Objetvos:
+objectives:
 - "Crear una jerarquía de directorios que coincida con un diagrama dado."
 - "Crear archivos en esa jerarquía usando un editor o copiando y renombrando archivos existentes."
 - "Mostrar el contenido de un directorio utilizando la línea de comandos."
 - "Eliminar archivos y/o directorios específicos."
-Conceptos clave:
+keypoints:
 - "`cp old new` copia un archivo."
 - "`mkdir path` crea un nuevo directorio."
 - "`mv old new` mueve (renombra) un archivo o directorio."
