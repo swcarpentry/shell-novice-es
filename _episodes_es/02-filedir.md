@@ -1,19 +1,19 @@
 ---
-Title: "Navegación de archivos y directorios"
-Lesson: 15
-Exercises: 0
-Questions:
+title: "Navegación de archivos y directorios"
+lesson: 15
+exercises: 0
+questions:
 - "¿Cómo puedo moverme en mi computadora?"
 - "¿Cómo puedo ver qué archivos y directorios tengo?"
 - "¿Cómo puedo especificar la ubicación de un archivo o directorio en mi computadora?"
-Objetives:
+objectives:
 - "Explicar las similitudes y diferencias entre un archivo y un directorio."
 - "Convertir una ruta absoluta en una ruta relativa y viceversa."
 - "Construir rutas absolutas y relativas que identifican archivos y directorios específicos."
 - "Explicar los pasos del ciclo de lectura-ejecución-impresión de la terminal."
 - "Identificar el comando, opciones y nombres de archivo en una llamada de línea de comandos."
 - "Demostrar el uso del autocompletado con el tabulador y explicar sus ventajas."
-Keypoints:
+keypoints:
 - "El sistema de archivos es responsable de administrar la información en el disco."
 - "La información se almacena en archivos, que a su vez se almacenan en directorios (carpetas)."
 - "Los directorios también pueden almacenar otros directorios, formando un árbol de directorios."
