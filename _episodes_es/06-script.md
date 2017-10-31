@@ -12,7 +12,7 @@ objectives:
 keypoints:
 - "Guardar comandos en archivos (normalmente llamados **scripts** de la terminal) para su reutilización."
 - "`bash filename` ejecuta los comandos guardados en un archivo."
-- "`$@`se refiere a todos los parámetros de la línea de comandos de un script de la terminal."
+- "`$@`se refiere a todos los parámetros de la línea de comandos de un **script** de la terminal."
 - "`$1`, `$2`, etc., se refieren al primer parámetro de la línea de comandos, al segundo parámetro de la línea de comandos, etc."
 - "Coloque las variables entre comillas si los valores tienen espacios en ellas."
 - "Dejar que los usuarios decidan qué archivos procesar es más flexible y más consistente con los comandos de Unix."
@@ -282,11 +282,11 @@ El archivo `redo-figure-3.sh` ahora contiene:
 Después de un poco de trabajo en un editor para eliminar los números de serie en los comandos,
 y eliminar la línea final donde llamamos el comando `history`, tenemos un registro completamente preciso de cómo creamos dicha figura.
 
-En la práctica, la mayoría de las personas desarrollan **scripts** de la terminal ejecutando comandos en el prompt de dicha terminal varias veces para asegurarse de que están haciendo las cosas bien, y a continuación los guardan en un archivo para su reutilización. Este estilo de trabajo permite a la gente replicar lo que descubre sobre sus datos y su flujo de trabajo con una llamada a `history` y editando para limpiar la salida pueden guardarlo como un script de la terminal.
+En la práctica, la mayoría de las personas desarrollan **scripts** de la terminal ejecutando comandos en el prompt de dicha terminal varias veces para asegurarse de que están haciendo las cosas bien, y a continuación los guardan en un archivo para su reutilización. Este estilo de trabajo permite a la gente replicar lo que descubre sobre sus datos y su flujo de trabajo con una llamada a `history` y editando para limpiar la salida pueden guardarlo como un **script** de la terminal.
 
 ## El pipeline de Nelle: Creando un **script**
 
-El supervisor de Nelle insistió en que todos sus análisis deben ser reproducibles. Nelle se da cuenta que debería haber proporcionado un par de parámetros adicionales a `goostats` cuando procesó sus archivos. Esto podría haber sido un desastre si hubiera hecho todo el análisis a mano, pero gracias a los bucles `for`, sólo le tomará un par de horas para volver a realizar el análisis. La forma más fácil de capturar todos los pasos es en un script. Ella ejecuta el editor y escribe lo siguiente:
+El supervisor de Nelle insistió en que todos sus análisis deben ser reproducibles. Nelle se da cuenta que debería haber proporcionado un par de parámetros adicionales a `goostats` cuando procesó sus archivos. Esto podría haber sido un desastre si hubiera hecho todo el análisis a mano, pero gracias a los bucles `for`, sólo le tomará un par de horas para volver a realizar el análisis. La forma más fácil de capturar todos los pasos es en un **script**. Ella ejecuta el editor y escribe lo siguiente:
 
 ~~~
 # Calculate reduced stats for data files.
@@ -328,7 +328,7 @@ done
 {: .bash}
 
 La ventaja es que esto siempre selecciona los archivos correctos: Ella no tiene que recordar excluir los archivos 'Z'.
-La desventaja es que *siempre* selecciona esos archivos - ella no puede ejecutarlo en todos los archivos (incluidos los archivos 'Z'), o en los archivos 'G' o 'H' que sus colegas de la Antártida están produciendo, sin editar el script manualmente.
+La desventaja es que *siempre* selecciona esos archivos - ella no puede ejecutarlo en todos los archivos (incluidos los archivos 'Z'), o en los archivos 'G' o 'H' que sus colegas de la Antártida están produciendo, sin editar el **script** manualmente.
 Si quisiera ser más aventurera, Nelle podría modificar su **script** para verificar los parámetros en línea de comandos, y utilizar `NENE*[AB].txt` si no se ha proporcionado ninguno. Por supuesto, esto introduce otro equilibrio entre flexibilidad y complejidad.
 
 > ## Variables en los **scripts** de la terminal
@@ -497,7 +497,7 @@ El **script** 3 mostrará todos los parámetros del **script** (es decir, todos 
 
 > ## Depuración (debugging) de Scripts
 >
-> Supongamos que ha guardado el siguiente script en un archivo denominado `do-errors.sh`
+> Supongamos que ha guardado el siguiente **script** en un archivo denominado `do-errors.sh`
 > en el directorio `north-pacific-gyre/2012-07-03` de Nelle:
 >
 > ~~~
