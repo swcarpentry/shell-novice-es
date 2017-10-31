@@ -1,6 +1,6 @@
 ---
 title: "Scripts de la terminal"
-lesson: 15
+teaching: 15
 exercises: 0
 questions:
 - "¿Cómo puedo guardar y reutilizar comandos?"
