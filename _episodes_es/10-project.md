@@ -3,7 +3,7 @@ title: "Proyecto Final Opcional"
 questions:
 - "¿Puedes aplicar lo aprendido?"
 keypoints:
-- "Si hay dos proyectos iguales (o extremadamente parecidos) su resultado será descartado"
+- "Práctica opcional usando fasta files"
 ---
 
 Usando los comandos disponibles en esta lección deberán escribir un script que,
@@ -20,8 +20,8 @@ a partir únicamente de tres archivos fasta, genere la siguiente información.
 
 Por ejemplo:
 
-Dados los siguientes archivos fasta [Proteins_1.fasta](https://liz-fernandez.github.io/PBI_linux_shell/final_project/example/Proteins_1.fasta),
-[Proteins_2.fasta](https://liz-fernandez.github.io/PBI_linux_shell/final_project/example/Proteins_2.fasta), [Proteins_3.fasta](https://liz-fernandez.github.io/PBI_linux_shell/final_project/example/Proteins_3.fasta),
+Dados los siguientes archivos fasta [Proteins_1.fasta](/files/example/Proteins_1.fasta),
+[Proteins_2.fasta](~/final_project/example/Proteins_2.fasta), [Proteins_3.fasta](https://liz-fernandez.github.io/PBI_linux_shell/final_project/example/Proteins_3.fasta),
 
 ~~~
 bash fasta_analysis_script_ID.sh *.fasta
