@@ -20,15 +20,15 @@ a partir únicamente de tres archivos fasta, genere la siguiente información.
 
 Por ejemplo:
 
-Dados los siguientes archivos fasta [Proteins_1.fasta](/files/example/Proteins_1.fasta),
-[Proteins_2.fasta](~/final_project/example/Proteins_2.fasta), [Proteins_3.fasta](https://liz-fernandez.github.io/PBI_linux_shell/final_project/example/Proteins_3.fasta),
+Dados los siguientes archivos fasta [Proteins_1.fasta](/files/final_project/example/Proteins_1.fasta),
+[Proteins_2.fasta](~/final_project/example/Proteins_2.fasta), [Proteins_3.fasta](/files/final_project/example/Proteins_3.fasta),
 
 ~~~
 bash fasta_analysis_script_ID.sh *.fasta
 ~~~
 {: .bash}
 
-Generará el siguiente archivo [Complete_ID.fasta](https://liz-fernandez.github.io/PBI_linux_shell/final_project/example/Complete_ID.fasta) e imprimirá en la terminal:
+Generará el siguiente archivo [Complete_ID.fasta](/files/final_project/example/Complete_ID.fasta) e imprimirá en la terminal:
 
 ~~~
 Longest file: Proteins_1.fasta
@@ -52,7 +52,7 @@ Todas las ocurrencias de 'ID' deberán ser substituidas por un identificador, pu
 
 Los paquetes de archivos los pueden descargar de:
 
-`https://liz-fernandez.github.io/PBI_linux_shell/final_project/data/Fastas_<identificador_de_estudiante>.tar.gz`
+`https://software-carpentry.github.io/shell-novice-es/final_project/data/Fastas_<identificador_de_estudiante>.tar.gz`
 
 Y descomprimirlos con tar de la siguiente manera, por ejemplo, para el estudiante con ID=1:
 ~~~
