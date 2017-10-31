@@ -21,7 +21,7 @@ a partir únicamente de tres archivos fasta, genere la siguiente información.
 Por ejemplo:
 
 Dados los siguientes archivos fasta [Proteins_1.fasta](/files/final_project/example/Proteins_1.fasta),
-[Proteins_2.fasta](~/final_project/example/Proteins_2.fasta), [Proteins_3.fasta](/files/final_project/example/Proteins_3.fasta),
+[Proteins_2.fasta](/files/final_project/example/Proteins_2.fasta), [Proteins_3.fasta](/files/final_project/example/Proteins_3.fasta),
 
 ~~~
 bash fasta_analysis_script_ID.sh *.fasta
