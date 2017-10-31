@@ -1,6 +1,6 @@
 ---
 title: "Introducción a la Terminal"
-lesson: 5
+teaching: 5
 exercises: 0
 questions:
 - "¿Qué es una terminal y por qué utilizarla?"
