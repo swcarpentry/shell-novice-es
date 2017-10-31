@@ -1,14 +1,14 @@
 ---
-title: "Scripts de la terminal"
+title: "**Scripts** de la terminal"
 teaching: 15
 exercises: 0
 questions:
 - "¿Cómo puedo guardar y reutilizar comandos?"
 objectives:
-- "Escriba un script de la terminal que ejecute un comando o una serie de comandos para un conjunto fijo de archivos."
-- "Ejecutar un script de la terminal desde la línea de comandos."
-- "Escribir un script de la terminal que opere sobre un conjunto de archivos definidos por el usuario en línea de comandos."
-- "Crear **pipelines** que incluyan scripts de la terminal que tú y otros hayan escrito."
+- "Escriba un **script** de la terminal que ejecute un comando o una serie de comandos para un conjunto fijo de archivos."
+- "Ejecutar un **script** de la terminal desde la línea de comandos."
+- "Escribir un **script** de la terminal que opere sobre un conjunto de archivos definidos por el usuario en línea de comandos."
+- "Crear **pipelines** que incluyan **script** de la terminal que tú y otros hayan escrito."
 keypoints:
 - "Guardar comandos en archivos (normalmente llamados **scripts** de la terminal) para su reutilización."
 - "`bash filename` ejecuta los comandos guardados en un archivo."
@@ -23,7 +23,7 @@ Vamos a tomar los comandos que repetimos con frecuencia y guardarlos en archivos
 de modo que podemos volver a ejecutar todas esas operaciones de nuevo más tarde escribiendo un sólo comando.
 Por razones históricas, a un conjunto de comandos guardados en un archivo se le llama un **script de la terminal**, pero no se equivoquen: estos son en realidad pequeños programas.
 
-Comencemos por volver a `molecules/` creando un nuevo archivo, `middle.sh`, que se convertirá en nuestro script de la terminal:
+Comencemos por volver a `molecules/` creando un nuevo archivo, `middle.sh`, que se convertirá en nuestro **script** de la terminal:
 
 ~~~
 $ cd molecules
@@ -59,7 +59,7 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00
 ~~~
 {: .output}
 
-Efectivamente, la salida de nuestro script es exactamente lo que obtendríamos si ejecutamos ese **pipeline** directamente
+Efectivamente, la salida de nuestro **script** es exactamente lo que obtendríamos si ejecutamos ese **pipeline** directamente
 en la terminal.
 
 > ## Texto vs. Lo que sea
@@ -91,8 +91,8 @@ head -n 15 "$1" | tail -n 5
 ~~~
 {: .output}
 
-Dentro de un script de la terminal,`$1` significa "el primer nombre de archivo (u otro parámetro) en la línea de comandos".
-Ahora podemos ejecutar nuestro script de esta manera:
+Dentro de un **script** de la terminal,`$1` significa "el primer nombre de archivo (u otro parámetro) en la línea de comandos".
+Ahora podemos ejecutar nuestro **script** de esta manera:
 
 ~~~
 $ bash middle.sh octane.pdb
@@ -160,7 +160,7 @@ ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00
 ~~~
 {: .output}
 
-Cambiando los parámetros de nuestra línea de comando, podemos cambiar el comportamiento del script:
+Cambiando los parámetros de nuestra línea de comando, podemos cambiar el comportamiento del **script**:
 
 ~~~
 $ bash middle.sh pentane.pdb 20 5
@@ -177,7 +177,7 @@ TER      18              1
 {: .output}
 
 Esto funciona,pero a la siguiente persona que use `middle.sh` se le puede dificultar ver lo que hace.
-Podemos mejorar nuestro script agregando algunos **comentarios** en la parte superior:
+Podemos mejorar nuestro **script** agregando algunos **comentarios** en la parte superior:
 
 ~~~
 $ nano middle.sh
@@ -192,7 +192,7 @@ head -n "$2" "$1" | tail -n "$3"
 {: .output}
 
 Un comentario comienza con un caracter `#` y se ejecuta hasta el final de la línea. La computadora ignora los comentarios,
-pero son invaluables para ayudar a la gente (incluyendote a ti en un futuro) a entender y usar scripts. La única advertencia es que cada vez que modifiques un script, debes comprobar que el comentario siga siendo preciso:
+pero son invaluables para ayudar a la gente (incluyendote a ti en un futuro) a entender y usar **scripts**. La única advertencia es que cada vez que modifiques un **script**, debes comprobar que el comentario siga siendo preciso:
 Una explicación que envía al lector en la dirección equivocada es peor que ninguna.
 
 ¿Qué sucede si queremos procesar muchos archivos en un solo pipeline?
@@ -205,8 +205,8 @@ $ wc -l *.pdb | sort -n
 
 dado que `wc -l` lista el número de líneas en los archivos (recuerda que `wc` significa 'word count', y si agregas el `-l` significa 'contar líneas') y `sort -n` ordena numéricamente.
 Podríamos poner esto en un archivo, pero entonces sólo podría ordenar una lista de archivos `.pdb` en el directorio actual.
-Si queremos ser capaces de obtener una lista ordenada de otros tipos de archivos, necesitamos una manera de conseguir estos nombres en el script. No podemos usar `$1`, `$2`, y así sucesivamente porque no sabemos cuántos archivos hay.
-En su lugar, utilizamos la variable especial `$@`, lo que significa, "Todos los parámetros de la línea de comandos para el script". También debemos poner `$@` dentro de comillas dobles para el caso de parámetros que contienen espacios (`"$@"` es equivalente a `"$1"` `"$2"` ...). He aquí un ejemplo:
+Si queremos ser capaces de obtener una lista ordenada de otros tipos de archivos, necesitamos una manera de conseguir estos nombres en el **script**. No podemos usar `$1`, `$2`, y así sucesivamente porque no sabemos cuántos archivos hay.
+En su lugar, utilizamos la variable especial `$@`, lo que significa, "Todos los parámetros de la línea de comandos para el **script**". También debemos poner `$@` dentro de comillas dobles para el caso de parámetros que contienen espacios (`"$@"` es equivalente a `"$1"` `"$2"` ...). He aquí un ejemplo:
 
 ~~~
 $ nano sorted.sh
@@ -239,7 +239,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 
 > ## ¿Por qué no está haciendo nada?
 >
-> ¿Qué pasa si se supone que un script procesa un grupo de archivos, pero nosotros
+> ¿Qué pasa si se supone que un **script** procesa un grupo de archivos, pero nosotros
 > no le damos ningún nombre de archivo? Por ejemplo, ¿qué pasa si escribimos?:
 >
 > ~~~
@@ -248,7 +248,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 > {: .bash}
 >
 > pero sin agregar `*.dat` (o cualquier otra cosa)? En este caso, `$@` se expande a
-> nada en absoluto, por lo que el **pipeline** dentro del script es efectivamente:
+> nada en absoluto, por lo que el **pipeline** dentro del **script** es efectivamente:
 >
 > ~~~
 > $ wc -l | sort -n
@@ -282,9 +282,9 @@ El archivo `redo-figure-3.sh` ahora contiene:
 Después de un poco de trabajo en un editor para eliminar los números de serie en los comandos,
 y eliminar la línea final donde llamamos el comando `history`, tenemos un registro completamente preciso de cómo creamos dicha figura.
 
-En la práctica, la mayoría de las personas desarrollan scripts de la terminal ejecutando comandos en el prompt de dicha terminal varias veces para asegurarse de que están haciendo las cosas bien, y a continuación los guardan en un archivo para su reutilización. Este estilo de trabajo permite a la gente replicar lo que descubre sobre sus datos y su flujo de trabajo con una llamada a `history` y editando para limpiar la salida pueden guardarlo como un script de la terminal.
+En la práctica, la mayoría de las personas desarrollan **scripts** de la terminal ejecutando comandos en el prompt de dicha terminal varias veces para asegurarse de que están haciendo las cosas bien, y a continuación los guardan en un archivo para su reutilización. Este estilo de trabajo permite a la gente replicar lo que descubre sobre sus datos y su flujo de trabajo con una llamada a `history` y editando para limpiar la salida pueden guardarlo como un script de la terminal.
 
-## El pipeline de Nelle: Creando un script
+## El pipeline de Nelle: Creando un **script**
 
 El supervisor de Nelle insistió en que todos sus análisis deben ser reproducibles. Nelle se da cuenta que debería haber proporcionado un par de parámetros adicionales a `goostats` cuando procesó sus archivos. Esto podría haber sido un desastre si hubiera hecho todo el análisis a mano, pero gracias a los bucles `for`, sólo le tomará un par de horas para volver a realizar el análisis. La forma más fácil de capturar todos los pasos es en un script. Ella ejecuta el editor y escribe lo siguiente:
 
@@ -314,7 +314,7 @@ $ bash do-stats.sh NENE*[AB].txt | wc -l
 
 de modo que la salida es sólo el número de archivos procesados en lugar de los nombres de los archivos que se procesaron.
 
-Una cosa a tener en cuenta sobre el script de Nelle es que permite que la persona que lo ejecuta decida que archivos procesar.
+Una cosa a tener en cuenta sobre el **script** de Nelle es que permite que la persona que lo ejecuta decida que archivos procesar.
 Podría haberlo escrito así:
 
 ~~~
@@ -329,11 +329,11 @@ done
 
 La ventaja es que esto siempre selecciona los archivos correctos: Ella no tiene que recordar excluir los archivos 'Z'.
 La desventaja es que *siempre* selecciona esos archivos - ella no puede ejecutarlo en todos los archivos (incluidos los archivos 'Z'), o en los archivos 'G' o 'H' que sus colegas de la Antártida están produciendo, sin editar el script manualmente.
-Si quisiera ser más aventurera, Nelle podría modificar su script para verificar los parámetros en línea de comandos, y utilizar `NENE*[AB].txt` si no se ha proporcionado ninguno. Por supuesto, esto introduce otro equilibrio entre flexibilidad y complejidad.
+Si quisiera ser más aventurera, Nelle podría modificar su **script** para verificar los parámetros en línea de comandos, y utilizar `NENE*[AB].txt` si no se ha proporcionado ninguno. Por supuesto, esto introduce otro equilibrio entre flexibilidad y complejidad.
 
-> ## Variables en los scripts de la terminal
+> ## Variables en los **scripts** de la terminal
 >
-> En el directorio `molecules`, imagina que tienes un script de la terminal llamado `script.sh` que contiene los siguientes
+> En el directorio `molecules`, imagina que tienes un **script** de la terminal llamado `script.sh` que contiene los siguientes
 > comandos:
 >
 > ~~~
@@ -361,14 +361,14 @@ Si quisiera ser más aventurera, Nelle podría modificar su script para verifica
 **Solución**
 
 La respuesta correcta es la 2.
-Las variables $1, $2 y $3 representan los argumentos para el script, tal que los comandos ejecutados son:
+Las variables $1, $2 y $3 representan los argumentos para el **script**, tal que los comandos ejecutados son:
 
 ~~~
 $ head -n 1 cubane.pdb ethan ee.pdb octane.pdb pentane.pdb propane.pdb
 $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 ~~~
 
-La terminal no expande '* .pdb' porque está rodeado por comillas. El primer parámetro del script es '*.pdb', que se expande dentro del script desde el principio al final.
+La terminal no expande '* .pdb' porque está rodeado por comillas. El primer parámetro del **script** es '*.pdb', que se expande dentro del **script** desde el principio al final.
 
 > ## Listando especies únicas
 >
@@ -388,7 +388,7 @@ La terminal no expande '* .pdb' porque está rodeado por comillas. El primer par
 >
 > Un ejemplo de este tipo de archivo se puede ver en data-shell/data/animal-counts/animals.txt.
 >
-> Escribe un script de la terminal llamado `species.sh` que tome cualquier número de
+> Escribe un **script** de la terminal llamado `species.sh` que tome cualquier número de
 > nombres de archivos como parámetros de línea de comandos, y utilice `cut`, `sort` y
 > `uniq` para mostrar una lista de las especies únicas que aparecen en cada uno de
 > esos archivos por separado.
@@ -410,7 +410,7 @@ done
 
 > ## Encuentre el archivo más largo con una extensión determinada
 >
-> Escribe un script de la terminal llamado `longest.sh` que tome el nombre de un
+> Escribe un **script** de la terminal llamado `longest.sh` que tome el nombre de un
 > directorio y una extensión de nombre de archivo como sus parámetros, e imprima
 > el nombre del archivo con más líneas en ese directorio con esa extensión. Por ejemplo:
 >
@@ -461,7 +461,7 @@ Si el comando sólo se registra después de ejecutarlo, no tendríamos un regist
 > ## Script de lectura y comprensión
 >
 > Considera el directorio data-shell/molecules una vez más. Este contiene una cantidad de archivos .pdb 
-> además de otro archivo que hayas creado. Explica qué haría un script llamado example.sh cuando se ejecutara como bash 
+> además de otro archivo que hayas creado. Explica qué haría un **script** llamado example.sh cuando se ejecutara como bash
 > example.sh * .pdb si contuviera las siguientes líneas:
 >
 > ~~~
@@ -487,11 +487,11 @@ Si el comando sólo se registra después de ejecutarlo, no tendríamos un regist
 
 **Solución**
 
-El script 1 mostrará una lista de todos los archivos que contienen un punto en su nombre.
+El **script** 1 mostrará una lista de todos los archivos que contienen un punto en su nombre.
 
-El script 2 mostrará el contenido de los primeros 3 archivos que coinciden con la extensión del archivo. La terminal expande el caracter especial antes de pasar los argumentos al script example.sh.
+El **script** 2 mostrará el contenido de los primeros 3 archivos que coinciden con la extensión del archivo. La terminal expande el caracter especial antes de pasar los argumentos al **script** example.sh.
 
-El script 3 mostrará todos los parámetros del script (es decir, todos los archivos .pdb), seguido de .pdb. cubane.pdb etano.pdb metano.pdb octano.pdb pentano.pdb propano.pdb.pdb
+El **script** 3 mostrará todos los parámetros del **script** (es decir, todos los archivos .pdb), seguido de .pdb. cubane.pdb etano.pdb metano.pdb octano.pdb pentano.pdb propano.pdb.pdb
 
 {: .challenge}
 
@@ -518,7 +518,7 @@ El script 3 mostrará todos los parámetros del script (es decir, todos los arch
 > {: .bash}
 >
 > La salida está en blanco.
-> Para averiguar por qué, vuelva a ejecutar el script utilizando la opción `-x`:
+> Para averiguar por qué, vuelva a ejecutar el **script** utilizando la opción `-x`:
 >
 > ~~~
 > bash -x do-errors.sh *[AB].txt
