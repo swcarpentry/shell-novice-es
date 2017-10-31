@@ -16,9 +16,9 @@ Discutiremos cómo maneja Windows los permisos al final de la sección:
 los conceptos son similares,
 pero las reglas son diferentes.
 
-Comencemos con Alicia.
+Comencemos con Nelle.
 Ella tiene un nombre de usuario único,
-`alicia.nemo`,
+`nelle.nemo`,
 Y un ID de usuario,
 1404.
 
