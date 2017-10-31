@@ -649,7 +649,7 @@ Normalmente hay más de una forma para solucionar una tarea de programación. Ca
 >
 > Sugerencia 2: El valor de `-mtime` tendrá que ser negativo --- ¿por qué?
 >
-> Solución: Asumiendo que el directorio de inicio de Alicia es nuestro directorio que trabajamos tecleamos:
+> Solución: Asumiendo que el directorio de inicio de Nelle es nuestro directorio en el que trabajamos, podemos usar:
 >
 > ~~~
 > $ find ./ -type f -mtime -1 -user ahmed
