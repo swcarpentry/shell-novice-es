@@ -1,1 +1,1 @@
-These are 15 fasta files for the optional project on episode 10
+16 fasta para el proyecto opcional del episodio 10
