@@ -1,17 +1,17 @@
 ---
-Título: "Bucles"
-Lección: 15
-Ejercicios: 0
-Preguntas:
+title: "Bucles"
+lesson: 15
+exercises: 0
+questions:
 - "¿Cómo puedo realizar las mismas acciones en varios archivos diferentes?"
-Objetivos:
+objectives:
 - "Escribir un bucle que aplique uno o más comandos por separado a cada archivo de un conjunto de archivos."
 - "Rastrear los valores tomados por una variable de bucle durante la ejecución del bucle."
 - "Explicar la diferencia entre el nombre de una variable y su valor."
 - "Explicar por qué los espacios y algunos caracteres de puntuación no deben usarse en nombres de archivo."
 - "Demostrar cómo ver qué comandos han sido ejecutados recientemente."
 - "Volver a ejecutar comandos ejecutados recientemente sin volver a escribirlos."
-Conceptos clave:
+keypoints:
 - "Un bucle `for` repite comandos una vez para cada elemento de una lista."
 - "Cada bucle `for` necesita una variable para referirse al elemento en el que está trabajando actualmente."
 - "Uso de `$name` para expandir una variable (es decir, obtener su valor). También se puede usar `${name}`."
