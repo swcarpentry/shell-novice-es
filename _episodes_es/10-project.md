@@ -1,5 +1,5 @@
 ---
-title: "Proyecto Final"
+title: "Proyecto Final Opcional"
 questions:
 - "¿Puedes aplicar lo aprendido?"
 keypoints:
@@ -48,9 +48,7 @@ Analysis of Complete_ID.fasta
 * Deberá funcionar con cualquier otro archivo o archivos fasta, diferentes a los proporcionados.
 * Deberá estar comentado, explicando brevemente qué hace el script y qué realiza cada línea.
 
-Todas las ocurrencias de 'ID' deberán ser substituidas por su identificador de estudiante, proporcionado por
-correo electrónico. No tienen que hacer este ID variable, es decir, si el ID no se puede cambiar en la
-línea de comandos cuando se ejecuta el script está bien.  
+Todas las ocurrencias de 'ID' deberán ser substituidas por un identificador, pueden usar un número entre 1 y 16. No tienen que hacer este ID variable, es decir, no es necesario que el ID se pueda cambiar en la línea de comandos cuando se ejecuta el script.  
 
 Los paquetes de archivos los pueden descargar de:
 
@@ -69,16 +67,10 @@ Se entregarán dos archivos:
 1. fasta_analysis_script_`<identificador_de_estudiante>`.sh (e.g. fasta_analysis_script_5.sh)
 2. Complete_`<identificador_de_estudiante>`.fasta (e.g. Complete_5.fasta)
 
-Se recibirán vía [correo electrónico](mailto:selene.fernandez@cinvestav.mx) a más tardar
-el día sábado 29 de abril a la medianoche. El correo debe incluir ambos archivos.
-**No hay prórrogas**.
 
-El día viernes 28 de abril estará abierto el aula de biocómputo para que prueben su
-script antes de enviarlo.
+#### Reto extra
 
-#### Puntaje extra
-
-Se dará medio punto extra (sobre 10 en la sección de linux) a aquel que imprima un menú de
+Intenta imprimir un menú de
 ayuda si se ejecuta el script sin opciones.
 
 #### Tips
