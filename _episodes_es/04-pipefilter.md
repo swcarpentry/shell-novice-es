@@ -1,16 +1,16 @@
 ---
-Título: "Pipes y filtros"
-Lección: 15
-Ejercicios: 0
-Preguntas:
+title: "Pipes y filtros"
+lesson: 15
+exercises: 0
+questions:
 - "¿Cómo puedo combinar comandos existentes para hacer cosas nuevas?"
-Objetivos:
+objectives:
 - "Redireccionar la salida de un comando a un archivo."
 - "Procesar un archivo en lugar de la entrada de teclado mediante la redirección."
 - "Construir **pipelines** de comandos con dos o más etapas."
 - "Explicar lo que normalmente sucede si un programa o un **pipeline** no recibe ninguna entrada para procesar."
 - "Explicar las filosofía de Unix de 'pequeñas piezas, libremente unidas'."
-Conceptos clave:
+keypoints:
 - "`cat` muestra el contenido de sus entradas."
 - "`head` muestra las primeras líneas de su entrada."
 - "`tail` muestra las últimas líneas de su entrada."
