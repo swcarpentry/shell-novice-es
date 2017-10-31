@@ -1,6 +1,6 @@
 ---
 title: "Bucles"
-lesson: 15
+teaching: 15
 exercises: 0
 questions:
 - "¿Cómo puedo realizar las mismas acciones en varios archivos diferentes?"
