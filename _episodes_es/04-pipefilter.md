@@ -734,7 +734,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ## Eliminación de archivos innecesarios
 >
 > Suponte que deseas borrar tus archivos de datos procesados y sólo
-> conservar los archivos sin procesar y el script de procesamiento para ahorrar espacio en disco.
+> conservar los archivos sin procesar y el **script** de procesamiento para ahorrar espacio en disco.
 > Los archivos sin procesar terminan en `.dat` y los archivos procesados terminan en `.txt`.
 > ¿Cuál de las siguientes opciones eliminaría todos los archivos de datos procesados,
 > y *unicamente* los archivos de datos procesados?
