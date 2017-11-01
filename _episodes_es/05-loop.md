@@ -344,7 +344,7 @@ $ for datafile in NENE*[AB].txt; do bash goostats $datafile stats-$datafile; don
 
 Cuando presiona Enter, la terminal ejecuta el comando modificado.
 Sin embargo, nada parece suceder porque no hay salida.
-Después de un momento, Nelle se da cuenta de que, ya que su script no imprime nada a la pantalla,
+Después de un momento, Nelle se da cuenta de que, ya que su **script** no imprime nada a la pantalla,
 no tiene ni idea de si está funcionando, y mucho menos con qué rapidez.
 Mata el comando de ejecución escribiendo `Ctrl-C`,
 e utiliza la flecha hacia arriba para repetir el comando,
