@@ -1,5 +1,5 @@
 ---
-title: "**Scripts** de la terminal"
+title: "Scripts de la terminal"
 teaching: 15
 exercises: 0
 questions:
