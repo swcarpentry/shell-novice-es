@@ -22,6 +22,6 @@ Estas lecciones lo iniciarán en el camino hacia el uso eficaz de estos recursos
 > por lo mismo), estás listo para esta lección.
 >
 > Si ya te sientes cómodo manipulando archivos y directorios,
-> buscando archivos con `grep` y` find`, y escribiendo bucles simples
+> buscando archivos con `grep` y `find`, y escribiendo bucles simples
 > y scripts, probablemente no aprenderá mucho de esta lección.
 {: .prereq}

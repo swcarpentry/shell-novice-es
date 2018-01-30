@@ -1,14 +1,14 @@
 {% comment %}
-  Display syllabus in tabular form.
-  Days are displayed if at least one episode has 'start = true'.
+Mostrar plan de estudios en forma de tabla.
+Los días se muestran si al menos un episodio tiene 'start = true'.
 {% endcomment %}
 <div class="syllabus">
-  <h2 id="schedule">Schedule</h2>
+  <h2 id="schedule">Programar</h2>
 
   {% assign lesson_number = 0 %}
   {% assign day = 0 %}
   {% assign multiday = false %}
-  {% for episode in site.episodes %}
+  {% for episode in site.episodes_es %}
     {% if episode.start %}{% assign multiday = true %}{% break %}{% endif %}
   {% endfor %}
   {% assign current = site.start_time %}
@@ -20,7 +20,7 @@
     <td class="col-md-3"><a href="{{ page.root }}/setup">Setup</a></td>
     <td class="col-md-7">Download files required for the lesson</td>
   </tr>
-  {% for episode in site.episodes %}
+  {% for episode in site.episodes_es %}
     {% if episode.start %} {% comment %} Starting a new day? {% endcomment %}
       {% assign day = day | plus: 1 %}
       {% if day > 1 %} {% comment %} If about to start day 2 or later, show finishing time for previous day {% endcomment %}
@@ -72,7 +72,7 @@
   </table>
 
   <p>
-    The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
+El horario real puede variar ligeramente dependiendo de los temas y ejercicios elegidos por el instructor.
   </p>
 
 </div>
