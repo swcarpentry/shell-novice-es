@@ -9,8 +9,8 @@ que permite a las personas hacer cosas complejas con sólo unas pocas teclas.
 Lo más importante es que ayuda a combinar programas existentes de nuevas maneras
 y automatizar tareas repetitivas, en vez de estar escribiendo las mismas cosas una y otra vez.
 El uso del terminal o **shell** es fundamental para usar muchas otras herramientas poderosas
-y recursos informáticos (incluidos los supercomputadores de "computación de alto rendimiento").
-Esta lección te va guiar en el camino hacia el uso eficaz de estos recursos.
+y recursos informáticos (incluidos los supercomputadores o "computación de alto rendimiento").
+Esta lección te guiará en el camino hacia el uso eficaz de estos recursos.
 
 > ## Prerequisitos
 > 
