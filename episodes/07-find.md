@@ -570,10 +570,7 @@ en ellas."
 > Sugerencia: use `man grep` para buscar cómo seleccionar texto recursivamente en un directorio
 > usando grep
 > y `man cut` para seleccionar más de un campo en una línea.
-{: .challenge}
-
-Un ejemplo es el siguiente archivo `data-shell/data/animal-counts/animals.txt`
-
+> Un ejemplo es el siguiente archivo `data-shell/data/animal-counts/animals.txt`
 >
 > > ## Solución
 > >
@@ -604,14 +601,8 @@ Un ejemplo es el siguiente archivo `data-shell/data/animal-counts/animals.txt`
 > Sugerencia: una solución sería emplear
 > los comandos `grep` y `wc` y un `|`, mientras que otra podría utilizar
 > opciones de `grep`.
-{: .challenge}
-
-There is often more than one way to solve a programming task, so a
-> particular solution is usually chosen based on a combination of
-> yielding the correct result, elegance, readability, and speed.
-
-Normalmente hay más de una forma para solucionar una tarea de programación. Cada solución es seleccionada de acuerdo a la combinación entre cuál es la que produce el resultado correcto, con mayor elegancia, de la manera más clara y con mayor velocidad.
-
+> Normalmente hay más de una forma para solucionar una tarea de programación. Cada solución es seleccionada de acuerdo a la combinación entre cuál es la que produce el resultado correcto, con mayor elegancia, de la manera más clara y con mayor velocidad.
+> 
 > > ## Solución
 > > ```
 > > for sis in Jo Meg Beth Amy
