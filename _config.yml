@@ -44,7 +44,7 @@ start_time: 0
 
 # Specify that things in the episodes collection should be output.
 collections:
-  episodes_es:
+  episodes:
     output: true
     permalink: /:path/
   extras:
@@ -56,7 +56,7 @@ defaults:
       root: ..
   - scope:
       path: ""
-      type: episodes_es
+      type: episodes
     values:
       layout: episode
 
