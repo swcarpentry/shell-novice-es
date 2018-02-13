@@ -8,7 +8,7 @@
   {% assign lesson_number = 0 %}
   {% assign day = 0 %}
   {% assign multiday = false %}
-  {% for episode in site.episodes_es %}
+  {% for episode in site.episodes %}
     {% if episode.start %}{% assign multiday = true %}{% break %}{% endif %}
   {% endfor %}
   {% assign current = site.start_time %}
