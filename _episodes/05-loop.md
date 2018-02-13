@@ -235,14 +235,17 @@ de cualquier archivo que se esté procesando
 > head: cannot open ‘red dragon.dat’ for reading: No such file or directory
 > head: cannot open ‘purple unicorn.dat’ for reading: No such file or directory
 > ~~~
-> {: .output} Intenta remover las comillas en `$filename` en el bucle anterior para observar el efecto de las comillas en los espacios en blanco:
+> {: .output}
+> 
+> Intenta remover las comillas en `$filename` en el bucle anterior para observar el efecto de las comillas en los espacios en blanco:
 > ~~~
 > head: cannot open ‘red’ for reading: No such file or directory
 > head: cannot open ‘dragon.dat’ for reading: No such file or directory
 > head: cannot open ‘purple’ for reading: No such file or directory
 > head: cannot open ‘unicorn.dat’ for reading: No such file or directory
 > ~~~
-> {: .output} {: .callout}
+> {: .output}
+{: .callout}
 
 Volviendo a nuestro problema original de copia de archivos,
 Podemos resolverlo usando este bucle:
@@ -358,7 +361,8 @@ $ for datafile in NENE*[AB].txt; do echo $datafile; bash goostats $datafile stat
 > ## Principio y Fin
 >
 > Podemos pasar al principio de una línea en la terminal escribiendo `Ctrl-A`
-> y al final usando `Ctrl-E`. {: .callout}
+> y al final usando `Ctrl-E`.
+{: .callout}
 
 Ahora, cuando ejecuta su programa, produce una línea de salida cada cinco segundos aproximadamente:
 
@@ -398,14 +402,16 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 > {: .output}
 >
 > Entonces puede volver a ejecutar `goostats` en` NENE01729B.txt` simplemente escribiendo
-> `!458`. {: .callout}
+> `!458`.
+{: .callout}
 
 > ## Otros comandos del historial
 >
 > Existen otros comandos de acceso directo para acceder al historial:
 > - `Ctrl-R` permite buscar en el historial en un modo denominado "búsqueda reversa" ("reverse-i-search" en inglés), que permite buscar el comando más reciente en tu historial que coincide con el texto que introduzcas a continuación. Presionar `Ctrl-R` una o más veces adicionales permite buscar coincidencias más antiguas.
 > - `!!` recupera el comando anterior inmediato (puedes ser que esto te parezca más conveniente que usar la flecha hacia arriba).
-> - `!$` recupera la última palabra del último comando. Esto es más útil de lo que pensarías: después de `bash goostats NENE01729B.txt stats-NENE01729B.txt`, puedes teclear `less !$` para ver el archivo `NENE01729B.txt`, que es más rápid que utilizar la flecha hacia arriba y editar el comando. {: .callout}
+> - `!$` recupera la última palabra del último comando. Esto es más útil de lo que pensarías: después de `bash goostats NENE01729B.txt stats-NENE01729B.txt`, puedes teclear `less !$` para ver el archivo `NENE01729B.txt`, que es más rápid que utilizar la flecha hacia arriba y editar el comando.
+{: .callout}
 
 > ## Variables en bucles
 >
@@ -436,7 +442,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 > ~~~
 > {: .bash}
 >
-> ¿Por qué estos dos bucles dan resultados diferentes? {: .challenge}
+> ¿Por qué estos dos bucles dan resultados diferentes?
 >
 >> ## Solución
 >>
@@ -470,7 +476,9 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >> pentane.pdb
 >> propane.pdb
 >> ~~~
->> {: .output} {: .solution} {: .challenge}
+>> {: .output}
+> {: .solution}
+{: .challenge}
 
 > ## Guardar en un archivo dentro de un bucle - Primera parte
 >
@@ -492,7 +500,9 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >
 >> ## Solución
 >>
->> 1. El texto de cada archivo se escribe (uno a la vez) en `alkanes.pdb`. Sin embargo, el archivo se sobrescribe en cada iteración del bucle, por lo que el contenido final de `alkanes.pdb` es sólo el texto proveniente de `propane.pdb`. {: .solution} {: .challenge}
+>> 1. El texto de cada archivo se escribe (uno a la vez) en `alkanes.pdb`. Sin embargo, el archivo se sobrescribe en cada iteración del bucle, por lo que el contenido final de `alkanes.pdb` es sólo el texto proveniente de `propane.pdb`.
+> {: .solution}
+{: .challenge}
 
 > ## Guardar en un archivo en un bucle - Segunda parte
 >
@@ -514,7 +524,9 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >
 >> ## Solución
 >>
->> La opción correcta es 3. `>>` concatena en un archivo, en lugar de sobrescribirlo con la salida del comando. Dado que la salida del comando `cat` ha sido redirigida, nada se imprime en pantalla. {: .solution} {: .challenge}
+>> La opción correcta es 3. `>>` concatena en un archivo, en lugar de sobrescribirlo con la salida del comando. Dado que la salida del comando `cat` ha sido redirigida, nada se imprime en pantalla.
+> {: .solution}
+{: .challenge}
 
 > ## Limitación de conjuntos de archivos
 >
@@ -535,7 +547,8 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >
 >> ## Solución
 >> 
->> La respuesta correcta es 4. `*` coincide con cero o más caracteres, así que cualquier nombre que comience con la letra c, seguida de cero o más caracteres, coincidirá con el comando. {: .solution}
+>> La respuesta correcta es 4. `*` coincide con cero o más caracteres, así que cualquier nombre que comience con la letra c, seguida de cero o más caracteres, coincidirá con el comando
+> {: .solution}
 >
 > ¿Cómo diferiría el resultado si usáramos el siguiente comando en lugar del anterior?
 >
@@ -554,7 +567,9 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >
 >> ## Solución
 >>
->> La respuesta correcta es 4. `*` coincide con cero o más caracteres, por lo que la expresión `*c*` coincidirá con un nombre de archivo con cero o más caracteres antes de la letra c, y cero o más caracteres después de la letra c. {: .solution} {: .challenge}
+>> La respuesta correcta es 4. `*` coincide con cero o más caracteres, por lo que la expresión `*c*` coincidirá con un nombre de archivo con cero o más caracteres antes de la letra c, y cero o más caracteres después de la letra c.
+> {: .solution}
+{: .challenge}
 
 > ## Haciendo una ejecución "en seco" (dry-run)
 >
@@ -600,7 +615,9 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >>
 >> La versión 1 redirige la salida del comando `echo analyze $file` a un archivo, `analyzed-$file`. Es decir, se genera una serie de archivos: `analyzed-cubane.pdb`, `analyzed-ethane.pdb`, etc.
 >>
->> Prueba ambas versiones en tu terminal para ver la salida. Asegúrate de abrir los archivos `analyzed-*.pdb` para ver su contenido. {: .solution} {: .challenge}
+>> Prueba ambas versiones en tu terminal para ver la salida. Asegúrate de abrir los archivos `analyzed-*.pdb` para ver su contenido.
+> {: .solution}
+{: .challenge}
 
 > ## Bucles anidado
 >
@@ -623,5 +640,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >>
 >> Tenemos un bucle anidado, es decir, un bucle dentro de otro bucle: para cada `specie` del bucle exterior, el bucle interior (el bucle anidado) itera sobre la lista de temperaturas y crea un nuevo directorio para cada combinación.
 >>
->> ¡Intenta ejecutar el código para descubrir qué directorio se crean! {: .solution} {: .challenge}
+>> ¡Intenta ejecutar el código para descubrir qué directorio se crean!
+> {: .solution}
+{: .challenge}
 

@@ -359,7 +359,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > 3. La primera y la última línea de cada archivo en el directorio `molecules`.
 > 4. Un error debido a las comillas alrededor de `*.pdb`.
 >
-> ## Solución
+>> ## Solución
 >> La respuesta correcta es la 2.
 >> Las variables $1, $2 y $3 representan los argumentos para el **script**, tal que los comandos ejecutados son:
 >>
@@ -394,7 +394,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > nombres de archivos como parámetros de línea de comandos, y utilice `cut`, `sort` y
 > `uniq` para mostrar una lista de las especies únicas que aparecen en cada uno de
 > esos archivos por separado.
-> ## Solución
+>> ## Solución
 >> ~~~
 >> # Script to find unique species in csv files where species is the second data field
 >> # This script accepts any number of file names as command line arguments
@@ -422,7 +422,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >
 > Mostraría el nombre del archivo `.pdb` en`/tmp/data` que tenga más líneas.
 >
-> ## Solución
+>> ## Solución
 >> 
 >> ~~~
 >>  # Script que toma 2 parámetros: 
@@ -450,7 +450,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ejecutarlo. De hecho, la terminal *siempre* agrega comandos al registro
 > antes de ejecutarlos. ¿Por qué crees que hace esto?
 >
-> ## Solución
+>> ## Solución
 >> 
 >> Si un comando hace que algo se cuelgue, podría ser útil saber cuál era ese comando para saber cual fue el problema. 
 >> Si el comando sólo se registra después de ejecutarlo, no tendríamos un registro del último comando ejecutado en caso
@@ -486,7 +486,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ~~~
 > {: .bash}
 >
-> ## Solución
+>> ## Solución
 >> 
 >> El **script** 1 mostrará una lista de todos los archivos que contienen un punto en su nombre.
 >> 
@@ -531,7 +531,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ¿Cuál es el resultado que muestra?
 > ¿Qué línea es responsable del error?
 >
-> ## Solución
+>> ## Solución
 >> 
 >> El indicador `-x` hace que `bash` se ejecute en modo de depuración. Esto muestra cada comando mientras se ejecuta, 
 >> lo que te ayudará a localizar errores. En este ejemplo, podemos ver que `echo` no está mostrando nada. 
