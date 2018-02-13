@@ -119,7 +119,9 @@ $ wc *.pdb
 >>
 >> 3. soluciona el problema de la opción 3 agregando dos caracteres entre `t` y `me`. Esta es la opción correcta.
 >>
->> 4. sólo muestra archivos que comienzan con `ethane.`. {: .solution} {: .challenge}
+>> 4. sólo muestra archivos que comienzan con `ethane.`.
+> {: .solution}
+{: .challenge}
 
 Si ejecutamos `wc -l` en lugar de` wc`,
 la salida sólo muestra el número de líneas por archivo:
@@ -518,7 +520,9 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >
 >> ## Solución
 >>
->> La opción `-n` indica un ordenamiento numérico, en lugar de alfabético. {: .solution} {: .challenge}
+>> La opción `-n` indica un ordenamiento numérico, en lugar de alfabético. 
+> {: .solution}
+{: .challenge}
 
 > ## ¿Qué significa `<`?
 >
@@ -559,7 +563,9 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> 3
 >> ~~~
 >>
->>{: .output} {: .solution} {: .challenge}
+>>{: .output}
+> {: .solution}
+{: .challenge}
 
 > ## ¿Qué significa `>>`?
 >
@@ -575,7 +581,6 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > $ echo hello >> testfile02.txt
 > ~~~
->
 > {: .bash}
 >
 > Pista: Intenta ejecutar cada comando dos veces seguidas y después examinar los archivos de salida.
@@ -600,7 +605,6 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > 2015-11-23-dataset2.txt
 > 2015-11-23-dataset_overview.txt
 > ~~~
->
 > {: .bash}
 >
 > Antes de ir a otro viaje de campo, Sam quiere respaldar sus datos y
@@ -618,12 +622,15 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > Ayuda a Sam rellenando los espacios en blanco.
 >
 >> ## Solución
->>
+>> 
+>> ~~~
 >> $ cp *calibration.txt /backup/calibration
 >> $ cp 2015-11-* ~/send_to_bob/all_november_files/
 >> $ cp *-23-dataset* ~send_to_bob/all_datasets_created_on_a_23rd/
->>
->> {: -bash} {: .solution} {: .challenge}
+>> ~~~
+>> {: -bash}
+> {: .solution}
+{: .challenge}
 
 > ## Uniendo comandos con pipes
 >
@@ -637,7 +644,9 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >
 >> ## Solución
 >>
->> La solución es la opción 3. El caracter de **pipe** `|` es usado para alimentar la entrada estándar de un proceso con la salida estándar del anterior. `>` es utilizado para redirigir la salida estándar a un archivo. ¡Inténtalo en el directorio `data-shell/molecules`! {: .solution} {: .challenge}
+>> La solución es la opción 3. El caracter de **pipe** `|` es usado para alimentar la entrada estándar de un proceso con la salida estándar del anterior. `>` es utilizado para redirigir la salida estándar a un archivo. ¡Inténtalo en el directorio `data-shell/molecules`!
+> {: .solution}
+{: .challenge}
 
 > ## ¿Por qué `uniq` sólo elimina duplicados adyacentes?
 >
@@ -673,7 +682,9 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> ~~~
 >> $ sort salmon.txt | uniq
 >> ~~~
->> {: .bash} {: .solution} {: .challenge}
+>> {: .bash}
+> {: .solution}
+{: .challenge}
 
 > ## Comprensión de la lectura de pipes
 >
@@ -696,7 +707,10 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
 > ~~~
-> {: .bash} Pista: construye el **pipeline** agregando un comando a la vez para comprobar tu respuesta. {: .challenge}
+> {: .bash} 
+> 
+> Pista: construye el **pipeline** agregando un comando a la vez para comprobar tu respuesta.
+{: .challenge}
 
 > ## Construcción de Pipes
 >
@@ -729,7 +743,9 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> ~~~
 >> $ cut -d , -f 2 animals.txt | sort | uniq
 >> ~~~
->> {: .bash} {: .solution} {: .challenge}
+>> {: .bash}
+> {: .solution}
+{: .challenge}
 
 > ## Eliminación de archivos innecesarios
 >
@@ -749,7 +765,9 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> 1. Esto eliminaría archivos con terminación `.txt` y nombres de un caracter.
 >> 2. Esta es la respuesta correcta.
 >> 3. La terminal expandiría el `*` para coincidir con todo el directorio actual, así que el comando intentaría eliminar todos los archivos, más un archivo adicional llamado `.txt`.
->> 4. La terminal expandiría `*.*` para coincidir con todos los archivos, independientemente de su terminación. Este comando eliminaría todos los archivos. {: .solution} {: .challenge}
+>> 4. La terminal expandiría `*.*` para coincidir con todos los archivos, independientemente de su terminación. Este comando eliminaría todos los archivos.
+> {: .solution}
+{: .challenge}
 
 > ## Expresiones con Caracteres Especiales
 >
@@ -771,7 +789,12 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> $ ls *B.txt
 >> ...
 >> ~~~
->> {: .bash} 2. La salida de la nueva expresión aparece separada porque son dos comandos independientes. 3. Cuando no haya archivos que terminen en `A.txt`, o en `B.txt`. {: .solution} {: .challenge}
+>> {: .bash}
+>> 
+>> 2. La salida de la nueva expresión aparece separada porque son dos comandos independientes.  
+>> 3. Cuando no haya archivos que terminen en `A.txt`, o en `B.txt`.
+> {: .solution}
+{: .challenge}
 
 > ## ¿Qué tubería?
 >
@@ -798,7 +821,9 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >
 >> ## Solución
 >>
->> La opción 5 es la respuesta correcta. Si se te dificulta entender por qué, intenta probar los comandos, o las subsecciones de los **pipelines** (sólo asegúrate de estar en el directorio `data-shell/data`). {: .solution} {: .challenge}
+>> La opción 5 es la respuesta correcta. Si se te dificulta entender por qué, intenta probar los comandos, o las subsecciones de los **pipelines** (sólo asegúrate de estar en el directorio `data-shell/data`).
+> {: .solution}
+{: .challenge}
 
 > ## Adición de datos
 >
@@ -819,4 +844,6 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >
 >> ## Solución
 >>
->> La opción 3 es la correcta. Para que la opción 1 fuera correcta tendríamos que haber ejecutado sólo el comando `head`. Para que la opción 2 fuera correcta tendríamos que haber ejecutado sólo el comando `tail`. Para que la opción 4 fuera correcta tendríamos que haber usado un **pipe** para enviar la salida de `head` a `tail -2` de esta forma: `head -3 animals.txt | tail -2 >> animalsUpd.txt` {: .solution} {: .challenge}
+>> La opción 3 es la correcta. Para que la opción 1 fuera correcta tendríamos que haber ejecutado sólo el comando `head`. Para que la opción 2 fuera correcta tendríamos que haber ejecutado sólo el comando `tail`. Para que la opción 4 fuera correcta tendríamos que haber usado un **pipe** para enviar la salida de `head` a `tail -2` de esta forma: `head -3 animals.txt | tail -2 >> animalsUpd.txt`
+> {: .solution}
+{: .challenge}

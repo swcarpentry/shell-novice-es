@@ -448,8 +448,8 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > 2. `mv statstics.txt statistics.txt`
 > 3. `mv statstics.txt .`
 > 4. `cp statstics.txt .`
->
-Solución
+> 
+> > ## Solución
 > > 1. No. Mientras esto crearía un archivo con el nombre correcto, el archivo con nombre incorrecto todavía existiría en el directorio y necesitaría ser borrado.
 > > 2. Sí, esto funcionaría para renombrar el archivo.
 > > 3. No, el punto (.) indica dónde mover el archivo, pero no proporciona un nuevo nombre de archivo; no pueden crearse nombres de archivo idénticos.
@@ -546,8 +546,11 @@ Solución
 >> ~~~
 >> mv *.dat analyzed
 >> ~~~
+>> {: .bash} 
 >>
->> {: .bash} Jamie necesita mover sus archivos `fructose.dat` y `sucrose.dat` al directorio `analyzed`. La terminal expandirá *.dat para abarcar todos los archivos .dat en el directorio. Después, el comando `mv` moverá la lista de archivos .dat al directorio "analyzed". {: .solution} {: .challenge}
+>> Jamie necesita mover sus archivos `fructose.dat` y `sucrose.dat` al directorio `analyzed`. La terminal expandirá *.dat para abarcar todos los archivos .dat en el directorio. Después, el comando `mv` moverá la lista de archivos .dat al directorio "analyzed". 
+> {: .solution} 
+{: .challenge}
 
 > ## Copiar con varios archivos
 >
@@ -566,10 +569,12 @@ Solución
 > $ ls -F
 > ~~~
 > {: .bash}
+>
 > ~~~
 > amino-acids.txt  animals.txt  backup/  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt
 > ~~~
 > {: .output}
+>
 > ~~~
 > $ cp amino-acids.txt animals.txt morse.txt
 > ~~~
@@ -583,8 +588,9 @@ Solución
 >> ~~~
 >> cp: target ‘morse.txt’ is not a directory
 >> ~~~
->> {: .output} {: .solution} {: .challenge}
-
+>> {: .output} 
+> {: .solution} 
+{: .challenge}
 
 > ## Listado recursivo y por tiempo
 >
@@ -596,7 +602,9 @@ Solución
 > ¿En qué orden muestra los archivos el comando `ls -R -t`?
 >
 >> ## Solución
->> El comando `ls -R` enumera los directorios recursivamente en orden cronológico de cada nivel, y los archivos en cada direcotrio también son desplegados en orden cronológico. {: .solution} {: .challenge}
+>> El comando `ls -R` enumera los directorios recursivamente en orden cronológico de cada nivel, y los archivos en cada direcotrio también son desplegados en orden cronológico. 
+> {: .solution} 
+{: .challenge}
 
 > ## Creación de archivos de una manera diferente
 >
@@ -621,7 +629,9 @@ Solución
 >>
 >> 1. El comando touch genera un nuevo archivo llamado "my_file.txt" en tu directorio **home**. Si te encuentras en tu directorio **home**, puedes observar el archivo recién creado utilizando `ls` en la terminal. También puedes visualizar "my_file.txt" en tu explorados de archivos GUI.
 >> 2. Cuando inspeccionas el archivo con "ls -l", nota que el tamaño de "my_file.txt" es 0 kb. En otras palabras, no contiene dato alguno. Si abres "my_file.txt" en un editor de texto, aparecerá en blanco.
->> 3. Algunos programas no generan nuevos archivos de salida, pero requieren archivos en blanco que ya se hayan generado. Cuando uno de estos programas es ejecutado, automáticamente busca un archivo existente para llenarlo con su salida. El comando touch te permite generar eficientemente archivos en blanco para que este tipo de programas puedan usarlos. {: .solution} {: .challenge}
+>> 3. Algunos programas no generan nuevos archivos de salida, pero requieren archivos en blanco que ya se hayan generado. Cuando uno de estos programas es ejecutado, automáticamente busca un archivo existente para llenarlo con su salida. El comando touch te permite generar eficientemente archivos en blanco para que este tipo de programas puedan usarlos. 
+> {: .solution}
+{: .challenge}
 
 > ## Pasar a la carpeta actual
 >
@@ -650,9 +660,11 @@ Solución
 >> ~~~
 >> $ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
 >> ~~~
+>> {: .bash} 
 >>
->> {: .bash} Recuerda que `..` se refiere al directorio padre (es decir, el directorio en el nivel superior al actual) y `.` se refiere al directorio actual. {: .solution} {: .challenge}
->>
+>> Recuerda que `..` se refiere al directorio padre (es decir, el directorio en el nivel superior al actual) y `.` se refiere al directorio actual. 
+> {: .solution} 
+{: .challenge}
 
 > ## Utilizando `rm` con seguridad
 >
@@ -664,8 +676,10 @@ Solución
 >> ~~~
 >> $ rm: remove regular file 'thesis/quotations.txt'?
 >> ~~~
->>
-> > {: .bash} La opción -i provocará que se pregunte antes de eliminar un elemento. La terminal de Unix no cuenta con una papelera de reciclaje, así que todos los archivos que sean eliminados desaparecerán para siempre. Por medio de la opción -i tienes la oportunidad de revisar que sólo estés eliminando los archivos que realmente deseas borrar. {: .solution} {: .challenge}
+>> {: .bash} 
+>> La opción -i provocará que se pregunte antes de eliminar un elemento. La terminal de Unix no cuenta con una papelera de reciclaje, así que todos los archivos que sean eliminados desaparecerán para siempre. Por medio de la opción -i tienes la oportunidad de revisar que sólo estés eliminando los archivos que realmente deseas borrar. 
+> {: .solution} 
+{: .challenge}
 
 > ## Copiar una estructura de carpetas sin archivos
 >
@@ -706,4 +720,6 @@ Solución
 >>
 >> El segundo grupo de comandos está en el orden incorrecto: intenta borrar archivos que aún no han sido copiados, seguido del comando recursivo que los copiaría.
 >>
->> El tercer grupo de comandos podría lograr el objetivo deseado, pero de una forma muy poco eficiente: el primer comando copia el directorio de forma recursiva, pero el segundo comando borra de forma interactiva, requiriendo confirmación antes de borrar cada archivo y directorio. {: .solution} {: .challenge}
+>> El tercer grupo de comandos podría lograr el objetivo deseado, pero de una forma muy poco eficiente: el primer comando copia el directorio de forma recursiva, pero el segundo comando borra de forma interactiva, requiriendo confirmación antes de borrar cada archivo y directorio. 
+> {: .solution} 
+{: .challenge}

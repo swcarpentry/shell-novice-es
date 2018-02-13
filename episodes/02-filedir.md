@@ -109,7 +109,8 @@ Más específicamente, cuando escribimos `whoami` la terminal:
 > ~~~
 > {: .error}
 > 
-> La terminal te dice que no puede encontrar el programa `mycommand` porque este programa no existe en tu computadora. En este curso aprenderás varios comandos, pero existen muchos más de los que mencionaremos. {: .callout}
+> La terminal te dice que no puede encontrar el programa `mycommand` porque este programa no existe en tu computadora. En este curso aprenderás varios comandos, pero existen muchos más de los que mencionaremos. 
+{: .callout}
 
 Averiguemos dónde estamos ejecutando el comando `pwd`
 (que significa "imprime directorio de trabajo" - "print working directory").
@@ -135,7 +136,7 @@ $ pwd
 
 > ## Variaciones en el Directorio de Inicio
 > El directorio **home** puede lucir diferente en distintos sistemas operativos. En Linux puede verse como `/home/nelle`, en Windows puede ser similar a `C:\Documents and Settings\nelle` o `C:\Users\nelle` (pueden variar según la versión de Windows que estés utilizando). En los ejemplos que siguen utilizaremos la salida de Mac como estándar. Linux y Windows pueden variar ligeramente, pero deberían lucir similares en general.
-> {: .callout}
+{: .callout}
 
 Para entender lo que es un "directorio **home**"
 echemos un vistazo a cómo se organiza el sistema de archivos. 
@@ -363,7 +364,8 @@ información sobre cómo usar los comandos o programas.
 > ls: invalid option -- 'j'
 > Try 'ls --help' for more information.
 > ~~~
-> {: .error} {: .callout}
+> {: .error} 
+{: .callout}
 
 Para más información sobre cómo usar `ls` podemos escribir `man ls`.
 `man` es el comando "manual" de Unix:
