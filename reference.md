@@ -3,227 +3,149 @@ layout: reference
 permalink: /reference/
 ---
 
-## Summary of Basic Commands
+## Resumen de Comandos Básicos
 
-| Action      | Files | Folders      |
-|-------------|-------|--------------|
-| Inspect     | ls    | ls           |
-| View content| cat   | ls           |
-| Navigate to |       | cd           |
-| Move        | mv    | mv           |
-| Copy        | cp    | cp -r        |
-| Create      | nano  | mkdir        |
-| Delete      | rm    | rmdir, rm -r |
+| Acción | Archivos | Carpetas |
+| ------------- | ------- | -------------- |
+| Inspeccionar | ls | ls |
+| Ver contenido | cat | ls |
+| Navega hacia | | cd |
+| Mover | mv | mv |
+| Copiar | cp | cp -r |
+| Crear | nano | mkdir |
+| Eliminar | rm | rmdir, rm -r |
 
-## Filesystem hierarchy
+## Jerarquía del sistema de archivos
 
-The following is an overview of a standard Unix filesystem.
-The exact hierarchy depends on the platform,
-so you may not see exactly the same files/directories on your computer:
+La siguiente es una descripción general de un sistema de archivos Unix estándar.
+La jerarquía exacta depende de la plataforma,
+por lo que es posible que no vea exactamente los mismos archivos / directorios en su computadora:
 
-![Linux filesystem hierarchy](../fig/standard-filesystem-hierarchy.svg)
+![Jerarquía del sistema de archivos de Linux](../fig/standard-filesystem-hierarchy.svg)
 
-## Glossary
+## Glosario
 
-{:auto_ids}
-absolute path
-:   A [path](#path) that refers to a particular location in a file system.
-    Absolute paths are usually written with respect to the file system's
-    [root directory](#root-directory),
-    and begin with either "/" (on Unix) or "\\" (on Microsoft Windows).
-    See also: [relative path](#relative-path).
+{: auto_ids}
 
-argument
-:   A value given to a function or program when it runs.
-    The term is often used interchangeably (and inconsistently) with [parameter](#parameter).
+argumento
+: Un valor dado a una función o programa cuando se ejecuta. El término a menudo se usa indistintamente (y de manera inconsistente) con [parámetro](#parámetro).
 
-command shell
-:   See [shell](#shell)
+bandera
+: Una forma concisa de especificar una opción o configuración a un programa de línea de comandos. Por convención, las aplicaciones Unix usan un guion seguido de una sola letra, como `-v`, o dos guiones seguidos de una palabra, como` --verbose`, mientras que las aplicaciones de DOS usan una barra inclinada, como `/ V`. Dependiendo de la aplicación, un indicador puede ir seguido de un único argumento, como en `-o / tmp / output.txt`.
 
-command-line interface
-:   A user interface based on typing commands,
-    usually at a [REPL](#read-evaluate-print-loop).
-    See also: [graphical user interface](#graphical-user-interface).
+citando
+: (en el terminal):
+    Utilizar comillas de varios tipos para evitar que el intérprete interprete caracteres especiales. Por ejemplo, para pasar la secuencia de caracteres `*.txt` a un programa, generalmente es necesario escribirlo como `'* .txt'` (con comillas simples) para que el terminal no intente expandir el comodín `*`.
 
-comment
-:   A remark in a program that is intended to help human readers understand what is going on,
-    but is ignored by the computer.
-    Comments in Python, R, and the Unix shell start with a `#` character and run to the end of the line;
-    comments in SQL start with `--`,
-    and other languages have other conventions.
+comentario
+: Un comentario en un programa que pretende ayudar a los lectores humanos a entender lo que está sucediendo, pero es ignorado por la computadora. Los comentarios en Python, R y el terminal de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la linea; los comentarios en SQL comienzan con `--`,
+    y otros idiomas tienen otras convenciones.
 
+comodín
+: Un caracteres utilizado en la coincidencia de patrones. En el terminal de Unix, el comodín `*` coincide con cero o más caracteres, para que `* .txt` coincida con todos los archivos cuyos nombres terminen en` .txt`.
 
-current working directory
-:   The directory that [relative paths](#relative-path) are calculated from;
-    equivalently,
-    the place where files referenced by name only are searched for.
-    Every [process](#process) has a current working directory.
-    The current working directory is usually referred to using the shorthand notation `.` (pronounced "dot").
+cuerpo de bucle
+: El conjunto de instrucciones o comandos que se repiten dentro de un [for bucle](# for-bucle) o [while bucle](# while-bucle).
 
-file system
-:   A set of files, directories, and I/O devices (such as keyboards and screens).
-    A file system may be spread across many physical devices,
-    or many file systems may be stored on a single physical device;
-    the [operating system](#operating-system) manages access.
+directorio de inicio
+: El directorio predeterminado asociado con una cuenta en un sistema informático. Por convención, todos los archivos de un usuario se almacenan en o debajo de su directorio de inicio.
 
-filename extension
-:   The portion of a file's name that comes after the final "." character.
-    By convention this identifies the file's type:
-    `.txt` means "text file", `.png` means "Portable Network Graphics file",
-    and so on. These conventions are not enforced by most operating systems:
-    it is perfectly possible (but confusing!) to name an MP3 sound file `homepage.html`.
-    Since many applications use filename extensions to identify the [MIME type](#mime-type) of the file,
-    misnaming files may cause those applications to fail.
+directorio de padres
+: El directorio que "contiene" el que está en cuestión. Cada directorio en un sistema de archivos, excepto el [directorio raíz](#directorio-raíz), tiene un padre. Por lo general, se hace referencia al padre de un directorio usando la notación abreviada `..` (pronunciado "dot dot").
 
-filter
-:   A program that transforms a stream of data.
-    Many Unix command-line tools are written as filters:
-    they read data from [standard input](#standard-input),
-    process it, and write the result to [standard output](#standard-output).
+directorio de trabajo actual
+: El directorio del que se calculan [paths relativos](#path-relativa); equivalentemente, el lugar donde se buscan los archivos a los que se hace referencia solo por nombre. Cada [proceso](#proceso) tiene un directorio de trabajo actual. El directorio de trabajo actual generalmente se refiere a la notación abreviada `.` (pronunciado "punto").
 
-flag
-:   A terse way to specify an option or setting to a command-line program.
-    By convention Unix applications use a dash followed by a single letter,
-    such as `-v`, or two dashes followed by a word, such as `--verbose`,
-    while DOS applications use a slash, such as `/V`.
-    Depending on the application, a flag may be followed by a single argument, as in `-o /tmp/output.txt`.
+directorio raíz
+: El directorio más alto en un [sistema de archivos](# file-system). Su nombre es "/" en Unix (incluidos Linux y Mac OS X) y "\\" en Microsoft Windows.
 
-for loop
-:   A loop that is executed once for each value in some kind of set, list, or range.
-    See also: [while loop](#while-loop).
+entrada estándar
+: Flujo de entrada predeterminado de un proceso. En aplicaciones interactivas de línea de comandos, generalmente está conectado al teclado; en un [tubo](#tubería), recibe datos de [salida estándar](#estándar-salida) del proceso anterior.
 
-graphical user interface
-:   A user interface based on selecting items and actions from a graphical display,
-    usually controlled by using a mouse.
-    See also: [command-line interface](#command-line-interface).
+expresión regular
+: Un patrón que especifica un conjunto de secuencia de caracteres. Los RE se usan con mayor frecuencia para encontrar secuencias de caracteres.
 
-home directory
-:   The default directory associated with an account on a computer system.
-    By convention, all of a user's files are stored in or below her home directory.
+extensión de archivo
+: La parte del nombre de un archivo que aparece después del "." final. Por convención, esto identifica el tipo de archivo:
+    `.txt` significa "archivo de texto", `.png` significa "archivo de red portátil de gráficos", y así. Estas convenciones no son aplicadas por la mayoría de los sistemas operativos:
+    es perfectamente posible (¡pero confuso!) nombrar un archivo de sonido MP3 `homepage.html`. Dado que muchas aplicaciones usan extensiones de nombre de archivo para identificar el [tipo MIME](# mime-type) del archivo, los archivos de desincronización pueden hacer que esas aplicaciones fallen.
 
-loop
-:   A set of instructions to be executed multiple times. Consists of a [loop body](#loop-body) and (usually) a
-    condition for exiting the loop. See also [for loop](#for-loop) and [while loop](#while-loop).
+filtrar
+: Un programa que transforma una secuencia de datos. Muchas herramientas de línea de comandos de Unix están escritas como filtros: leen datos de [entrada estándar](#entrada-estándar),
+    procesarlo y escribir el resultado en [salida estándar](# salida estándar).
 
-loop body
-:   The set of statements or commands that are repeated inside a [for loop](#for-loop)
-    or [while loop](#while-loop).
+for bucle
+: Un bucle que se ejecuta una vez para cada valor en algún tipo de conjunto, lista o rango. Ver también: [while bucle](#while-bucle).
 
-MIME type
-:   MIME (Multi-Purpose Internet Mail Extensions) types describe different file types for exchange on the Internet,
-    for example images, audio, and documents.
+guión de terminal
+: Un conjunto de comandos [terminal](#terminal) almacenados en un archivo para su reutilización. Un script de terminal es un programa ejecutado por el terminal; el nombre "script" se usa por razones históricas.
 
-operating system
-:   Software that manages interactions between users, hardware, and software [processes](#process). Common
-    examples are Linux, OS X, and Windows.
+interfaz de línea de comando
+: Una interfaz de usuario basada en comandos de tipeo, generalmente en un [REPL](#read-evaluate-print-loop). Ver también: [interfaz gráfica de usuario](#graphical-user-interface).
 
-orthogonal
-:   To have meanings or behaviors that are independent of each other.
-    If a set of concepts or tools are orthogonal,
-    they can be combined in any way.
+interfaz gráfica del usuario
+: Una interfaz de usuario basada en la selección de elementos y acciones desde una pantalla gráfica, usualmente controlado usando un mouse. Ver también: [interfaz de línea de comandos](#command-line-interface).
 
-parameter
-:   A variable named in a function's declaration that is used to hold a value passed into the call.
-    The term is often used interchangeably (and inconsistently) with [argument](#argument).
+lazo
+: Un conjunto de instrucciones que se ejecutarán varias veces. Consiste en un [cuerpo de bucle](#bucle-cuerpo) y (por lo general) un condición para salir del bucle. Ver también [for bucle](# for-bucle) y [while bucle](#while-bucle).
 
-parent directory
-:   The directory that "contains" the one in question.
-    Every directory in a file system except the [root directory](#root-directory) has a parent.
-    A directory's parent is usually referred to using the shorthand notation `..` (pronounced "dot dot").
+ortogonal
+: Tener significados o comportamientos que son independientes el uno del otro. Si un conjunto de conceptos o herramientas son ortogonales, se pueden combinar de cualquier manera.
+
+parámetro
+: Una variable nombrada en la declaración de una función que se usa para mantener un valor pasado a la llamada. El término a menudo se usa indistintamente (y de manera inconsistente) con [argumento](#argumento).
 
 path
-:   A description that specifies the location of a file or directory within a [file system](#file-system).
-    See also: [absolute path](#absolute-path), [relative path](#relative-path).
+: Una descripción que especifica la ubicación de un archivo o directorio dentro de un [sistema de archivos](#file-system). Ver también: [path absoluta](#path-absoluta), [path relativa](# path-relativa).
 
+path absoluto
+: A [path](#path) que hace referencia a una ubicación particular en un sistema de archivos. Los paths absolutos generalmente se escriben con respecto al sistema de archivos [directorio root](#directorio-root), y comience con "/" (en Unix) o "\\" (en Microsoft Windows). Ver también: [path relativa](#path-relativa).
 
-pipe
-:   A connection from the output of one program to the input of another.
-    When two or more programs are connected in this way, they are called a "pipeline".
+path relativo
+: A [path](#ruta) que especifica la ubicación de un archivo o directorio con respecto al [directorio de trabajo actual](#current-working-directory). Cualquier ruta que no comience con un carácter separador ("/" o "\\") es una ruta relativa. Ver también: [path absoluta](#path-absoluta).
 
-process
-:   A running instance of a program, containing code, variable values,
-    open files and network connections, and so on.
-    Processes are the "actors" that the [operating system](#operating-system) manages;
-    it typically runs each process for a few milliseconds at a time
-    to give the impression that they are executing simultaneously.
-
+proceso
+: Una instancia en ejecución de un programa, que contiene código, valores de variables, abrir archivos y conexiones de red, y así sucesivamente. Los procesos son los "actores" que maneja el [sistema operativo](#sistema-operativo); generalmente ejecuta cada proceso durante unos pocos milisegundos a la vez para dar la impresión de que están ejecutándose simultáneamente.
 
 prompt
-:   A character or characters display by a [REPL](#read-evaluate-print-loop) to show that
-    it is waiting for its next command.
-
-quoting
-:   (in the shell):
-    Using quotation marks of various kinds to prevent the shell from interpreting special characters.
-    For example, to pass the string `*.txt` to a program,
-    it is usually necessary to write it as `'*.txt'` (with single quotes)
-    so that the shell will not try to expand the `*` wildcard.
+: Un caractere o caracteres se muestran con [REPL](#read-evaluate-print-loop) para mostrar que está esperando su próximo comando.
 
 read-evaluate-print loop
-:   (REPL): A [command-line interface](#command-line-interface) that reads a command from the user,
-    executes it, prints the result, and waits for another command.
+: (REPL): A [interfaz de línea de comandos](#command-line-interface) que lee un comando del usuario, lo ejecuta, imprime el resultado y espera otro comando.
 
-redirect
-:   To send a command's output to a file rather than to the screen or another command,
-    or equivalently to read a command's input from a file.
+redirigir
+: Para enviar la salida de un comando a un archivo en lugar de a la pantalla u otro comando, o de manera equivalente, para leer la entrada de un comando desde un archivo.
 
-regular expression
-:   A pattern that specifies a set of character strings.
-    REs are most often used to find sequences of characters in strings.
+sistema de archivos
+: Un conjunto de archivos, directorios y dispositivos de E/S (como teclados y pantallas). Un sistema de archivos puede extenderse a través de muchos dispositivos físicos, o muchos sistemas de archivos pueden almacenarse en un solo dispositivo físico;
+    el [sistema operativo](#sistema operativo) administra el acceso.
 
-relative path
-:   A [path](#path) that specifies the location of a file or directory
-    with respect to the [current working directory](#current-working-directory).
-    Any path that does not begin with a separator character ("/" or "\\") is a relative path.
-    See also: [absolute path](#absolute-path).
+salida estándar
+: Flujo de salida predeterminado de un proceso. En aplicaciones interactivas de línea de comandos, los datos enviados a la salida estándar se muestran en la pantalla; en un [tubo](#tubería), se pasa a la [entrada estándar](#entrada-estándar) del siguiente proceso.
 
-root directory
-:   The top-most directory in a [file system](#file-system).
-    Its name is "/" on Unix (including Linux and Mac OS X) and "\\" on Microsoft Windows.
+sistema operativo
+: Software que gestiona las interacciones entre usuarios, hardware y software [procesos](#proceso). Común ejemplos son Linux, OS X y Windows.
 
-shell
-:   A [command-line interface](#cli) such as Bash (the Bourne-Again Shell)
-    or the Microsoft Windows DOS shell
-    that allows a user to interact with the [operating system](#operating-system).
+subdirectorio
+: Un directorio contenido en otro directorio.
 
-shell script
-:   A set of [shell](#shell) commands stored in a file for re-use.
-    A shell script is a program executed by the shell;
-    the name "script" is used for historical reasons.
+tabulación completa
+: Una función proporcionada por muchos sistemas interactivos en los que presionar la tecla Tab activa la finalización automática de la palabra o comando actual.
 
+terminal
+: A [interfaz de línea de comando](#cli) como Bash (Bourne-Again Shell) o el terminal de Microsoft Windows DOS que permite a un usuario interactuar con el [sistema operativo](#sistema-operativo).
 
-standard input
-:   A process's default input stream.
-    In interactive command-line applications,
-    it is typically connected to the keyboard;
-    in a [pipe](#pipe),
-    it receives data from the [standard output](#standard-output) of the preceding process.
+terminal de comando
+: Ver [terminal](#terminal)
 
+tipo MIME
+: Los tipos MIME (extensiones multipropósito de correo de Internet) describen diferentes tipos de archivos para el intercambio en Internet, por ejemplo, imágenes, audio y documentos.
 
-standard output
-:   A process's default output stream.
-    In interactive command-line applications,
-    data sent to standard output is displayed on the screen;
-    in a [pipe](#pipe),
-    it is passed to the [standard input](#standard-input) of the next process.
-
-
-sub-directory
-:   A directory contained within another directory.
-
-tab completion
-:   A feature provided by many interactive systems in which
-    pressing the Tab key triggers automatic completion of the current word or command.
+tubo
+: Una conexión desde la salida de un programa a la entrada de otro. Cuando dos o más programas están conectados de esta manera, se denominan "canalización".
 
 variable
-:   A name in a program that is associated with a value or a collection of values.
+: Un nombre en un programa que está asociado con un valor o una colección de valores.
 
-while loop
-:   A loop that keeps executing as long as some condition is true.
-    See also: [for loop](#for-loop).
-
-wildcard
-:   A character used in pattern matching.
-    In the Unix shell,
-    the wildcard `*` matches zero or more characters,
-    so that `*.txt` matches all files whose names end in `.txt`.
+while bucle
+: Un bucle que se ejecuta siempre que alguna condición sea verdadera. Ver también: [for bucle](#for-bucle).
