@@ -1,18 +1,18 @@
 ---
 layout: page
-title: Setup
+title: Preparación
 permalink: /setup/
 ---
 
-You need to download some files to follow this lesson:
+Para ésta lección necesitas descargar unos archivos:
 
-1. Download [shell-novice-data.zip]({{ page.root }}/data/shell-novice-data.zip) and move the file to your Desktop.
-2. Unzip/extract the file (ask your instructor if you need help with this step). You should end up with a new folder called data-shell on your Desktop.
-3. Open a terminal and type:
+1. Descarga [shell-novice-data.zip]({{ page.root }}/data/shell-novice-data.zip) y luego mueve el archivo a tu **Desktop**.
+2. Unzip/extraer/descomprimir el archivo (pregunta a tu instructor si necesitas ayuda). Después deberías tener un nuevo directorio en tu **Desktop** con el nombre **data-shell**.
+3. Abre la terminal y escribe **cd**:
 
 ~~~
 $ cd
 ~~~
 {: .bash}
 
-In the lesson, you will find out how to access the data in this folder.  
+En la lección, aprenderás como acceder a los datos de este directorio.  

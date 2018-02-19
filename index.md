@@ -3,25 +3,24 @@ layout: lesson
 root: .
 ---
 
-The Unix shell has been around longer than most of its users have been alive.
-It has survived so long because it's a power tool
-that allows people to do complex things with just a few keystrokes.
-More importantly,
-it helps them combine existing programs in new ways
-and automate repetitive tasks
-so they aren't typing the same things over and over again.
-Use of the shell is fundamental to using a wide range of other powerful tools 
-and computing resources (including "high-performance computing" supercomputers).
-These lessons will start you on a path towards using these resources effectively.
+El terminal de Unix ha existido por más tiempo que la mayoría de sus usuarios.
+Ha sobrevivido tanto tiempo porque es una herramienta poderosa
+que permite a las personas hacer cosas complejas con sólo unas pocas teclas.
+Lo más importante es que ayuda a combinar programas existentes de nuevas maneras
+y automatizar tareas repetitivas, en vez de estar escribiendo las mismas cosas una y otra vez.
+El uso del terminal o **shell** es fundamental para usar muchas otras herramientas poderosas
+y recursos informáticos (incluidos los supercomputadores o "computación de alto rendimiento").
+Esta lección te guiará en el camino hacia el uso eficaz de estos recursos.
 
-> ## Prerequisites
+> ## Prerequisitos
+> 
+> Esta lección te guía a través de los principios básicos de los sistemas de archivos y
+> el terminal **shell**. Si tienes archivos guardados en una computadora reconoces que
+> las palabras "directorio" o "carpeta" (son sinónimos). No necesitas saber más y 
+> estás lista para esta lección.
 >
-> This lesson guides you through the basics of file systems and the
-> shell.  If you have stored files on a computer at all and recognize
-> the word “file” and either “directory” or “folder” (two common words
-> for the same thing), you're ready for this lesson.
->
-> If you're already comfortable manipulating files and directories,
-> searching for files with `grep` and `find`, and writing simple loops
-> and scripts, you probably won't learn much from this lesson.
+> Por otro lado, si ya te sientes cómoda manipulando archivos y directorios,
+> buscando archivos con `grep` y` find`, y escribiendo bucles simples
+> y scripts, probablemente no aprenderás mucho de esta lección.
 {: .prereq}
+
