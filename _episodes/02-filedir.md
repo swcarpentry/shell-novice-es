@@ -44,14 +44,14 @@ abramos una terminal:
 > ## La magia de preparación
 >
 > Si escribes el comando:
-> `PS1 = '$'`
+> `PS1='$ '`
 > En tu terminal, seguido de presionar la tecla 'enter',
 > tu ventana debe verse como nuestro ejemplo en esta lección.
 > Esto no es necesario para continuar así que lo dejamos a tu criterio.
 {: .callout}
 
 ~~~
-$
+$ 
 ~~~
 {: .bash}
 
