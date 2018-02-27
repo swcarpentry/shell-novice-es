@@ -67,10 +67,10 @@ en la terminal.
 > Por lo general llamamos a programas como Microsoft Word o LibreOffice Writer "editores 
 > de texto", pero tenemos que ser un poco más cuidadosos cuando se trata de
 > programación. De forma predeterminada, Microsoft Word utiliza archivos .docx para almacenar no
-> sólo texto, sino también formatear información sobre fuentes, encabezados,
+> sólo texto, sino también información de formato sobre fuentes, encabezados,
 > etcétera. Esta información adicional no se almacena como caracteres y no es comprendida por
 > herramientas como `head`: los comandos esperan que los archivos de entrada contengan
-> unicamente letras, dígitos y puntuación en un teclado de computadora estándar.
+> únicamente letras, dígitos y puntuación en un teclado de computadora estándar.
 > Por lo tanto, al editar programas, debemos utilizar un editor de texto sin formatos o tener cuidado de guardar 
 > nuestros archivos como texto sin formato.
 >
@@ -178,7 +178,7 @@ TER      18              1
 ~~~
 {: .output}
 
-Esto funciona,pero a la siguiente persona que use `middle.sh` se le puede dificultar ver lo que hace.
+Esto funciona, pero a la siguiente persona que use `middle.sh` se le puede dificultar ver lo que hace.
 Podemos mejorar nuestro **script** agregando algunos **comentarios** en la parte superior:
 
 ~~~
@@ -194,10 +194,10 @@ head -n "$2" "$1" | tail -n "$3"
 {: .output}
 
 Un comentario comienza con un caracter `#` y se ejecuta hasta el final de la línea. La computadora ignora los comentarios,
-pero son invaluables para ayudar a la gente (incluyendote a ti en un futuro) a entender y usar **scripts**. La única advertencia es que cada vez que modifiques un **script**, debes comprobar que el comentario siga siendo preciso:
+pero son invaluables para ayudar a la gente (incluyéndote a ti en un futuro) a entender y usar **scripts**. La única advertencia es que cada vez que modifiques un **script**, debes comprobar que el comentario siga siendo preciso:
 Una explicación que envía al lector en la dirección equivocada es peor que ninguna.
 
-¿Qué sucede si queremos procesar muchos archivos en un solo pipeline?
+¿Qué sucede si queremos procesar muchos archivos en un solo **pipeline**?
 Por ejemplo, si queremos ordenar nuestros archivos `.pdb` por longitud, deberíamos escribir:
 
 ~~~
@@ -314,7 +314,7 @@ $ bash do-stats.sh NENE*[AB].txt | wc -l
 ~~~
 {: .bash}
 
-de modo que la salida es sólo el número de archivos procesados en lugar de los nombres de los archivos que se procesaron.
+de modo que el **output** es sólo el número de archivos procesados en lugar de los nombres de los archivos que se procesaron.
 
 Una cosa a tener en cuenta sobre el **script** de Nelle es que permite que la persona que lo ejecuta decida que archivos procesar.
 Podría haberlo escrito así:
@@ -396,14 +396,14 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > esos archivos por separado.
 >> ## Solución
 >> ~~~
->> # Script to find unique species in csv files where species is the second data field
->> # This script accepts any number of file names as command line arguments
+>> # El script para encontrar especies unicas en archivos .csv en donde "species" es la segunda data field
+>> # Este script acepta cualquier número de nombres de archivos como argumentos de la línea de comando. 
 >> 
->> # Loop over all files
+>> # Bucle loop
 >> for file in $@ 
 >> do
 >> 	echo "Unique species in $file:"
->> 	# Extract species names
+>> 	# Extraer nombres de especies
 >> 	cut -d , -f 2 $file | sort | uniq
 >> done
 >> ~~~
@@ -452,7 +452,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >
 >> ## Solución
 >> 
->> Si un comando hace que algo se cuelgue, podría ser útil saber cuál era ese comando para saber cual fue el problema. 
+>> Si un comando hace que algo se cuelgue, podría ser útil saber cuál era ese comando para saber cuál fue el problema. 
 >> Si el comando sólo se registra después de ejecutarlo, no tendríamos un registro del último comando ejecutado en caso
 >> de un bloqueo.
 >>
@@ -462,8 +462,8 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ## Script de lectura y comprensión
 >
 > Considera el directorio data-shell/molecules una vez más. Este contiene una cantidad de archivos .pdb 
-> además de otro archivo que hayas creado. Explica qué haría un **script** llamado example.sh cuando se ejecutara como bash
-> example.sh * .pdb si contuviera las siguientes líneas:
+> además de otro archivo que hayas creado. Explica qué haría un **script** llamado example.sh. ¿Cuándo se ejecutará como bash
+> example.sh * .pdb si contuviera las siguientes líneas?
 >
 > ~~~
 > # Script 1
@@ -500,7 +500,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 
 > ## Depuración (debugging) de scripts
 >
-> Supongamos que ha guardado el siguiente **script** en un archivo denominado `do-errors.sh`
+> Supongamos que se ha guardado el siguiente **script** en un archivo denominado `do-errors.sh`
 > en el directorio `north-pacific-gyre/2012-07-03` de Nelle:
 >
 > ~~~
@@ -520,8 +520,8 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ~~~
 > {: .bash}
 >
-> La salida está en blanco.
-> Para averiguar por qué, vuelva a ejecutar el **script** utilizando la opción `-x`:
+> El **output** está en blanco.
+> Para averiguar por qué, vuelve a ejecutar el **script** utilizando la opción `-x`:
 >
 > ~~~
 > bash -x do-errors.sh NENE*[AB].txt
