@@ -462,8 +462,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ## Script de lectura y comprensión
 >
 > Considera el directorio data-shell/molecules una vez más. Este contiene una cantidad de archivos .pdb 
-> además de otro archivo que hayas creado. Explica qué haría un **script** llamado example.sh. ¿Cuándo se ejecutará como bash
-> example.sh * .pdb si contuviera las siguientes líneas?
+> además de otro archivo que hayas creado. Explica, para los siguientes tres ejemplos, que hace el **script** llamado example.sh cuando lo ejecutas como `bash example.sh *.pdb`:
 >
 > ~~~
 > # Script 1
