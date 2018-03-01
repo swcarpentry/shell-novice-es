@@ -3,7 +3,7 @@ title: "Navegación de archivos y directorios"
 teaching: 15
 exercises: 0
 questions:
-- "¿Cómo puedo moverme en mi computadora?"
+- "¿Cómo puedo moverme dentro de mi computadora?"
 - "¿Cómo puedo ver qué archivos y directorios tengo?"
 - "¿Cómo puedo especificar la ubicación de un archivo o directorio en mi computadora?"
 objectives:
@@ -18,20 +18,20 @@ keypoints:
 - "La información se almacena en archivos, que a su vez se almacenan en directorios (carpetas)."
 - "Los directorios también pueden almacenar otros directorios, formando un árbol de directorios."
 - "`cd path` cambia el directorio de trabajo actual."
-- "`ls path` imprime un listado de un archivo o directorio específico; `ls` por si solo lista el directorio de trabajo actual."
+- "`ls path` imprime un listado de un archivo o directorio específico; `ls` por si solo lista el contenido del directorio de trabajo actual."
 - "`pwd` imprime el directorio de trabajo actual del usuario."
 - "`whoami` muestra la identidad actual del usuario."
 - "`/` es el directorio raíz de todo el sistema de archivos."
 - "Una ruta relativa especifica una ubicación desde la ubicación actual."
 - "Una ruta absoluta especifica una ubicación desde la raíz del sistema de archivos."
 - "Los nombres de directorio en una ruta están separados por '/' en Unix, pero por '\\\' en Windows."
-- "'..' significa 'el directorio por encima del actual'; '.' por si solo significa 'el directorio actual'."
+- "'..' significa 'el directorio por encima del actual'; '.' significa 'el directorio actual'."
 - "La mayoría de los nombres de los archivos son `algo.extension`. La extensión no es necesaria y no garantiza nada, pero normalmente se utiliza para indicar el tipo de datos en el archivo."
 - "La mayoría de los comandos toman opciones (**flags**) que comienzan con un '-'."
 ---
 
 La parte del sistema operativo responsable de administrar archivos y directorios
-Se denomina **sistema de archivos** (**file system**).
+se le denomina **sistema de archivos** (**file system**).
 Organiza nuestros datos en archivos
 que contienen información,
 y directorios (también llamados "carpetas"),
@@ -45,25 +45,25 @@ abramos una terminal:
 >
 > Si escribes el comando:
 > `PS1='$ '`
-> En tu terminal, seguido de presionar la tecla 'enter',
-> tu ventana debe verse como nuestro ejemplo en esta lección.
+> en tu terminal, seguido de presionar la tecla 'Enter',
+> tu ventana se verá como nuestro ejemplo en esta lección.
 > Esto no es necesario para continuar así que lo dejamos a tu criterio.
 {: .callout}
 
 ~~~
-$ 
+$
 ~~~
 {: .bash}
 
-El signo de dólar es un **prompt** (indicador), que nos muestra que la terminal está esperando 
-la entrada;
+El signo `$` es un **prompt**, que nos muestra que la terminal está esperando
+una entrada;
 tu terminal puede usar un carácter diferente como prompt y puede agregar información antes
 de él. Al teclear comandos, ya sea a partir de estas lecciones o de otras fuentes,
 no escribas el prompt (*$*), sólo los comandos que le siguen.
 
 Escribe el comando `whoami`,
 luego presiona la tecla Enter para enviar el comando a la terminal.
-La salida del comando es la ID del usuario actual,
+La salida de este comando es el ID del usuario actual,
 es decir,
 nos muestra como quién nos identifica la terminal:
 
@@ -73,7 +73,7 @@ $ whoami
 {: .bash}
 
 ~~~
-Nelle
+nelle
 ~~~
 {: .output}
 
@@ -82,7 +82,7 @@ Más específicamente, cuando escribimos `whoami` la terminal:
 1. encuentra un programa llamado `whoami`,
 2. ejecuta ese programa,
 3. muestra la salida de ese programa, luego
-4. muestra un nuevo mensaje para decirnos que está listo para más comandos.
+4. muestra un nuevo **prompt** para decirnos que está listo para más comandos.
 
 > ## Variaciones en el username
 >
@@ -96,8 +96,8 @@ Más específicamente, cuando escribimos `whoami` la terminal:
 > los ejemplos siguientes, `nelle` siempre será reemplazado por ese **username**.
 {: .callout}
 
-> ## Comandos Desconocidos
-> Recuerda, la terminal es un programa que llama a otros programas en lugar de realizar los cálculos ella misma. Los comandos que escribes en la terminal deben ser los nombres de programas existentes. Si tecleas el nombre de un programa que no existe y oprimes enter, verás un mensaje de error similar a este:
+> ## Comandos desconocidos
+> Recuerda, la terminal es un programa que llama a otros programas en lugar de realizar los cálculos ella misma. Los comandos que escribes en la terminal deben ser los nombres de programas existentes. Si tecleas el nombre de un programa que no existe y oprimes Enter, verás un mensaje de error similar a este:
 >
 > ~~~
 > $ mycommand
@@ -108,21 +108,21 @@ Más específicamente, cuando escribimos `whoami` la terminal:
 > -bash: mycommand: command not found
 > ~~~
 > {: .error}
-> 
-> La terminal te dice que no puede encontrar el programa `mycommand` porque este programa no existe en tu computadora. En este curso aprenderás varios comandos, pero existen muchos más de los que mencionaremos. 
+>
+> La terminal te dice que no puede encontrar el programa `mycommand` porque este programa no existe en tu computadora. En este curso aprenderás varios comandos, pero existen muchos más de los que mencionaremos.
 {: .callout}
 
-Averiguemos dónde estamos ejecutando el comando `pwd`
+Averiguemos dónde estamos, ejecutando el comando `pwd`
 (que significa "imprime directorio de trabajo" - "print working directory").
 En cualquier momento,
 nuestro **directorio actual**
-es nuestro directorio predeterminado actual,
+es nuestro directorio predeterminado,
 es decir,
-el directorio en el que la computadora asume que queremos ejecutar comandos
+el directorio que la computadora supone queremos ejecutar comandos
 a menos que especifiquemos explícitamente otra cosa.
 En este caso
 la respuesta de la computadora es `/Users/nelle`,
-el cual es el directorio de inicio de Nelle, también conocido como su **home**:
+el cual es el directorio de inicio de Nelle, también conocido como su directorio **home**:
 
 ~~~
 $ pwd
@@ -135,12 +135,12 @@ $ pwd
 {: .output}
 
 > ## Variaciones en el Directorio de Inicio
-> El directorio **home** puede lucir diferente en distintos sistemas operativos. En Linux puede verse como `/home/nelle`, en Windows puede ser similar a `C:\Documents and Settings\nelle` o `C:\Users\nelle` (pueden variar según la versión de Windows que estés utilizando). En los ejemplos que siguen utilizaremos la salida de Mac como estándar. Linux y Windows pueden variar ligeramente, pero deberían lucir similares en general.
+> El directorio **home** puede lucir diferente en distintos sistemas operativos. En Linux puede verse como `/home/nelle`, en Windows puede ser similar a `C:\Documents and Settings\nelle` o `C:\Users\nelle` (pueden variar según la versión de Windows que estés utilizando). En los ejemplos que siguen utilizaremos la salida de Mac como estándar. Linux y Windows pueden variar ligeramente, pero lucen similares en general.
 {: .callout}
 
 Para entender lo que es un "directorio **home**"
-echemos un vistazo a cómo se organiza el sistema de archivos. 
-Como ejemplo, discutiremos 
+echemos un vistazo a cómo se organiza el sistema de archivos.
+Como ejemplo, discutiremos
 el sistema de archivos en la computadora de nuestra científica Nelle. Después de este
 ejemplo, aprenderás comandos para explorar tu propio sistema de archivos. Se parecerá a éste, pero no será exactamente idéntico.
 
@@ -151,16 +151,16 @@ En la computadora de Nelle, el sistema de archivos se ve así:
 En la parte superior está el **directorio raíz** o **root**
 que contiene todo lo demás.
 Nos referimos a este directorio usando un caracter de barra `/` por si solo;
-ésta es la barra al inicio de `/Users/nelle`.
+esta es la barra al inicio de `/Users/nelle`.
 
 Dentro de ese directorio hay otros directorios:
-`bin` (que es donde se almacenan algunos programas preestablecidos),
+`bin` (que es donde se almacenan algunos programas preinstalados),
 `data` (para archivos de datos diversos),
 `Users` (donde se encuentran los directorios personales de los usuarios),
 `tmp` (para archivos temporales que no necesitan ser almacenados a largo plazo),
 etcétera.
 
-Sabemos que nuestro actual directorio de trabajo `/Users/nelle` se almacena dentro de`/Users`
+Sabemos que nuestro directorio actual de trabajo `/Users/nelle` se almacena dentro de`/Users`
 porque `/Users` es la primera parte de su nombre.
 Igualmente,
 sabemos que `/Users` se almacena dentro del directorio raíz` / `
@@ -170,8 +170,8 @@ porque su nombre comienza con `/`.
 >
 > Observa que hay dos significados para el carácter `/`.
 > Cuando aparezca antes del nombre de archivo o directorio,
-> se refiere al directorio raíz. Cuando aparezca *dentro de* un nombre,
-> es sólo un separador.
+> se refiere al directorio **root**. Cuando aparezca *dentro de* un nombre,
+> es solo un separador.
 {: .callout}
 
 Dentro de `/Users`,
@@ -188,7 +188,7 @@ Normalmente, cada vez que abres una nueva terminal te encontrarás en tu directo
 
 Ahora vamos a aprender el comando que nos permitirá ver el contenido de nuestro
 sistema de archivos. Podemos ver lo que hay en nuestro directorio personal ejecutando `ls`,
-que significa "listado":
+que significa "listar":
 
 ~~~
 $ ls
@@ -348,7 +348,7 @@ or available locally via: info '(coreutils) ls invocation'
 ~~~
 {: .output}
 
-Muchos comandos bash, y programas que la gente ha escrito que se pueden 
+Muchos comandos bash y programas que la gente ha escrito que se pueden
 ejecutar desde el bash, aceptan la opción `--help` para mostrar más
 información sobre cómo usar los comandos o programas.
 
@@ -364,7 +364,7 @@ información sobre cómo usar los comandos o programas.
 > ls: invalid option -- 'j'
 > Try 'ls --help' for more information.
 > ~~~
-> {: .error} 
+> {: .error}
 {: .callout}
 
 Para más información sobre cómo usar `ls` podemos escribir `man ls`.
@@ -381,7 +381,7 @@ y (si tienes suerte) proporciona algunos ejemplos de cómo usarlo.
 > Por ejemplo, GNU proporciona enlaces a sus
 > [Manuales](http://www.gnu.org/manual/manual.html),
 > que incluyen [grep](http://www.gnu.org/software/grep/manual/),
-> y 
+> y
 > [utilidades básicas de GNU](http://www.gnu.org/software/coreutils/manual/coreutils.html),
 > que cubre muchos comandos incluidos en esta lección.
 {: .callout}
@@ -389,7 +389,7 @@ y (si tienes suerte) proporciona algunos ejemplos de cómo usarlo.
 Para navegar por las páginas de `man`,
 las teclas de flecha arriba y abajo te permiten moverte línea por línea,
 las teclas "b" y la barra espaciadora permiten saltar hacia arriba y hacia abajo una página a la vez.
-Sal de las páginas `man` escribiendo "q".
+Puedes salir de las páginas `man` escribiendo "q".
 
 Aquí podemos ver que nuestro directorio **home** contiene principalmente **subdirectorios**.
 Cualquier nombre en la salida que no tenga barras se refiere a **archivos** comunes y corrientes.
@@ -415,7 +415,7 @@ el cual no existe.
 También podemos usar `ls` para ver el contenido de un directorio diferente. Veamos
 nuestro directorio `Desktop` ejecutando` ls -F Desktop`,
 es decir,
-el comando `ls` con los **argumentos**` -F` y `Desktop`.
+el comando `ls` con **flag** `-F` y el **argumento** `Desktop`.
 El argumento `Desktop` le dice a `ls` que queremos una lista de algo distinto a nuestro directorio actual.
 
 ~~~
@@ -574,7 +574,7 @@ que significa "el directorio de trabajo actual".
 Puede parecer redundante tener un nombre para él,
 pero veremos algunos usos para ello en el transcurso de este curso.
 
-Nota que varias **flags** del mismo comando pueden combinarse en el mismo `-`, sin espacios entre los argumentos: `ls -F -a` es equivalente a `ls -Fa`. 
+Nota que varias **flags** del mismo comando pueden combinarse en el mismo `-`, sin espacios entre los argumentos: `ls -F -a` es equivalente a `ls -Fa`.
 
 > ## Otros archivos ocultos
 >
@@ -642,10 +642,10 @@ ubicación actual.
 
 Hasta ahora, al especificar nombres de directorio, o incluso una ruta de directorio (como anteriormente),
 hemos estado usando **caminos relativos**. Cuando utilizas una ruta relativa con un comando
-como `ls` o` cd`, la temrinal intenta encontrar esa ubicación desde donde estamos,
+como `ls` o` cd`, la terminal intenta encontrar esa ubicación desde donde estamos,
 en lugar de la raíz del sistema de archivos.
 
-Sin embargo, es posible especificar la **ruta absoluta** a un directorio 
+Sin embargo, es posible especificar la **ruta absoluta** a un directorio
 incluyendo su ruta completa desde el directorio raíz, que está indicado por una
 diagonal principal. Esta `/` principal le dice a la computadora que siga el camino desde
 la raíz del sistema de archivos, por lo que siempre se refiere a un sólo directorio,
@@ -673,7 +673,7 @@ $ cd /Users/nelle/Desktop/data-shell
 
 Ejecuta `pwd` y `ls -F` para asegurarte de que estás en el directorio que esperas.
 
-> ## Dos Atajos Más
+> ## Dos atajos más
 >
 > La terminal interpreta el carácter `~` (tilde) al inicio de una ruta
 > como "el directorio inicial del usuario actual". Por ejemplo, si el **home** de Nelle
@@ -732,7 +732,7 @@ $ ls north-pacific-gyre/2012-07-03/
 {: .bash}
 
 Esto es mucho que teclear,
-pero puede permitir que la terminal haga la mayor parte del trabajo a través de lo 
+pero puede permitir que la terminal haga la mayor parte del trabajo a través de lo
 que se llama **autocompletado con el tabulador**.
 Si escribe:
 
@@ -741,7 +741,7 @@ $ ls nor
 ~~~
 {: .bash}
 
-Y después presiona el tabulador (la tecla de tabulador en su teclado),
+y después presiona el tabulador (la tecla de tabulador en su teclado),
 la terminal completa automáticamente el nombre del directorio por ella:
 
 ~~~
@@ -781,7 +781,7 @@ y lo veremos en muchas otras herramientas a medida que avancemos.
 > > 3. No: El directorio **home** de Amanda es `/Users/amanda`.
 > > 4. No: sube dos niveles, es decir termina en `/Users`.
 > > 5. Sí:  `~` significa el directorio **home** del usuario, en este caso` /Users/amanda`.
-> > 6. No: esto navegaria a un directorio `home` en el directorio actual, si existe.
+> > 6. No: esto navegaría a un directorio `home` en el directorio actual, si existe.
 > > 7. Sí: innecesariamente complicado, pero correcto.
 > > 8. Sí: un atajo para volver al directorio **home** del usuario.
 > > 9. Sí: sube un nivel.
@@ -813,7 +813,7 @@ y lo veremos en muchas otras herramientas a medida que avancemos.
 >
 > Suponiendo una estructura de directorio como en la figura anterior,
 > si `pwd` muestra`/Users/backup`,
-> Y `-r` le dice a ` ls` que muestre el resultado en orden inverso,
+> Y `-r` le dice a `ls` que muestre el resultado en orden inverso,
 > ¿qué comando mostrará:
 >
 > ~~~
@@ -855,7 +855,7 @@ y lo veremos en muchas otras herramientas a medida que avancemos.
 > sus subdirectorios, subsubdirectorios, etc. en orden alfabético
 > en cada nivel. El comando `ls -t` ordena el resultado según la fecha del último cambio,
 > los archivos o directorios más recientemente modificados aparecen primero.
-> ¿En qué orden muestra los resultados el usar `ls -R -t`? Pista: `ls -l` usa un formato de lista larga para ver los tiempos.
+> ¿En qué orden muestra los resultados el usar `ls -R -t`? Pista: `ls -l` usa un formato de lista larga para ver los **timestamps**.
 >
 > > ## Solución
 > > Los directorios se enlistan alfabéticamente en cada nivel, los archivos/directorios
