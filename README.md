@@ -1,13 +1,13 @@
 shell-novice
 ============
 
-An introduction to the Unix shell for people who have never used the command line before.
-Please see <https://swcarpentry.github.io/shell-novice/> for a rendered version of this material,
-[the lesson template documentation][lesson-example]
-for instructions on formatting, building, and submitting material,
-or run `make` in this directory for a list of helpful commands.
+Una introduccion a Unix para personas que jamas han usado esta linea de comando antes. 
+Por favor revisar https://swcarpentry.github.io/shell-novice/ para una revision mas consolidada de este contenido, 
+[El formato de la documentacion de las lecciones][lesson-example] 
+para instrucciones en formato, construccion y enviar contenido 
+o ejecutar `make` en este directorio para una lista de comandos utiles. 
 
-Maintainers:
+Mantenedores:
 
 * [Gabriel Devenyi][devenyi_gabriel]
 * [Ashwin Srinath][srinath_ashwin]
