@@ -205,7 +205,7 @@ $ ls
 >
 > La terminal de Unix no tiene una papelera de reciclaje desde donde podamos restaurar archivos
 > eliminados (aunque la mayoría de las interfaces gráficas de Unix sí lo tienen). En su lugar,
-> cuando eliminamos archivos, los mismo se desvinculan del sistema de archivos para que
+> cuando eliminamos archivos, los mismos se desvinculan del sistema de archivos para que
 > su espacio de almacenamiento en disco pueda ser reciclado. Existen herramientas para encontrar y
 > recuperar archivos eliminados, pero no hay garantía de que
 > funcionen en todas las situaciones, ya que la computadora puede reciclar
