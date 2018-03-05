@@ -61,7 +61,7 @@ usuario se desconecta del equipo.
 Esta descripción hace pensar que el usuario envía comandos directamente a la computadora
 y que la computadora envía el resultado o salida directamente al usuario.
 De hecho,
-por lo general hay un programa intermediario conocido como un
+por lo general hay un programa intermediario conocido como
 **terminal** o **línea de comandos**.
 Lo que el usuario escribe se pasa a la terminal,
 la cual calcula qué comandos ejecutar y ordena al equipo su ejecución.
@@ -72,7 +72,7 @@ Una terminal es un programa como cualquier otro.
 Lo que la hace especial es que su trabajo es ejecutar otros programas, 
 en lugar de realizar los cálculos en sí.
 La terminal más popular de Unix se llama **Bash**, que proviene de **Bourne Again Shell**
-(así llamado porque deriva de una versión previa escrita por Stephen Bourne).
+(así llamada porque deriva de una versión previa escrita por Stephen Bourne).
 **Bash** es la terminal por defecto en la mayoría de las implementaciones modernas de Unix,
 y en la mayoría de los paquetes que proporcionan herramientas similares a las de Unix 
 para Windows.
@@ -80,7 +80,7 @@ para Windows.
 ### ¿Por qué usarlo?
 
 Utilizar **bash** o cualquier otra terminal
-a veces se siente más como programación que como usar un ratón.
+a veces es mas cómodo para  programar  que utilizar un ratón.
 Los comandos son cortos (a menudo con sólo un par de caracteres de largo),
 sus nombres son frecuentemente crípticos,
 y su salida son líneas de texto en lugar de algo visual, como un gráfico.
@@ -102,7 +102,7 @@ para abordar una amplia gama de preguntas científicas y desafíos computacional
 
 Nelle Nemo, una bióloga marina,
 acaba de regresar de un estudio de seis meses del 
-[Gyre del Pacífico Norte](http://en.wikipedia.org/wiki/North_Pacific_Gyre),
+[Giro del Pacífico Norte](http://en.wikipedia.org/wiki/North_Pacific_Gyre),
 en donde ha estado muestreando la vida marina gelatinosa en la
 [Gran Mancha de Basura del Pacífico](http://en.wikipedia.org/wiki/Great_Pacific_Garbage_Patch).
 Tiene 1,520 muestras en total, ahora necesita:
