@@ -28,7 +28,7 @@ reduce la cantidad de tecleo (y los errores de escritura/dedo).
 Suponte que tenemos varios cientos de archivos con datos genómicos denominados `basilisk.dat`,` unicorn.dat` y así sucesivamente.
 En este ejemplo,
 usaremos el directorio `creatures` que sólo tiene dos archivos de ejemplo,
-pero los principios se pueden aplicar a muchos muchos más archivos a la vez.
+pero los principios se pueden aplicar a muchos más archivos a la vez.
 Nos gustaría modificar estos archivos, pero también guardar una versión de los archivos originales, nombrando las copias
 `original-basilisk.dat` y` original-unicorn.dat`.
 No podemos usar:
@@ -117,7 +117,7 @@ posible poner sus nombres en llaves para delimitar claramente el nombre de la va
 >
 > Aquí vemos `>` siendo utilizado como un prompt de la terminal, mientras que `>` también se
 > utiliza para redirigir la salida de un comando.
-> De forma similar, `$` se utiliza como prompt de la terminal, pero, como vimos antes,
+> De forma similar, `$` se utiliza como prompt de la terminal, pero como vimos antes,
 > también se utiliza para pedir que la terminal obtenga el valor de una variable.
 >
 > Si la *terminal* imprime `>` o `$` entonces espera que escribas algo,
@@ -410,7 +410,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 > Existen otros comandos de acceso directo para acceder al historial:
 > - `Ctrl-R` permite buscar en el historial en un modo denominado "búsqueda reversa" ("reverse-i-search" en inglés), que permite buscar el comando más reciente en tu historial que coincide con el texto que introduzcas a continuación. Presionar `Ctrl-R` una o más veces adicionales permite buscar coincidencias más antiguas.
 > - `!!` recupera el comando anterior inmediato (puedes ser que esto te parezca más conveniente que usar la flecha hacia arriba).
-> - `!$` recupera la última palabra del último comando. Esto es más útil de lo que pensarías: después de `bash goostats NENE01729B.txt stats-NENE01729B.txt`, puedes teclear `less !$` para ver el archivo `NENE01729B.txt`, que es más rápid que utilizar la flecha hacia arriba y editar el comando.
+> - `!$` recupera la última palabra del último comando. Esto es más útil de lo que pensarías: después de `bash goostats NENE01729B.txt stats-NENE01729B.txt`, puedes teclear `less !$` para ver el archivo `NENE01729B.txt`, que es más rápido que utilizar la flecha hacia arriba y editar el comando.
 {: .callout}
 
 > ## Variables en bucles
