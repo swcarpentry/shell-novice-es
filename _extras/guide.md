@@ -1,4 +1,4 @@
-* ¿Por qué aprendemos a usar el terminal?
+* ¿Por qué aprendemos a usar la terminal?
     * Permite a los usuarios automatizar tareas repetitivas
     * Y captura pequeños pasos de manipulación de datos que normalmente no se graban hacer la investigación reproducible
 * El problema
@@ -7,33 +7,33 @@
         * a menudo no se captura en la documentación
         * es difícil de reproducir
         * es difícil solucionar problemas, revisar o mejorar
-* El terminal
+* La terminal
     * Los flujos de trabajo pueden automatizarse mediante el uso de scripts de terminal
     * Los comandos incorporados permiten una fácil manipulación de los datos (por ejemplo, sort, grep, etc.)
     * Cada paso puede capturarse en el script de terminal y permitir la reproducibilidad y la resolución de problemas fáciles
 
 ## En general
 
-Muchas personas han cuestionado si todavía debemos enseñar el terminal.
+Muchas personas han cuestionado si todavía debemos enseñar la terminal.
 Después de todo,
 cualquiera que quiera renombrar varios miles de archivos de datos
 puede hacerlo de manera interactiva en el intérprete de Python,
 y cualquiera que esté haciendo un análisis de datos serio
 probablemente haga la mayor parte de su trabajo dentro del IPython Notebook o RStudio.
-Entonces, ¿por qué enseñar el terminal?
+Entonces, ¿por qué enseñar la terminal?
 
 La primera respuesta es
 "Porque mucho más depende de eso".
 Instalación de software,
 configurando su editor predeterminado,
-y el control de máquinas remotas frecuentemente asume una familiaridad básica con el terminal,
+y el control de máquinas remotas frecuentemente asume una familiaridad básica con la terminal,
 y con ideas relacionadas como entrada y salida estándar.
 Muchas herramientas también usan su terminología
 (por ejemplo, los comandos mágicos `% ls` y`% cd` en IPython).
 
 La segunda respuesta es
 "Porque es una manera fácil de presentar algunas ideas fundamentales sobre cómo usar computadoras".
-A medida que enseñamos a la gente a usar el terminal de Unix,
+A medida que enseñamos a la gente a usar la terminal de Unix,
 les enseñamos que deben hacer que la computadora repita las cosas
 (a través de la terminación de la pestaña,
 `!` seguido de un número de comando,
@@ -49,7 +49,7 @@ para mejorar la vida de sus futuros seres.
 
 La tercera respuesta es
 "Porque permite el uso de muchas herramientas específicas de dominio y recursos informáticos a los que los investigadores no pueden acceder de otra manera".
-La familiaridad con el terminal es muy útil para las máquinas de acceso remoto,
+La familiaridad con la terminal es muy útil para las máquinas de acceso remoto,
 utilizando la infraestructura informática de alto rendimiento,
 y ejecutar nuevas herramientas especializadas en muchas disciplinas.
 No enseñamos HPC o habilidades específicas de dominio aquí
@@ -60,7 +60,7 @@ y comprender el sistema de archivos (y cómo navegarlo) es útil para el acceso 
 
 Finalmente,
 y quizás lo más importante,
-enseñando a las personas el terminal nos permite enseñarles
+enseñando a las personas la terminal nos permite enseñarles
 pensar en la programación en términos de composición de funciones.
 En el caso del terminal,
 esto toma la forma de pipelines en lugar de llamadas a funciones anidadas,
@@ -73,7 +73,7 @@ siempre que los alumnos que usen Windows no se encuentren con obstáculos como:
     (particularmente si están usando Cygwin);
 * no ser capaz de ejecutar un editor de texto plano;
     y
-* el terminal que se niega a ejecutar scripts que incluyen terminaciones de línea DOS.
+* la terminal que se niega a ejecutar scripts que incluyen terminaciones de línea DOS.
 
 ## Preparando para enseñar
 
@@ -135,8 +135,8 @@ Haga que un alumno muestre la solución?
     La forma más rápida de superar estos problemas es tener aprendices más conocedores
     ayudar a quienes lo necesitan.
 
-* Introducción y navegación del sistema de archivos en el terminal (cubierto en
-    [Navegación de archivos y directorios] ({{page.root}} / 02-filedir /) sección) puede ser confuso. Puede tener el explorador de archivos de la GUI y el terminal abierto uno al lado del otro para que los alumnos puedan ver el contenido y la estructura del archivo mientras usan la terminal para navegar por el sistema.
+* Introducción y navegación del sistema de archivos en la terminal (cubierto en
+    [Navegación de archivos y directorios] ({{page.root}} / 02-filedir /) sección) puede ser confuso. Puede tener el explorador de archivos de la GUI y la terminal abierto uno al lado del otro para que los alumnos puedan ver el contenido y la estructura del archivo mientras usan la terminal para navegar por el sistema.
 
 * La finalización de pestañas suena como algo pequeño: no lo es.
     Volviendo a ejecutar comandos viejos usando `! 123` o`! Wc`

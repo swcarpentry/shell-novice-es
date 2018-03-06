@@ -336,7 +336,7 @@ Cada proceso también tiene un canal de salida predeterminado llamado **salida e
 (o "stdout"). Un tercer canal de salida llamado **error estándar** (stderr) también
 existe. Este canal suele utilizarse para mensajes de error o de diagnóstico y
 permite al usuario canalizar la salida de un programa a otro mientras sigue recibiendo
-mensajes de error en el terminal.
+mensajes de error en la terminal.
 
 La terminal es realmente otro programa. Bajo circunstancias normales,
 lo que ingresemos en el teclado se envía a la entrada estándar de la terminal,
