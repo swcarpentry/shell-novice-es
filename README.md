@@ -7,7 +7,7 @@ Por favor revisar https://swcarpentry.github.io/shell-novice/ para una revision
 para instrucciones en formato, construccion y enviar contenido 
 o ejecutar `make` en este directorio para una lista de comandos utiles. 
 
-Mantenedores:
+Maintainers:
 
 * [Gabriel Devenyi][devenyi_gabriel]
 * [Ashwin Srinath][srinath_ashwin]
