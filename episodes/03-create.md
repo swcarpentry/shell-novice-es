@@ -46,6 +46,7 @@ data/       north-pacific-gyre/  solar.pdf
 Desktop/    notes.txt            writing/
 ~~~
 {: .output}
+
 Creemos un nuevo directorio llamado `thesis` usando el comando` mkdir thesis`
 (que no genera una salida):
 
@@ -58,8 +59,8 @@ Como su nombre sugiere,
 `mkdir` significa "make directory", 
 que significa "crear directorio" en inglés. 
 Dado que `thesis` es una ruta relativa
-(es decir, no inicia con una diagonal),
-el nuevo directorio se crea en el directorio de trabajo actual: 
+(es decir, no inicia con una barra oblicua `/`),
+el nuevo directorio se crea en la carpeta de trabajo actual: 
 
 ~~~
 $ ls -F
@@ -102,7 +103,7 @@ molecules/  solar.pdf
 > y los aprenderemos durante esta lección. Algunos sólo harán que tu comando no funcione, otros pueden incluso hacer que pierdas datos.
 >
 > Si necesitas referirte a nombres de archivos o directorios que tengan espacios en blanco
-> u otro carácter no alfanumérico, se debe poner el nombre entre comillas (`""`).
+> u otro carácter no alfanumérico, se debe poner el nombre entre comillas dobles (`""`).
 {: .callout}
 
 Dado que acabamos de crear el directorio `thesis`, aún se encuentra vacío:
@@ -127,7 +128,7 @@ $ nano draft.txt
 > sólo funciona con datos de caracteres simples, no con tablas, imágenes o cualquier otro
 > formato amigable con el usuario. Lo utilizamos en ejemplos porque es un editor muy sencillo que permite funciones muy básicas. Sin embargo, por estas mismas cualidades, podría ser insuficiente para necesidades de la vida real. En los sistemas Unix (como Linux y Mac OS X)
 > muchos programadores utilizan [Emacs](http://www.gnu.org/software/emacs/) o
-> [Vim](http://www.vim.org/) (ambos requieren más tiempo para familiarizarse), o un editor gráfico como
+> [Vim](http://www.vim.org/) (ambos requieren más tiempo para familiarizarse con ellos), o un editor gráfico como
 > [Gedit](http://projects.gnome.org/gedit/). En Windows puedes
 > utilizar [Notepad ++](http://notepad-plus-plus.org/). Windows también tiene un editor
 > interno llamado `notepad` que se puede ejecutar desde la línea de comandos de la misma
@@ -145,7 +146,7 @@ Escribamos algunas líneas de texto.
 Una vez que estemos contentos con nuestro texto, podemos presionar `Ctrl-O` (presiona la tecla Ctrl o Control y, mientras
 la mantienes presionada, oprime la tecla O) para escribir nuestros datos en el disco
 (se nos preguntará en qué archivo queremos guardar esto:
-presiona Enter para aceptar el valor predeterminado sugerido `draft.txt`).
+presiona `Enter` para aceptar el valor predeterminado sugerido `draft.txt`).
 
 ![Nano in Action](../fig/nano-screenshot.png)
 
@@ -202,9 +203,9 @@ $ ls
 
 > ## Eliminar es para siempre
 >
-> La terminal de Unix no tiene un contenedor de basura donde podamos restaurar archivos
+> La terminal de Unix no tiene una papelera de reciclaje desde donde podamos restaurar archivos
 > eliminados (aunque la mayoría de las interfaces gráficas de Unix sí lo tienen). En su lugar,
-> cuando eliminamos archivos, se desenganchan del sistema de archivos para que
+> cuando eliminamos archivos, los mismos se desvinculan del sistema de archivos para que
 > su espacio de almacenamiento en disco pueda ser reciclado. Existen herramientas para encontrar y
 > recuperar archivos eliminados, pero no hay garantía de que
 > funcionen en todas las situaciones, ya que la computadora puede reciclar
@@ -253,7 +254,7 @@ rm: cannot remove `thesis': Is a directory
 ~~~
 {: .error}
 
-Esto ocurre porque `rm` por defecto sólo funciona en archivos, no en directorios.
+Esto ocurre porque `rm` normalmente trabaja sólo con archivos, no con directorios.
 
 Para realmente deshacernos de `thesis` también debemos eliminar el archivo `draft.txt`.
 Podemos hacer esto con la opción [recursiva](https://en.wikipedia.org/wiki/Recursion) para `rm`:
@@ -277,7 +278,7 @@ $ rm -r thesis
 > ~~~
 > {: .bash}
 >
-> Esto elimina todo en el directorio y después el directorio, preguntando
+> Esto elimina todo el contenido en el directorio y después el directorio mismo, preguntando
 > en cada paso para que se confirme la eliminación.
 {: .callout}
 
@@ -647,7 +648,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ~~~
 > {: .bash}
 >
-> Rellena los espacios en blanco para mover estos archivos a la carpeta actual
+> Rellena los espacios en blanco para mover estos archivos a la carpeta de trabajo
 > (es decir, en la que ella está actualmente):
 >
 > ~~~
@@ -716,7 +717,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 >
 >> ## Solución
 >>
->> El primer grupo de comandos logra este objetivo. Primero se cre una copia recursiva de la carpeta `data`. Después, dos comandos `rm` eliminan todos los archivos en los directorios especificados. La terminal interpreta el caracter especial `*` para incluír todos los archivos y subdirectorios.
+>> El primer grupo de comandos logra este objetivo. Primero se crea una copia recursiva de la carpeta `data`. Después, dos comandos `rm` eliminan todos los archivos en los directorios especificados. La terminal interpreta el caracter especial `*` para incluír todos los archivos y subdirectorios.
 >>
 >> El segundo grupo de comandos está en el orden incorrecto: intenta borrar archivos que aún no han sido copiados, seguido del comando recursivo que los copiaría.
 >>
