@@ -18,7 +18,7 @@ Spelling, pero estamos atrapados con eso ahora.
 
 ## Códigos de control de trabajo
 
-El terminal acepta algunos comandos especiales que permiten a los usuarios interactuar
+La terminal acepta algunos comandos especiales que permiten a los usuarios interactuar
 con procesos o programas en ejecución. Puedes ingresar cada uno de estos
 "códigos de control" presionando la tecla `Ctrl` y luego presionando uno
 de los personajes de control. En otros tutoriales, puede ver el término
@@ -54,9 +54,9 @@ utilizado (y algunos todavía usan) otro terminal, C-shell o Csh. Bash y Csh
 tienen conjuntos de características similares, pero sus reglas de sintaxis son diferentes y
 esto los hace incompatibles entre sí. Algunas otras terminals tienen
 apareció desde entonces, incluyendo ksh, zsh y un número de otros; son
-mayormente compatible con Bash, y Bash es el terminal que se selecciona automáticamente en la mayoría
+mayormente compatible con Bash, y Bash es la terminal que se selecciona automáticamente en la mayoría
 implementaciones modernas de Unix (incluida la mayoría de los paquetes que proporcionan
-herramientas tipo Unix para Windows) pero si obtiene errores extraños en el terminal
+herramientas tipo Unix para Windows) pero si obtiene errores extraños en la terminal
 guiones escritos por colegas, compruebe para ver qué terminal eran
 escrito para.
 

@@ -34,15 +34,15 @@ bandera
 : Una forma concisa de especificar una opción o configuración a un programa de línea de comandos. Por convención, las aplicaciones Unix usan un guion seguido de una sola letra, como `-v`, o dos guiones seguidos de una palabra, como` --verbose`, mientras que las aplicaciones de DOS usan una barra inclinada, como `/ V`. Dependiendo de la aplicación, un indicador puede ir seguido de un único argumento, como en `-o / tmp / output.txt`.
 
 citando
-: (en el terminal):
-    Utilizar comillas de varios tipos para evitar que el intérprete interprete caracteres especiales. Por ejemplo, para pasar la secuencia de caracteres `*.txt` a un programa, generalmente es necesario escribirlo como `'* .txt'` (con comillas simples) para que el terminal no intente expandir el comodín `*`.
+: (en la terminal):
+    Utilizar comillas de varios tipos para evitar que el intérprete interprete caracteres especiales. Por ejemplo, para pasar la secuencia de caracteres `*.txt` a un programa, generalmente es necesario escribirlo como `'* .txt'` (con comillas simples) para que la terminal no intente expandir el comodín `*`.
 
 comentario
-: Un comentario en un programa que pretende ayudar a los lectores humanos a entender lo que está sucediendo, pero es ignorado por la computadora. Los comentarios en Python, R y el terminal de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la linea; los comentarios en SQL comienzan con `--`,
+: Un comentario en un programa que pretende ayudar a los lectores humanos a entender lo que está sucediendo, pero es ignorado por la computadora. Los comentarios en Python, R y la terminal de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la linea; los comentarios en SQL comienzan con `--`,
     y otros idiomas tienen otras convenciones.
 
 comodín
-: Un caracteres utilizado en la coincidencia de patrones. En el terminal de Unix, el comodín `*` coincide con cero o más caracteres, para que `* .txt` coincida con todos los archivos cuyos nombres terminen en` .txt`.
+: Un caracteres utilizado en la coincidencia de patrones. En la terminal de Unix, el comodín `*` coincide con cero o más caracteres, para que `* .txt` coincida con todos los archivos cuyos nombres terminen en` .txt`.
 
 cuerpo de bucle
 : El conjunto de instrucciones o comandos que se repiten dentro de un [for bucle](# for-bucle) o [while bucle](# while-bucle).
@@ -78,7 +78,7 @@ for bucle
 : Un bucle que se ejecuta una vez para cada valor en algún tipo de conjunto, lista o rango. Ver también: [while bucle](#while-bucle).
 
 guión de terminal
-: Un conjunto de comandos [terminal](#terminal) almacenados en un archivo para su reutilización. Un script de terminal es un programa ejecutado por el terminal; el nombre "script" se usa por razones históricas.
+: Un conjunto de comandos [terminal](#terminal) almacenados en un archivo para su reutilización. Un script de terminal es un programa ejecutado por la terminal; el nombre "script" se usa por razones históricas.
 
 interfaz de línea de comando
 : Una interfaz de usuario basada en comandos de tipeo, generalmente en un [REPL](#read-evaluate-print-loop). Ver también: [interfaz gráfica de usuario](#graphical-user-interface).
@@ -133,7 +133,7 @@ tabulación completa
 : Una función proporcionada por muchos sistemas interactivos en los que presionar la tecla Tab activa la finalización automática de la palabra o comando actual.
 
 terminal
-: A [interfaz de línea de comando](#cli) como Bash (Bourne-Again Shell) o el terminal de Microsoft Windows DOS que permite a un usuario interactuar con el [sistema operativo](#sistema-operativo).
+: A [interfaz de línea de comando](#cli) como Bash (Bourne-Again Shell) o la terminal de Microsoft Windows DOS que permite a un usuario interactuar con el [sistema operativo](#sistema-operativo).
 
 terminal de comando
 : Ver [terminal](#terminal)
