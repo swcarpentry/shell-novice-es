@@ -67,10 +67,10 @@ $ wc *.pdb
 
 > ## Caracteres especiales
 >
-> `*` Es un caracter especial o **wildcard**. Corresponde a cero o más
+> `*` Es un caracter especial o **wild card**. Corresponde a cero o más
 > caracteres, así que `*.pdb` coincide con` ethane.pdb`, `propane.pdb`, y cada
 > archivo que termina con '.pdb'. Por otro lado, `p*.pdb` sólo coincide con
-> `pentane.pdb` y` propane.pdb`, porque la 'p' al inicio 
+> `pentane.pdb` y` propane.pdb`, porque la 'p' al inicio
 > hace coincidir los nombres de archivos que comienzan con la letra 'p'.
 >
 > `?` también es un caracter especial, pero sólo coincide con un solo carácter. Esto
@@ -80,7 +80,7 @@ $ wc *.pdb
 > coincide con cualquier cosa que comience con una 'p' y termine con '.', 'p', y al
 > menos un carácter más (ya que `?` tiene que coincidir con un carácter, y
 > el final `*` puede coincidir con cualquier número de caracteres). Por lo tanto, `p*.p?*`
-> coincidirá con `preferred.practice`, e incluso `p.pi` (dado que el primer `*` 
+> coincidirá con `preferred.practice`, e incluso `p.pi` (dado que el primer `*`
 > no coincide con ningún carácter), pero no `quality.practice` (ya que no inicia
 > con 'p') o `preferred.p` (porque no hay al menos un carácter después de
 > '.p').
@@ -199,7 +199,7 @@ $ cat lengths.txt
 > pero tiene la desventaja de que siempre vuelca todo el archivo en la pantalla.
 > En la práctica es más útil el comando `less`,
 > que se utiliza como `$ less lengths.txt`.
-> Este comando muestra solo el contenido del archivo que cabe en una pantalla y luego se detiene.
+> Este comando muestra sólo el contenido del archivo que cabe en una pantalla y luego se detiene.
 > Puedes avanzar a la siguiente pantalla presionando la barra espaciadora,
 > o retroceder presionando `b`. Para salir, pulsa `q`.
 {: .callout}
@@ -226,7 +226,7 @@ $ sort -n lengths.txt
 ~~~
 {: .output}
 
-Podemos poner la lista ordenada de líneas en otro archivo temporal llamado `sorted-lengths.txt`
+Podemos poner la lista de líneas ordenada en otro archivo temporal llamado `sorted-lengths.txt`
 poniendo `> sorted-lengths.txt` después del comando,
 así como usamos `> lengths.txt` para poner la salida de `wc` en `lengths.txt`.
 Una vez que hayamos hecho eso,
@@ -324,7 +324,7 @@ $ wc -l *.pdb | sort -n | head -n 1
 Esto es exactamente como un matemático anidando funciones como *log(3x)*
 Y diciendo "el logaritmo de tres veces *x*".
 En nuestro caso,
-el cálculo es "cabeza del la lista ordenada del número de líneas de `*.pdb`". 
+el cálculo es "cabeza de la lista ordenada del número de líneas de `*.pdb`".
 
 Esto es lo que realmente sucede detrás de la terminal cuando creamos un **pipe**.
 Cuando una computadora ejecuta un programa (cualquier programa) crea un **proceso**
@@ -336,7 +336,7 @@ Cada proceso también tiene un canal de salida predeterminado llamado **salida e
 (o "stdout"). Un tercer canal de salida llamado **error estándar** (stderr) también
 existe. Este canal suele utilizarse para mensajes de error o de diagnóstico y
 permite al usuario canalizar la salida de un programa a otro mientras sigue recibiendo
-mensajes de error en la terminal.
+mensajes de error en el terminal.
 
 La terminal es realmente otro programa. Bajo circunstancias normales,
 lo que ingresemos en el teclado se envía a la entrada estándar de la terminal,
@@ -367,7 +367,7 @@ a través de `wc` a `sort`, de `sort` a` head` y finalmente a la pantalla.
 
 Esta sencilla idea es la razón por la cual Unix ha tenido tanto éxito.
 En lugar de crear enormes programas que tratan de hacer muchas cosas diferentes,
-los programadores de Unix se centran en crear muchas herramientas simples que hacen bien su trabajo y son capaces de cooperar entre sí. Este modelo de programación se llama "**pipes** y filtros".
+los programadores de Unix se centran en crear muchas herramientas simples que hacen bien su trabajo y son capaces de cooperar entre sí. Este modelo de programación se llama "**pipes** y **filtros**".
 Ya hemos visto **pipes**;
 un **filtro** es un programa como `wc` o` sort`
 que transforma una entrada en una salida.
@@ -520,7 +520,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >
 >> ## Solución
 >>
->> La opción `-n` indica un ordenamiento numérico, en lugar de alfabético. 
+>> La opción `-n` indica un ordenamiento numérico, en lugar de alfabético.
 > {: .solution}
 {: .challenge}
 
@@ -554,7 +554,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> this
 >> is
 >> a test
->> Ctrl-D # Esto le indica a la terminal que has terminado de teclear la entrada. 
+>> Ctrl-D # Esto le indica a la terminal que has terminado de teclear la entrada.
 >> ~~~
 >>
 >> {: .bash}
@@ -622,7 +622,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > Ayuda a Sam rellenando los espacios en blanco.
 >
 >> ## Solución
->> 
+>>
 >> ~~~
 >> $ cp *calibration.txt /backup/calibration
 >> $ cp 2015-11-* ~/send_to_bob/all_november_files/
@@ -707,8 +707,8 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
 > ~~~
-> {: .bash} 
-> 
+> {: .bash}
+>
 > Pista: construye el **pipeline** agregando un comando a la vez para comprobar tu respuesta.
 {: .challenge}
 
@@ -771,7 +771,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 
 > ## Expresiones con Caracteres Especiales
 >
-> Las expresiones con caracteres especiales pueden llegar a ser muy complejas, sin embargo a veces es posible escribirlas de forma que utilicen una sintaxis muy sencilla y sean un poco más elocuentes. 
+> Las expresiones con caracteres especiales pueden llegar a ser muy complejas, sin embargo a veces es posible escribirlas de forma que utilicen una sintaxis muy sencilla y sean un poco más elocuentes.
 > Considera el directorio `data-shell/north-pacific-gyre/2012-07-03` : la expresión `*[AB].txt` coincide con todos los archivos que terminan en `A.txt` o `B.txt`. Imagina que ignoras esto.
 >
 > 1. ¿Podrías hacer coincidir el mismo set de archivos con una expresión que incluya caracteres especiales, pero no `[]`? *Pista:* Podrías necesitar más de una expresión.
@@ -790,8 +790,8 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> ...
 >> ~~~
 >> {: .bash}
->> 
->> 2. La salida de la nueva expresión aparece separada porque son dos comandos independientes.  
+>>
+>> 2. La salida de la nueva expresión aparece separada porque son dos comandos independientes.
 >> 3. Cuando no haya archivos que terminen en `A.txt`, o en `B.txt`.
 > {: .solution}
 {: .challenge}
