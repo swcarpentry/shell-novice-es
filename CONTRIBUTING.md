@@ -25,19 +25,19 @@ y conocer a algunos de los miembros de nuestra comunidad.
 
 1. Si no tienes una cuenta de [GitHub][github], puedes [enviarnos comentarios por correo electrónico][contacto]. Sin embargo, podremos responder más rápidamente si usa uno de los otros métodos que se describen a continuación.
 
-2. Si tiene una cuenta de[GitHub][github], o están dispuestos a [crear uno][github-join], pero no sabes cómo usar git, puedes informar problemas o sugerir mejoras al [crear un problema o **issue**][nuevo-problema]. Esto nos permite asignar el elemento a alguien y para responder en una conversación abierta.
+2. Si tiene una cuenta de [GitHub][github], o están dispuestos a [crear una][github-join], pero no sabes cómo usar git, puedes informar problemas o sugerir mejoras al [crear un problema o **issue**][nuevo-problema]. Esto nos permite asignar el elemento a alguien y responder en una conversación abierta.
 
-3. Si te sientes cómodo con Git, y te gustaría agregar o cambiar material, puede enviar una solicitud de extracción o **pull request**(PR). Las  instrucciones para hacer esto [se incluyen a continuación](# using-github).
+3. Si te sientes cómodo con Git, y te gustaría agregar o cambiar material, puede enviar una solicitud de extracción o **pull request**(PR). Las  instrucciones para hacer esto [se incluyen a continuación][como-contribuir].
 
 ## Donde Contribuir
 
-1. Si deseas cambiar esta lección, por favor trabaje en <https://github.com/swcarpentry/shell-novice-es>, que se puede ver en <https://swcarpentry.github.io/shell-novice-es>.
+1. Si deseas cambiar esta lección, por favor trabaja en <https://github.com/swcarpentry/shell-novice-es>, que se puede ver en <https://swcarpentry.github.io/shell-novice-es>.
 
-2. Si deseas cambiar la lección de ejemplo, por favor trabaje en <https://github.com/swcarpentry/lesson-example>, que documenta el formato de nuestras lecciones y se puede ver en <https://swcarpentry.github.io/lesson-example>.
+2. Si deseas cambiar la lección de ejemplo, por favor trabaja en <https://github.com/swcarpentry/lesson-example>, que documenta el formato de nuestras lecciones y se puede ver en <https://swcarpentry.github.io/lesson-example>.
 
-3. Si deseas cambiar la plantilla utilizada para los sitios web del taller, por favor trabaje en <https://github.com/swcarpentry/workshop-template>. La página de inicio de ese repositorio explica cómo configurar sitios web de talleres, mientras que las páginas adicionales en <https://swcarpentry.github.io/workshop-template> proporcionar más antecedentes sobre nuestras elecciones de diseño.
+3. Si deseas cambiar la plantilla utilizada para los sitios web del taller, por favor trabaja en <https://github.com/swcarpentry/workshop-template>. La página de inicio de ese repositorio explica cómo configurar sitios web de talleres, mientras que las páginas adicionales en <https://swcarpentry.github.io/workshop-template> proporcionan más antecedentes sobre nuestras elecciones de diseño.
 
-4. Si deseas cambiar los archivos de estilo CSS, herramientas, o texto estándar HTML para lecciones o talleres almacenados en `_includes` o` _layouts`, por favor trabaje en <https://github.com/swcarpentry/styles>.
+4. Si deseas cambiar los archivos de estilo CSS, herramientas, o texto estándar HTML para lecciones o talleres almacenados en `_includes` o` _layouts`, por favor trabaja en <https://github.com/swcarpentry/styles-es>.
 
 ## Qué aportar
 
@@ -46,8 +46,8 @@ mejorar los existentes para actualizar o completar la documentación y
 enviando [informes de error o **issues**][nuevo-problema] sobre cosas que no
 funcionan, no son claras o faltan. Si estás buscando ideas, por favor
 ve [la lista de problemas para este repositorio][issues], o los 
-problemas para [Data Carpentry][dc-issues] y 
-[Software Carpentry][swc-issues] proyectos.
+problemas o **issues** para los proyectos de [Data Carpentry][dc-issues] y 
+[Software Carpentry][swc-issues].
 
 Los comentarios sobre problemas y revisiones de solicitudes de
 extracción son igualmente bienvenidos: somos más fuertes juntos
@@ -75,24 +75,24 @@ lecciones deben correr igualmente bien en las tres plataformas.
 ## Usando GitHub
 
 Si eliges contribuir a través de GitHub, es posible que desees mirar
-[Cómo contribuir a un proyecto de código abierto en GitHub][cómo-contribuir].
+[Cómo contribuir a un proyecto de código abierto en GitHub][como-contribuir].
 
 En breve:
 
-1. La copia publicada de la lección está en la rama `gh-pages` del repositorio (para que GitHub lo regenere automáticamente). Por favor crea todas las ramas de eso, y fusiona la rama `gh-pages` de [repositorio maestro][repo] en la rama` gh-pages` antes de comenzar a trabajar. Por favor, *no* trabaje directamente en su rama `gh-pages`, ya que eso le dificultará trabajar en otras contribuciones.
+1. La copia publicada de la lección está en la rama `gh-pages` del repositorio (para que GitHub lo regenere automáticamente). Por favor crea todas las ramas de eso, y fusiona la rama `gh-pages` de [repositorio maestro][repo] en la rama` gh-pages` antes de comenzar a trabajar. Por favor, *no* trabajes directamente en tu rama `gh-pages`, ya que esto te dificultará trabajar en otras contribuciones.
 
-2. Usamos [GitHub flow] [github-flow] para gestionar los cambios:
-    1. Cree una nueva rama en su copia de escritorio de este repositorio para cada cambio significativo.
-    2. Cometer el cambio en esa rama.
-    3. Empuje esa rama a su tenedor de este repositorio en GitHub.
-    4. Envíe una solicitud de extracción desde esa rama al [repositorio principal] [repo].
-    5. Si recibe comentarios,
-        hacer cambios en su escritorio y enviar a su sucursal en GitHub:
+2. Usamos [GitHub flow][github-flow] para gestionar los cambios:
+    1. Crea una nueva rama en su copia de escritorio de este repositorio para cada cambio significativo.
+    2. **Commit** el cambio en esa rama.
+    3. **Push** esa rama a su **fork** de este repositorio en GitHub.
+    4. Envía una solicitud de extracción **Pull request** desde esa rama al [repositorio principal][repo].
+    5. Si recibes comentarios,
+        hacer cambios en tu escritorio y enviar a GitHub:
         la solicitud de extracción se actualizará automáticamente.
 
 Cada lección tiene dos mantenedores que revisan problemas y solicitan 
-extracción o alentar a otros a hacerlo. Los mantenedores son 
-voluntarios de la comunidad, y tener una opinión final sobre lo que 
+extracción o alentan a otros a hacerlo. Los mantenedores son 
+voluntarios de la comunidad, y tienen una opinión final sobre lo que 
 se fusiona en la lección.
 
 ## Otros recursos
@@ -111,10 +111,10 @@ a la cual todos son bienvenidos. También puedes
 [github]: http://github.com
 [github-flow]: https://guides.github.com/introduction/flow/
 [github-join]: https://github.com/join
-[cómo-contribuir]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
-[nuevo-problema]: https://github.com/swcarpentry/git-novice/issues/new
-[issues]: https://github.com/swcarpentry/git-novice/issues/
-[repo]: https://github.com/swcarpentry/git-novice/
+[como-contribuir]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
+[nuevo-problema]: https://github.com/swcarpentry/shell-novice-es/issues/new
+[issues]: https://github.com/swcarpentry/shell-novice-es/issues/
+[repo]: https://github.com/swcarpentry/shell-novice-es/
 [swc-issues]: https://github.com/issues?q=user%3Aswcarpentry
 [swc-lessons]: http://software-carpentry.org/lessons/
 [swc-site]: http://software-carpentry.org/
