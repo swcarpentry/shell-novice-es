@@ -1,20 +1,20 @@
 ---
-title: "Encontrando cosas"
+title: "Encontrando archivos"
 teaching: 15
 exercises: 0
 questions:
 - "¿Cómo puedo encontrar archivos?"
-- "¿Cómo puedo encontrar cosas dentro de archivos?"
+- "¿Cómo puedo encontrar algunas cosas dentro de mis archivos?"
 objectives:
-- "Usar `grep` para seleccionar líneas de archivos de texto que coincidan con patrones simples."
-- "Use `find` para encontrar archivos cuyos nombres coincidan con patrones simples."
-- "Usar la salida de un comando como parámetros de otro comando."
+- "Usar `grep` para seleccionar las líneas de archivos de texto que coincidan con patrones simples."
+- "Usar `find` para encontrar archivos cuyos nombres coincidan con patrones simples."
+- "Usar la respuesta de un comando como parámetro de entrada para otro comando."
 - "Explicar lo que se entiende por archivos de 'texto' y 'binarios', y por qué muchas herramientas comunes no manejan bien estos últimos."
 keypoints:
-- "`find` encuentra archivos con propiedades específicas que coinciden con patrones especificados."
-- "`grep` selecciona líneas en archivos que coinciden con patrones especificados."
-- "`--help` es un indicador soportado por muchos comandos bash, y programas que se pueden ejecutar desde dentro de Bash, para mostrar más información sobre cómo usar estos comandos o programas."
-- "`man command` muestra la página de manual de un comando dado."
+- "`find` encuentra archivos con propiedades específicas que coinciden con los patrones especificados."
+- "`grep` selecciona líneas en archivos que coinciden con los patrones especificados."
+- "`--help` es un indicador usado por muchos comandos bash y programas que se pueden ejecutar desde dentro de Bash, se usa para mostrar más información sobre cómo usar estos comandos o programas."
+- "`man command` muestra la página del manual de un comando."
 - "`$(comando)` contiene la salida de un comando."
 ---
 
@@ -29,7 +29,7 @@ El comando `grep` encuentra e imprime líneas en archivos que coinciden con un p
 Para nuestros ejemplos,
 usaremos un archivo que contenga tres haikus publicados en
 1998 en la revista *Salon*. Para este conjunto de ejemplos,
-Vamos a estar trabajando en el subdirectorio "writing" :
+Vamos a estar trabajando en el subdirectorio "writing":
 
 ~~~
 $ cd
@@ -53,14 +53,14 @@ Software is like that.
 ~~~
 {: .output}
 
-> ## Para siempre, o Cinco Años
+> ## Del dicho "Para siempre, o cinco años" 
 >
-> No hemos vinculado a los haikus originales porque parecen ya no estar en el sitio de *Salon*.
+> Nota: no hemos vinculado a los haikus originales porque parecen ya no estar disponibles en el sitio de *Salon*.
 > Como [Jeff Rothenberg dijo](http://www.clir.org/pubs/archives/ensuring.pdf),
 > "La información digital dura para siempre --- o cinco años, lo que ocurra primero."
 {: .callout}
 
-Busquemos líneas que contengan la palabra "no":
+Busquemos líneas que contengan la palabra "not":
 
 ~~~
 $ grep not haiku.txt
@@ -98,7 +98,7 @@ Sin embargo, una instancia de esas letras está contenida en una palabra más gr
 
 Para restringir los aciertos a las líneas que contienen la palabra "The" por sí sola,
 podemos usar `grep` con el indicador` -w`.
-Esto limitará los coincidencias con los límites de las palabras.
+Esto limitará los coincidencias a palabras.
 
 ~~~
 $ grep -w The haiku.txt
@@ -111,8 +111,8 @@ The Tao that is seen
 {: .output}
 
 
-Notar que una "word boundary" incluye el comienzo y el final de una línea, no solamente aquellas letras rodeadas de espacios. 
-A veces, queremos buscar una frase en vez de una sola palabra. Esto puede hacerse fácilmente con `grep` usando la frase entre comillas.
+Nota que la palabra o patrón de búsqueda incluye el comienzo y el final de una línea, no solamente aquellas letras rodeadas de espacios. 
+A veces, queremos buscar una frase, en vez de una sola palabra. Esto puede hacerse fácilmente con `grep` usando la frase entre comillas.
 
 ~~~
 $ grep -w "is not" haiku.txt
@@ -127,8 +127,8 @@ Today it is not working
 Hemos visto que no requerimos comillas alrededor de palabras simples,
 pero es útil utilizar comillas cuando se buscan varias palabras consecutivas.
 También ayuda a facilitar la distinción entre el término o frase de búsqueda
-y el archivo que se está buscando.
-Utilizaremos cotizaciones en los ejemplos restantes.
+y el archivo en el que se está buscando.
+Utilizaremos comillas en los próximos ejemplos.
 
 Otra opción útil es `-n`, que numera las líneas que coinciden:
 
@@ -146,7 +146,7 @@ $ grep -n "it" haiku.txt
 
 Aquí, podemos ver que las líneas 5, 9 y 10 contienen las letras "it".
 
-Podemos combinar opciones (es decir, flags) como lo hacemos con otros comandos de Unix.
+Podemos combinar opciones (es decir, **flags**) como lo hacemos con otros comandos de Unix.
 Por ejemplo, vamos a encontrar las líneas que contienen la palabra "the". Podemos combinar
 la opción `-w` para encontrar las líneas que contienen la palabra "the" con `-n` para numerar las líneas que coinciden:
 
@@ -226,15 +226,33 @@ Miscellaneous:
 ~~~
 {: .output}
 
-> ## Comodines
+> ## Utilizando `grep`
 >
-> La verdadera ventaja de `grep` no proviene de sus opciones; viene de
-> el hecho de que los patrones pueden incluir comodines. (El nombre técnico para
+> Haciendo referencia a `haiku.txt`
+> presentado al inicio de este tema,
+> qué comando resultaría en la salida siguiente:
+>
+> ~~~
+> and the presence of absence:
+> ~~~
+> {: .output}
+>
+> 1. `grep "of" haiku.txt`
+> 2. `grep -E "of" haiku.txt`
+> 3. `grep -w "of" haiku.txt`
+> 4. `grep -i "of" haiku.txt`
+{: .challenge}
+
+> ## Caracteres especiales o comodines
+>
+> La verdadera ventaja de `grep` no proviene de sus opciones; viene del
+> hecho de que los patrones pueden incluir comodines. (El nombre técnico para
 > estos son **expresiones regulares**, que
 > es lo que significa el "re" en "grep".) Las expresiones regulares son complejas
-> y poderosas; si quieres realizar búsquedas complejas, mira la lección
-> En [nuestro sitio web](http://v4.software-carpentry.org/regexp/index.html). Como prueba, podemos
-> encontrar líneas que tienen un 'o' en la segunda posición como esto:
+> y poderosas. Nota: Si quieres realizar búsquedas complejas, y quieres saber más detalles mira la lección
+> de [expresiones regulares](http://v4.software-carpentry.org/regexp/index.html). 
+> Como prueba, podemos
+> encontrar líneas que tienen una 'o' en la segunda posición, por ejemplo:
 >
 > ~~~
 > $ grep -E '^.o' haiku.txt
@@ -249,17 +267,117 @@ Miscellaneous:
 > {: .output}
 >
 > Utilizamos el indicador `-E` y ponemos el patrón entre comillas para evitar que el shell
-> intente interpretarlo. (Si el patrón contenía un `*`, por
+> intente interpretarlo. (Si el patrón contiene un `*`, por
 > ejemplo, el shell intentaría expandirlo antes de ejecutar grep.)
-> `^` en el patrón de búsqueda ancla la coincidencia al inicio de la línea. El `.`
+> El `^` en el patrón de búsqueda indica que la coincidencia debe ser al inicio de la línea. El `.`
 > coincide con un solo carácter (como `?` en el shell), mientras que el `o`
-> coincide con una 'o' real.
+> coincide con una 'o' real que en este caso viene a ser el segundo caracter.
 {: .callout}
+
+> ## Seguimiento de una especie
+> 
+> Leah tiene varios cientos de
+> archivos de datos guardados en un directorio, cada uno de los cuales tiene el formato siguiente:
+> 
+> ~~~
+> 2013-11-05,deer,5
+> 2013-11-05,rabbit,22
+> 2013-11-05,raccoon,7
+> 2013-11-06,rabbit,19
+> 2013-11-06,deer,2
+> ~~~
+> {: .source}
+>
+> Quiere escribir un **script** de shell que tome un directorio y una especie
+> como parámetros de línea de comandos y que le devuelva un archivo llamado `species.txt`
+> que contenga una lista de fechas y el número de individuos de esa especie observados en esa fecha,
+> como este archivo de números de conejos:
+> 
+> ~~~
+> 2013-11-05,22
+> 2013-11-06,19
+> 2013-11-07,18
+> ~~~
+> {: .source}
+>
+> Escribe estos comandos y **pipes** en el orden correcto para lograrlo:
+> 
+> ~~~
+> cut -d : -f 2  
+> >  
+> |  
+> grep -w $1 -r $2  
+> |  
+> $1.txt  
+> cut -d , -f 1,3  
+> ~~~
+> {: .bash}
+>
+> Sugerencia: usa `man grep` para buscar cómo seleccionar texto recursivamente en un directorio
+> usando grep
+> y `man cut` para seleccionar más de un campo en una línea.
+> Encuentra un ejemplo en el siguiente archivo `data-shell/data/animal-counts/animals.txt`
+>
+> > ## Solución
+> >
+> > ```
+> > grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
+> > ```
+> > {: .source}
+> >
+> > Puedes llamar al **script** de la siguiente forma:
+> >
+> > ```
+> > $ bash count-species.sh bear .
+> > ```
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
+> ## Mujercitas
+>
+> Tú y tu amigo tienen una desacuerdo, después de terminar de leer *Little Women* de
+> Louisa May Alcott. De las cuatro hermanas en el
+> libro, Jo, Meg, Beth, y Amy, tu amigo piensa que Jo era la
+> más mencionada. Tú, sin embargo, estás segura de que era Amy. Afortunadamente tu
+> tienes un archivo llamado `LittleWomen.txt` en data/, que contiene el texto completo de la novela.
+> Utilizando un bucle `for`, ¿cómo tabularías el número de veces que cada una
+> de las cuatro hermanas es mencionada?
+>
+> Sugerencia: una solución sería emplear
+> los comandos `grep` y `wc` y un `|`, mientras que otra solución podría utilizar
+> opciones de `grep`.
+> Normalmente hay más de una forma para solucionar una tarea de programación. Cada solución es seleccionada de acuerdo a la combinación entre cuál es la que produce el resultado correcto, con mayor elegancia, de la manera más clara y con mayor velocidad.
+> 
+> > ## Solución
+> > ```
+> > for sis in Jo Meg Beth Amy
+> > do
+> > 	echo $sis:
+> >	  grep -ow $sis LittleWomen.txt | wc -l
+> > done
+> > ```
+> > {: .source}
+> >
+> > Alternativa, menos eficiente:
+> > ```
+> > for sis in Jo Meg Beth Amy
+> > do
+> > 	echo $sis:
+> >	grep -ocw $sis LittleWomen.txt
+> > done
+> > ```
+> > {: .source}
+> >
+> > Esta solución es menos eficiente porque `grep -c` solamente reporta el número de las líneas.
+> > El número total de coincidencias que es reportado por este método va a ser más bajo si hay más de una coincidencia por línea. 
+> {: .solution}
+{: .challenge}
 
 Mientras `grep` encuentra líneas en los archivos,
 El comando `find` busca los archivos.
 Una vez más,
-tiene muchas opciones;
+tienes muchas opciones.
 Para mostrar cómo funcionan las más simples, utilizaremos el árbol de directorios que se muestra a continuación.
 
 ![Árbol de archivos para el ejemplo de búsqueda](../fig/find-file-tree.svg)
@@ -271,7 +389,7 @@ un directorio `tools` que contiene los programas` format` y `stats`,
 y un subdirectorio llamado `old`, con un archivo `oldtool`.
 
 Para nuestro primer comando,
-ejecutemos `find '.
+ejecutemos `find .`.
 ~~~
 $ find .
 ~~~
@@ -304,7 +422,7 @@ para filtrar la salida y en esta lección vamos a descubrir algunas
 de ellas.
 
 La primera opción en nuestra lista es
-`-type d` que significa "cosas que son directorios".
+`-type d` que significa "encontrar directorios".
 Por supuesto que
 la salida de `find` serán los nombres de los cinco directorios en nuestro pequeño árbol
 (incluyendo `.`):
@@ -324,7 +442,7 @@ $ find . -type d
 {: .output}
 
 Si cambiamos `-type d` por `-type f`,
-recibimos una lista de todos los archivos en su lugar:
+recibimos una lista de todos los archivos:
 
 ~~~
 $ find . -type f
@@ -359,18 +477,18 @@ Esperábamos que encontrara todos los archivos de texto,
 Pero sólo imprime `./haiku.txt`.
 El problema es que el shell amplía los caracteres comodín como `*` *antes* de ejecutar los comandos.
 Dado que `*.txt` en el directorio actual se expande a `haiku.txt`,
-El comando que corrimos era:
+El comando que ejecutamos era:
 
 ~~~
 $ find . -name haiku.txt
 ~~~
 {: .bash}
 
-`find` hizo lo que pedimos; Sólo pedimos la cosa equivocada.
+`find` hizo lo que pedimos, pero pedimos la cosa equivocada.
 
 Para conseguir lo que queremos,
 vamos a hacer lo que hicimos con `grep`:
-ponga `* txt` en comillas simples para evitar que el shell expanda el comodín `*`.
+escribe `* txt` entre comillas simples para evitar que el shell expanda el comodín `*`.
 De esta manera,
 `find` obtiene realmente el patrón `*.txt`, no el nombre de archivo expandido `haiku.txt`:
 
@@ -387,7 +505,7 @@ $ find . -name '*.txt'
 ~~~
 {: .output}
 
-> ## Listado vs. Búsqueda
+> ## Listar vs. Buscar
 >
 > `ls` y` find` se pueden usar para hacer cosas similares dadas las opciones correctas,
 > pero en circunstancias normales,
@@ -397,7 +515,7 @@ $ find . -name '*.txt'
 
 Como mencionamos anteriormente,
 el poder de la línea de comandos reside en la combinación de herramientas.
-Hemos visto cómo hacerlo con tuberías;
+Hemos visto cómo hacerlo con **pipes**,
 veamos otra técnica.
 Como acabamos de ver,
 `find . -name '*.txt'` nos da una lista de todos los archivos de texto dentro o más abajo del directorio actual.
@@ -422,7 +540,7 @@ $ wc -l $(find . -name '*.txt')
 Cuando el shell ejecuta este comando,
 lo primero que hace es ejecutar lo que esté dentro del `$()`.
 Luego reemplaza la expresión `$()` con la salida de ese comando.
-Dado que la salida de `find` es los cuatro nombres de directorio `./data/one.txt`, `./data/LittleWomen.txt`, `./data/two.txt`, y `./haiku.txt`,
+Dado que la salida de `find` son los cuatro nombres de directorio `./data/one.txt`, `./data/LittleWomen.txt`, `./data/two.txt`, y `./haiku.txt`,
 el shell construye el comando:
 
 ~~~
@@ -434,7 +552,7 @@ que es lo que queríamos.
 Esta expansión es exactamente lo que hace el shell cuando se expanden comodines como `*` y `?`,
 pero nos permite usar cualquier comando que deseemos como nuestro propio "comodín".
 
-Es muy común usar `find` y` grep` juntos.
+Es muy común usar `find` y `grep` juntos.
 El primero encuentra archivos que coinciden con un patrón;
 el segundo busca líneas dentro de los archivos que coinciden con otro patrón.
 Aquí, por ejemplo, podemos encontrar archivos PDB que contienen átomos de hierro
@@ -450,12 +568,39 @@ $ grep "FE" $(find .. -name '*.pdb')
 ~~~
 {: .output}
 
+> ## Buscando coincidencias y restando
+>
+> `-v` es una opción de `grep` que invierte la coincidencia de patrones, de modo que sólo las líneas
+> que *no* coinciden con el patrón se imprimen. Dado esto ¿cuál de
+> los siguientes comandos encontrarán todos los archivos en `/data` cuyos nombres
+> terminan en `s.txt` (por ejemplo, `animals.txt` or `planets.txt`), pero
+> *no* contienen la palabra `net`?
+> Después de pensar en tu respuesta, puedes probar los comandos en el directorio `data-shell`.
+>
+> 1.  `find data -name '*s.txt' | grep -v net`
+> 2.  `find data -name *s.txt | grep -v net`
+> 3.  `grep -v "temp" $(find data -name '*s.txt')`
+> 4.  Ninguna de las anteriores.
+>
+>> ## Solución
+>> La respuesta correcta es 1. Poniendo la expresión entre comillas, evita que el shell
+>> la expanda, y luego lo pasa al comando `find`.
+>>
+>> La opción 2 es incorrecta porque el shell expande `*s.txt` en lugar de mandar el nombre correcto al
+>> `find`.
+>>
+>> La opción 3 es incorrecta porque busca en los contenidos de los archivos las líneas que
+>> no coinciden con "temp", en lugar de buscar los nombres de los archivos.
+> {: .solution}
+{: .challenge}
+
+
 > ## Archivos binarios
 >
 > Nos hemos centrado exclusivamente en encontrar cosas en archivos de texto. ¿Y si
 > sus datos se almacenan como imágenes, en bases de datos, o en algún otro formato?
 > Una opción sería extender herramientas como `grep` para manejar esos formatos.
-> Esto no ha sucedido, y probablemente no lo hará, porque hay demasiados
+> Esto no ha sucedido, y probablemente no se hará, porque hay demasiados
 > formatos disponibles. 
 >
 > La segunda opción es convertir los datos en texto, o extraer los
@@ -463,19 +608,18 @@ $ grep "FE" $(find .. -name '*.pdb')
 > ya que sólo requiere generar una herramienta por formato de datos (para
 > extraer información). Por un lado, facilita realizar las cosas simples.
 > Por el contrario, las cosas complejas son generalmente imposibles. Por
-> ejemplo, es bastante fácil escribir un programa que extraerá X e Y
-> dimensiones de los archivos de imagen para que podamos después usar `grep`, pero ¿cómo
-> escribir algo para encontrar valores en una hoja de cálculo cuyas celdas contenían
+> ejemplo, es bastante fácil escribir un programa que extraiga las dimensiones X, Y
+> de los archivos de imagen para que podamos después usar `grep`, pero ¿cómo
+> escribir algo para encontrar valores en una hoja de cálculo cuyas celdas contienen
 > fórmulas?
 >
-> La tercera opción es reconocer que el shell y el procesamiento de texto
-> tiene sus límites, y utilizar otro lenguaje de programación.
+> La tercera opción es reconocer que laterminal y el procesamiento de texto
+> tiene sus límites, y en caso necesario debes utilizar otro lenguaje de programación.
 > Sin embargo, el shell te seguirá siendo útil para realizar tareas de 
 > procesamiento diarias.
 {: .callout}
 
-
-El shell de Unix es más antiguo que la mayoría de las personas que lo usan. 
+La terminal de Unix es más antiguo que la mayoría de las personas que lo usan. 
 Ha sobrevivido tanto tiempo porque es uno de los ambientes de programación más productivos
 jamás creados --- quizás incluso *el* más productivo. Su sintaxis
 puede ser críptica, pero las personas que lo dominan pueden experimentar con
@@ -486,145 +630,19 @@ North Whitehead escribió en 1911, "La civilización avanza extendiendo el
 número de operaciones importantes que podemos realizar sin pensar
 en ellas."
 
-> ## Utilizando `grep`
->
-> Haciendo referencia a `haiku.txt`
-> presentado al inicio de este tema,
-> qué comando resultaría en la salida siguiente:
->
-> ~~~
-> and the presence of absence:
-> ~~~
-> {: .output}
->
-> 1. `grep "of" haiku.txt`
-> 2. `grep -E "of" haiku.txt`
-> 3. `grep -w "of" haiku.txt`
-> 4. `grep -i "of" haiku.txt`
-{: .challenge}
-
-
 > ## `find` Comprensión de lectura de pipeline
 >
-> Escriba un breve comentario explicativo para el siguiente **script** de shell:
+> Escribe un breve comentario explicativo para el siguiente **script** de shell:
 >
 > ~~~
 > wc -l $(find . -name '*.dat') | sort -n
 > ~~~
 > {: .bash}
-{: .challenge}
-
-> ## Buscando coincidencias y restando
 >
-> La bandera `-v` a` grep` invierte la coincidencia de patrones, de modo que sólo las líneas
-> que *no* coinciden con el patrón se imprimen. Dado esto ¿cuál de
-> los siguientes comandos encontrarán todos los archivos en `/data` cuyos nombres
-> terminan en `ose.dat` (por ejemplo, `sucrose.dat` o `maltose.dat`), pero
-> *no* contienen la palabra `temp`?
->
-> 1.  `find /data -name '*.dat' | grep ose | grep -v temp`
-> 2.  `find /data -name ose.dat | grep -v temp`
-> 3.  `grep -v "temp" $(find /data -name '*ose.dat')`
-> 4.  Ninguna de las anteriores.
-{: .challenge}
-
-> ## Seguimiento de una especie
-> 
-> Leah tiene varios cientos de
-> archivos de datos guardados en un directorio, cada uno de los cuales tiene el formato siguiente:
-> 
-> ~~~
-> 2013-11-05,deer,5
-> 2013-11-05,rabbit,22
-> 2013-11-05,raccoon,7
-> 2013-11-06,rabbit,19
-> 2013-11-06,deer,2
-> ~~~
-> {: .source}
->
-> Quiere escribir un **script** de shell que tome un directorio y una especie
-> como parámetros de línea de comandos y devuelva un archivo llamado `species.txt`
-> que contenga una lista de fechas y el número de individuos de esa especie observados en esa fecha,
-> como este archivo de números de conejos:
-> 
-> ~~~
-> 2013-11-05,22
-> 2013-11-06,19
-> 2013-11-07,18
-> ~~~
-> {: .source}
->
-> Pon estos comandos y tuberías en el orden correcto para lograrlo:
-> 
-> ~~~
-> cut -d : -f 2  
-> >  
-> |  
-> grep -w $1 -r $2  
-> |  
-> $1.txt  
-> cut -d , -f 1,3  
-> ~~~
-> {: .bash}
->
-> Sugerencia: use `man grep` para buscar cómo seleccionar texto recursivamente en un directorio
-> usando grep
-> y `man cut` para seleccionar más de un campo en una línea.
-> Un ejemplo es el siguiente archivo `data-shell/data/animal-counts/animals.txt`
->
-> > ## Solución
-> >
-> > ```
-> > grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
-> > ```
-> > {: .source}
-> >
-> > Puedes llamar al **script** de la siguiente forma:
-> >
-> > ```
-> > $ bash count-species.sh bear .
-> > ```
-> > {: .bash}
-> {: .solution}
-{: .challenge}
-
-> ## Mujercitas
->
-> Tú y tu amigo, que acaban de terminar de leer *Little Women* de
-> Louisa May Alcott, y tienen una desacuerdo. De las cuatro hermanas en el
-> libro, Jo, Meg, Beth, y Amy, tu amigo piensa que Jo era la
-> más mencionada. Tú, sin embargo, estás seguro de que era Amy. Afortunadamente tu
-> tienen un archivo `LittleWomen.txt` que contiene el texto completo de la novela.
-> Utilizando un bucle `for`, ¿cómo tabularían el número de veces que cada una
-> de las cuatro hermanas es mencionada?
->
-> Sugerencia: una solución sería emplear
-> los comandos `grep` y `wc` y un `|`, mientras que otra podría utilizar
-> opciones de `grep`.
-> Normalmente hay más de una forma para solucionar una tarea de programación. Cada solución es seleccionada de acuerdo a la combinación entre cuál es la que produce el resultado correcto, con mayor elegancia, de la manera más clara y con mayor velocidad.
-> 
-> > ## Solución
-> > ```
-> > for sis in Jo Meg Beth Amy
-> > do
-> > 	echo $sis:
-> >	grep -ow $sis LittleWomen.txt | wc -l
-> > done
-> > ```
-> > {: .source}
-> >
-> > Alternativa, un poco inferior:
-> > ```
-> > for sis in Jo Meg Beth Amy
-> > do
-> > 	echo $sis:
-> >	grep -ocw $sis LittleWomen.txt
-> > done
-> > ```
-> > {: .source}
-> >
-> > Esta solucón es inferior porque `grep -c` solamente reporta el número de las líneas.
-> > El número total de coincidencias es reportado por este método va a ser más bajo si hay más de una coincidencia por línea. 
+>> ## Solución
+>> 1. Encuentra todos los archivos con una extensión `.dat` en el directorio actual
+>> 2. Cuenta el número de líneas que contiene cada uno de estos archivos
+>> 3. Ordena la salida del paso 2. numéricamente
 > {: .solution}
 {: .challenge}
 
@@ -632,7 +650,7 @@ en ellas."
 >
 > El comando `find` puede recibir varios otros criterios conocidos como "tests"
 > para localizar archivos con atributos específicos, como tiempo de creación, tamaño,
-> permisos o dueño. Explora esto con `man find` y luego
+> permisos o dueño. Explora el manual con `man find` y luego
 > escribe un solo comando para encontrar todos los archivos en o debajo del directorio actual
 > que han sido modificados por el usuario `ahmed` en las últimas 24 horas.
 >
@@ -640,10 +658,12 @@ en ellas."
 >
 > Sugerencia 2: El valor de `-mtime` tendrá que ser negativo --- ¿por qué?
 >
-> Solución: Asumiendo que el directorio de inicio de Nelle es nuestro directorio en el que trabajamos, podemos usar:
->
-> ~~~
-> $ find ./ -type f -mtime -1 -user ahmed
-> ~~~
-> {: .bash}
+> > ## Solución: 
+> > Asumiendo que el directorio de inicio de Nelle es nuestro directorio en el que trabajamos, podemos usar:
+> >
+> > ~~~
+> > $ find ./ -type f -mtime -1 -user ahmed
+> > ~~~
+> > {: .bash}
+> {: .solution}
 {: .challenge}
