@@ -5,7 +5,7 @@ permalink: /reference/
 
 ## Resumen de Comandos Básicos
 
-| Acción | Archivos | Carpetas |
+| Acción | Archivos | Directorios o Carpetas |
 | ------------- | ------- | -------------- |
 | Inspeccionar | ls | ls |
 | Ver contenido | cat | ls |
@@ -19,7 +19,7 @@ permalink: /reference/
 
 La siguiente es una descripción general de un sistema de archivos Unix estándar.
 La jerarquía exacta depende de la plataforma,
-por lo que es posible que no vea exactamente los mismos archivos / directorios en su computadora:
+por lo que es posible que no veas exactamente los mismos archivos / directorios en tu computadora:
 
 ![Jerarquía del sistema de archivos de Linux](../fig/standard-filesystem-hierarchy.svg)
 
@@ -30,22 +30,22 @@ por lo que es posible que no vea exactamente los mismos archivos / directorios e
 argumento
 : Un valor dado a una función o programa cuando se ejecuta. El término a menudo se usa indistintamente (y de manera inconsistente) con [parámetro](#parámetro).
 
-bandera
-: Una forma concisa de especificar una opción o configuración a un programa de línea de comandos. Por convención, las aplicaciones Unix usan un guion seguido de una sola letra, como `-v`, o dos guiones seguidos de una palabra, como` --verbose`, mientras que las aplicaciones de DOS usan una barra inclinada, como `/ V`. Dependiendo de la aplicación, un indicador puede ir seguido de un único argumento, como en `-o / tmp / output.txt`.
+bandera o **flag**
+: Una forma concisa de especificar una opción o configuración a un programa de línea de comandos. Por convención, las aplicaciones Unix usan un guión seguido de una sóla letra, como `-v`, o dos guiones seguidos de una palabra, como 
+`--verbose`, mientras que las aplicaciones de DOS usan una barra inclinada, como `/ V`. Dependiendo de la aplicación, un indicador puede ir seguido de un único argumento, como en `-o / tmp / output.txt`.
 
-citando
+comillas
 : (en la terminal):
-    Utilizar comillas de varios tipos para evitar que el intérprete interprete caracteres especiales. Por ejemplo, para pasar la secuencia de caracteres `*.txt` a un programa, generalmente es necesario escribirlo como `'* .txt'` (con comillas simples) para que la terminal no intente expandir el comodín `*`.
+Se utilizan comillas de varios tipos para evitar que el intérprete interprete caracteres especiales. Por ejemplo, para pasar la secuencia de caracteres `*.txt` a un programa, generalmente es necesario escribirlo como `'* .txt'` (con comillas simples) para que la terminal no intente expandir el comodín `*`.
 
 comentario
-: Un comentario en un programa que pretende ayudar a los lectores humanos a entender lo que está sucediendo, pero es ignorado por la computadora. Los comentarios en Python, R y la terminal de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la linea; los comentarios en SQL comienzan con `--`,
-    y otros idiomas tienen otras convenciones.
+: Un comentario en un programa pretende ayudar a los lectores entender lo que está sucediendo, pero es ignorado por la computadora. Los comentarios en Python, R y la terminal de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la linea; los comentarios en SQL comienzan con `--`, y otros idiomas tienen otras convenciones.
 
-comodín
-: Un caracteres utilizado en la coincidencia de patrones. En la terminal de Unix, el comodín `*` coincide con cero o más caracteres, para que `* .txt` coincida con todos los archivos cuyos nombres terminen en` .txt`.
+comodín o caracter especial
+: Un caracter utilizado para coincidir con patrones. En la terminal de Unix, el comodín `*` coincide con cero o más caracteres, para que `*.txt` coincida con todos los archivos cuyos nombres terminen en `.txt`.
 
 cuerpo de bucle
-: El conjunto de instrucciones o comandos que se repiten dentro de un [for bucle](# for-bucle) o [while bucle](# while-bucle).
+: El conjunto de instrucciones o comandos que se repiten dentro de un [for bucle](#for-bucle) o [while bucle](#while-bucle).
 
 directorio de inicio
 : El directorio predeterminado asociado con una cuenta en un sistema informático. Por convención, todos los archivos de un usuario se almacenan en o debajo de su directorio de inicio.
@@ -87,44 +87,46 @@ interfaz gráfica del usuario
 : Una interfaz de usuario basada en la selección de elementos y acciones desde una pantalla gráfica, usualmente controlado usando un mouse. Ver también: [interfaz de línea de comandos](#command-line-interface).
 
 lazo
-: Un conjunto de instrucciones que se ejecutarán varias veces. Consiste en un [cuerpo de bucle](#bucle-cuerpo) y (por lo general) un condición para salir del bucle. Ver también [for bucle](# for-bucle) y [while bucle](#while-bucle).
+: Un conjunto de instrucciones que se ejecutarán varias veces. Consiste en un [cuerpo de bucle](#bucle-cuerpo) y (por lo general) un condición para salir del bucle. Ver también [for bucle](# for-bucle) y [while bucle](# while-bucle).
 
 ortogonal
 : Tener significados o comportamientos que son independientes el uno del otro. Si un conjunto de conceptos o herramientas son ortogonales, se pueden combinar de cualquier manera.
 
 parámetro
-: Una variable nombrada en la declaración de una función que se usa para mantener un valor pasado a la llamada. El término a menudo se usa indistintamente (y de manera inconsistente) con [argumento](#argumento).
+: Una variable nombrada en la declaración de una función que se usa para mantener un valor pasado a la llamada. El término a menudo se usa indistintamente (y de manera inconsistente) con [argumento](# argumento).
 
 path
-: Una descripción que especifica la ubicación de un archivo o directorio dentro de un [sistema de archivos](#file-system). Ver también: [path absoluta](#path-absoluta), [path relativa](# path-relativa).
+: Una descripción que especifica la ubicación de un archivo o directorio dentro de un [sistema de archivos](#file-system). Ver también: [path absoluto](# path-absoluto), [path relativo](# path-relativo).
 
 path absoluto
-: A [path](#path) que hace referencia a una ubicación particular en un sistema de archivos. Los paths absolutos generalmente se escriben con respecto al sistema de archivos [directorio root](#directorio-root), y comience con "/" (en Unix) o "\\" (en Microsoft Windows). Ver también: [path relativa](#path-relativa).
+: Un [path](#path) que hace referencia a una ubicación particular en un sistema de archivos. Los paths absolutos generalmente se escriben con respecto al sistema de archivos [directorio root](# directorio-root), y comienzan con "/" (en Unix) o "\\" (en Microsoft Windows). Ver también: [path relativo](# path-relativo).
 
 path relativo
-: A [path](#ruta) que especifica la ubicación de un archivo o directorio con respecto al [directorio de trabajo actual](#current-working-directory). Cualquier ruta que no comience con un carácter separador ("/" o "\\") es una ruta relativa. Ver también: [path absoluta](#path-absoluta).
+: Un [path](#ruta) que especifica la ubicación de un archivo o directorio con respecto al [directorio de trabajo actual](#current-working-directory). Cualquier ruta que no comience con un caracter separador ("/" o "\\") es una ruta relativa. Ver también: [path absoluto](#path-absoluto).
+
+pipe
+: Una conexión desde la salida de un programa a la entrada de otro. Cuando dos o más programas están conectados de esta manera, se denominan "canalización" o **piping**.
 
 proceso
-: Una instancia en ejecución de un programa, que contiene código, valores de variables, abrir archivos y conexiones de red, y así sucesivamente. Los procesos son los "actores" que maneja el [sistema operativo](#sistema-operativo); generalmente ejecuta cada proceso durante unos pocos milisegundos a la vez para dar la impresión de que están ejecutándose simultáneamente.
+: Una instancia en ejecución de un programa, que contiene código, valores de variables, archivos abiertos y conexiones de red, y así sucesivamente. Los procesos son los "actores" que maneja el [sistema operativo](#sistema-operativo); generalmente ejecuta cada proceso durante unos pocos milisegundos a la vez para dar la impresión de que están ejecutándose simultáneamente.
 
 prompt
-: Un caractere o caracteres se muestran con [REPL](#read-evaluate-print-loop) para mostrar que está esperando su próximo comando.
+: Un caracter o caracteres se muestran con [REPL](#read-evaluate-print-loop) para mostrar que está esperando su próximo comando.
 
-read-evaluate-print loop
-: (REPL): A [interfaz de línea de comandos](#command-line-interface) que lee un comando del usuario, lo ejecuta, imprime el resultado y espera otro comando.
+read-evaluate-print-loop
+: (REPL): Una [interfaz de línea de comandos](#command-line-interface) que lee un comando del usuario, lo ejecuta, imprime el resultado y espera otro comando.
 
 redirigir
 : Para enviar la salida de un comando a un archivo en lugar de a la pantalla u otro comando, o de manera equivalente, para leer la entrada de un comando desde un archivo.
 
 sistema de archivos
-: Un conjunto de archivos, directorios y dispositivos de E/S (como teclados y pantallas). Un sistema de archivos puede extenderse a través de muchos dispositivos físicos, o muchos sistemas de archivos pueden almacenarse en un solo dispositivo físico;
-    el [sistema operativo](#sistema operativo) administra el acceso.
+: Un conjunto de archivos, directorios y dispositivos de entrada y salida (E/S) (como teclados y pantallas). Un sistema de archivos puede extenderse a través de muchos dispositivos físicos, o muchos sistemas de archivos pueden almacenarse en un solo dispositivo físico; el [sistema operativo](#sistema operativo) administra el acceso.
 
 salida estándar
-: Flujo de salida predeterminado de un proceso. En aplicaciones interactivas de línea de comandos, los datos enviados a la salida estándar se muestran en la pantalla; en un [tubo](#tubería), se pasa a la [entrada estándar](#entrada-estándar) del siguiente proceso.
+: Flujo de salida predeterminado de un proceso. En aplicaciones interactivas de línea de comandos, los datos enviados a la salida estándar se muestran en la pantalla; con un [pipe](#pipe), se pasa a la [entrada estándar](#entrada-estándar) del siguiente proceso.
 
 sistema operativo
-: Software que gestiona las interacciones entre usuarios, hardware y software [procesos](#proceso). Común ejemplos son Linux, OS X y Windows.
+: Software que gestiona las interacciones entre usuarios y los [procesos](#proceso) de hardware y software. Por ejemplo, Linux, OS X y Windows.
 
 subdirectorio
 : Un directorio contenido en otro directorio.
@@ -133,16 +135,13 @@ tabulación completa
 : Una función proporcionada por muchos sistemas interactivos en los que presionar la tecla Tab activa la finalización automática de la palabra o comando actual.
 
 terminal
-: A [interfaz de línea de comando](#cli) como Bash (Bourne-Again Shell) o la terminal de Microsoft Windows DOS que permite a un usuario interactuar con el [sistema operativo](#sistema-operativo).
+: Una [interfaz de línea de comando] como Bash (Bourne-Again Shell) o la terminal de Microsoft Windows DOS que permite a un usuario interactuar con el [sistema operativo](#sistema-operativo).
 
-terminal de comando
+terminal de comandos o terminal de shell
 : Ver [terminal](#terminal)
 
 tipo MIME
 : Los tipos MIME (extensiones multipropósito de correo de Internet) describen diferentes tipos de archivos para el intercambio en Internet, por ejemplo, imágenes, audio y documentos.
-
-tubo
-: Una conexión desde la salida de un programa a la entrada de otro. Cuando dos o más programas están conectados de esta manera, se denominan "canalización".
 
 variable
 : Un nombre en un programa que está asociado con un valor o una colección de valores.
