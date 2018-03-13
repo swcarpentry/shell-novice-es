@@ -36,7 +36,7 @@ $ cd
 $ cd writing
 $ cat haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 The Tao that is seen
@@ -65,7 +65,7 @@ Busquemos líneas que contengan la palabra "no":
 ~~~
 $ grep not haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Is not the true Tao, until
@@ -85,7 +85,7 @@ Vamos a probar un patrón distinto: "The".
 ~~~
 $ grep The haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 The Tao that is seen
@@ -103,7 +103,7 @@ Esto limitará los coincidencias con los límites de las palabras.
 ~~~
 $ grep -w The haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 The Tao that is seen
@@ -117,7 +117,7 @@ A veces, queremos buscar una frase en vez de una sola palabra. Esto puede hacers
 ~~~
 $ grep -w "is not" haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Today it is not working
@@ -135,7 +135,7 @@ Otra opción útil es `-n`, que numera las líneas que coinciden:
 ~~~
 $ grep -n "it" haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 5:With searching comes loss
@@ -153,7 +153,7 @@ la opción `-w` para encontrar las líneas que contienen la palabra "the" con `-
 ~~~
 $ grep -n -w "the" haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 2:Is not the true Tao, until
@@ -166,7 +166,7 @@ Ahora queremos usar la opción `-i` para hacer que nuestra búsqueda sea insensi
 ~~~
 $ grep -n -w -i "the" haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 1:The Tao that is seen
@@ -181,7 +181,7 @@ obtener las líneas que NO contienen la palabra "the".
 ~~~
 $ grep -n -w -v "the" haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 1:The Tao that is seen
@@ -201,7 +201,7 @@ $ grep -n -w -v "the" haiku.txt
 ~~~
 $ grep --help
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Usage: grep [OPTION]... PATTERN [FILE]...
@@ -239,7 +239,7 @@ Miscellaneous:
 > ~~~
 > $ grep -E '^.o' haiku.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > You bring fresh toner.
@@ -275,7 +275,7 @@ ejecutemos `find '.
 ~~~
 $ find .
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 .
@@ -312,7 +312,7 @@ la salida de `find` serán los nombres de los cinco directorios en nuestro peque
 ~~~
 $ find . -type d
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ./
@@ -329,7 +329,7 @@ recibimos una lista de todos los archivos en su lugar:
 ~~~
 $ find . -type f
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ./haiku.txt
@@ -348,7 +348,7 @@ Ahora tratemos de buscar por nombre:
 ~~~
 $ find . -name *.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ./haiku.txt
@@ -364,7 +364,7 @@ El comando que corrimos era:
 ~~~
 $ find . -name haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 `find` hizo lo que pedimos; Sólo pedimos la cosa equivocada.
 
@@ -377,7 +377,7 @@ De esta manera,
 ~~~
 $ find . -name '*.txt'
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ./data/one.txt
@@ -408,7 +408,7 @@ La forma más sencilla es poner el comando `find` dentro de `$()`:
 ~~~
 $ wc -l $(find . -name '*.txt')
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 11 ./haiku.txt
@@ -428,7 +428,7 @@ el shell construye el comando:
 ~~~
 $ wc -l ./data/one.txt ./data/LittleWomen.txt ./data/two.txt ./haiku.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 que es lo que queríamos.
 Esta expansión es exactamente lo que hace el shell cuando se expanden comodines como `*` y `?`,
@@ -443,7 +443,7 @@ buscando la cadena "FE" en todos los archivos `.pdb` por encima del directorio a
 ~~~
 $ grep "FE" $(find .. -name '*.pdb')
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ../data/pdb/heme.pdb:ATOM     25 FE           1      -0.924   0.535  -0.518
@@ -511,7 +511,7 @@ en ellas."
 > ~~~
 > wc -l $(find . -name '*.dat') | sort -n
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .challenge}
 
 > ## Buscando coincidencias y restando
@@ -565,7 +565,7 @@ en ellas."
 > $1.txt  
 > cut -d , -f 1,3  
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Sugerencia: use `man grep` para buscar cómo seleccionar texto recursivamente en un directorio
 > usando grep
@@ -584,7 +584,7 @@ en ellas."
 > > ```
 > > $ bash count-species.sh bear .
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -645,5 +645,5 @@ en ellas."
 > ~~~
 > $ find ./ -type f -mtime -1 -user ahmed
 > ~~~
-> {: .bash}
+> {: .language-bash}
 {: .challenge}

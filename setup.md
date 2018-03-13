@@ -13,6 +13,6 @@ Para ésta lección necesitas descargar unos archivos:
 ~~~
 $ cd
 ~~~
-{: .bash}
+{: .language-bash}
 
 En la lección, aprenderás como acceder a los datos de este directorio.  

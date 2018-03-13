@@ -3,31 +3,31 @@ title: "Navegación de archivos y directorios"
 teaching: 15
 exercises: 0
 questions:
-- "¿Cómo puedo moverme en mi computadora?"
-- "¿Cómo puedo ver qué archivos y directorios tengo?"
-- "¿Cómo puedo especificar la ubicación de un archivo o directorio en mi computadora?"
+   - "¿Cómo puedo moverme en mi computadora?"
+   - "¿Cómo puedo ver qué archivos y directorios tengo?"
+   - "¿Cómo puedo especificar la ubicación de un archivo o directorio en mi computadora?"
 objectives:
-- "Explicar las similitudes y diferencias entre un archivo y un directorio."
-- "Convertir una ruta absoluta en una ruta relativa y viceversa."
-- "Construir rutas absolutas y relativas que identifican archivos y directorios específicos."
-- "Explicar los pasos del ciclo de lectura-ejecución-impresión de la terminal."
-- "Identificar el comando, opciones y nombres de archivo en una llamada de línea de comandos."
-- "Demostrar el uso del autocompletado con el tabulador y explicar sus ventajas."
+   - "Explicar las similitudes y diferencias entre un archivo y un directorio."
+   - "Convertir una ruta absoluta en una ruta relativa y viceversa."
+   - "Construir rutas absolutas y relativas que identifican archivos y directorios específicos."
+   - "Explicar los pasos del ciclo de lectura-ejecución-impresión de la terminal."
+   - "Identificar el comando, opciones y nombres de archivo en una llamada de línea de comandos."
+   - "Demostrar el uso del autocompletado con el tabulador y explicar sus ventajas."
 keypoints:
-- "El sistema de archivos es responsable de administrar la información en el disco."
-- "La información se almacena en archivos, que a su vez se almacenan en directorios (carpetas)."
-- "Los directorios también pueden almacenar otros directorios, formando un árbol de directorios."
-- "`cd path` cambia el directorio de trabajo actual."
-- "`ls path` imprime un listado de un archivo o directorio específico; `ls` por si solo lista el directorio de trabajo actual."
-- "`pwd` imprime el directorio de trabajo actual del usuario."
-- "`whoami` muestra la identidad actual del usuario."
-- "`/` es el directorio raíz de todo el sistema de archivos."
-- "Una ruta relativa especifica una ubicación desde la ubicación actual."
-- "Una ruta absoluta especifica una ubicación desde la raíz del sistema de archivos."
-- "Los nombres de directorio en una ruta están separados por '/' en Unix, pero por '\\\' en Windows."
-- "'..' significa 'el directorio por encima del actual'; '.' por si solo significa 'el directorio actual'."
-- "La mayoría de los nombres de los archivos son `algo.extension`. La extensión no es necesaria y no garantiza nada, pero normalmente se utiliza para indicar el tipo de datos en el archivo."
-- "La mayoría de los comandos toman opciones (**flags**) que comienzan con un '-'."
+   - "El sistema de archivos es responsable de administrar la información en el disco."
+   - "La información se almacena en archivos, que a su vez se almacenan en directorios (carpetas)."
+   - "Los directorios también pueden almacenar otros directorios, formando un árbol de directorios."
+   - "`cd path` cambia el directorio de trabajo actual."
+   - "`ls path` imprime un listado de un archivo o directorio específico; `ls` por si solo lista el directorio de trabajo actual."
+   - "`pwd` imprime el directorio de trabajo actual del usuario."
+   - "`whoami` muestra la identidad actual del usuario."
+   - "`/` es el directorio raíz de todo el sistema de archivos."
+   - "Una ruta relativa especifica una ubicación desde la ubicación actual."
+   - "Una ruta absoluta especifica una ubicación desde la raíz del sistema de archivos."
+   - "Los nombres de directorio en una ruta están separados por / en Unix, pero por \\\ en Windows."
+   - "`..` significa *el directorio por encima del actual*; `.` por si solo significa *el directorio actual*."
+   - "La mayoría de los nombres de los archivos son `algo.extension`. La extensión no es necesaria y no garantiza nada, pero normalmente se utiliza para indicar el tipo de datos en el archivo."
+   - "La mayoría de los comandos toman opciones (**flags**) que comienzan con un '-'."
 ---
 
 La parte del sistema operativo responsable de administrar archivos y directorios
@@ -53,7 +53,7 @@ abramos una terminal:
 ~~~
 $ 
 ~~~
-{: .bash}
+{: .language-bash}
 
 El signo de dólar es un **prompt** (indicador), que nos muestra que la terminal está esperando 
 la entrada;
@@ -70,7 +70,7 @@ nos muestra como quién nos identifica la terminal:
 ~~~
 $ whoami
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Nelle
@@ -102,7 +102,7 @@ Más específicamente, cuando escribimos `whoami` la terminal:
 > ~~~
 > $ mycommand
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > -bash: mycommand: command not found
@@ -127,7 +127,7 @@ el cual es el directorio de inicio de Nelle, también conocido como su **home**:
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle
@@ -193,7 +193,7 @@ que significa "listado":
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Applications Documents    Library      Music        Public
@@ -213,7 +213,7 @@ que le indica a `ls` que agregue un `/`a los nombres de los directorios:
 ~~~
 $ ls -F
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Applications/ Documents/    Library/      Music/        Public/
@@ -226,7 +226,7 @@ Desktop/      Downloads/    Movies/       Pictures/
 ~~~
 $ ls --help
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Usage: ls [OPTION]... [FILE]...
@@ -358,7 +358,7 @@ información sobre cómo usar los comandos o programas.
 > ~~~
 > $ ls -j
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > ls: invalid option -- 'j'
@@ -409,7 +409,9 @@ el cual no existe.
 > ~~~
 > $ ls -lh Documents
 > ~~~
-> {: .bash} `ls` es el comando, `-lh` son las **flags** (u opciones), y `Documents` es el argumento.
+> {: .language-bash} 
+>`ls` es el comando, `-lh` son las **flags** (u opciones), y `Documents` 
+> es el argumento.
 {: .callout}
 
 También podemos usar `ls` para ver el contenido de un directorio diferente. Veamos
@@ -421,7 +423,7 @@ El argumento `Desktop` le dice a `ls` que queremos una lista de algo distinto a 
 ~~~
 $ ls -F Desktop
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 data-shell/
@@ -449,7 +451,7 @@ un nombre de directorio a `ls`:
 ~~~
 $ ls -F Desktop/data-shell
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 creatures/          molecules/          notes.txt           solar.pdf
@@ -476,7 +478,7 @@ $ cd Desktop
 $ cd data-shell
 $ cd data
 ~~~
-{: .bash}
+{: .language-bash}
 
 Estos comandos nos moverán del directorio **home** al directorio Desktop, luego
 al directorio `data-shell`, y finalmente al directorio `data`. `cd` no imprime nada,
@@ -488,7 +490,7 @@ se listan los contenidos de `/Users/nelle/Desktop/data-shell/data`, porque ahí 
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell/data
@@ -498,7 +500,7 @@ $ pwd
 ~~~
 $ ls -F
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 amino-acids.txt   elements/     pdb/	          salmon.txt
@@ -512,7 +514,7 @@ Ahora sabemos cómo bajar por el árbol de directorios, pero
 ~~~
 cd data-shell
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 -bash: cd: data-shell: No such file or directory
@@ -532,7 +534,7 @@ que se ve así:
 ~~~
 $ cd ..
 ~~~
-{: .bash}
+{: .language-bash}
 
 `..` es un nombre de directorio especial que significa
 "el directorio que contiene a este", o más brevemente,
@@ -543,7 +545,7 @@ si ejecutamos `pwd` después de ejecutar` cd ..`, volvemos a `/Users/nelle/Deskt
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell
@@ -556,7 +558,7 @@ mostrarlo, podemos dar a `ls` la opción `-a`:
 ~~~
 $ ls -F -a
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ./                  creatures/          notes.txt
@@ -608,14 +610,14 @@ un directorio?
 ~~~
 $ cd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ¿Cómo puedes comprobar lo que sucedió? ¡`pwd` nos da la respuesta!
 
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle
@@ -632,7 +634,7 @@ para llegar a `data` en un solo paso:
 ~~~
 $ cd Desktop/data-shell/data
 ~~~
-{: .bash}
+{: .language-bash}
 
 Comprueba que nos hemos movido al lugar correcto ejecutando `pwd` y `ls -F`.
 
@@ -659,7 +661,7 @@ para movernos a `data-shell`.
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell/data
@@ -669,7 +671,7 @@ $ pwd
 ~~~
 $ cd /Users/nelle/Desktop/data-shell
 ~~~
-{: .bash}
+{: .language-bash}
 
 Ejecuta `pwd` y `ls -F` para asegurarte de que estás en el directorio que esperas.
 
@@ -729,7 +731,7 @@ Ahora en su directorio actual `data-shell`, Nelle puede ver qué archivos tiene 
 ~~~
 $ ls north-pacific-gyre/2012-07-03/
 ~~~
-{: .bash}
+{: .language-bash}
 
 Esto es mucho que teclear,
 pero puede permitir que la terminal haga la mayor parte del trabajo a través de lo 
@@ -739,7 +741,7 @@ Si escribe:
 ~~~
 $ ls nor
 ~~~
-{: .bash}
+{: .language-bash}
 
 Y después presiona el tabulador (la tecla de tabulador en su teclado),
 la terminal completa automáticamente el nombre del directorio por ella:
@@ -747,7 +749,7 @@ la terminal completa automáticamente el nombre del directorio por ella:
 ~~~
 $ ls north-pacific-gyre/
 ~~~
-{: .bash}
+{: .language-bash}
 
 Si presiona el tabulador otra vez,
 Bash añadirá `2012-07-03/` al comando,

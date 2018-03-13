@@ -202,7 +202,7 @@ Haga que un alumno muestre la solución?
     $ cd
     $ cd Desktop
     ~~~
-    {: .bash}
+    {: .language-bash}
 
     siempre pondrá a alguien en su escritorio.
     Pídales que creen el directorio de ejemplos para los ejercicios de terminal allí
