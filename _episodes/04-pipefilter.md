@@ -847,3 +847,6 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> La opción 3 es la correcta. Para que la opción 1 fuera correcta tendríamos que haber ejecutado sólo el comando `head`. Para que la opción 2 fuera correcta tendríamos que haber ejecutado sólo el comando `tail`. Para que la opción 4 fuera correcta tendríamos que haber usado un **pipe** para enviar la salida de `head` a `tail -2` de esta forma: `head -3 animals.txt | tail -2 >> animalsUpd.txt`
 > {: .solution}
 {: .challenge}
+
+
+{% include links.md %}

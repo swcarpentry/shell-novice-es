@@ -723,3 +723,6 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 >> El tercer grupo de comandos podría lograr el objetivo deseado, pero de una forma muy poco eficiente: el primer comando copia el directorio de forma recursiva, pero el segundo comando borra de forma interactiva, requiriendo confirmación antes de borrar cada archivo y directorio. 
 > {: .solution} 
 {: .challenge}
+
+
+{% include links.md %}
