@@ -577,7 +577,7 @@ en ellas."
 > > ```
 > > grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  > $1.txt
 > > ```
-> > {: .source}
+> > {: .language-bash}
 > >
 > > Puedes llamar al **script** de la siguiente forma:
 > >
@@ -611,9 +611,10 @@ en ellas."
 > >	grep -ow $sis LittleWomen.txt | wc -l
 > > done
 > > ```
-> > {: .source}
+> > {: .language-bash}
 > >
 > > Alternativa, un poco inferior:
+> >
 > > ```
 > > for sis in Jo Meg Beth Amy
 > > do
@@ -621,7 +622,7 @@ en ellas."
 > >	grep -ocw $sis LittleWomen.txt
 > > done
 > > ```
-> > {: .source}
+> > {: .language-bash}
 > >
 > > Esta solucón es inferior porque `grep -c` solamente reporta el número de las líneas.
 > > El número total de coincidencias es reportado por este método va a ser más bajo si hay más de una coincidencia por línea. 

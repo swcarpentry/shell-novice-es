@@ -37,7 +37,7 @@ Si el archivo no existe, se creará. Podemos usar el editor de texto para editar
 ~~~
 head -n 15 octane.pdb | tail -n 5
 ~~~
-{: .source}
+{: .language-bash}
 
 Esta es una variación del **pipe** que construimos anteriormente: selecciona las líneas 11-15 del archivo `octane.pdb`. Recuerda, *no* lo estamos ejecutando como un comando todavía: sólo estamos poniendo los comandos en un archivo.
 
@@ -91,7 +91,7 @@ Ahora, dentro de "nano", reemplaza el texto `octane.pdb` con la variable especia
 ~~~
 head -n 15 "$1" | tail -n 5
 ~~~
-{: .output}
+{: .language-bash}
 
 Dentro de un **script** de la terminal,`$1` significa "el primer nombre de archivo (u otro parámetro) en la línea de comandos".
 Ahora podemos ejecutar nuestro **script** de esta manera:
