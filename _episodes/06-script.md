@@ -367,6 +367,8 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >> $ head -n 1 cubane.pdb ethan ee.pdb octane.pdb pentane.pdb propane.pdb
 >> $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 >> ~~~
+>> {: .language-bash}
+>>
 >> La terminal no expande '* .pdb' porque está rodeado por comillas. El primer parámetro del **script** es '*.pdb', que se expande 
 >> dentro del **script** desde el principio al final.
 > {: .solution}
@@ -433,6 +435,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >>  
 >> wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 >> ~~~
+>>{: .language-bash}
 >{: .solution}
 {: .challenge}
 

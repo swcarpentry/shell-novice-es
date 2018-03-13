@@ -540,7 +540,6 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > $ wc -l < notes.txt
 > ~~~
->
 > {: .language-bash}
 >
 >> ## Solución
@@ -556,15 +555,13 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> a test
 >> Ctrl-D # Esto le indica a la terminal que has terminado de teclear la entrada. 
 >> ~~~
->>
->> {: .language-bash}
+>>{: .language-bash}
 >>
 >> ~~~
 >> 3
 >> ~~~
->>
 >>{: .output}
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 > ## ¿Qué significa `>>`?

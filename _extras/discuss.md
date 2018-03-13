@@ -247,10 +247,11 @@ lo que casi con seguridad no funcionaría.)
 
 El comando para cambiar los permisos del propietario a `rw-` es:
 
-~~~ {.input}
+~~~
 $ chmod u=rw final.grd
 ~~~
-
+{: .language-bash}
+ 
 La 'u' señala que estamos cambiando los privilegios
 del usuario (es decir, el propietario del archivo),
 y `rw` es el nuevo conjunto de permisos.
@@ -447,7 +448,7 @@ para que Blast pueda usarla como datos de búsqueda.
 ~~~
 makeblastdb -in uniprot_sprot.fasta -dbtype prot
 ~~~
-{: .blast}
+{: .language-bash}
 
 Ahora, vamos a configurar la **variable de entorno** que especifica
 en dónde se encuentra nuestra base de datos de Blast
