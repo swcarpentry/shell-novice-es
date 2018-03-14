@@ -1,4 +1,12 @@
-* ¿Por qué aprendemos a usar la terminal?
+---
+layout: page
+title: "Instructor Notes"
+permalink: /guide/
+---
+
+
+* ¿Por qué aprendemos a usar el terminal?
+
     * Permite a los usuarios automatizar tareas repetitivas
     * Y captura pequeños pasos de manipulación de datos que normalmente no se graban hacer la investigación reproducible
 * El problema
