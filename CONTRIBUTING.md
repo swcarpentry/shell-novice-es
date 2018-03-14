@@ -99,7 +99,7 @@ se fusiona en la lección.
 
 Discusión general de [Software Carpentry][swc-site] y 
 [Data Carpentry][dc-site] sucede en la 
-[lista de distribución de discusiones][lista de discusión], 
+[lista de distribución de discusiones][discuss-list], 
 a la cual todos son bienvenidos. También puedes 
 [contactarnos por correo electrónico][contacto].
 
