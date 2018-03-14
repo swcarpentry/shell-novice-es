@@ -6,19 +6,18 @@ permalink: /guide/
 
 
 * ¿Por qué aprendemos a usar el terminal?
-
-    * Permite a los usuarios automatizar tareas repetitivas
-    * Y captura pequeños pasos de manipulación de datos que normalmente no se graban hacer la investigación reproducible
+  * Permite a los usuarios automatizar tareas repetitivas
+  * Y captura pequeños pasos de manipulación de datos que normalmente no se graban hacer la investigación reproducible
+  
 * El problema
-    * Ejecutar el mismo flujo de trabajo en varias muestras puede ser innecesariamente laborioso
-    * Manipulación manual de archivos de datos:
-        * a menudo no se captura en la documentación
-        * es difícil de reproducir
-        * es difícil solucionar problemas, revisar o mejorar
+  * Ejecutar el mismo flujo de trabajo en varias muestras puede ser innecesariamente laborioso
+  * Manipulación manual de archivos de datos:
+	* a menudo no se captura en la documentación es difícil de reproducir
+	* es difícil solucionar problemas, revisar o mejorar
 * La terminal
-    * Los flujos de trabajo pueden automatizarse mediante el uso de scripts de terminal
-    * Los comandos incorporados permiten una fácil manipulación de los datos (por ejemplo, sort, grep, etc.)
-    * Cada paso puede capturarse en el script de terminal y permitir la reproducibilidad y la resolución de problemas fáciles
+  * Los flujos de trabajo pueden automatizarse mediante el uso de scripts de terminal
+  * Los comandos incorporados permiten una fácil manipulación de los datos (por ejemplo, sort, grep, etc.)
+  * Cada paso puede capturarse en el script de terminal y permitir la reproducibilidad y la resolución de problemas fáciles
 
 ## En general
 
