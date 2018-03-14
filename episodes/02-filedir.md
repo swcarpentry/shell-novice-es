@@ -7,12 +7,12 @@ questions:
 - "¿Cómo puedo ver qué archivos y directorios tengo?"
 - "¿Cómo puedo especificar la ubicación de un archivo o directorio en mi computadora?"
 objectives:
-- "Explicar las similitudes y diferencias entre un archivo y un directorio."
-- "Convertir una ruta absoluta en una ruta relativa y viceversa."
-- "Construir rutas absolutas y relativas que identifican archivos y directorios específicos."
-- "Explicar los pasos del ciclo de lectura-ejecución-impresión de la terminal."
-- "Identificar el comando, opciones y nombres de archivo en una llamada de línea de comandos."
-- "Demostrar el uso del autocompletado con el tabulador y explicar sus ventajas."
+   - "Explicar las similitudes y diferencias entre un archivo y un directorio."
+   - "Convertir una ruta absoluta en una ruta relativa y viceversa."
+   - "Construir rutas absolutas y relativas que identifican archivos y directorios específicos."
+   - "Explicar los pasos del ciclo de lectura-ejecución-impresión de la terminal."
+   - "Identificar el comando, opciones y nombres de archivo en una llamada de línea de comandos."
+   - "Demostrar el uso del autocompletado con el tabulador y explicar sus ventajas."
 keypoints:
 - "El sistema de archivos es responsable de administrar la información en el disco."
 - "La información se almacena en archivos, que a su vez se almacenan en directorios (carpetas)."
@@ -24,7 +24,7 @@ keypoints:
 - "`/` es el directorio raíz de todo el sistema de archivos."
 - "Una ruta relativa especifica una ubicación desde la ubicación actual."
 - "Una ruta absoluta especifica una ubicación desde la raíz del sistema de archivos."
-- "Los nombres de directorio en una ruta están separados por '/' en Unix, pero por '\\\' en Windows."
+- "Los nombres de directorio en una ruta están separados por '/' en Unix, pero por \\\ en Windows."
 - "'..' significa 'el directorio por encima del actual'; '.' significa 'el directorio actual'."
 - "La mayoría de los nombres de los archivos son `algo.extension`. La extensión no es necesaria y no garantiza nada, pero normalmente se utiliza para indicar el tipo de datos en el archivo."
 - "La mayoría de los comandos toman opciones (**flags**) que comienzan con un '-'."
@@ -49,7 +49,7 @@ una terminal:
 ~~~
 $
 ~~~
-{: .bash}
+{: .language-bash}
 
 El signo `$` es un **prompt**, que nos muestra que la terminal está esperando
 una entrada; tu terminal puede usar un carácter diferente como prompt y puede
@@ -64,7 +64,7 @@ es decir, nos muestra como quién nos identifica la terminal:
 ~~~
 $ whoami
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 nelle
@@ -99,7 +99,7 @@ Más específicamente, cuando escribimos `whoami` la terminal:
 > ~~~
 > $ mycommand
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > -bash: mycommand: command not found
@@ -122,7 +122,7 @@ también conocido como su directorio **home**:
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle
@@ -189,7 +189,7 @@ ejecutando `ls`, que significa "listar":
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Applications Documents    Library      Music        Public
@@ -208,7 +208,7 @@ que agregue un `/`a los nombres de los directorios:
 ~~~
 $ ls -F
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Applications/ Documents/    Library/      Music/        Public/
@@ -221,7 +221,7 @@ Desktop/      Downloads/    Movies/       Pictures/
 ~~~
 $ ls --help
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Usage: ls [OPTION]... [FILE]...
@@ -354,7 +354,7 @@ información sobre cómo usar los comandos o programas.
 > ~~~
 > $ ls -j
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > ls: invalid option -- 'j'
@@ -400,7 +400,8 @@ llamado `ls-F`, el cual no existe.
 > ~~~
 > $ ls -lh Documents
 > ~~~
-> {: .bash} 
+> {: .language-bash} 
+>
 > `ls` es el comando, `-lh` son **flags** (u opciones), y `Documents` 
 > es el argumento.
 {: .callout}
@@ -414,7 +415,7 @@ directorio actual.
 ~~~
 $ ls -F Desktop
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 data-shell/
@@ -442,7 +443,7 @@ pasando un nombre de directorio a `ls`:
 ~~~
 $ ls -F Desktop/data-shell
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 creatures/          molecules/          notes.txt           solar.pdf
@@ -466,7 +467,7 @@ $ cd Desktop
 $ cd data-shell
 $ cd data
 ~~~
-{: .bash}
+{: .language-bash}
 
 Estos comandos nos moverán del directorio **home** al directorio Desktop, luego
 al directorio `data-shell`, y finalmente al directorio `data`. `cd` no imprime 
@@ -478,7 +479,7 @@ es donde estamos ahora:
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell/data
@@ -488,7 +489,7 @@ $ pwd
 ~~~
 $ ls -F
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 amino-acids.txt   elements/     pdb/	          salmon.txt
@@ -502,7 +503,7 @@ Ahora sabemos cómo bajar por el árbol de directorios, pero ¿cómo subimos
 ~~~
 cd data-shell
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 -bash: cd: data-shell: No such file or directory
@@ -521,7 +522,7 @@ se ve así:
 ~~~
 $ cd ..
 ~~~
-{: .bash}
+{: .language-bash}
 
 `..` es un nombre de directorio especial que significa "el directorio que 
 contiene a este", o más brevemente, el **padre** del directorio actual. Por 
@@ -531,7 +532,7 @@ supuesto, si ejecutamos `pwd` después de ejecutar` cd ..`, volvemos a
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell
@@ -544,7 +545,7 @@ queremos mostrarlo, podemos dar a `ls` la opción `-a`:
 ~~~
 $ ls -F -a
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ./                  creatures/          notes.txt
@@ -593,14 +594,14 @@ comandos. ¿Qué pasa si escribes `cd` por sí solo, sin dar un directorio?
 ~~~
 $ cd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ¿Cómo puedes comprobar lo que sucedió? ¡`pwd` nos da la respuesta!
 
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle
@@ -617,7 +618,7 @@ directorios para llegar a `data` en un solo paso:
 ~~~
 $ cd Desktop/data-shell/data
 ~~~
-{: .bash}
+{: .language-bash}
 
 Comprueba que nos hemos movido al lugar correcto ejecutando `pwd` y `ls -F`.
 
@@ -645,7 +646,7 @@ necesitamos para movernos a `data-shell`.
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell/data
@@ -655,7 +656,7 @@ $ pwd
 ~~~
 $ cd /Users/nelle/Desktop/data-shell
 ~~~
-{: .bash}
+{: .language-bash}
 
 Ejecuta `pwd` y `ls -F` para asegurarte de que estás en el directorio que 
 esperas.
@@ -713,7 +714,7 @@ usando el comando:
 ~~~
 $ ls north-pacific-gyre/2012-07-03/
 ~~~
-{: .bash}
+{: .language-bash}
 
 Esto es mucho que teclear, pero puede permitir que la terminal haga la mayor 
 parte del trabajo a través de lo que se llama **autocompletado con el 
@@ -722,7 +723,7 @@ tabulador**. Si escribe:
 ~~~
 $ ls nor
 ~~~
-{: .bash}
+{: .language-bash}
 
 y después presiona el tabulador (la tecla de tabulador en su teclado), la 
 terminal completa automáticamente el nombre del directorio por ella:
@@ -730,7 +731,7 @@ terminal completa automáticamente el nombre del directorio por ella:
 ~~~
 $ ls north-pacific-gyre/
 ~~~
-{: .bash}
+{: .language-bash}
 
 Si presiona el tabulador otra vez, Bash añadirá `2012-07-03/` al comando, ya 
 que es el único autocompletamiento posible. Presionar el tabulador de nuevo no 
@@ -847,3 +848,6 @@ medida que avancemos.
 > > cambio.
 > {: .solution}
 {: .challenge}
+
+
+{% include links.md %}

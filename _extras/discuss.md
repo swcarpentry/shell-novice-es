@@ -158,7 +158,7 @@ que es (probablemente) algo que el ordenador puede ejecutar.
 $ cd labs
 $ ls -F
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 safety.txt    setup*     waiver.txt
@@ -184,7 +184,7 @@ Ahora vamos a ejecutar el comando `ls -l`:
 ~~~
 $ ls -l
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 -rw-rw-r-- 1 vlad bio  1158  2010-07-11 08:22 safety.txt
@@ -233,7 +233,7 @@ Aquí está un listado de formato largo que muestra los permisos de las califica
 ~~~
 $ ls -l final.grd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 -rwxrwxrwx 1 vlad bio  4215  2010-08-29 22:30 final.grd
@@ -247,10 +247,11 @@ lo que casi con seguridad no funcionaría.)
 
 El comando para cambiar los permisos del propietario a `rw-` es:
 
-~~~ {.input}
+~~~
 $ chmod u=rw final.grd
 ~~~
-
+{: .language-bash}
+ 
 La 'u' señala que estamos cambiando los privilegios
 del usuario (es decir, el propietario del archivo),
 y `rw` es el nuevo conjunto de permisos.
@@ -260,7 +261,7 @@ ya que los permisos del propietario ahora están configurados para leer y escrib
 ~~~
 $ ls -l final.grd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 -rw-rwxrwx 1 vlad bio  4215  2010-08-30 08:19 final.grd
@@ -273,7 +274,7 @@ Vamos a ejecutar `chmod` de nuevo para dar al grupo permisos de sólo lectura:
 $ chmod g=r final.grd
 $ ls -l final.grd
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 ~~~
@@ -288,7 +289,7 @@ vamos a quitarles los permisos a "todos" (todos en el sistema que no son ni el p
 $ chmod a= final.grd
 $ ls -l final.grd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 -rw-r----- 1 vlad bio  4215  2010-08-30 08:20 final.grd
@@ -306,7 +307,7 @@ que el usuario puede ejecutar:
 ~~~
 $ find . -type f -perm -u=x
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ./tools/format
@@ -321,7 +322,7 @@ Para obtener un listado de formulario largo que incluye entradas de directorio q
 ~~~
 $ ls -a -l
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 drwxr-xr-x 1 vlad bio     0  2010-08-14 09:55 .
@@ -410,14 +411,14 @@ Verifiquemos que nuestra instalación de Blast funcionó correctamente escribien
 ~~~
 blastn
 ~~~
-{: .bash}
+{: .language-bash}
 
 o en Windows:
 
 ~~~
 blastn.exe
 ~~~
-{: .bash}
+{: .language-bash}
 
 Si obtienes la siguiente salida, tu programa está bien configurado:
 
@@ -431,7 +432,7 @@ Primero creemos un directorio para almacenar nuestras bases de datos de blast:
 ~~~
 mkdir $HOME/blastdb
 ~~~
-{: .bash}
+{: .language-bash}
 
 Movamos el archivo de nuestra base de datos a ese directorio:
 
@@ -439,7 +440,7 @@ Movamos el archivo de nuestra base de datos a ese directorio:
 mv uniprot_sprot.fasta $HOME/blastdb/
 cd $HOME/blastdb
 ~~~
-{: .bash}
+{: .language-bash}
 
 Y cambiemos el formato de la base de datos que descargamos de [Uniprot](http://www.uniprot.org/)
 para que Blast pueda usarla como datos de búsqueda.
@@ -447,7 +448,7 @@ para que Blast pueda usarla como datos de búsqueda.
 ~~~
 makeblastdb -in uniprot_sprot.fasta -dbtype prot
 ~~~
-{: .blast}
+{: .language-bash}
 
 Ahora, vamos a configurar la **variable de entorno** que especifica
 en dónde se encuentra nuestra base de datos de Blast
@@ -455,7 +456,7 @@ en dónde se encuentra nuestra base de datos de Blast
 ~~~
 export BLASTDB=$HOME/blastdb
 ~~~
-{: .bash}
+{: .language-bash}
 
 ¡Estamos listos!
 
@@ -487,7 +488,7 @@ Podemos explorar sus opciones usando:
 ~~~
 blastn -h
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 USAGE
@@ -533,7 +534,7 @@ cd ~/data-shell
 mkdir blast_analysis
 cd blast_analysis
 ~~~
-{: .bash}
+{: .language-bash}
 
 ## Un ejemplo de Blast
 
@@ -588,7 +589,7 @@ Realicemos una búsqueda usando Blast. Vamos a descargar el siguiente archivo [f
 ~~~
 wget http://www.uniprot.org/uniprot/P38398.fasta
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 Resolving www.uniprot.org... 128.175.240.211, 193.62.193.81
@@ -608,7 +609,7 @@ Y veamos las primeras líneas:
 ~~~
 head P38398.fasta
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 >sp|P38398|BRCA1_HUMAN Breast cancer type 1 susceptibility protein OS=Homo sapiens GN=BRCA1 PE=1 SV=2
@@ -629,14 +630,14 @@ Y le vamos a cambiar el nombre:
 ~~~
 mv P38398.fasta BRCA1_HUMAN.fasta
 ~~~
-{: .bash}
+{: .language-bash}
 
 Ejecutemos nuestra primera búsqueda de Blast usando el siguiente comando:
 
 ~~~
 blastp -query BRCA1_HUMAN.fasta -db uniprot_sprot.fasta -outfmt 7 -max_target_seqs 5
 ~~~
-{: .bash}
+{: .language-bash}
 
 ¿Qué significa cada una de las opciones que utilizamos?
 
@@ -727,7 +728,7 @@ Dados los siguientes archivos fasta [Proteins_1.fasta](/files/final_project/exam
 ~~~
 bash fasta_analysis_script_ID.sh *.fasta
 ~~~
-{: .bash}
+{: .language-bash}
 
 Generará el siguiente archivo [Complete_ID.fasta](/files/final_project/example/Complete_ID.fasta) e imprimirá en la terminal:
 
@@ -759,7 +760,7 @@ Y descomprimirlos con tar de la siguiente manera, por ejemplo, para el estudiant
 ~~~
 tar -xvf Fastas_1.tar.gz
 ~~~
-{: .bash}
+{: .language-bash}
 
 Éste generará un directorio llamado `Fastas_1` dentro del cual realizarán sus análisis.
 
@@ -781,4 +782,4 @@ Para borrar uno o más espacios al inicio de la línea se puede utilizar:
 ~~~
 sed 's/ *//'
 ~~~
-{: .bash}
+{: .language-bash}

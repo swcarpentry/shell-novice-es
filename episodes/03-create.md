@@ -28,7 +28,7 @@ y utilicemos el comando `ls -F` para ver lo que contiene:
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell
@@ -38,7 +38,7 @@ $ pwd
 ~~~
 $ ls -F
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 creatures/  molecules/           pizza.cfg
@@ -53,7 +53,7 @@ Creemos un nuevo directorio llamado `thesis` usando el comando` mkdir thesis`
 ~~~
 $ mkdir thesis
 ~~~
-{: .bash}
+{: .language-bash}
 
 Como su nombre sugiere,
 `mkdir` significa "make directory", 
@@ -65,7 +65,7 @@ el nuevo directorio se crea en la carpeta de trabajo actual:
 ~~~
 $ ls -F
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 creatures/  north-pacific-gyre/  thesis/
@@ -111,7 +111,7 @@ Dado que acabamos de crear el directorio `thesis`, aún se encuentra vacío:
 ~~~
 $ ls -F thesis
 ~~~
-{: .bash}
+{: .language-bash}
 
 Cambiemos nuestro directorio de trabajo a `thesis` usando` cd`,
 y a continuación, ejecutemos un editor de texto llamado Nano para crear un archivo denominado `draft.txt`:
@@ -120,7 +120,7 @@ y a continuación, ejecutemos un editor de texto llamado Nano para crear un arch
 $ cd thesis
 $ nano draft.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 > ## ¿Qué editor usar?
 >
@@ -177,7 +177,7 @@ pero `ls` ahora muestra que hemos creado un archivo llamado` draft.txt`:
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 draft.txt
@@ -189,7 +189,7 @@ Limpiemos un poco ejecutando `rm draft.txt`:
 ~~~
 $ rm draft.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Este comando elimina archivos (`rm` es la abreviatura de "remove", "remover" en inglés).
 Si ejecutamos `ls` de nuevo,
@@ -199,7 +199,7 @@ indicándonos que nuestro archivo ha desaparecido:
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 
 > ## Eliminar es para siempre
 >
@@ -218,7 +218,7 @@ y después subamos un directorio a `/Users/nelle/Desktop/data-shell` usando `cd 
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell/thesis
@@ -229,7 +229,7 @@ $ pwd
 $ nano draft.txt
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 draft.txt
@@ -239,7 +239,7 @@ draft.txt
 ~~~
 $ cd ..
 ~~~
-{: .bash}
+{: .language-bash}
 
 Si tratamos de eliminar todo el directorio `thesis` usando `rm thesis`,
 obtenemos un mensaje de error:
@@ -247,7 +247,7 @@ obtenemos un mensaje de error:
 ~~~
 $ rm thesis
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 rm: cannot remove `thesis': Is a directory
@@ -262,7 +262,7 @@ Podemos hacer esto con la opción [recursiva](https://en.wikipedia.org/wiki/Recu
 ~~~
 $ rm -r thesis
 ~~~
-{: .bash}
+{: .language-bash}
 
 > ## Un gran poder conlleva una gran responsabilidad
 >
@@ -276,7 +276,7 @@ $ rm -r thesis
 > rm: remove regular file ‘thesis/draft.txt’? y
 > rm: remove directory ‘thesis’? y
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Esto elimina todo el contenido en el directorio y después el directorio mismo, preguntando
 > en cada paso para que se confirme la eliminación.
@@ -289,7 +289,7 @@ en lugar de ir al directorio `thesis` y ejecutar `nano` en `draft.txt`.)
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 /Users/nelle/Desktop/data-shell
@@ -301,7 +301,7 @@ $ mkdir thesis
 $ nano thesis/draft.txt
 $ ls thesis
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 draft.txt
@@ -315,7 +315,7 @@ que es la abreviatura de "move" (mover):
 ~~~
 $ mv thesis/draft.txt thesis/quotes.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 El primer parámetro dice a `mv` lo que estamos "moviendo"",
 mientras que el segundo indica a dónde hay que moverlo.
@@ -328,7 +328,7 @@ Como esperamos,
 ~~~
 $ ls thesis
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 quotes.txt
@@ -354,7 +354,7 @@ el nombre de directorio que usamos es el nombre de directorio especial `.` que m
 ~~~
 $ mv thesis/quotes.txt .
 ~~~
-{: .bash}
+{: .language-bash}
 
 El resultado es mover el archivo desde el directorio en el que estaba en el directorio de trabajo actual.
 `ls` ahora nos muestra que `thesis` está vacío:
@@ -362,7 +362,7 @@ El resultado es mover el archivo desde el directorio en el que estaba en el dire
 ~~~
 $ ls thesis
 ~~~
-{: .bash}
+{: .language-bash}
 
 Además,
 `ls` con un nombre de archivo o un nombre de directorio como parámetro sólo lista ese archivo o directorio.
@@ -371,7 +371,7 @@ Podemos usar esto para ver que `quotes.txt` todavía está en nuestro directorio
 ~~~
 $ ls quotes.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 quotes.txt
@@ -388,7 +388,7 @@ con dos rutas como parámetros --- como la mayoría de los comandos Unix,
 $ cp quotes.txt thesis/quotations.txt
 $ ls quotes.txt thesis/quotations.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 quotes.txt   thesis/quotations.txt
@@ -402,7 +402,7 @@ y después ejecutemos el mismo `ls` de nuevo.
 $ rm quotes.txt
 $ ls quotes.txt thesis/quotations.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ls: cannot access quotes.txt: No such file or directory
@@ -466,7 +466,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ~~~
 > $ pwd
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 > /Users/jamie/data
 > ~~~
@@ -474,7 +474,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ~~~
 > $ ls
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 > proteins.dat
 > ~~~
@@ -485,7 +485,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > $ cp recombine/proteins.dat ../proteins-saved.dat
 > $ ls
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > 1.   `proteins-saved.dat recombine`
 > 2.   `recombine`
@@ -515,7 +515,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ~~~
 > $ ls -F
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 > analyzed/  fructose.dat    raw/   sucrose.dat
 > ~~~
@@ -528,7 +528,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ~~~
 > $ ls -F
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 > analyzed/   raw/
 > ~~~
@@ -536,7 +536,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ~~~
 > $ ls analyzed
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 > fructose.dat    sucrose.dat
 > ~~~
@@ -547,7 +547,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 >> ~~~
 >> mv *.dat analyzed
 >> ~~~
->> {: .bash} 
+>> {: .language-bash} 
 >>
 >> Jamie necesita mover sus archivos `fructose.dat` y `sucrose.dat` al directorio `analyzed`. La terminal expandirá *.dat para abarcar todos los archivos .dat en el directorio. Después, el comando `mv` moverá la lista de archivos .dat al directorio "analyzed". 
 > {: .solution} 
@@ -562,14 +562,14 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > $ mkdir backup
 > $ cp amino-acids.txt animals.txt backup/
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > En el siguiente ejemplo, ¿qué hace `cp` cuando se le dan tres o más nombres de archivo?
 >
 > ~~~
 > $ ls -F
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > amino-acids.txt  animals.txt  backup/  elements/  morse.txt  pdb/  planets.txt  salmon.txt  sunspot.txt
@@ -579,7 +579,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ~~~
 > $ cp amino-acids.txt animals.txt morse.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 >> ## Solución
 >> 
@@ -616,7 +616,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > $ cd                  # ir al directorio **home**
 > $ touch my_file.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > 1. ¿Qué hizo el comando touch?
 > Cuando abre su directorio de inicio con el explorador de archivos GUI,
@@ -646,7 +646,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > fructose.dat glucose.dat maltose.dat sucrose.dat
 > $ cd raw/
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Rellena los espacios en blanco para mover estos archivos a la carpeta de trabajo
 > (es decir, en la que ella está actualmente):
@@ -654,14 +654,14 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ~~~
 > $ mv ___/sucrose.dat  ___/maltose.dat ___
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 >> ## Solución
 >>
 >> ~~~
 >> $ mv ../analyzed/sucrose.dat ../analyzed/maltose.dat .
 >> ~~~
->> {: .bash} 
+>> {: .language-bash} 
 >>
 >> Recuerda que `..` se refiere al directorio padre (es decir, el directorio en el nivel superior al actual) y `.` se refiere al directorio actual. 
 > {: .solution} 
@@ -677,7 +677,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 >> ~~~
 >> $ rm: remove regular file 'thesis/quotations.txt'?
 >> ~~~
->> {: .bash} 
+>> {: .language-bash} 
 >> La opción -i provocará que se pregunte antes de eliminar un elemento. La terminal de Unix no cuenta con una papelera de reciclaje, así que todos los archivos que sean eliminados desaparecerán para siempre. Por medio de la opción -i tienes la oportunidad de revisar que sólo estés eliminando los archivos que realmente deseas borrar. 
 > {: .solution} 
 {: .challenge}
@@ -702,18 +702,18 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > $ rm 2016-05-20-data/data/raw/*
 > $ rm 2016-05-20-data/data/processed/*
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 > $ rm 2016-05-20-data/raw/*
 > $ rm 2016-05-20-data/processed/*
 > $ cp -r 2016-05-18-data/ 2016-5-20-data/
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 > $ cp -r 2016-05-18-data/ 2016-05-20-data/
 > $ rm -r -i 2016-05-20-data/
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 >> ## Solución
 >>
@@ -724,3 +724,6 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 >> El tercer grupo de comandos podría lograr el objetivo deseado, pero de una forma muy poco eficiente: el primer comando copia el directorio de forma recursiva, pero el segundo comando borra de forma interactiva, requiriendo confirmación antes de borrar cada archivo y directorio. 
 > {: .solution} 
 {: .challenge}
+
+
+{% include links.md %}
