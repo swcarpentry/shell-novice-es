@@ -29,7 +29,7 @@ Comencemos por volver a `molecules/` creando un nuevo archivo, `middle.sh`, que 
 $ cd molecules
 $ nano middle.sh
 ~~~
-{: .bash}
+{: .language-bash}
 
 El comando `nano middle.sh` abre el archivo `middle.sh` dentro del editor de texto "nano" (que se ejecuta dentro de la terminal).
 Si el archivo no existe, se creará. Podemos usar el editor de texto para editar directamente el archivo - simplemente insertaremos la siguiente línea:
@@ -37,7 +37,7 @@ Si el archivo no existe, se creará. Podemos usar el editor de texto para editar
 ~~~
 head -n 15 octane.pdb | tail -n 5
 ~~~
-{: .source}
+{: .language-bash}
 
 Esta es una variación del **pipe** que construimos anteriormente: selecciona las líneas 11-15 del archivo `octane.pdb`. Recuerda, *no* lo estamos ejecutando como un comando todavía: sólo estamos poniendo los comandos en un archivo.
 
@@ -48,7 +48,7 @@ Una vez que hayamos guardado el archivo, podemos pedirle a la terminal que ejecu
 ~~~
 $ bash middle.sh
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ATOM      9  H           1      -4.502   0.681   0.785  1.00  0.00
@@ -84,14 +84,14 @@ En cambio, editemos middle.sh y hagamos que sea más versátil:
 ~~~
 $ nano middle.sh
 ~~~
-{: .bash}
+{: .language-bash}
 
 Ahora, dentro de "nano", reemplaza el texto `octane.pdb` con la variable especial denominada `$1`:
 
 ~~~
 head -n 15 "$1" | tail -n 5
 ~~~
-{: .output}
+{: .language-bash}
 
 Dentro de un **script** de la terminal,`$1` significa "el primer nombre de archivo (u otro parámetro) en la línea de comandos".
 Ahora podemos ejecutar nuestro **script** de esta manera:
@@ -99,7 +99,7 @@ Ahora podemos ejecutar nuestro **script** de esta manera:
 ~~~
 $ bash middle.sh octane.pdb
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ATOM      9  H           1      -4.502   0.681   0.785  1.00  0.00
@@ -115,7 +115,7 @@ o con un archivo diferente:
 ~~~
 $ bash middle.sh pentane.pdb
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ATOM      9  H           1       1.324   0.350  -1.332  1.00  0.00
@@ -139,7 +139,7 @@ número de líneas que se pasarán respectivamente a `head` y `tail`:
 ~~~
 $ nano middle.sh
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 head -n "$2" "$1" | tail -n "$3"
@@ -151,7 +151,7 @@ Ahora podemos ejecutar:
 ~~~
 $ bash middle.sh pentane.pdb 15 5
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ATOM      9  H           1       1.324   0.350  -1.332  1.00  0.00
@@ -167,7 +167,7 @@ Cambiando los parámetros de nuestra línea de comando, podemos cambiar el compo
 ~~~
 $ bash middle.sh pentane.pdb 20 5
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 ATOM     14  H           1      -1.259   1.420   0.112  1.00  0.00
@@ -184,7 +184,7 @@ Podemos mejorar nuestro **script** agregando algunos **comentarios** en la parte
 ~~~
 $ nano middle.sh
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 # Select lines from the middle of a file.
@@ -203,7 +203,7 @@ Por ejemplo, si queremos ordenar nuestros archivos `.pdb` por longitud, debería
 ~~~
 $ wc -l *.pdb | sort -n
 ~~~
-{: .bash}
+{: .language-bash}
 
 dado que `wc -l` lista el número de líneas en los archivos (recuerda que `wc` significa 'word count', y si agregas el `-l` significa 'contar líneas') y `sort -n` ordena numéricamente.
 Podríamos poner esto en un archivo, pero entonces sólo podría ordenar una lista de archivos `.pdb` en el directorio actual.
@@ -213,7 +213,7 @@ En su lugar, utilizamos la variable especial `$@`, lo que significa, "Todos los 
 ~~~
 $ nano sorted.sh
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 # Sort filenames by their length.
@@ -225,7 +225,7 @@ wc -l "$@" | sort -n
 ~~~
 $ bash sorted.sh *.pdb ../creatures/*.dat
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 9 methane.pdb
@@ -247,7 +247,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 > ~~~
 > $ bash sorted.sh
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > pero sin agregar `*.dat` (o cualquier otra cosa)? En este caso, `$@` se expande a
 > nada en absoluto, por lo que el **pipeline** dentro del **script** es efectivamente:
@@ -255,7 +255,7 @@ $ bash sorted.sh *.pdb ../creatures/*.dat
 > ~~~
 > $ wc -l | sort -n
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Dado que no tiene ningún nombre de archivo, `wc` supone que debe
 > procesar entrada estándar, por lo que sólo se sienta allí y espera a que le demos
@@ -268,7 +268,7 @@ Supongamos que acabamos de ejecutar una serie de comandos que hicieron algo úti
 ~~~
 $ history | tail -n 5 > redo-figure-3.sh
 ~~~
-{: .bash}
+{: .language-bash}
 
 El archivo `redo-figure-3.sh` ahora contiene:
 
@@ -298,21 +298,21 @@ do
     bash goostats $datafile stats-$datafile
 done
 ~~~
-{: .bash}
+{: .language-bash}
 
 Guarda esto en un archivo llamado `do-stats.sh` para que ahora pueda volver a hacer la primera etapa de su análisis escribiendo:
 
 ~~~
 $ bash do-stats.sh NENE*[AB].txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Ella también puede hacer esto:
 
 ~~~
 $ bash do-stats.sh NENE*[AB].txt | wc -l
 ~~~
-{: .bash}
+{: .language-bash}
 
 de modo que el **output** es sólo el número de archivos procesados en lugar de los nombres de los archivos que se procesaron.
 
@@ -327,7 +327,7 @@ do
     bash goostats $datafile stats-$datafile
 done
 ~~~
-{: .bash}
+{: .language-bash}
 
 La ventaja es que esto siempre selecciona los archivos correctos: Ella no tiene que recordar excluir los archivos 'Z'.
 La desventaja es que *siempre* selecciona esos archivos - ella no puede ejecutarlo en todos los archivos (incluidos los archivos 'Z'), o en los archivos 'G' o 'H' que sus colegas de la Antártida están produciendo, sin editar el **script** manualmente.
@@ -342,14 +342,14 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > head -n $2 $1
 > tail -n $3 $1
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Mientras estés en el directorio `molecules`, escribe el siguiente comando:
 >
 > ~~~
 > bash script.sh '*.pdb' 1 1
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ¿Cuál de los siguientes resultados esperarías ver?
 >
@@ -367,6 +367,8 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >> $ head -n 1 cubane.pdb ethan ee.pdb octane.pdb pentane.pdb propane.pdb
 >> $ tail -n 1 cubane.pdb ethane.pdb octane.pdb pentane.pdb propane.pdb
 >> ~~~
+>> {: .language-bash}
+>>
 >> La terminal no expande '* .pdb' porque está rodeado por comillas. El primer parámetro del **script** es '*.pdb', que se expande 
 >> dentro del **script** desde el principio al final.
 > {: .solution}
@@ -418,7 +420,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ~~~
 > $ bash longest.sh /tmp/data pdb
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Mostraría el nombre del archivo `.pdb` en`/tmp/data` que tenga más líneas.
 >
@@ -433,6 +435,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >>  
 >> wc -l $1/*.$2 | sort -n | tail -n 2 | head -n 1
 >> ~~~
+>>{: .language-bash}
 >{: .solution}
 {: .challenge}
 
@@ -443,7 +446,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ~~~
 > $ history | tail -n 5 > recent.sh
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > El último comando del archivo es el mismo comando `history`, es decir,
 > la terminal ha añadido `history` al registro de comandos antes de
@@ -468,7 +471,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > # Script 1
 > echo *.*
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > # Script 2
@@ -477,13 +480,13 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >     cat $filename
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > # Script 3
 > echo $@.dat
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 >> ## Solución
 >> 
@@ -510,14 +513,14 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >     bash goostats $datafile stats-$datafile
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Cuando lo ejecutas:
 >
 > ~~~
 > $ bash do-errors.sh NENE*[AB].txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > El **output** está en blanco.
 > Para averiguar por qué, vuelve a ejecutar el **script** utilizando la opción `-x`:
@@ -525,7 +528,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 > ~~~
 > bash -x do-errors.sh NENE*[AB].txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ¿Cuál es el resultado que muestra?
 > ¿Qué línea es responsable del error?
@@ -539,3 +542,6 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >> 
 >{: .solution}
 {: .challenge}
+
+
+{% include links.md %}

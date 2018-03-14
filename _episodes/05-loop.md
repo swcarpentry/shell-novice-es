@@ -36,14 +36,14 @@ No podemos usar:
 ~~~
 $ cp *.dat original-*.dat
 ~~~
-{: .bash}
+{: .language-bash}
 
 Porque se expandiría a:
 
 ~~~
 $ cp basilisk.dat unicorn.dat original-*.dat
 ~~~
-{: .bash}
+{: .language-bash}
 
 Esto no respalda nuestros archivos, en su lugar obtenemos un error:
 
@@ -67,7 +67,7 @@ $ for filename in basilisk.dat unicorn.dat
 >    head -n 3 $filename
 > done
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 COMMON NAME: basilisk
@@ -138,7 +138,7 @@ do
     head -n 3 $x
 done
 ~~~
-{: .bash}
+{: .language-bash}
 
 or:
 
@@ -148,7 +148,7 @@ do
     head -n 3 $temperature
 done
 ~~~
-{: .bash}
+{: .language-bash}
 
 Funcionaría exactamente de la misma manera.
 *No lo hagas así.*
@@ -165,7 +165,7 @@ do
     head -n 100 $filename | tail -n 20
 done
 ~~~
-{: .bash}
+{: .language-bash}
 
 La terminal comienza expandiendo `*.dat` para crear la lista de archivos que procesará.
 Después de esto, el **cuerpo del bucle**
@@ -176,7 +176,7 @@ Por ejemplo:
 ~~~
 $ echo hello there
 ~~~
-{: .bash}
+{: .language-bash}
 
 regresa:
 
@@ -196,7 +196,7 @@ do
     head -n 100 $filename | tail -n 20
 done
 ~~~
-{: .bash}
+{: .language-bash}
 
 porque entonces la primera vez a través del bucle,
 cuando `$filename` se expande a `basilisk.dat`, la terminal intentará ejecutar `basilisk.dat` como un programa. Finalmente, la combinación `head` y `tail` selecciona las líneas 81-100
@@ -225,7 +225,7 @@ de cualquier archivo que se esté procesando
 >     head -n 100 "$filename" | tail -n 20
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Es más sencillo simplemente evitar el uso de espacios en blanco (u otros caracteres especiales) en los nombres de archivo.
 >
@@ -256,7 +256,7 @@ do
     cp $filename original-$filename
 done
 ~~~
-{: .bash}
+{: .language-bash}
 
 Este bucle ejecuta el comando `cp` una vez para cada nombre de archivo.
 La primera vez, cuando `$filename` se convierte en `basilisk.dat`,
@@ -265,14 +265,14 @@ la terminal ejecuta:
 ~~~
 cp basilisk.dat original-basilisk.dat
 ~~~
-{: .bash}
+{: .language-bash}
 
 La segunda vez, el comando es:
 
 ~~~
 cp unicorn.dat original-unicorn.dat
 ~~~
-{: .bash}
+{: .language-bash}
 
 Como el comando `cp` no produce una salida normalmente, es difícil verificar que el bucle está funcionando de forma correcta. Al antecederle `echo` es posibe ver cada comando como *sería* ejecutado. El siguiente diagrama muestra lo que sucede cuando el código modificado es ejecutado, y demuestra cómo el uso de `echo` es una práctica útil.
 
@@ -292,7 +292,7 @@ $ for datafile in NENE*[AB].txt
 >     echo $datafile
 > done
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 NENE01729A.txt
@@ -314,7 +314,7 @@ $ for datafile in NENE*[AB].txt
 >     echo $datafile stats-$datafile
 > done
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 NENE01729A.txt stats-NENE01729A.txt
@@ -336,14 +336,14 @@ presiona la flecha hacia arriba. En respuesta, la terminal vuelve a mostrar el b
 ~~~
 $ for datafile in NENE*[AB].txt; do echo $datafile stats-$datafile; done
 ~~~
-{: .bash}
+{: .language-bash}
 
 Utilizando la tecla de flecha izquierda, Nelle realiza una copia de seguridad y cambia el comando `echo` a `bash goostats`:
 
 ~~~
 $ for datafile in NENE*[AB].txt; do bash goostats $datafile stats-$datafile; done
 ~~~
-{: .bash}
+{: .language-bash}
 
 Cuando presiona Enter, la terminal ejecuta el comando modificado.
 Sin embargo, nada parece suceder porque no hay salida.
@@ -356,7 +356,7 @@ y lo edita para que se vea así:
 ~~~
 $ for datafile in NENE*[AB].txt; do echo $datafile; bash goostats $datafile stats-$datafile; done
 ~~~
-{: .bash}
+{: .language-bash}
 
 > ## Principio y Fin
 >
@@ -391,7 +391,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 > ~~~
 > $ history | tail -n 5
 > ~~~
-> {: .bash}
+> {: .language-bash}
 > ~~~
 >   456  ls -l NENE0*.txt
 >   457  rm stats-NENE01729B.txt.txt
@@ -430,7 +430,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >     ls *.pdb
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Ahora, ¿cuál es la salida de este código?:
 >
@@ -440,7 +440,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >	  ls $datafile
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ¿Por qué estos dos bucles dan resultados diferentes?
 >
@@ -454,7 +454,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >> ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 >> done
 >> ~~~
->> {: .bash}
+>> {: .language-bash}
 >>
 >> ~~~
 >> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
@@ -491,7 +491,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >     cat $alkanes > alkanes.pdb
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > 1. Imprime `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb`, `pentane.pdb` y `propane.pdb`, y el texto de `propane.pdb` se guarda en un archivo llamado `alkanes.pdb`.
 > 2. Imprime `cubane.pdb`, `ethane.pdb`, `methane.pdb`, y concatena el texto de los tres archivos en un archivo llamado `alkanes.pdb`.
@@ -514,7 +514,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >    cat $datafile >> all.pdb
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > 1. Todo el texto de `cubane.pdb`, `ethane.pdb`, `methane.pdb`, `octane.pdb` y `pentane.pdb` sería
 > concatenado y guardado en un archivo llamado `all.pdb`.
@@ -538,7 +538,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >     ls $filename 
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > 1. No se muestra ningún archivo.
 > 2. Todos los archivos son enumerados.
@@ -558,7 +558,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >     ls $filename 
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > 1. Se listarían los mismos archivos.
 > 2. Esta vez se enumerarían todos los archivos.
@@ -586,7 +586,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >   analyze $file > analyzed-$file
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ¿Cuál es la diferencia entre los dos bucles abajo, y cuál 
 > deberíamos usar?
@@ -598,7 +598,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >   echo analyze $file > analyzed-$file
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > ~~~
 > # Version 2
@@ -607,7 +607,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >   echo "analyze $file > analyzed-$file"
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 >> ## Solución
 >>
@@ -634,7 +634,7 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 >     done
 > done
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 >> ## Solución
 >>
@@ -644,3 +644,4 @@ Se ve bien, así que decide tomarse un café y ponerse al día con su lectura.
 > {: .solution}
 {: .challenge}
 
+{% include links.md %}

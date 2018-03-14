@@ -34,7 +34,7 @@ un formato de texto simple que especifica el tipo y la posición de cada átomo 
 ~~~
 $ ls molecules
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 cubane.pdb    ethane.pdb    methane.pdb
@@ -52,7 +52,7 @@ por lo que la terminal convierte `*.pdb` en una lista de todos los archivos `.pd
 $ cd molecules
 $ wc *.pdb
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
   20  156 1158 cubane.pdb
@@ -129,7 +129,7 @@ la salida sólo muestra el número de líneas por archivo:
 ~~~
 $ wc -l *.pdb
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
   20  cubane.pdb
@@ -151,7 +151,7 @@ Nuestro primer paso hacia una solución es ejecutar el comando:
 ~~~
 $ wc -l *.pdb > lengths.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 El símbolo "mayor que", `>`, le dice a la terminal que **redireccione** la salida del comando
 a un archivo en lugar de imprimirlo en la pantalla. (Es por eso que no hay salida de pantalla:
@@ -164,7 +164,7 @@ por lo tanto, requiere cierta precaución.
 ~~~
 $ ls lengths.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 lengths.txt
@@ -180,7 +180,7 @@ así que `cat` sólo nos muestra lo que éste contiene:
 ~~~
 $ cat lengths.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
   20  cubane.pdb
@@ -213,7 +213,7 @@ sólo despliega el resultado ordenado en la pantalla:
 ~~~
 $ sort -n lengths.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
   9  methane.pdb
@@ -236,7 +236,7 @@ podemos ejecutar otro comando llamado `head` para obtener las primeras líneas d
 $ sort -n lengths.txt > sorted-lengths.txt
 $ head -n 1 sorted-lengths.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
   9  methane.pdb
@@ -257,7 +257,7 @@ Dado que `sorted-lengths.txt` contiene las longitudes de nuestros archivos orden
 > ~~~
 > $ sort -n lengths.txt > lengths.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Hacer algo como esto puede regresar
 > resultados incorrectos y/o eliminar
@@ -273,7 +273,7 @@ Podemos hacerlo más fácil de entender ejecutando `sort` y `head` juntos:
 ~~~
 $ sort -n lengths.txt | head -n 1
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
   9  methane.pdb
@@ -296,7 +296,7 @@ Así, primero usamos un **pipe** para enviar la salida de `wc` a `sort`:
 ~~~
 $ wc -l *.pdb | sort -n
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
    9 methane.pdb
@@ -314,7 +314,7 @@ Y ahora enviamos la salida de este **pipe**, a través de otro **pipe**, a `head
 ~~~
 $ wc -l *.pdb | sort -n | head -n 1
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
    9  methane.pdb
@@ -402,7 +402,7 @@ Como un chequeo rápido, a partir de su directorio de inicio, Nelle teclea:
 $ cd north-pacific-gyre/2012-07-03
 $ wc -l *.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 La salida son 18 líneas que como estas:
 
@@ -422,7 +422,7 @@ Ahora escribe esto:
 ~~~
 $ wc -l *.txt | sort -n | head -n 5
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
  240 NENE02018B.txt
@@ -444,7 +444,7 @@ decide comprobar si algunos archivos tienen demasiados datos:
 ~~~
 $ wc -l *.txt | sort -n | tail -n 5
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
  300 NENE02040B.txt
@@ -464,7 +464,7 @@ Para encontrar a otros archivos como este, Nelle hace lo siguiente:
 ~~~
 $ ls *Z.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 NENE01971Z.txt    NENE02040Z.txt
@@ -533,15 +533,14 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > $ wc -l notes.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > y:
 >
 > ~~~
 > $ wc -l < notes.txt
 > ~~~
->
-> {: .bash}
+> {: .language-bash}
 >
 >> ## Solución
 >>
@@ -556,15 +555,13 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> a test
 >> Ctrl-D # Esto le indica a la terminal que has terminado de teclear la entrada.
 >> ~~~
->>
->> {: .bash}
+>>{: .language-bash}
 >>
 >> ~~~
 >> 3
 >> ~~~
->>
 >>{: .output}
-> {: .solution}
+>{: .solution}
 {: .challenge}
 
 > ## ¿Qué significa `>>`?
@@ -574,14 +571,14 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > $ echo hello > testfile01.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > y:
 >
 > ~~~
 > $ echo hello >> testfile02.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Pista: Intenta ejecutar cada comando dos veces seguidas y después examinar los archivos de salida.
 {: .challenge}
@@ -605,7 +602,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > 2015-11-23-dataset2.txt
 > 2015-11-23-dataset_overview.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Antes de ir a otro viaje de campo, Sam quiere respaldar sus datos y
 > enviar algunos **datasets** a su colega Bob. Sam utiliza los siguientes comandos
@@ -617,7 +614,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > $ cp 2015-____-____ ~/send_to_bob/all_november_files/
 > $ cp ____ ~/send_to_bob/all_datasets_created_on_a_23rd/
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > Ayuda a Sam rellenando los espacios en blanco.
 >
@@ -628,7 +625,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> $ cp 2015-11-* ~/send_to_bob/all_november_files/
 >> $ cp *-23-dataset* ~send_to_bob/all_datasets_created_on_a_23rd/
 >> ~~~
->> {: -bash}
+>> {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -682,7 +679,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> ~~~
 >> $ sort salmon.txt | uniq
 >> ~~~
->> {: .bash}
+>> {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -707,7 +704,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
 > ~~~
-> {: .bash}
+> {: .language-bash} 
 >
 > Pista: construye el **pipeline** agregando un comando a la vez para comprobar tu respuesta.
 {: .challenge}
@@ -719,7 +716,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > ~~~
 > $ cut -d , -f 2 animals.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > produce la siguiente salida:
 >
@@ -743,7 +740,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> ~~~
 >> $ cut -d , -f 2 animals.txt | sort | uniq
 >> ~~~
->> {: .bash}
+>> {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -789,9 +786,10 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> $ ls *B.txt
 >> ...
 >> ~~~
->> {: .bash}
+>> {: .language-bash}
 >>
 >> 2. La salida de la nueva expresión aparece separada porque son dos comandos independientes.
+>>
 >> 3. Cuando no haya archivos que terminen en `A.txt`, o en `B.txt`.
 > {: .solution}
 {: .challenge}
@@ -835,7 +833,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 > $ head -3 animals.txt > animalsUpd.txt
 > $ tail -2 animals.txt >> animalsUpd.txt
 > ~~~
-> {: .bash}
+> {: .language-bash}
 >
 > 1. Las tres primeras líneas de `animals.txt`
 > 2. Las dos últimas líneas de `animals.txt`
@@ -847,3 +845,6 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >> La opción 3 es la correcta. Para que la opción 1 fuera correcta tendríamos que haber ejecutado sólo el comando `head`. Para que la opción 2 fuera correcta tendríamos que haber ejecutado sólo el comando `tail`. Para que la opción 4 fuera correcta tendríamos que haber usado un **pipe** para enviar la salida de `head` a `tail -2` de esta forma: `head -3 animals.txt | tail -2 >> animalsUpd.txt`
 > {: .solution}
 {: .challenge}
+
+
+{% include links.md %}
