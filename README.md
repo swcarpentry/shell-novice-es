@@ -13,6 +13,12 @@ o ejecutar `make` en este directorio para una lista de comandos utiles.
 
 Maintainers:
 
-* Heladia Saldago
+* Heladia Saldago: [@Helysalgado](https://github.com/Helysalgado)
+* [Ivan Gonzalez][gonzalez_ivan]: [@iglpdc](https://github.com/iglpdc)
+* [Clara Llebot Lorente][llebot_clara]: [@clarallebot](https://github.com/clarallebot)
+* Veronica Jimenez: [@vjimenez9](https://github.com/vjimenez9)
+* Silvana Pereyra: [@spereyra](https://github.com/spereyra)
 
 [lesson-example]: https://swcarpentry.github.io/lesson-example/
+[gonzalez_ivan]: https://software-carpentry.org/team/#gonzalez_ivan
+[llebot_clara]: https://software-carpentry.org/team/#llebot_clara
