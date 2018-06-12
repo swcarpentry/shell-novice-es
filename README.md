@@ -19,6 +19,6 @@ Maintainers:
 * Veronica Jimenez: [@vjimenez9](https://github.com/vjimenez9)
 * Silvana Pereyra: [@spereyra](https://github.com/spereyra)
 
-[lesson-example]: https://swcarpentry.github.io/lesson-example/
+[lesson-example]: https://carpentries.github.io/lesson-example/
 [gonzalez_ivan]: https://software-carpentry.org/team/#gonzalez_ivan
 [llebot_clara]: https://software-carpentry.org/team/#llebot_clara
