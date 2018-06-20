@@ -3,7 +3,10 @@ layout: page
 title: "Código de conducta del contribuidor"
 permalink: /conduct/
 ---
+<<<<<<< HEAD
 
+=======
+>>>>>>> 555226b1559f148c626bc04b24d74c2c73fbf0f6
 Los contribuidores y **maintainers** de este proyecto,
 nos comprometemos a respetar a todas las personas que contribuyen a través de problemas de informes **issues**,
 publicar solicitudes de mejora,
