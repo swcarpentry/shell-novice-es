@@ -15,11 +15,11 @@ Esta lección te guiará en el camino hacia el uso eficaz de estos recursos.
 > ## Prerequisitos
 > 
 > Esta lección te guía a través de los principios básicos de los sistemas de archivos y
-> la terminal **shell**. Si tienes archivos guardados en una computadora reconoces que
-> las palabras "directorio" o "carpeta" (son sinónimos). No necesitas saber más y 
-> estás lista para esta lección.
+> la terminal **shell**. Si has guardado archivos en una computadora y reconoces que
+> las palabras "archivo", "directorio" o "carpeta" (estas dos últimas sinónimos para referirse al mismo concepto), entonces
+> estás lista para seguir esta lección.
 >
-> Por otro lado, si ya te sientes cómoda manipulando archivos y directorios,
+> Por otro lado, si ya tienes experiencia manipulando archivos y directorios,
 > buscando archivos con `grep` y` find`, y escribiendo bucles simples
 > y scripts, probablemente no aprenderás mucho de esta lección.
 {: .prereq}
