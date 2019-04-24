@@ -566,7 +566,20 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 
 > ## ¿Qué significa `>>`?
 >
-> ¿Cuál es la diferencia entre:
+> Hemos visto el uso de ``>`` pero hay un operador similar ``>>`` que funciona un poco distinto. Aprenderemos sobre la diferencia de estos comandos impriendo algunas **strings**. Podemos usar el comando ``echo`` para imprimir **strings**, e.g.:
+
+> ~~~
+> $ echo El comando echo imprime el texto
+> ~~~
+> {: .language-bash}
+> ~~~
+> El comando echo imprime el texto
+> ~~~
+> {: .output}
+
+> Ahora prueba los comandos siguientes para revelar la diferencia entre los dos operadores.
+
+¿Cuál es la diferencia entre:
 >
 > ~~~
 > $ echo hello > testfile01.txt
