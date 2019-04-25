@@ -773,7 +773,7 @@ medida que avancemos.
 > ## Resolución de ruta relativa
 >
 > Si se utiliza el diagrama de sistema de directorios de abajo, si `pwd` muestra
-> `/Users/thing`, ¿Qué mostrará `ls -F ../ backup`?
+> `/Users/thing`, ¿Qué mostrará `ls -F ../backup`?
 >
 > 1.  `../backup: No such file or directory`
 > 2.  `2012-12-01 2013-01-08 2013-01-27`
