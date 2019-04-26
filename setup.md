@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Preparación
-permalink: /setup/
 ---
 
 Para ésta lección necesitas descargar unos archivos:
