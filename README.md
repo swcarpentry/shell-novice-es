@@ -5,11 +5,11 @@
 shell-novice
 ============
 
-Una introduccion a Unix para personas que jamas han usado esta linea de comando antes.
-Por favor revisar https://swcarpentry.github.io/shell-novice-es para una revision mas consolidada de este contenido,
-[El formato de la documentacion de las lecciones][lesson-example]
-para instrucciones en formato, construccion y enviar contenido
-o ejecutar `make` en este directorio para una lista de comandos utiles.
+Una introduccion a Unix para personas que jamás han usado esta línea de comando antes.
+Por favor revisar https://swcarpentry.github.io/shell-novice-es para una revisión mas consolidada de este contenido,
+[El formato de la documentación de las lecciones][lesson-example]
+para instrucciones de formato, construcción y envio de contenido
+o ejecucción de `make` en este directorio para una lista de comandos utiles.
 
 Maintainers:
 
