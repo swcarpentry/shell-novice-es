@@ -68,7 +68,7 @@ Esta excelente publicación de blog "[Bash Configurations Demystified] [bash-dem
 de Dalton Hubble
 cubre consejos, trucos y cómo evitar peligros.
 
-[bash-demystified]: http://dghubble.com/blog/posts/.bashprofile-.profile-and-.bashrc-conventions/---
+[bash-demystified]: https://blog.dghubble.io/post/.bashprofile-.profile-and-.bashrc-conventions/
 
 ## Permisos
 
@@ -722,15 +722,15 @@ a partir únicamente de tres archivos fasta, genere la siguiente información.
 
 Por ejemplo:
 
-Dados los siguientes archivos fasta [Proteins_1.fasta](/files/final_project/example/Proteins_1.fasta),
-[Proteins_2.fasta](/files/final_project/example/Proteins_2.fasta), [Proteins_3.fasta](/files/final_project/example/Proteins_3.fasta),
+Dados los siguientes archivos fasta [Proteins_1.fasta]({{ page.root }}/files/final_project/example/Proteins_1.fasta),
+[Proteins_2.fasta]({{ page.root }}/files/final_project/example/Proteins_2.fasta), [Proteins_3.fasta]({{ page.root }}/files/final_project/example/Proteins_3.fasta),
 
 ~~~
 bash fasta_analysis_script_ID.sh *.fasta
 ~~~
 {: .language-bash}
 
-Generará el siguiente archivo [Complete_ID.fasta](/files/final_project/example/Complete_ID.fasta) e imprimirá en la terminal:
+Generará el siguiente archivo [Complete_ID.fasta]({{ page.root }}/files/final_project/example/Complete_ID.fasta) e imprimirá en la terminal:
 
 ~~~
 Longest file: Proteins_1.fasta
