@@ -1,4 +1,4 @@
----
+```---
 ---
 <script>
   window.onload = function() {
@@ -32,3 +32,4 @@ Create anchor for each one of the episodes.
 {% for episode in site.episodes %}
 <article id="{{ episode.url }}"></article>
 {% endfor %}
+```
