@@ -7,14 +7,14 @@ shell-novice
 
 Una introduccion a Unix para personas que jamás han usado esta línea de comando antes.
 
-Por favor revisar https://swcarpentry.github.io/shell-novice-es para para visualizar el material,
+Por favor revisar https://swcarpentry.github.io/shell-novice-es para visualizar el material,
 y [La documentación de la plantilla de las lecciones][lesson-example]
 para obtener las instrucciones sobre cómo formatear, compilar y enviar material, o ejecuta `make` en este directorio para una lista de comandos útiles.
 
 
 Maintainers:
 
-* Heladia Saldago: [@Helysalgado](https://github.com/Helysalgado)
+* Heladia Salgado: [@Helysalgado](https://github.com/Helysalgado)
 * [Ivan Gonzalez][gonzalez_ivan]: [@iglpdc](https://github.com/iglpdc)
 * [Clara Llebot Lorente][llebot_clara]: [@clarallebot](https://github.com/clarallebot)
 * Veronica Jimenez: [@vjimenez9](https://github.com/vjimenez9)
