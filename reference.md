@@ -30,7 +30,7 @@ argumento
 : Un valor dado a una función o programa cuando se ejecuta. El término a menudo se usa indistintamente (y de manera inconsistente) con [parámetro](#parmetro).
 
 bandera o **flag**
-: Una forma concisa de especificar una opción o configuración a un programa de línea de comandos. Por convención, las aplicaciones Unix usan un guión seguido de una sóla letra, como `-v`, o dos guiones seguidos de una palabra, como 
+: Una forma concisa de especificar una opción o configuración a un programa de línea de comandos. Por convención, las aplicaciones Unix usan un guión seguido de una sola letra, como `-v`, o dos guiones seguidos de una palabra, como 
 `--verbose`, mientras que las aplicaciones de DOS usan una barra inclinada, como `/ V`. Dependiendo de la aplicación, un indicador puede ir seguido de un único argumento, como en `-o / tmp / output.txt`.
 
 comillas
@@ -38,7 +38,7 @@ comillas
 Se utilizan comillas de varios tipos para evitar que el intérprete interprete caracteres especiales. Por ejemplo, para pasar la secuencia de caracteres `*.txt` a un programa, generalmente es necesario escribirlo como `'* .txt'` (con comillas simples) para que la terminal no intente expandir el comodín `*`.
 
 comentario
-: Un comentario en un programa pretende ayudar a los lectores entender lo que está sucediendo, pero es ignorado por la computadora. Los comentarios en Python, R y la terminal de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la linea; los comentarios en SQL comienzan con `--`, y otros idiomas tienen otras convenciones.
+: Un comentario en un programa pretende ayudar a los lectores a entender lo que está sucediendo, pero es ignorado por la computadora. Los comentarios en Python, R y la terminal de Unix comienzan con un caracter `#` y se ejecutan hasta el final de la línea; los comentarios en SQL comienzan con `--`, y otros idiomas tienen otras convenciones.
 
 comodín o caracter especial
 : Un caracter utilizado para coincidir con patrones. En la terminal de Unix, el comodín `*` coincide con cero o más caracteres, para que `*.txt` coincida con todos los archivos cuyos nombres terminen en `.txt`.
