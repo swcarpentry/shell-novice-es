@@ -79,7 +79,7 @@ en la terminal.
 ¿Qué pasa si queremos seleccionar líneas de un archivo arbitrario?
 Podríamos editar `middle.sh` cada vez para cambiar el nombre de archivo,
 pero eso probablemente llevaría más tiempo que simplemente volver a escribir el comando.
-En cambio, editemos middle.sh y hagamos que sea más versátil:
+En cambio, editemos `middle.sh` y hagamos que sea más versátil:
 
 ~~~
 $ nano middle.sh
