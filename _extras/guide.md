@@ -1,14 +1,12 @@
 ---
-layout: page
-title: "Instructor Notes"
-permalink: /guide/
+title: Instructor Notes
 ---
 
 
 * ¿Por qué aprendemos a usar el terminal?
   * Permite a los usuarios automatizar tareas repetitivas
   * Y captura pequeños pasos de manipulación de datos que normalmente no se graban hacer la investigación reproducible
-  
+
 * El problema
   * Ejecutar el mismo flujo de trabajo en varias muestras puede ser innecesariamente laborioso
   * Manipulación manual de archivos de datos:
@@ -88,7 +86,7 @@ siempre que los alumnos que usen Windows no se encuentren con obstáculos como:
      Puede clonar el directorio shell-novice o usar `Download ZIP`
      botón a la derecha para obtener el [repositorio] completo (https://github.com/swcarpentry/shell-novice). También proporcionamos ahora
      un archivo zip del directorio `data` que se puede descargar por sí mismo
-     del repositorio haciendo clic derecho + Guardar o ver la página ["setup"] ({{page.root}} / setup /) en el sitio web de la lección para más detalles.
+     del repositorio haciendo clic derecho + Guardar o ver la página ["setup"]({{page.root}}{% link setup.md %}) en el sitio web de la lección para más detalles.
 
 * Sitio web: se han usado varias prácticas.
     * Opción 1: puede proporcionar enlaces a los alumnos antes de la lección para que puedan seguirlos,
