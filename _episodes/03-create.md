@@ -603,7 +603,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 > ¿En qué orden muestra los archivos el comando `ls -R -t`?
 >
 >> ## Solución
->> El comando `ls -R` enumera los directorios recursivamente en orden cronológico de cada nivel, y los archivos en cada direcotrio también son desplegados en orden cronológico. 
+>> El comando `ls -R` enumera los directorios recursivamente en orden cronológico de cada nivel, y los archivos en cada directorio también son desplegados en orden cronológico. 
 > {: .solution} 
 {: .challenge}
 
