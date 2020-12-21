@@ -669,7 +669,7 @@ pero encuentra la copia en `thesis` que no hemos borrado.
 
 > ## Utilizando `rm` con seguridad
 >
-> ¿Qué ocurre cuando escribimos `rm -i thesis /quotations.txt`?
+> ¿Qué ocurre cuando escribimos `rm -i thesis/quotations.txt`?
 > ¿Por qué querríamos esta protección cuando usamos `rm`?
 >
 > > ## Solución
