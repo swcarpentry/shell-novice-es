@@ -654,7 +654,7 @@ por lo que coincide con los nombres de todos los archivos de datos válidos que 
 >
 >> ## Solución
 >>
->> La solución es la opción 3. El caracter de **pipe** `|` es usado para alimentar la entrada estándar de un proceso con la salida estándar del anterior. `>` es utilizado para redirigir la salida estándar a un archivo. ¡Inténtalo en el directorio `data-shell/molecules`!
+>> La solución es la opción 4. El caracter de **pipe** `|` es usado para alimentar la entrada estándar de un proceso con la salida estándar del anterior. `>` es utilizado para redirigir la salida estándar a un archivo. ¡Inténtalo en el directorio `data-shell/molecules`!
 > {: .solution}
 {: .challenge}
 
