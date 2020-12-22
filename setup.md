@@ -1,5 +1,4 @@
 ---
-layout: page
 title: Preparación
 ---
 
@@ -14,4 +13,4 @@ $ cd
 ~~~
 {: .language-bash}
 
-En la lección, aprenderás como acceder a los datos de este directorio.  
+En la lección, aprenderás como acceder a los datos de este directorio.

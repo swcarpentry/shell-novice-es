@@ -1,7 +1,5 @@
 ---
-layout: page
-title: "Discussion"
-permalink: /discuss/
+title: Discussion
 ---
 ## Sopa de letras
 
@@ -106,7 +104,7 @@ Y un ID de usuario,
 {: .callout}
 
 Los usuarios pueden pertenecer a cualquier número de grupos,
-cada uno de los cuales tiene un nombre de grupo único 
+cada uno de los cuales tiene un nombre de grupo único
 y un identificador numérico o ID de grupo.
 La lista de quién está en qué grupo se almacena normalmente en el archivo `/etc/group`.
 (si está delante de una máquina Unix en este momento,
@@ -251,7 +249,7 @@ El comando para cambiar los permisos del propietario a `rw-` es:
 $ chmod u=rw final.grd
 ~~~
 {: .language-bash}
- 
+
 La 'u' señala que estamos cambiando los privilegios
 del usuario (es decir, el propietario del archivo),
 y `rw` es el nuevo conjunto de permisos.
@@ -379,7 +377,7 @@ pero también es más complejo de administrar y entender en sistemas pequeños
 Algunas variantes modernas de Unix aceptan ACL, así como los permisos antiguos de lectura-escritura-ejecución,
 pero casi nadie los utiliza.
 
-> ## Challenge 
+> ## Challenge
 > Si `ls -l myfile.php` devuelve los siguientes detalles:
 >
 > ~~~
@@ -670,7 +668,7 @@ La salida nos muestra las 5 secuencias con mayor identidad a nuestra secuencia d
 información acerca de cada una de estas secuencias:
 
 1. `query acc.` - El nombre de nuestra secuencia de interés.
-2. `subject acc.` - El nombre de la secuencia con identidad a nuestra secuencia de interés.  
+2. `subject acc.` - El nombre de la secuencia con identidad a nuestra secuencia de interés.
 3. `% identity` - El porcentaje de identidad.
 4. `alignment length` - La longitud del alineamiento.
 5. `mismatches` - El número de posiciones diferentes (**mismatches**).
@@ -750,7 +748,7 @@ Analysis of Complete_ID.fasta
 * Deberá funcionar con cualquier otro archivo o archivos fasta, diferentes a los proporcionados.
 * Deberá estar comentado, explicando brevemente qué hace el **script** y qué realiza cada línea.
 
-Todas las ocurrencias de 'ID' deberán ser substituidas por un identificador, pueden usar un número entre 1 y 16. No tienen que hacer este ID variable, es decir, no es necesario que el ID se pueda cambiar en la línea de comandos cuando se ejecuta el script.  
+Todas las ocurrencias de 'ID' deberán ser substituidas por un identificador, pueden usar un número entre 1 y 16. No tienen que hacer este ID variable, es decir, no es necesario que el ID se pueda cambiar en la línea de comandos cuando se ejecuta el script.
 
 Los paquetes de archivos los pueden descargar de:
 
