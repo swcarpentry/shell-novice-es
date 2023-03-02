@@ -14,7 +14,7 @@ para obtener las instrucciones sobre cómo formatear, compilar y enviar material
 
 Maintainers:
 
-* Heladia Salgado: [@Helysalgado](https://github.com/Helysalgado)
+* Heladia Salgado O.: [@Helysalgado](https://github.com/Helysalgado)
 * [Ivan Gonzalez][gonzalez_ivan]: [@iglpdc](https://github.com/iglpdc)
 * [Clara Llebot Lorente][llebot_clara]: [@clarallebot](https://github.com/clarallebot)
 * Veronica Jimenez: [@vjimenez9](https://github.com/vjimenez9)
