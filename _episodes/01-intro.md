@@ -30,7 +30,9 @@ A pesar de que la mayoría de los sistemas operativos modernos se comunican con 
 usuarios a través de ventanas, íconos y apuntadores, estas tecnologías no eran
 comunes sino hasta los años 80s. Las raíces de estas *interfaces gráficas de usuario*
 se remontan al trabajo de Doug Engelbart's en los 60s, el cual podemos ver en lo que
-se ha denominado "[La Madre de todos los Demos](http://www.youtube.com/watch?v=a11JDLBXtPQ)".
+se ha denominado "[La Madre de todos los Demos](https://www.youtube.com/watch?v=yJDv-zdhzMY)".
+
+
 
 ### Interfaz de Línea de Comandos
 
