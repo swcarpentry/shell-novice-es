@@ -1,1 +1,60 @@
-{"contributors":[{"type":"Editor","name":"Heladia Saldago"}],"creators":[{"name":"Paula Andrea Martinez"},{"name":"Dani Ledezma"},{"name":"Juan M. Barrios"},{"name":"LauCIFASIS"},{"name":"Matias Andina"},{"name":"Alejandra Gonzalez-Beltran"},{"name":"Otoniel Maya"},{"name":"Francisco Palm"},{"name":"Nohemi Huanca Nunez"},{"name":"Olemis Lang"},{"name":"AnaBVA"},{"name":"Kevin Alquicira"},{"name":"Rayna M Harris"},{"name":"Shirley Alquicira"},{"name":"Silvana Pereyra"},{"name":"Veronica Jimenez-Jacinto"},{"name":"Ashwin Srinath"},{"name":"Gabriel A. Devenyi"},{"name":"Gerard Capes"},{"name":"Colin Morris"},{"name":"csqrs"},{"name":"Erin Becker"},{"name":"Anja Le Blanc"},{"name":"Stéphane Guillou"},{"name":"Jake Cowper Szamosi"},{"name":"Marisa Lim"},{"name":"Steve Leak"},{"name":"Kunal Marwaha"},{"name":"Martha Robinson"},{"name":"Yee Mey"},{"name":"Gordon Rhea"},{"name":"Thomas Mellan"},{"name":"Adam Huffman"},{"name":"Brian Ballsun-Stanton"},{"name":"Dave Bridges"},{"name":"François Michonneau"},{"name":"Giuseppe Profiti"},{"name":"Jared Flater"},{"name":"Jonah Duckles"},{"name":"Katrin Leinweber"},{"name":"Kelly L. Rowland"},{"name":"Michael Zingale"},{"name":"Nicolas Barral"},{"name":"Raniere Silva"},{"name":"sjnair"},{"name":"William L. Close"},{"name":"Andrew Sanchez"},{"name":"Jeff Oliver"}]}
+{
+  "contributors": [
+    {
+      "type": "Editor",
+      "name": "Clara Llebot Lorente",
+      "orcid": "0000-0003-3211-7396"
+    },
+    {
+      "type": "Editor",
+      "name": "Veronica Jimenez-Jacinto",
+      "orcid": "0000-0001-6742-1537"
+    },
+    {
+      "type": "Editor",
+      "name": "Heladia Salgado Osorio",
+      "orcid": "0000-0002-3166-5801"
+    },
+    {
+      "type": "Editor",
+      "name": "Silvana Pereyra"
+    }
+  ],
+  "creators": [
+    {
+      "name": "Clara Llebot Lorente",
+      "orcid": "0000-0003-3211-7396"
+    },
+    {
+      "name": "Heladia Salgado Osorio",
+      "orcid": "0000-0002-3166-5801"
+    },
+    {
+      "name": "Rayna M Harris",
+      "orcid": "0000-0002-7943-5650"
+    },
+    {
+      "name": "Fernando Raya"
+    },
+    {
+      "name": "Alejandra Noemi Gonzalez-Beltran",
+      "orcid": "0000-0003-3499-8262"
+    },
+    {
+      "name": "Darío Hereñú"
+    },
+    {
+      "name": "Silvana Pereyra"
+    },
+    {
+      "name": "Jake Lever"
+    },
+    {
+      "name": "Julian Stanley",
+      "orcid": "0000-0002-9193-3791"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-4.0"
+  }
+}
