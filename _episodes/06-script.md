@@ -361,7 +361,7 @@ Si quisiera ser más aventurera, Nelle podría modificar su **script** para veri
 >
 >> ## Solución
 >> La respuesta correcta es la 2.
->> Las variables $1, $2 y $3 representan los argumentos para el **script**, tal que los comandos ejecutados son:
+>> Las variables `$1`, `$2` y `$3` representan los argumentos para el **script**, tal que los comandos ejecutados son:
 >>
 >> ~~~
 >> $ head -n 1 cubane.pdb ethan ee.pdb octane.pdb pentane.pdb propane.pdb
