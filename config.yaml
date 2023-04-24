@@ -84,5 +84,5 @@ profiles:
 
 url: https://preview.carpentries.org/shell-novice-es
 analytics: carpentries
-lang: en
+lang: 'es'
 workbench-beta: 'true'
