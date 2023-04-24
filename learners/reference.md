@@ -1,18 +1,20 @@
 ---
-layout: reference
+title: 'FIXME'
 ---
+
+## Glossary
 
 ## Resumen de Comandos Básicos
 
-| Acción | Archivos | Directorios o Carpetas |
-| ------------- | ------- | -------------- |
-| Inspeccionar | ls | ls |
-| Ver contenido | cat | ls |
-| Navega hacia | | cd |
-| Mover | mv | mv |
-| Copiar | cp | cp -r |
-| Crear | nano | mkdir |
-| Eliminar | rm | rmdir, rm -r |
+| Acción        | Archivos | Directorios o Carpetas | 
+| ------------- | -------- | ---------------------- |
+| Inspeccionar  | ls       | ls                     | 
+| Ver contenido | cat      | ls                     | 
+| Navega hacia  |          | cd                     | 
+| Mover         | mv       | mv                     | 
+| Copiar        | cp       | cp -r                  | 
+| Crear         | nano     | mkdir                  | 
+| Eliminar      | rm       | rmdir, rm -r           | 
 
 ## Jerarquía del sistema de archivos
 
@@ -20,17 +22,17 @@ La siguiente es una descripción general de un sistema de archivos Unix estánda
 La jerarquía exacta depende de la plataforma,
 por lo que es posible que no veas exactamente los mismos archivos / directorios en tu computadora:
 
-![Jerarquía del sistema de archivos de Linux]({{ page.root }}/fig/standard-filesystem-hierarchy.svg)
+![](fig/standard-filesystem-hierarchy.svg){alt='Jerarquía del sistema de archivos de Linux'}
 
 ## Glosario
 
-{: auto_ids}
+{: auto\_ids}
 
 argumento
 : Un valor dado a una función o programa cuando se ejecuta. El término a menudo se usa indistintamente (y de manera inconsistente) con [parámetro](#parmetro).
 
 bandera o **flag**
-: Una forma concisa de especificar una opción o configuración a un programa de línea de comandos. Por convención, las aplicaciones Unix usan un guión seguido de una sola letra, como `-v`, o dos guiones seguidos de una palabra, como 
+: Una forma concisa de especificar una opción o configuración a un programa de línea de comandos. Por convención, las aplicaciones Unix usan un guión seguido de una sola letra, como `-v`, o dos guiones seguidos de una palabra, como
 `--verbose`, mientras que las aplicaciones de DOS usan una barra inclinada, como `/ V`. Dependiendo de la aplicación, un indicador puede ir seguido de un único argumento, como en `-o / tmp / output.txt`.
 
 comillas
@@ -147,3 +149,5 @@ variable
 
 while bucle
 : Un bucle que se ejecuta siempre que alguna condición sea verdadera. Ver también: [for bucle](#for-bucle).
+
+

@@ -1,6 +1,7 @@
 ---
 title: Discussion
 ---
+
 ## Sopa de letras
 
 Si el comando para averiguar quiénes somos es `whoami`, el comando para encontrar
@@ -23,21 +24,21 @@ de los personajes de control. En otros tutoriales, puede ver el término
 `Control` o `^` usado para representar la tecla `Ctrl` (por ejemplo,
 Los siguientes son equivalentes "Ctrl-C", "Ctrl + C", "Control-C", "Control + C", "^ C".
 
-* `Ctrl-C`:
-    interrumpe y cancela un programa en ejecución.
-    Esto es útil si desea cancelar un comando que tarda demasiado en ejecutarse.
+- `Ctrl-C`:
+      interrumpe y cancela un programa en ejecución.
+      Esto es útil si desea cancelar un comando que tarda demasiado en ejecutarse.
 
-* `Ctrl-D`:
-    indica el final de un archivo o secuencia de caracteres que está ingresando en la línea de comando.
-    Por ejemplo, vimos anteriormente que el comando `wc` cuenta líneas, palabras y caracteres en un archivo.
-    Si simplemente escribimos `wc` y presionamos la tecla Enter sin proporcionar un nombre de archivo,
-    entonces `wc` supondrá que queremos analizar todas las cosas que escribimos a continuación.
-    Después de escribir nuestro magnum opus directamente en el intérprete de comandos del terminal,
-    entonces podemos escribir Ctrl-D para decir `wc` que hemos terminado y nos gustaría ver los resultados del conteo de palabras.
+- `Ctrl-D`:
+      indica el final de un archivo o secuencia de caracteres que está ingresando en la línea de comando.
+      Por ejemplo, vimos anteriormente que el comando `wc` cuenta líneas, palabras y caracteres en un archivo.
+      Si simplemente escribimos `wc` y presionamos la tecla Enter sin proporcionar un nombre de archivo,
+      entonces `wc` supondrá que queremos analizar todas las cosas que escribimos a continuación.
+      Después de escribir nuestro magnum opus directamente en el intérprete de comandos del terminal,
+      entonces podemos escribir Ctrl-D para decir `wc` que hemos terminado y nos gustaría ver los resultados del conteo de palabras.
 
-* `Ctrl-Z`:
-    Suspende un proceso pero no lo finaliza.
-    A continuación, puede utilizar el comando `fg` para reiniciar el trabajo en primer plano.
+- `Ctrl-Z`:
+      Suspende un proceso pero no lo finaliza.
+      A continuación, puede utilizar el comando `fg` para reiniciar el trabajo en primer plano.
 
 Para los nuevos usuarios de terminal, todos estos códigos de control pueden parecer tener
 el mismo efecto: hacen que las cosas "se vayan". Pero es útil
@@ -66,8 +67,6 @@ Esta excelente publicación de blog "[Bash Configurations Demystified] [bash-dem
 de Dalton Hubble
 cubre consejos, trucos y cómo evitar peligros.
 
-[bash-demystified]: https://blog.dghubble.io/post/.bashprofile-.profile-and-.bashrc-conventions/
-
 ## Permisos
 
 Unix controla quién puede leer, modificar y ejecutar archivos usando *permisos*.
@@ -79,29 +78,33 @@ Comencemos con Nelle.
 Ella tiene un nombre de usuario único,
 `nelle.nemo`,
 Y un ID de usuario,
-1404.
+1404\.
 
-> ## ¿Por qué IDs con números enteros?
->
-> ¿Por qué usar enteros para IDs?
-> Una vez más, la respuesta se remonta a principios de los años setenta.
-> Las cadenas de caracteres como `alan.turing` son de longitud variable,
-> y comparar una a otro toma muchas instrucciones.
-> Enteros,
-> por otra parte,
-> utilizan una cantidad bastante pequeña de almacenamiento (normalmente cuatro caracteres),
-> y puede ser comparados con una sola instrucción.
-> Para hacer operaciones rápidas y sencillas,
-> los programadores suelen realizar un seguimiento de las cosas internamente usando números enteros,
-> luego utilizan una tabla de búsqueda de algún tipo
-> para traducir esos números enteros en un texto fácil de usar para su presentación.
-> Por supuesto,
-> los programadores siendo programadores,
-> a menudo se saltarán la parte de usar el texto
-> y sólo utilizan los enteros,
-> de la misma manera que alguien que trabaja en un laboratorio podría hablar del Experimento 28
-> en lugar de "los ensayos cronotípicos de respuesta alfa en anacondas".
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## ¿Por qué IDs con números enteros?
+
+¿Por qué usar enteros para IDs?
+Una vez más, la respuesta se remonta a principios de los años setenta.
+Las cadenas de caracteres como `alan.turing` son de longitud variable,
+y comparar una a otro toma muchas instrucciones.
+Enteros,
+por otra parte,
+utilizan una cantidad bastante pequeña de almacenamiento (normalmente cuatro caracteres),
+y puede ser comparados con una sola instrucción.
+Para hacer operaciones rápidas y sencillas,
+los programadores suelen realizar un seguimiento de las cosas internamente usando números enteros,
+luego utilizan una tabla de búsqueda de algún tipo
+para traducir esos números enteros en un texto fácil de usar para su presentación.
+Por supuesto,
+los programadores siendo programadores,
+a menudo se saltarán la parte de usar el texto
+y sólo utilizan los enteros,
+de la misma manera que alguien que trabaja en un laboratorio podría hablar del Experimento 28
+en lugar de "los ensayos cronotípicos de respuesta alfa en anacondas".
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Los usuarios pueden pertenecer a cualquier número de grupos,
 cada uno de los cuales tiene un nombre de grupo único
@@ -141,9 +144,9 @@ Por ejemplo, si un archivo tuviera el siguiente conjunto de permisos:
 
 esto significaría que:
 
-* el propietario del archivo puede leerlo y escribirlo, pero no ejecutarlo;
-* otras personas del grupo del archivo pueden leerlo, pero no modificarlo o ejecutarlo; y
-* otras personas (no el grupo ni el propietario) no pueden hacer nada con él en absoluto.
+- el propietario del archivo puede leerlo y escribirlo, pero no ejecutarlo;
+- otras personas del grupo del archivo pueden leerlo, pero no modificarlo o ejecutarlo; y
+- otras personas (no el grupo ni el propietario) no pueden hacer nada con él en absoluto.
 
 Veamos este modelo en acción.
 Si usamos `cd` en el directorio `labs` y ejecutamos `ls -F`,
@@ -152,44 +155,44 @@ Esta es su forma de decirnos que `setup` es ejecutable,
 es decir,
 que es (probablemente) algo que el ordenador puede ejecutar.
 
-~~~
+```bash
 $ cd labs
 $ ls -F
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 safety.txt    setup*     waiver.txt
-~~~
-{: .output}
+```
 
-> ## Necesario pero no suficiente
->
-> El hecho de que algo este marcado como ejecutable
-> en realidad no significa que contiene un programa de algún tipo.
-> Podríamos marcar fácilmente este archivo HTML (de esta página) como ejecutable
-> utilizando los comandos que se presentan a continuación.
-> Dependiendo del sistema operativo que utilicemos,
-> tratar de "ejecutarlo" no funcionará
-> (porque no contiene instrucciones que la computadora reconozca)
-> o puede hacer que el sistema operativo abra el archivo
-> con cualquier aplicación que normalmente lo maneja
-> (como un navegador web).
-{: .callout}
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+## Necesario pero no suficiente
+
+El hecho de que algo este marcado como ejecutable
+en realidad no significa que contiene un programa de algún tipo.
+Podríamos marcar fácilmente este archivo HTML (de esta página) como ejecutable
+utilizando los comandos que se presentan a continuación.
+Dependiendo del sistema operativo que utilicemos,
+tratar de "ejecutarlo" no funcionará
+(porque no contiene instrucciones que la computadora reconozca)
+o puede hacer que el sistema operativo abra el archivo
+con cualquier aplicación que normalmente lo maneja
+(como un navegador web).
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Ahora vamos a ejecutar el comando `ls -l`:
 
-~~~
+```bash
 $ ls -l
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 -rw-rw-r-- 1 vlad bio  1158  2010-07-11 08:22 safety.txt
 -rwxr-xr-x 1 vlad bio 31988  2010-07-23 20:04 setup
 -rw-rw-r-- 1 vlad bio  2312  2010-07-11 08:23 waiver.txt
-~~~
-{: .output}
+```
 
 La opción `-l` le dice a `ls` que nos de una lista larga.
 Es una gran cantidad de información, así que vamos a explicar las columnas una a la vez.
@@ -228,15 +231,13 @@ Para cambiar los permisos, usamos el comando `chmod`
 (cuyo nombre significa "modo de cambio" (change mode)).
 Aquí está un listado de formato largo que muestra los permisos de las calificaciones finales del curso que Vlad está enseñando:
 
-~~~
+```bash
 $ ls -l final.grd
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 -rwxrwxrwx 1 vlad bio  4215  2010-08-29 22:30 final.grd
-~~~
-{: .output}
+```
 
 Ups: todo el mundo puede leerlo, y lo que es peor,
 modificarlo
@@ -245,10 +246,9 @@ lo que casi con seguridad no funcionaría.)
 
 El comando para cambiar los permisos del propietario a `rw-` es:
 
-~~~
+```bash
 $ chmod u=rw final.grd
-~~~
-{: .language-bash}
+```
 
 La 'u' señala que estamos cambiando los privilegios
 del usuario (es decir, el propietario del archivo),
@@ -256,43 +256,36 @@ y `rw` es el nuevo conjunto de permisos.
 Un rápido `ls -l` nos muestra que funcionó,
 ya que los permisos del propietario ahora están configurados para leer y escribir (pero no para ejecutar):
 
-~~~
+```bash
 $ ls -l final.grd
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 -rw-rwxrwx 1 vlad bio  4215  2010-08-30 08:19 final.grd
-~~~
-{: .output}
+```
 
 Vamos a ejecutar `chmod` de nuevo para dar al grupo permisos de sólo lectura:
 
-~~~
+```bash
 $ chmod g=r final.grd
 $ ls -l final.grd
-~~~
-{: .language-bash}
+```
 
-
-~~~
+```output
 -rw-r--rw- 1 vlad bio  4215  2010-08-30 08:19 final.grd
-~~~
-{: .output}
+```
 
 Y finalmente,
 vamos a quitarles los permisos a "todos" (todos en el sistema que no son ni el propietario del archivo o están su grupo):
 
-~~~
+```bash
 $ chmod a= final.grd
 $ ls -l final.grd
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 -rw-r----- 1 vlad bio  4215  2010-08-30 08:20 final.grd
-~~~
-{: .output}
+```
 
 La 'a' indica que estamos cambiando permisos para "todos",
 y, puesto que no hay nada a la derecha del "=",
@@ -302,34 +295,30 @@ También podemos buscar por permisos.
 Aquí, por ejemplo, podemos usar `-type f -perm -u=x` para encontrar archivos
 que el usuario puede ejecutar:
 
-~~~
+```bash
 $ find . -type f -perm -u=x
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 ./tools/format
 ./tools/stats
-~~~
-{: .output}
+```
 
 Antes de ir más lejos,
 Vamos a ejecutar `ls -a -l`
 Para obtener un listado de formulario largo que incluye entradas de directorio que normalmente están ocultas:
 
-~~~
+```bash
 $ ls -a -l
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 drwxr-xr-x 1 vlad bio     0  2010-08-14 09:55 .
 drwxr-xr-x 1 vlad bio  8192  2010-08-27 23:11 ..
 -rw-rw-r-- 1 vlad bio  1158  2010-07-11 08:22 safety.txt
 -rwxr-xr-x 1 vlad bio 31988  2010-07-23 20:04 setup
 -rw-rw-r-- 1 vlad bio  2312  2010-07-11 08:23 waiver.txt
-~~~
-{: .output}
+```
 
 Los permisos para `.` y `..` (este directorio y su padre) comienzan con un 'd'.
 pero mira el resto de sus permisos:
@@ -342,7 +331,7 @@ Da a alguien el derecho a *recorrer* el directorio, pero no a mirar su contenido
 La distinción es sutil, así que echemos un vistazo a un ejemplo.
 El directorio de inicio de Vlad tiene tres subdirectorios llamados `venus`, `mars` y `pluto`:
 
-![Permisos de ejecución para directorios](../fig/x-for-directories.svg)
+![](fig/x-for-directories.svg){alt='Permisos de ejecución para directorios'}
 
 Cada uno de ellos tiene un subdirectorio llamado `notes`,
 y esos subdirectorios contienen varios archivos.
@@ -377,20 +366,25 @@ pero también es más complejo de administrar y entender en sistemas pequeños
 Algunas variantes modernas de Unix aceptan ACL, así como los permisos antiguos de lectura-escritura-ejecución,
 pero casi nadie los utiliza.
 
-> ## Challenge
-> Si `ls -l myfile.php` devuelve los siguientes detalles:
->
-> ~~~
-> -rwxr-xr-- 1 caro zoo  2312  2014-10-25 18:30 myfile.php
-> ~~~
-> {: .output}
-> ¿Cuál de las siguientes afirmaciones es verdadera?
->
-> 1. caro (el propietario) puede leer, escribir y ejecutar myfile.php
-> 2. caro (el propietario) no puede escribir en myfile.php
-> 3. Los miembros de caro (un grupo) pueden leer, escribir y ejecutar myfile.php
-> 4. Los miembros de zoo (un grupo) no pueden ejecutar myfile.php
-{: .challenge}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge
+
+Si `ls -l myfile.php` devuelve los siguientes detalles:
+
+```output
+-rwxr-xr-- 1 caro zoo  2312  2014-10-25 18:30 myfile.php
+```
+
+¿Cuál de las siguientes afirmaciones es verdadera?
+
+1. caro (el propietario) puede leer, escribir y ejecutar myfile.php
+2. caro (el propietario) no puede escribir en myfile.php
+3. Los miembros de caro (un grupo) pueden leer, escribir y ejecutar myfile.php
+4. Los miembros de zoo (un grupo) no pueden ejecutar myfile.php
+  
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Blast en la línea de comandos
 
@@ -399,62 +393,55 @@ de secuencias más populares. Se utiliza
 para buscar similitud (homología) entre distintas secuencias
 generando alineamientos locales de manera heurística. De hecho es tan popular
 que las publicaciones que lo describen figuran entre los 20
-artículos más citados del [mundo](http://www.nature.com/news/the-top-100-papers-1.16224).
+artículos más citados del [mundo](https://www.nature.com/news/the-top-100-papers-1.16224).
 
 ### Configurando Blast
 
 Instalamos Blast previamente en nuestro proceso de preparación para esta lección.
 Verifiquemos que nuestra instalación de Blast funcionó correctamente escribiendo:
 
-~~~
+```bash
 blastn
-~~~
-{: .language-bash}
+```
 
 o en Windows:
 
-~~~
+```bash
 blastn.exe
-~~~
-{: .language-bash}
+```
 
 Si obtienes la siguiente salida, tu programa está bien configurado:
 
-~~~
+```output
 BLAST query/options error: Either a BLAST database or subject sequence(s) must be specified
-~~~
-{: .output}
+```
 
 Primero creemos un directorio para almacenar nuestras bases de datos de blast:
 
-~~~
+```bash
 mkdir $HOME/blastdb
-~~~
-{: .language-bash}
+```
 
 Movamos el archivo de nuestra base de datos a ese directorio:
 
-~~~
+```bash
 mv uniprot_sprot.fasta $HOME/blastdb/
 cd $HOME/blastdb
-~~~
-{: .language-bash}
+```
 
-Y cambiemos el formato de la base de datos que descargamos de [Uniprot](http://www.uniprot.org/)
+Y cambiemos el formato de la base de datos que descargamos de [Uniprot](https://www.uniprot.org/)
 para que Blast pueda usarla como datos de búsqueda.
 
-~~~
+```bash
 makeblastdb -in uniprot_sprot.fasta -dbtype prot
-~~~
-{: .language-bash}
+```
 
 Ahora, vamos a configurar la **variable de entorno** que especifica
 en dónde se encuentra nuestra base de datos de Blast
 
-~~~
+```bash
 export BLASTDB=$HOME/blastdb
-~~~
-{: .language-bash}
+```
 
 ¡Estamos listos!
 
@@ -462,14 +449,13 @@ export BLASTDB=$HOME/blastdb
 
 Blast acepta como entrada un archivo tipo fasta similar a este:
 
-~~~
+```output
 >MIMI_L4 complement(6238..7602)
 MPQKTSKSKSSRTRYIEDSDDETRGRSRNRSIEKSRSRSLDKSQKKSRDK
 SLTRSRSKSPEKSKSRSKSLTRSRSKSPKKCITGNRKNSKHTKKDNEYTT
 EESDEESDDESDGETNEESDEELDNKSDGESDEEISEESDEEISEESDED
 VPEEEYDDNDIRNIIIENINNEFARGKFGDFNVIIMKDNGFINATKLCKN
-~~~
-{: .output}
+```
 
 Blast cuenta con varios algoritmos que le permiten hacer búsquedas distintas:
 
@@ -483,12 +469,11 @@ Blast cuenta con varios algoritmos que le permiten hacer búsquedas distintas:
 
 Podemos explorar sus opciones usando:
 
-~~~
+```bash
 blastn -h
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 USAGE
   blastn [-h] [-help] [-import_search_strategy filename]
     [-export_search_strategy filename] [-task task_name] [-db database_name]
@@ -520,26 +505,24 @@ DESCRIPTION
    Nucleotide-Nucleotide BLAST 2.5.0+
 
 Use '-help' to print detailed descriptions of command line arguments
-~~~
-{: .output}
+```
 
 Esto nos permitirá usar más opciones de Blast.
 
 Entremos a nuestro directorio de trabajo:
 
-~~~
+```bash
 cd ~/data-shell
 mkdir blast_analysis
 cd blast_analysis
-~~~
-{: .language-bash}
+```
 
 ## Un ejemplo de Blast
 
 Examinemos un ejemplo de una búsqueda usando Blast. Este es el tipo de salida que se genera
 por defecto:
 
-~~~
+```output
 >ref|NM_009586.1| UniGene infoGeoGene info Homo sapiens single-minded homolog 2 (Drosophila) (SIM2), transcript
 variant SIM2s, mRNA
 Length=2823
@@ -567,8 +550,7 @@ Sbjct  2718  GGAGGATCACTTGAACCCGGGAGGTGGAGGTTGCAGTGAGCTAAGATCACATCACTGCAC  2777
 Query  6616  TCCAGCCTGGGTGACAG--TGAGACTGTGGCTCAAAAAAAAAAAAAAA  6661
              |||||||||||| ||||  |||||||||  ||||||||||||||||||
 Sbjct  2778  TCCAGCCTGGGTAACAGAGTGAGACTGT--CTCAAAAAAAAAAAAAAA  2823
-~~~
-{: .output}
+```
 
 Podemos ver que hay nucleótidos idénticos entre estas dos secuencias
 (denotados por el símbolo '|'), así como nucleótidos diferentes (donde no hay
@@ -582,14 +564,13 @@ formato diferente.
 
 ## Usando Blast
 
-Realicemos una búsqueda usando Blast. Vamos a descargar el siguiente archivo [fasta](http://www.uniprot.org/uniprot/P38398.fasta).
+Realicemos una búsqueda usando Blast. Vamos a descargar el siguiente archivo [fasta](https://www.uniprot.org/uniprot/P38398.fasta).
 
-~~~
+```bash
 wget http://www.uniprot.org/uniprot/P38398.fasta
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 Resolving www.uniprot.org... 128.175.240.211, 193.62.193.81
 Connecting to www.uniprot.org|128.175.240.211|:80... connected.
 HTTP request sent, awaiting response... 200 OK
@@ -599,17 +580,15 @@ Saving to: 'P38398.fasta'
 P38398.fasta                       100%[===============================================================>]   1.95K  --.-KB/s    in 0s
 
 2017-01-13 00:07:01 (54.4 MB/s) - 'P38398.fasta' saved [1997/1997]
-~~~
-{: .output}
+```
 
 Y veamos las primeras líneas:
 
-~~~
+```bash
 head P38398.fasta
-~~~
-{: .language-bash}
+```
 
-~~~
+```output
 >sp|P38398|BRCA1_HUMAN Breast cancer type 1 susceptibility protein OS=Homo sapiens GN=BRCA1 PE=1 SV=2
 MDLSALRVEEVQNVINAMQKILECPICLELIKEPVSTKCDHIFCKFCMLKLLNQKKGPSQ
 CPLCKNDITKRSLQESTRFSQLVEELLKIICAFQLDTGLEYANSYNFAKKENNSPEHLKD
@@ -620,36 +599,33 @@ KAEFCNKSKQPGLARSQHNRWAGSKETCNDRRTPSTEKKVDLNADPLCERKEWNKQKLPC
 SENPRDTEDVPWITLNSSIQKVNEWFSRSDELLGSDDSHDGESESNAKVADVLDVLNEVD
 EYSGSSEKIDLLASDPHEALICKSERVHSKSVESNIEDKIFGKTYRKKASLPNLSHVTEN
 LIIGAFVTEPQIIQERPLTNKLKRKRRPTSGLHPEDFIKKADLAVQKTPEMINQGTNQTE
-~~~
-{: .output}
+```
 
 Y le vamos a cambiar el nombre:
 
-~~~
+```bash
 mv P38398.fasta BRCA1_HUMAN.fasta
-~~~
-{: .language-bash}
+```
 
 Ejecutemos nuestra primera búsqueda de Blast usando el siguiente comando:
 
-~~~
+```bash
 blastp -query BRCA1_HUMAN.fasta -db uniprot_sprot.fasta -outfmt 7 -max_target_seqs 5
-~~~
-{: .language-bash}
+```
 
 ¿Qué significa cada una de las opciones que utilizamos?
 
-* `-query` se refiere al archivo con la secuencia a la cual le queremos encontrar secuencias homólogas.
-Debe estar en formato fasta.
-* `-db` Se refiere a la base de datos que queremos usar.
-* `-outfmt` se refiere al formato de salida deseamos, en este caso el tipo 7, que es en columnas con
-comentarios.
-* `-max_target_seqs` Nos indica que se reportarán máximo 5 'hits' o secuencias similares a nuestra
-secuencia de interés. Sólo se muestran las 5 secuencias con mayores niveles de identidad.
+- `-query` se refiere al archivo con la secuencia a la cual le queremos encontrar secuencias homólogas.
+  Debe estar en formato fasta.
+- `-db` Se refiere a la base de datos que queremos usar.
+- `-outfmt` se refiere al formato de salida deseamos, en este caso el tipo 7, que es en columnas con
+  comentarios.
+- `-max_target_seqs` Nos indica que se reportarán máximo 5 'hits' o secuencias similares a nuestra
+  secuencia de interés. Sólo se muestran las 5 secuencias con mayores niveles de identidad.
 
 ¿Por qué utilizamos blastp?
 
-~~~
+```output
 # BLASTP 2.5.0+
 # Query: sp|P38398|BRCA1_HUMAN Breast cancer type 1 susceptibility protein OS=Homo sapiens GN=BRCA1 PE=1 SV=2
 # Database: uniprot_sprot.fasta
@@ -661,8 +637,7 @@ sp|P38398|BRCA1_HUMAN	sp|Q6J6I8|BRCA1_GORGO	98.014	1863	37	0	1	1863	1	1863	0.0	3
 sp|P38398|BRCA1_HUMAN	sp|Q6J6J0|BRCA1_PONPY	96.833	1863	59	0	1	1863	1	1863	0.0	3699
 sp|P38398|BRCA1_HUMAN	sp|Q6J6I9|BRCA1_MACMU	93.026	1864	128	2	1	1863	1	1863	0.0	3504
 # BLAST processed 1 queries
-~~~
-{: .output}
+```
 
 La salida nos muestra las 5 secuencias con mayor identidad a nuestra secuencia de interés, así como
 información acerca de cada una de estas secuencias:
@@ -702,7 +677,7 @@ toma en cuenta cuántos residuos similares existen en el alineamiento así como 
 en el mismo. Es comparable entre bases de datos de diferente tamaño.
 
 Hay muchas más opciones de Blast, para ello debes revisar el manual que ese encuentra en
-NCBI - https://www.ncbi.nlm.nih.gov/books/NBK279690/.
+NCBI - [https://www.ncbi.nlm.nih.gov/books/NBK279690/](https://www.ncbi.nlm.nih.gov/books/NBK279690/).
 
 ## Proyecto Final Opcional
 
@@ -712,25 +687,24 @@ a partir únicamente de tres archivos fasta, genere la siguiente información.
 1. El nombre del archivo más largo (en número de caracteres).
 2. Un archivo concatenado de todas las secuencias.
 3. Un análisis de este archivo con:
-	1. El numero de líneas en el archivo,
-	2. El numero de caracteres en el archivo,
-	3. El número total de secuencias,
-	4. El nombre de la penúltima secuencia,
-	5. El número de secuencias únicas (sin importar sus nombres).
+  1. El numero de líneas en el archivo,
+  2. El numero de caracteres en el archivo,
+  3. El número total de secuencias,
+  4. El nombre de la penúltima secuencia,
+  5. El número de secuencias únicas (sin importar sus nombres).
 
 Por ejemplo:
 
-Dados los siguientes archivos fasta [Proteins_1.fasta]({{ page.root }}/files/final_project/example/Proteins_1.fasta),
-[Proteins_2.fasta]({{ page.root }}/files/final_project/example/Proteins_2.fasta), [Proteins_3.fasta]({{ page.root }}/files/final_project/example/Proteins_3.fasta),
+Dados los siguientes archivos fasta [Proteins\_1.fasta](files/final_project/example/Proteins_1.fasta),
+[Proteins\_2.fasta](files/final_project/example/Proteins_2.fasta), [Proteins\_3.fasta](files/final_project/example/Proteins_3.fasta),
 
-~~~
+```bash
 bash fasta_analysis_script_ID.sh *.fasta
-~~~
-{: .language-bash}
+```
 
-Generará el siguiente archivo [Complete_ID.fasta]({{ page.root }}/files/final_project/example/Complete_ID.fasta) e imprimirá en la terminal:
+Generará el siguiente archivo [Complete\_ID.fasta](files/final_project/example/Complete_ID.fasta) e imprimirá en la terminal:
 
-~~~
+```output
 Longest file: Proteins_1.fasta
 Concatenated file name: Complete_ID.fasta
 
@@ -740,13 +714,12 @@ Analysis of Complete_ID.fasta
   Number of sequences: 300
   Name of second to last sequence: XP_012933189.1_PREDICTED:_calcium-binding_and_coiled-coil_domain-containing_protein_2_isoform_X2
   Number of unique sequences: 298
-~~~
-{: .output}
+```
 
-* La descripciones en la salida deberán ser idénticas a las mostradas arriba.
-* El **script** deberá imprimir a salida estándar.
-* Deberá funcionar con cualquier otro archivo o archivos fasta, diferentes a los proporcionados.
-* Deberá estar comentado, explicando brevemente qué hace el **script** y qué realiza cada línea.
+- La descripciones en la salida deberán ser idénticas a las mostradas arriba.
+- El **script** deberá imprimir a salida estándar.
+- Deberá funcionar con cualquier otro archivo o archivos fasta, diferentes a los proporcionados.
+- Deberá estar comentado, explicando brevemente qué hace el **script** y qué realiza cada línea.
 
 Todas las ocurrencias de 'ID' deberán ser substituidas por un identificador, pueden usar un número entre 1 y 16. No tienen que hacer este ID variable, es decir, no es necesario que el ID se pueda cambiar en la línea de comandos cuando se ejecuta el script.
 
@@ -755,18 +728,17 @@ Los paquetes de archivos los pueden descargar de:
 `https://software-carpentry.github.io/shell-novice-es/final_project/data/Fastas_<identificador_de_estudiante>.tar.gz`
 
 Y descomprimirlos con tar de la siguiente manera, por ejemplo, para el estudiante con ID=1:
-~~~
+
+```bash
 tar -xvf Fastas_1.tar.gz
-~~~
-{: .language-bash}
+```
 
 Éste generará un directorio llamado `Fastas_1` dentro del cual realizarán sus análisis.
 
 Se entregarán dos archivos:
 
-1. fasta_analysis_script_`<identificador_de_estudiante>`.sh (e.g. fasta_analysis_script_5.sh)
-2. Complete_`<identificador_de_estudiante>`.fasta (e.g. Complete_5.fasta)
-
+1. fasta\_analysis\_script\_`<identificador_de_estudiante>`.sh (e.g. fasta\_analysis\_script\_5.sh)
+2. Complete\_`<identificador_de_estudiante>`.fasta (e.g. Complete\_5.fasta)
 
 #### Reto extra
 
@@ -777,7 +749,11 @@ ayuda si se ejecuta el **script** sin opciones.
 
 Para borrar uno o más espacios al inicio de la línea se puede utilizar:
 
-~~~
+```bash
 sed 's/ *//'
-~~~
-{: .language-bash}
+```
+
+[bash-demystified]: https://blog.dghubble.io/post/.bashprofile-.profile-and-.bashrc-conventions/
+
+
+
