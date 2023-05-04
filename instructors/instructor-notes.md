@@ -140,7 +140,7 @@ Haga que un alumno muestre la solución?
     ayudar a quienes lo necesitan.
 
 * Introducción y navegación del sistema de archivos en la terminal (cubierto en
-    [Navegación de archivos y directorios] (../episodes/02-filedir.md) sección) puede ser confuso. Puede tener el explorador de archivos de la GUI y la terminal abierto uno al lado del otro para que los alumnos puedan ver el contenido y la estructura del archivo mientras usan la terminal para navegar por el sistema.
+    [Navegación de archivos y directorios](../episodes/02-filedir.md) sección) puede ser confuso. Puede tener el explorador de archivos de la GUI y la terminal abierto uno al lado del otro para que los alumnos puedan ver el contenido y la estructura del archivo mientras usan la terminal para navegar por el sistema.
 
 * La finalización de pestañas suena como algo pequeño: no lo es.
     Volviendo a ejecutar comandos viejos usando `! 123` o`! Wc`
@@ -170,8 +170,8 @@ Haga que un alumno muestre la solución?
 * Si todo va bien, puedes llevar a casa el punto de ese archivo
     las extensiones están esencialmente ahí para ayudar a las computadoras (y
     lectores) entienden el contenido del archivo y no son un requisito de los archivos
-    (cubierto brevemente en [Navegación de archivos y directorios](../02-filedir.md)).
-    Esto se puede hacer en la sección [Tuberías y filtros](../04-pipefilter.md) mostrando que
+    (cubierto brevemente en [Navegación de archivos y directorios](../episodes/02-filedir.md)).
+    Esto se puede hacer en la sección [Tuberías y filtros](../episodes/04-pipefilter.md) mostrando que
     puede redirigir salida estándar a un archivo sin la extensión .txt
     (por ejemplo, longitudes) y que el archivo resultante sigue siendo un archivo de texto perfectamente utilizable.
     Haga notar que si hace doble clic en la GUI, la computadora
