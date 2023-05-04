@@ -251,5 +251,5 @@ Y por favor también haz uso de nuestro
 [Instalador de Windows de Software Carpentry][windows-installer].
 
 [shebang]: http://www.in-ulm.de/~mascheck/various/shebang/
-[windows-installer]: {{site.swc_github}}/windows-installer
+[windows-installer]: https://github.com/swcarpentry/windows-installer/
 
