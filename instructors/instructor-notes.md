@@ -83,9 +83,9 @@ siempre que los alumnos que usen Windows no se encuentren con obstáculos como:
 
 * Use el directorio `data` para ejercicios en el taller y ejemplos de codificación en vivo.
      Puede clonar el directorio shell-novice o usar `Download ZIP`
-     botón a la derecha para obtener el [repositorio] completo (https://github.com/swcarpentry/shell-novice). También proporcionamos ahora
+     botón a la derecha para obtener el [repositorio](https://github.com/swcarpentry/shell-novice) completo. También proporcionamos ahora
      un archivo zip del directorio `data` que se puede descargar por sí mismo
-     del repositorio haciendo clic derecho + Guardar o ver la página ["setup"]({{page.root}}{% link setup.md %}) en el sitio web de la lección para más detalles.
+     del repositorio haciendo clic derecho + Guardar o ver la página ["setup"](../learners/setup.md) en el sitio web de la lección para más detalles.
 
 * Sitio web: se han usado varias prácticas.
     * Opción 1: puede proporcionar enlaces a los alumnos antes de la lección para que puedan seguirlos,
@@ -140,7 +140,7 @@ Haga que un alumno muestre la solución?
     ayudar a quienes lo necesitan.
 
 * Introducción y navegación del sistema de archivos en la terminal (cubierto en
-    [Navegación de archivos y directorios] ({{page.root}} / 02-filedir /) sección) puede ser confuso. Puede tener el explorador de archivos de la GUI y la terminal abierto uno al lado del otro para que los alumnos puedan ver el contenido y la estructura del archivo mientras usan la terminal para navegar por el sistema.
+    [Navegación de archivos y directorios] (../episodes/02-filedir.md) sección) puede ser confuso. Puede tener el explorador de archivos de la GUI y la terminal abierto uno al lado del otro para que los alumnos puedan ver el contenido y la estructura del archivo mientras usan la terminal para navegar por el sistema.
 
 * La finalización de pestañas suena como algo pequeño: no lo es.
     Volviendo a ejecutar comandos viejos usando `! 123` o`! Wc`
@@ -170,8 +170,8 @@ Haga que un alumno muestre la solución?
 * Si todo va bien, puedes llevar a casa el punto de ese archivo
     las extensiones están esencialmente ahí para ayudar a las computadoras (y
     lectores) entienden el contenido del archivo y no son un requisito de los archivos
-    (cubierto brevemente en [Navegación de archivos y directorios] ({{page.root}} / 02-filedir /)).
-    Esto se puede hacer en la sección [Tuberías y filtros] ({{page.root}} / 04-pipefilter /) mostrando que
+    (cubierto brevemente en [Navegación de archivos y directorios](../02-filedir.md)).
+    Esto se puede hacer en la sección [Tuberías y filtros](../04-pipefilter.md) mostrando que
     puede redirigir salida estándar a un archivo sin la extensión .txt
     (por ejemplo, longitudes) y que el archivo resultante sigue siendo un archivo de texto perfectamente utilizable.
     Haga notar que si hace doble clic en la GUI, la computadora
@@ -185,7 +185,7 @@ Haga que un alumno muestre la solución?
 
 * Es difícil discutir `#!` (Shebang) sin antes discutir
     permisos, que no hacemos `#!` es también [bonita
-    complicado] [shebang], así que incluso si discutimos los permisos,
+    complicado][shebang], así que incluso si discutimos los permisos,
     probablemente todavía no quiera discutir `#!`.
 
 * Instalar Bash y un conjunto razonable de comandos de Unix en Windows
@@ -195,7 +195,7 @@ Haga que un alumno muestre la solución?
 
 * En máquinas con Windows
     si `nano` no se ha instalado correctamente con el
-    [Software Carpentry Windows Installer] [Windows-installer]
+    [Software Carpentry Windows Installer][windows-installer]
     es posible usar `notepad` como alternativa. Habrá una GUI
     interfaz y terminaciones de línea se tratan de manera diferente, pero de lo contrario, para
     los propósitos de esta lección, `notepad` y` nano` se pueden usar casi como intercambiablemente.
@@ -227,8 +227,8 @@ Consulte el último conjunto de pautas de instalación para obtener asesoramient
 y pruébalo tú mismo * antes * enseñando una clase.
 Las opciones que hemos explorado incluyen:
 
-1. [msysGit] (http://msysgit.github.io/) (también llamado "Git Bash"),
-2. [Cygwin] (http://www.cygwin.com/),
+1. [msysGit](http://msysgit.github.io/) (también llamado "Git Bash"),
+2. [Cygwin](http://www.cygwin.com/),
 3. usando una máquina virtual de escritorio, y
 4. Hacer que los alumnos se conecten a una máquina Unix remota (generalmente una VM en la nube).
 
