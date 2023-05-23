@@ -357,12 +357,12 @@ ATOM     13  H           1      -3.172  -1.337   0.206  1.00  0.00</code></pre>
 <p>Efectivamente, la salida de nuestro <strong>script</strong> es
 exactamente lo que obtendríamos si ejecutamos ese
 <strong>pipeline</strong> directamente en la terminal.</p>
-<div id="callout1" class="callout callout">
+<div id="texto-vs.-lo-que-sea" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="texto-vs.-lo-que-sea" class="callout-inner">
-<h3 class="callout-title">Texto vs. Lo que sea<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Texto vs. Lo que sea<a class="anchor" aria-label="anchor" href="#texto-vs.-lo-que-sea"></a>
 </h3>
 <div class="callout-content">
 <p>Por lo general llamamos a programas como Microsoft Word o LibreOffice
@@ -429,12 +429,12 @@ ATOM     11  H           1      -0.074  -0.384   1.288  1.00  0.00
 ATOM     12  H           1      -0.048  -1.362  -0.205  1.00  0.00
 ATOM     13  H           1      -1.183   0.500  -1.412  1.00  0.00</code></pre>
 </div>
-<div id="callout2" class="callout callout">
+<div id="comillas-dobles-alrededor-de-parámetros" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="comillas-dobles-alrededor-de-parámetros" class="callout-inner">
-<h3 class="callout-title">Comillas dobles alrededor de parámetros<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Comillas dobles alrededor de parámetros<a class="anchor" aria-label="anchor" href="#comillas-dobles-alrededor-de-par%C3%A1metros"></a>
 </h3>
 <div class="callout-content">
 <p>Por la misma razón que ponemos la variable del bucle dentro de
@@ -564,12 +564,12 @@ wc -l "$@" | sort -n</code></pre>
 163 ../creatures/basilisk.dat
 163 ../creatures/unicorn.dat</code></pre>
 </div>
-<div id="callout3" class="callout callout">
+<div id="por-qué-no-está-haciendo-nada" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="por-qué-no-está-haciendo-nada" class="callout-inner">
-<h3 class="callout-title">¿Por qué no está haciendo nada?<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">¿Por qué no está haciendo nada?<a class="anchor" aria-label="anchor" href="#por-qu%C3%A9-no-est%C3%A1-haciendo-nada"></a>
 </h3>
 <div class="callout-content">
 <p>¿Qué pasa si se supone que un <strong>script</strong> procesa un
@@ -686,13 +686,13 @@ Nelle podría modificar su <strong>script</strong> para verificar los
 parámetros en línea de comandos, y utilizar <code>NENE*[AB].txt</code>
 si no se ha proporcionado ninguno. Por supuesto, esto introduce otro
 equilibrio entre flexibilidad y complejidad.</p>
-<div id="challenge1" class="callout challenge">
+<div id="variables-en-los-scripts-de-la-terminal" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="variables-en-los-scripts-de-la-terminal" class="callout-inner">
 <h3 class="callout-title">Variables en los <strong>scripts</strong> de
-la terminal<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+la terminal<a class="anchor" aria-label="anchor" href="#variables-en-los-scripts-de-la-terminal"></a>
 </h3>
 <div class="callout-content">
 <p>En el directorio <code>molecules</code>, imagina que tienes un
@@ -730,7 +730,7 @@ que terminan en <code>.pdb</code> en el directorio
   Solución
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>La respuesta correcta es la 2. Las variables <code>$1</code>,
 <code>$2</code> y <code>$3</code> representan los argumentos para el
@@ -748,12 +748,12 @@ dentro del <strong>script</strong> desde el principio al final.</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="listando-especies-únicas" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="listando-especies-únicas" class="callout-inner">
-<h3 class="callout-title">Listando especies únicas<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Listando especies únicas<a class="anchor" aria-label="anchor" href="#listando-especies-%C3%BAnicas"></a>
 </h3>
 <div class="callout-content">
 <p>Leah tiene varios cientos de archivos de datos, cada uno de los
@@ -784,7 +784,7 @@ separado.</p>
   Solución
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre><code># El script para encontrar especies unicas en archivos .csv en donde "species" es la segunda data field
 # Este script acepta cualquier número de nombres de archivos como argumentos de la línea de comando. 
@@ -800,13 +800,13 @@ done</code></pre>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="encuentre-el-archivo-más-largo-con-una-extensión-determinada" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="encuentre-el-archivo-más-largo-con-una-extensión-determinada" class="callout-inner">
 <h3 class="callout-title">Encuentre el archivo más largo con una
-extensión determinada<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+extensión determinada<a class="anchor" aria-label="anchor" href="#encuentre-el-archivo-m%C3%A1s-largo-con-una-extensi%C3%B3n-determinada"></a>
 </h3>
 <div class="callout-content">
 <p>Escribe un <strong>script</strong> de la terminal llamado
@@ -831,7 +831,7 @@ en<code>/tmp/data</code> que tenga más líneas.</p>
   Solución
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -848,13 +848,13 @@ en<code>/tmp/data</code> que tenga más líneas.</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="por-qué-grabar-los-comandos-en-el-historial-antes-de-ejecutarlos" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="por-qué-grabar-los-comandos-en-el-historial-antes-de-ejecutarlos" class="callout-inner">
 <h3 class="callout-title">¿Por qué grabar los comandos en el historial
-antes de ejecutarlos?<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+antes de ejecutarlos?<a class="anchor" aria-label="anchor" href="#por-qu%C3%A9-grabar-los-comandos-en-el-historial-antes-de-ejecutarlos"></a>
 </h3>
 <div class="callout-content">
 <p>Si ejecutas el comando:</p>
@@ -878,7 +878,7 @@ ejecutarlos. ¿Por qué crees que hace esto?</p>
   Solución
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>Si un comando hace que algo se cuelgue, podría ser útil saber cuál
 era ese comando para saber cuál fue el problema. Si el comando sólo se
@@ -888,12 +888,12 @@ comando ejecutado en caso de un bloqueo.</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="script-de-lectura-y-comprensión" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="script-de-lectura-y-comprensión" class="callout-inner">
-<h3 class="callout-title">Script de lectura y comprensión<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Script de lectura y comprensión<a class="anchor" aria-label="anchor" href="#script-de-lectura-y-comprensi%C3%B3n"></a>
 </h3>
 <div class="callout-content">
 <p>Considera el directorio data-shell/molecules una vez más. Este
@@ -932,7 +932,7 @@ creado. Explica, para los siguientes tres ejemplos, que hace el
   Solución
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>El <strong>script</strong> 1 mostrará una lista de todos los archivos
 que contienen un punto en su nombre.</p>
@@ -947,12 +947,12 @@ etano.pdb metano.pdb octano.pdb pentano.pdb propano.pdb.pdb</p>
 </div>
 </div>
 </div>
-<div id="challenge6" class="callout challenge">
+<div id="depuración-debugging-de-scripts" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="depuración-debugging-de-scripts" class="callout-inner">
-<h3 class="callout-title">Depuración (debugging) de scripts<a class="anchor" aria-label="anchor" href="#challenge6"></a>
+<h3 class="callout-title">Depuración (debugging) de scripts<a class="anchor" aria-label="anchor" href="#depuraci%C3%B3n-debugging-de-scripts"></a>
 </h3>
 <div class="callout-content">
 <p>Supongamos que se ha guardado el siguiente <strong>script</strong> en
@@ -994,7 +994,7 @@ error?</p>
   Solución
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>El indicador <code>-x</code> hace que <code>bash</code> se ejecute en
 modo de depuración. Esto muestra cada comando mientras se ejecuta, lo
@@ -1064,7 +1064,7 @@ y más consistente con los comandos de Unix.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1088,7 +1088,7 @@ y más consistente con los comandos de Unix.</li>
   "identifier": "https://swcarpentry.github.io/shell-novice-es/06-script.html",
   "dateCreated": "2018-02-20",
   "dateModified": "2023-04-24",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
