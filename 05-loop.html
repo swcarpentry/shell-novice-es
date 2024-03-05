@@ -329,13 +329,13 @@ y<code>original-unicorn.dat</code>. No podemos usar:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp <span class="pp">*</span>.dat original-<span class="pp">*</span>.dat</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> cp <span class="pp">*</span>.dat original-<span class="pp">*</span>.dat</span></code></pre>
 </div>
 <p>Porque se expandiría a:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp basilisk.dat unicorn.dat original-<span class="pp">*</span>.dat</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> cp basilisk.dat unicorn.dat original-<span class="pp">*</span>.dat</span></code></pre>
 </div>
 <p>Esto no respalda nuestros archivos, en su lugar obtenemos un
 error:</p>
@@ -357,10 +357,10 @@ sola vez:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for filename in basilisk.dat unicorn.dat</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> do</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>    head <span class="ex">-n</span> 3 <span class="va">$filename</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> for filename in basilisk.dat unicorn.dat</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="op">&gt;</span> do</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="op">&gt;</span>    head <span class="ex">-n</span> 3 <span class="va">$filename</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -400,13 +400,12 @@ llaves para delimitar claramente el nombre de la variable:
 <code>$filename</code> es equivalente a<code>${filename}</code>, pero es
 diferente de <code>${file}name</code>. Puede ser que encuentres esta
 notación en programas escritos por otras personas.</p>
-<div id="siga-las-instrucciones" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="siga-las-instrucciones" class="callout-inner">
-<h3 class="callout-title">Siga las instrucciones<a class="anchor" aria-label="anclaje" href="#siga-las-instrucciones"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="siga-las-instrucciones">Siga las instrucciones<a class="anchor" aria-label="anchor" href="#siga-las-instrucciones"></a></h3>
 <div class="callout-content">
 <p>El <strong>prompt</strong> de la terminal cambia de <code>$</code> a
 <code>&gt;</code> y de nuevo a <code>$</code> conforme escribimos
@@ -417,14 +416,13 @@ para separar dos comandos escritos en una sola línea.</p>
 </div>
 </div>
 </div>
-<div id="los-mismos-símbolos-diferentes-significados" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="los-mismos-símbolos-diferentes-significados" class="callout-inner">
-<h3 class="callout-title">Los mismos símbolos, diferentes
-significados<a class="anchor" aria-label="anclaje" href="#los-mismos-s%C3%ADmbolos-diferentes-significados"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="los-mismos-símbolos-diferentes-significados">Los mismos símbolos, diferentes
+significados<a class="anchor" aria-label="anchor" href="#los-mismos-s%C3%ADmbolos-diferentes-significados"></a></h3>
 <div class="callout-content">
 <p>Aquí vemos <code>&gt;</code> siendo utilizado como un prompt de la
 terminal, mientras que <code>&gt;</code> también se utiliza para
@@ -446,19 +444,19 @@ bucle como:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> basilisk.dat unicorn.dat</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 3 <span class="va">$x</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> basilisk.dat unicorn.dat</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 3 <span class="va">$x</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>or:</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> temperature <span class="kw">in</span> basilisk.dat unicorn.dat</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 3 <span class="va">$temperature</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="cf">for</span> temperature <span class="kw">in</span> basilisk.dat unicorn.dat</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 3 <span class="va">$temperature</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>Funcionaría exactamente de la misma manera. <em>No lo hagas así.</em>
 Los programas sólo son útiles si la gente puede entenderlos, nombres
@@ -469,11 +467,11 @@ programa no haga lo que sus lectores piensan que hace.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.dat</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$filename</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 100 <span class="va">$filename</span> <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 20</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.dat</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$filename</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 100 <span class="va">$filename</span> <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 20</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>La terminal comienza expandiendo <code>*.dat</code> para crear la
 lista de archivos que procesará. Después de esto, el <strong>cuerpo del
@@ -483,7 +481,7 @@ de comandos a la salida estándar. Por ejemplo:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo hello there</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">$</span> echo hello there</span></code></pre>
 </div>
 <p>regresa:</p>
 <div class="codewrapper">
@@ -498,11 +496,11 @@ esto como:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.dat</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="va">$filename</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 100 <span class="va">$filename</span> <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 20</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.dat</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>    <span class="va">$filename</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 100 <span class="va">$filename</span> <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 20</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>porque entonces la primera vez a través del bucle, cuando
 <code>$filename</code> se expande a <code>basilisk.dat</code>, la
@@ -510,13 +508,12 @@ terminal intentará ejecutar <code>basilisk.dat</code> como un programa.
 Finalmente, la combinación <code>head</code> y <code>tail</code>
 selecciona las líneas 81-100 de cualquier archivo que se esté procesando
 (suponiendo que el archivo tiene al menos 100 líneas).</p>
-<div id="espacios-en-los-nombres" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="espacios-en-los-nombres" class="callout-inner">
-<h3 class="callout-title">Espacios en los nombres<a class="anchor" aria-label="anclaje" href="#espacios-en-los-nombres"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="espacios-en-los-nombres">Espacios en los nombres<a class="anchor" aria-label="anchor" href="#espacios-en-los-nombres"></a></h3>
 <div class="callout-content">
 <p>El espacio en blanco se utiliza para separar los elementos de la
 lista que vamos a usar en el bucle. Si en la lista tenemos elementos con
@@ -529,10 +526,10 @@ purple unicorn.dat</code></pre>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="st">"red dragon.dat"</span> <span class="st">"purple unicorn.dat"</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 100 <span class="st">"</span><span class="va">$filename</span><span class="st">"</span> <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 20</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="st">"red dragon.dat"</span> <span class="st">"purple unicorn.dat"</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>    <span class="fu">head</span> <span class="at">-n</span> 100 <span class="st">"</span><span class="va">$filename</span><span class="st">"</span> <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 20</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>Es más sencillo simplemente evitar el uso de espacios en blanco (u
 otros caracteres especiales) en los nombres de archivo.</p>
@@ -565,10 +562,10 @@ resolverlo usando este bucle:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.dat</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">$filename</span> original-<span class="va">$filename</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.dat</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>    <span class="fu">cp</span> <span class="va">$filename</span> original-<span class="va">$filename</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>Este bucle ejecuta el comando <code>cp</code> una vez para cada
 nombre de archivo. La primera vez, cuando <code>$filename</code> se
@@ -576,13 +573,13 @@ convierte en <code>basilisk.dat</code>, la terminal ejecuta:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> basilisk.dat original-basilisk.dat</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">cp</span> basilisk.dat original-basilisk.dat</span></code></pre>
 </div>
 <p>La segunda vez, el comando es:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> unicorn.dat original-unicorn.dat</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="fu">cp</span> unicorn.dat original-unicorn.dat</span></code></pre>
 </div>
 <p>Como el comando <code>cp</code> no produce una salida normalmente, es
 difícil verificar que el bucle está funcionando de forma correcta. Al
@@ -601,11 +598,11 @@ terminan en ‘A’ o ‘B’, en lugar de ‘Z’). Posicionada en su directori
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd north-pacific-gyre/2012-07-03</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*</span>[AB].txt</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> do</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>     echo <span class="va">$datafile</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> cd north-pacific-gyre/2012-07-03</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*[</span><span class="ss">AB</span><span class="pp">]</span>.txt</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="op">&gt;</span> do</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1"></a><span class="op">&gt;</span>     echo <span class="va">$datafile</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -624,10 +621,10 @@ para hacer eso:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*</span>[AB].txt</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> do</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>     echo <span class="va">$datafile</span> stats-<span class="va">$datafile</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*[</span><span class="ss">AB</span><span class="pp">]</span>.txt</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="op">&gt;</span> do</span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="op">&gt;</span>     echo <span class="va">$datafile</span> stats-<span class="va">$datafile</span></span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -650,7 +647,7 @@ separar las piezas):</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*</span>[AB].txt<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$datafile</span> stats-<span class="va">$datafile</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*[</span><span class="ss">AB</span><span class="pp">]</span>.txt<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$datafile</span> stats-<span class="va">$datafile</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre>
 </div>
 <p>Utilizando la tecla de flecha izquierda, Nelle realiza una copia de
 seguridad y cambia el comando <code>echo</code> a
@@ -658,7 +655,7 @@ seguridad y cambia el comando <code>echo</code> a
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*</span>[AB].txt<span class="kw">;</span> <span class="cf">do</span> <span class="fu">bash</span> goostats <span class="va">$datafile</span> stats-<span class="va">$datafile</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*[</span><span class="ss">AB</span><span class="pp">]</span>.txt<span class="kw">;</span> <span class="cf">do</span> <span class="fu">bash</span> goostats <span class="va">$datafile</span> stats-<span class="va">$datafile</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre>
 </div>
 <p>Cuando presiona Enter, la terminal ejecuta el comando modificado. Sin
 embargo, nada parece suceder porque no hay salida. Después de un
@@ -670,15 +667,14 @@ comando, y lo edita para que se vea así:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*</span>[AB].txt<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$datafile</span><span class="kw">;</span> <span class="fu">bash</span> goostats <span class="va">$datafile</span> stats-<span class="va">$datafile</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="ex">$</span> for datafile in NENE<span class="pp">*[</span><span class="ss">AB</span><span class="pp">]</span>.txt<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$datafile</span><span class="kw">;</span> <span class="fu">bash</span> goostats <span class="va">$datafile</span> stats-<span class="va">$datafile</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre>
 </div>
-<div id="principio-y-fin" class="callout callout">
+<div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="principio-y-fin" class="callout-inner">
-<h3 class="callout-title">Principio y Fin<a class="anchor" aria-label="anclaje" href="#principio-y-fin"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="principio-y-fin">Principio y Fin<a class="anchor" aria-label="anchor" href="#principio-y-fin"></a></h3>
 <div class="callout-content">
 <p>Podemos pasar al principio de una línea en la terminal escribiendo
 <code>Ctrl-A</code> y al final usando <code>Ctrl-E</code>.</p>
@@ -702,14 +698,13 @@ terminal, entra en <code>north-pacific-gyre/2012-07-03</code>, e utiliza
 <code>cat stats-NENE01729B.txt</code> para examinar uno de los archivos
 de salida. Se ve bien, así que decide tomarse un café y ponerse al día
 con su lectura.</p>
-<div id="aquellos-que-conocen-la-historia-pueden-elegir-repetirla" class="callout callout">
+<div id="callout5" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="aquellos-que-conocen-la-historia-pueden-elegir-repetirla" class="callout-inner">
-<h3 class="callout-title">Aquellos que conocen la historia pueden elegir
-repetirla<a class="anchor" aria-label="anclaje" href="#aquellos-que-conocen-la-historia-pueden-elegir-repetirla"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="aquellos-que-conocen-la-historia-pueden-elegir-repetirla">Aquellos que conocen la historia pueden elegir
+repetirla<a class="anchor" aria-label="anchor" href="#aquellos-que-conocen-la-historia-pueden-elegir-repetirla"></a></h3>
 <div class="callout-content">
 <p>Otra forma de repetir el trabajo anterior es usar el comando
 <code>history</code> para obtener una lista de los últimos cientos de
@@ -719,7 +714,7 @@ Por ejemplo, si Nelle escribe esto:</p>
 <div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> history <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 5</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="ex">$</span> history <span class="kw">|</span> <span class="fu">tail</span> <span class="at">-n</span> 5</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -736,13 +731,12 @@ en<code>NENE01729B.txt</code> simplemente escribiendo
 </div>
 </div>
 </div>
-<div id="otros-comandos-del-historial" class="callout callout">
+<div id="callout6" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="otros-comandos-del-historial" class="callout-inner">
-<h3 class="callout-title">Otros comandos del historial<a class="anchor" aria-label="anclaje" href="#otros-comandos-del-historial"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="otros-comandos-del-historial">Otros comandos del historial<a class="anchor" aria-label="anchor" href="#otros-comandos-del-historial"></a></h3>
 <div class="callout-content">
 <p>Existen otros comandos de acceso directo para acceder al
 historial:</p>
@@ -786,19 +780,19 @@ regresa la siguiente salida:</p>
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="pp">*</span>.pdb</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
+<span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb30-3"><a href="#cb30-3" tabindex="-1"></a>    <span class="fu">ls</span> <span class="pp">*</span>.pdb</span>
+<span id="cb30-4"><a href="#cb30-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>Ahora, ¿cuál es la salida de este código?:</p>
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">$datafile</span></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb31-3"><a href="#cb31-3" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">$datafile</span></span>
+<span id="cb31-4"><a href="#cb31-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>¿Por qué estos dos bucles dan resultados diferentes?</p>
 </div>
@@ -819,10 +813,10 @@ utilizando <code>ls</code>. El bucel expandido se vería así:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</span>
+<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a><span class="fu">ls</span> cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb</span>
+<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">SALIDA<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -865,11 +859,11 @@ Primera parte<a class="anchor" aria-label="anclaje" href="#guardar-en-un-archivo
 <div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alkanes <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$alkanes</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span> <span class="va">$alkanes</span> <span class="op">&gt;</span> alkanes.pdb</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" tabindex="-1"></a><span class="cf">for</span> alkanes <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
+<span id="cb35-2"><a href="#cb35-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb35-3"><a href="#cb35-3" tabindex="-1"></a>    <span class="bu">echo</span> <span class="va">$alkanes</span></span>
+<span id="cb35-4"><a href="#cb35-4" tabindex="-1"></a>    <span class="fu">cat</span> <span class="va">$alkanes</span> <span class="op">&gt;</span> alkanes.pdb</span>
+<span id="cb35-5"><a href="#cb35-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li>Imprime <code>cubane.pdb</code>, <code>ethane.pdb</code>,
 <code>methane.pdb</code>, <code>octane.pdb</code>,
@@ -917,10 +911,10 @@ bucle?</p>
 <div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">cat</span> <span class="va">$datafile</span> <span class="op">&gt;&gt;</span> all.pdb</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" tabindex="-1"></a><span class="cf">for</span> datafile <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
+<span id="cb36-2"><a href="#cb36-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb36-3"><a href="#cb36-3" tabindex="-1"></a>   <span class="fu">cat</span> <span class="va">$datafile</span> <span class="op">&gt;&gt;</span> all.pdb</span>
+<span id="cb36-4"><a href="#cb36-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li>Todo el texto de <code>cubane.pdb</code>, <code>ethane.pdb</code>,
 <code>methane.pdb</code>, <code>octane.pdb</code> y
@@ -967,10 +961,10 @@ bucle?:</p>
 <div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> c<span class="pp">*</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">$filename</span> </span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> c<span class="pp">*</span></span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">$filename</span> </span>
+<span id="cb37-4"><a href="#cb37-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li>No se muestra ningún archivo.</li>
 <li>Todos los archivos son enumerados.</li>
@@ -1007,10 +1001,10 @@ lugar del anterior?</p>
 <div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>c<span class="pp">*</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">$filename</span> </span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>c<span class="pp">*</span></span>
+<span id="cb38-2"><a href="#cb38-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb38-3"><a href="#cb38-3" tabindex="-1"></a>    <span class="fu">ls</span> <span class="va">$filename</span> </span>
+<span id="cb38-4"><a href="#cb38-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <ol style="list-style-type: decimal"><li>Se listarían los mismos archivos.</li>
 <li>Esta vez se enumerarían todos los archivos.</li>
@@ -1053,30 +1047,30 @@ ejecutará el siguiente bucle, sin ejecutarlos realmente:</p>
 <div class="codewrapper sourceCode" id="cb39">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">analyze</span> <span class="va">$file</span> <span class="op">&gt;</span> analyzed-<span class="va">$file</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
+<span id="cb39-2"><a href="#cb39-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb39-3"><a href="#cb39-3" tabindex="-1"></a>  <span class="ex">analyze</span> <span class="va">$file</span> <span class="op">&gt;</span> analyzed-<span class="va">$file</span></span>
+<span id="cb39-4"><a href="#cb39-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>¿Cuál es la diferencia entre los dos bucles abajo, y cuál deberíamos
 usar?</p>
 <div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Version 1</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> analyze <span class="va">$file</span> <span class="op">&gt;</span> analyzed-<span class="va">$file</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="co"># Version 1</span></span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
+<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a>  <span class="bu">echo</span> analyze <span class="va">$file</span> <span class="op">&gt;</span> analyzed-<span class="va">$file</span></span>
+<span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Version 2</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"analyze </span><span class="va">$file</span><span class="st"> &gt; analyzed-</span><span class="va">$file</span><span class="st">"</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># Version 2</span></span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.pdb</span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a>  <span class="bu">echo</span> <span class="st">"analyze </span><span class="va">$file</span><span class="st"> &gt; analyzed-</span><span class="va">$file</span><span class="st">"</span></span>
+<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1118,13 +1112,13 @@ temperaturas. ¿Cuál sería el resultado del siguiente código?:</p>
 <div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> species <span class="kw">in</span> cubane ethane methane</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> temperature <span class="kw">in</span> 25 30 37 40</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">do</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mkdir</span> <span class="va">$species</span>-<span class="va">$temperature</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">done</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" tabindex="-1"></a><span class="cf">for</span> species <span class="kw">in</span> cubane ethane methane</span>
+<span id="cb42-2"><a href="#cb42-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb42-3"><a href="#cb42-3" tabindex="-1"></a>    <span class="cf">for</span> temperature <span class="kw">in</span> 25 30 37 40</span>
+<span id="cb42-4"><a href="#cb42-4" tabindex="-1"></a>    <span class="cf">do</span></span>
+<span id="cb42-5"><a href="#cb42-5" tabindex="-1"></a>        <span class="fu">mkdir</span> <span class="va">$species</span>-<span class="va">$temperature</span></span>
+<span id="cb42-6"><a href="#cb42-6" tabindex="-1"></a>    <span class="cf">done</span></span>
+<span id="cb42-7"><a href="#cb42-7" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1234,7 +1228,7 @@ previamente introducidos.</li>
   "identifier": "https://swcarpentry.github.io/shell-novice-es/05-loop.html",
   "dateCreated": "2018-02-20",
   "dateModified": "2023-04-24",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
