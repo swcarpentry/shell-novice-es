@@ -264,10 +264,10 @@
               </div>
             </div>
 
-            <hr class="half-width"><div class="accordion accordion-flush resources" id="accordionFlush12">
+            <hr class="half-width"><div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
                     RECURSOS
                   </button>
                 </h2>
@@ -287,7 +287,7 @@
                 </div>
               </div>
             </div>
-            <hr class="half-width resources"><a href="../instructor/aio.html">Todo en una sola página</a>
+            <hr class="half-width lesson-resources"><a href="../instructor/aio.html">Todo en una sola página</a>
 
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
@@ -400,8 +400,7 @@ Software is like that.</code></pre>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="del-dicho-para-siempre-o-cinco-años" class="callout-inner">
-<h3 class="callout-title">Del dicho “Para siempre, o cinco años”<a class="anchor" aria-label="anclaje" href="#del-dicho-para-siempre-o-cinco-a%C3%B1os"></a>
-</h3>
+<h3 class="callout-title">Del dicho “Para siempre, o cinco años”</h3>
 <div class="callout-content">
 <p>Nota: no hemos vinculado a los haikus originales porque parecen ya no
 estar disponibles en el sitio de <em>Salon</em>. Como <a href="https://www.clir.org/pubs/archives/ensuring.pdf" class="external-link">Jeff Rothenberg
@@ -579,7 +578,7 @@ Miscellaneous:
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="utilizando-grep" class="callout-inner">
-<h3 class="callout-title">Utilizando <code>grep</code><a class="anchor" aria-label="anclaje" href="#utilizando-grep"></a>
+<h3 class="callout-title">Utilizando <code>grep</code>
 </h3>
 <div class="callout-content">
 <p>Haciendo referencia a <code>haiku.txt</code> presentado al inicio de
@@ -601,8 +600,7 @@ este tema, qué comando resultaría en la salida siguiente:</p>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="caracteres-especiales-o-comodines" class="callout-inner">
-<h3 class="callout-title">Caracteres especiales o comodines<a class="anchor" aria-label="anclaje" href="#caracteres-especiales-o-comodines"></a>
-</h3>
+<h3 class="callout-title">Caracteres especiales o comodines</h3>
 <div class="callout-content">
 <p>La verdadera ventaja de <code>grep</code> no proviene de sus
 opciones; viene del hecho de que los patrones pueden incluir comodines.
@@ -641,8 +639,7 @@ este caso viene a ser el segundo caracter.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="seguimiento-de-una-especie" class="callout-inner">
-<h3 class="callout-title">Seguimiento de una especie<a class="anchor" aria-label="anclaje" href="#seguimiento-de-una-especie"></a>
-</h3>
+<h3 class="callout-title">Seguimiento de una especie</h3>
 <div class="callout-content">
 <p>Leah tiene varios cientos de archivos de datos guardados en un
 directorio, cada uno de los cuales tiene el formato siguiente:</p>
@@ -687,7 +684,7 @@ el siguiente archivo
   Solución
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre class="source"><code>grep -w $1 -r $2 | cut -d : -f 2 | cut -d , -f 1,3  &gt; $1.txt</code></pre>
 <p>Puedes llamar al <strong>script</strong> de la siguiente forma:</p>
@@ -705,8 +702,7 @@ el siguiente archivo
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="mujercitas" class="callout-inner">
-<h3 class="callout-title">Mujercitas<a class="anchor" aria-label="anclaje" href="#mujercitas"></a>
-</h3>
+<h3 class="callout-title">Mujercitas</h3>
 <div class="callout-content">
 <p>Tú y tu amigo tienen una desacuerdo, después de terminar de leer
 <em>Little Women</em> de Louisa May Alcott. De las cuatro hermanas en el
@@ -733,7 +729,7 @@ velocidad.</p>
   Solución
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre class="source"><code>for sis in Jo Meg Beth Amy
 do
@@ -880,8 +876,7 @@ manera, <code>find</code> obtiene realmente el patrón
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="listar-vs.-buscar" class="callout-inner">
-<h3 class="callout-title">Listar vs. Buscar<a class="anchor" aria-label="anclaje" href="#listar-vs.-buscar"></a>
-</h3>
+<h3 class="callout-title">Listar vs. Buscar</h3>
 <div class="callout-content">
 <p><code>ls</code> y<code>find</code> se pueden usar para hacer cosas
 similares dadas las opciones correctas, pero en circunstancias normales,
@@ -950,8 +945,7 @@ encima del directorio actual:</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="buscando-coincidencias-y-restando" class="callout-inner">
-<h3 class="callout-title">Buscando coincidencias y restando<a class="anchor" aria-label="anclaje" href="#buscando-coincidencias-y-restando"></a>
-</h3>
+<h3 class="callout-title">Buscando coincidencias y restando</h3>
 <div class="callout-content">
 <p><code>-v</code> es una opción de <code>grep</code> que invierte la
 coincidencia de patrones, de modo que sólo las líneas que <em>no</em>
@@ -976,7 +970,7 @@ respuesta, puedes probar los comandos en el directorio
   Solución
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>La respuesta correcta es 1. Poniendo la expresión entre comillas,
 evita que el shell la expanda, y luego lo pasa al comando
@@ -995,8 +989,7 @@ nombres de los archivos.</p>
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="archivos-binarios" class="callout-inner">
-<h3 class="callout-title">Archivos binarios<a class="anchor" aria-label="anclaje" href="#archivos-binarios"></a>
-</h3>
+<h3 class="callout-title">Archivos binarios</h3>
 <div class="callout-content">
 <p>Nos hemos centrado exclusivamente en encontrar cosas en archivos de
 texto. ¿Y si sus datos se almacenan como imágenes, en bases de datos, o
@@ -1038,8 +1031,7 @@ ellas.”</p>
 <div id="find-comprensión-de-lectura-de-pipeline" class="callout-inner">
 <h3 class="callout-title">
 <code>find</code> Comprensión de lectura de
-pipeline<a class="anchor" aria-label="anclaje" href="#find-comprensi%C3%B3n-de-lectura-de-pipeline"></a>
-</h3>
+pipeline</h3>
 <div class="callout-content">
 <p>Escribe un breve comentario explicativo para el siguiente
 <strong>script</strong> de shell:</p>
@@ -1058,7 +1050,7 @@ pipeline<a class="anchor" aria-label="anclaje" href="#find-comprensi%C3%B3n-de-l
   Solución
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Encuentra todos los archivos con una extensión <code>.dat</code> en
 el directorio actual</li>
@@ -1074,8 +1066,7 @@ archivos</li>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="búsqueda-de-archivos-con-propiedades-diferentes" class="callout-inner">
-<h3 class="callout-title">Búsqueda de archivos con propiedades diferentes<a class="anchor" aria-label="anclaje" href="#b%C3%BAsqueda-de-archivos-con-propiedades-diferentes"></a>
-</h3>
+<h3 class="callout-title">Búsqueda de archivos con propiedades diferentes</h3>
 <div class="callout-content">
 <p>El comando <code>find</code> puede recibir varios otros criterios
 conocidos como “tests” para localizar archivos con atributos
@@ -1098,7 +1089,7 @@ horas.</p>
   Solución:
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>Asumiendo que el directorio de inicio de Nelle es nuestro directorio
 en el que trabajamos, podemos usar:</p>
@@ -1116,8 +1107,7 @@ en el que trabajamos, podemos usar:</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Puntos Clave<a class="anchor" aria-label="anclaje" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Puntos Clave</h3>
 <div class="callout-content">
 <ul><li>
 <code>find</code> encuentra archivos con propiedades específicas que
@@ -1176,7 +1166,7 @@ comando.</li>
         <p>Materiales bajo la <a href="LICENSE.html">CC-BY 4.0</a> por las autoras</p>
 
         <p>Plantilla compartida bajo <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> por <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Construido con <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a> y <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Construido con <a href="https://github.com/carpentries/sandpaper/tree/0.16.6" class="external-link">sandpaper (0.16.6)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a> y <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -1199,7 +1189,7 @@ comando.</li>
   "identifier": "https://swcarpentry.github.io/shell-novice-es/instructor/07-find.html",
   "dateCreated": "2018-02-20",
   "dateModified": "2023-04-24",
-  "datePublished": "2024-08-20"
+  "datePublished": "2024-08-27"
 }
 
   </script><script>
