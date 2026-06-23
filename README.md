@@ -2,7 +2,7 @@
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://slack-invite.carpentries.org/)
 [![Slack Status](https://img.shields.io/badge/Slack_Channel-swc--shell--es-E01563.svg)](https://carpentries.slack.com/messages/C9WDS87R6)
 
-# shell-novice
+# La Terminal de Unix
 
 Una introduccion a Unix para personas que jamás han usado esta línea de comando antes.
 
@@ -10,11 +10,13 @@ Por favor revisar [https://swcarpentry.github.io/shell-novice-es](https://swcarp
 y [La documentación de la plantilla de las lecciones][lesson-example]
 para obtener las instrucciones sobre cómo formatear, compilar y enviar material, o ejecuta `make` en este directorio para una lista de comandos útiles.
 
-Maintainers:
-
+Maintainers actuales:
 - Heladia Salgado O.: [@Helysalgado](https://github.com/Helysalgado)
-- [Ivan Gonzalez][gonzalez_ivan]: [@iglpdc](https://github.com/iglpdc)
-- [Clara Llebot Lorente][llebot_clara]: [@clarallebot](https://github.com/clarallebot)
+- Maria A. Torres Meraz: [@mariameraz](https://github.com/mariameraz)
+
+Maintainers anteriores:
+- Ivan Gonzalez: [@iglpdc](https://github.com/iglpdc)
+- Clara Llebot Lorente: [@clarallebot](https://github.com/clarallebot)
 - Veronica Jimenez: [@vjimenez9](https://github.com/vjimenez9)
 - Silvana Pereyra: [@spereyra](https://github.com/spereyra)
 
